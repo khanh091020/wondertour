@@ -7,7 +7,13 @@
  
 }
 
-
+.sticky {
+  position: fixed;
+  top: 0;
+   background-color: rgba(255, 255, 255, 255);
+   box-shadow: 1px 1px 5px #999;
+   color: #666 !important;
+   z-index: 7   ;}
 
 .pa__active {
     background-color: #00AD7C !important;
@@ -89,20 +95,21 @@ p {
 
 .ontop {
   z-index: 99999;
- display: block;
+
  justify-content: center;
 
   text-align: center;
   display: none;
-  padding: 14px 30px;
+  cursor: pointer;
+  
   position: fixed;
-  bottom: 1rem;
-  background-color: #61c8c1;
+  color: #00AD7C;
   bottom: 10px;
-  right: 20px;
-  /* left: 94%; */
+  right: 30px;
 }
-
+.ontop i {
+  font-size: 3rem;
+}
 /* slider  */
  .slider {
 

@@ -42,14 +42,7 @@
     right: 0;
     }
 
-    .sticky {
-          position: fixed;
-          top: 0;
-           background-color: rgba(255, 255, 255, 255);
-           box-shadow: 1px 1px 5px #999;
-           color: #666 !important;
-           z-index: 7   ;
-           }
+    
 
     .tab-pane {
     max-height: 510px;
@@ -97,8 +90,8 @@
 </head>
 <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction();">
 
-    <div class="ontop" id="ontopbro" onclick="ontop()">
-        <i class="fas fa-angle-double-up"></i>
+     <div class="ontop" id="ontopbro" onclick="ontop()">
+        <i class="fas fa-arrow-alt-circle-up"></i>
     </div>
 
      <div id="loading">
@@ -356,97 +349,6 @@
                 </div>
             <input type="hidden" name="index" id="indexPage" value="1">
 
-  <!-- Modal filter-->
-{{!-- <div class="modal " tabindex="-1" id="filter-tour" style="padding-left: 8px !important;" > 
-  <div class="modal-dialog" >
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Your payment option</h5>
-          <button  type="button" class="close ml-1" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" style="border-bottom: 1px solid #f1f1f1;">
-               
-      </div>
-                      <div class="container">
-
-                    <div class="contain__content_search">
-
-                       <h3>Search by name</h3>
-
-                        
-
-                   <div class="row form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 col-8 search__input" type="search" placeholder="Search" aria-label="Search" name="searchByName">
-                    <button class="d-flex justify-content-center btn my-2 my-sm-0 col-2 check__index" id="searchNyName2" ><i class="fas fa-search"></i></button>
-                   </div>
-                    </div>
-                    
-                    <div class="contain-filter">
-                        <h5>Filter by</h5>
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Breakfast include">
-                        <label for="vehicle1">Breakfast include</label><br>
-                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Hotel">
-                        <label for="vehicle2">Hotel</label><br>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="All inclusive">
-                        <label for="vehicle3">All inclusive</label><br>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Pool">
-                        <label for="vehicle3">Pool</label><br>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Free wifi">
-                        <label for="vehicle3">Free wifi</label><br>
-                    </div>
-                
-
-                <div class="contain__rating mt-4    ">
-                    <h4>Star rating</h4>
-                   <div class="row" style="margin: 0 0px;">
-                    <button class="col-sm-3" style="width: 100%; padding: 0;margin-bottom: 10px;margin-left: 2px;">1 <i class="fas fa-star" style="color: orange;margin-left: 5px;"></i></button>
-                    <button class="col-sm-3" style="width: 100%; padding: 0;margin-bottom: 10px;margin-left: 2px;">2 <i class="fas fa-star" style="color: orange;margin-left: 5px;"></i></button>
-                    <button class="col-sm-3" style="width: 100%; padding: 0;margin-bottom: 10px;margin-left: 2px;">3 <i class="fas fa-star" style="color: orange;margin-left: 5px;"></i></button>
-                    <button class="col-sm-3" style="width: 100%; padding: 0;margin-bottom: 10px;margin-left: 2px;">4 <i class="fas fa-star" style="color: orange;margin-left: 5px;"></i></button>
-                    <button class="col-sm-3" style="width: 100%; padding: 0;margin-bottom: 10px;margin-left: 2px;">5 <i class="fas fa-star" style="color: orange;margin-left: 5px;"></i></button>
-                   </div>
-                </div>
-
-                    <div class="contain__Yourbudget mt-4">
-                        <h4>Your budget</h4>
-                        <input type="radio" id="male" name="price2" value="200">
-                        <label for="Less than 200$">Less than 200$</label><br>
-                        <input type="radio" id="male" name="price2" value="500">
-                        <label for="Less than 500$">200$ to 500$</label><br>
-                        <input type="radio" id="male" name="price2" value="1000">
-                        <label for="Less than 500$">500$ to 1000$</label><br>
-                         <input type="radio" id="male" name="price2" value="2000">
-                        <label for="Less than 500$">1000$ to 2000$</label><br>
-                         <input type="radio" id="male" name="price2" value="5000">
-                        <label for="Less than 500$">2000$ to 5000$</label><br>
-                    </div>
-
-                      <div class="contain__Yourbudget mt-4">
-                        <h4>Guest rating</h4>
-                        <input type="radio" class="check__index" id="male" name="gender" value="Lessthan200$">
-                        <label for="Less than 200$">Any</label><br>
-                        <input type="radio" class="check__index" id="male" name="gender" value="Lessthan500$">
-                        <label for="Less than 500$">Wonderful 4.5+</label><br>
-                        <input type="radio" class="check__index" id="male" name="gender" value="Lessthan500$">
-                        <label for="Less than 500$">Very good 4+</label><br>
-                         <input type="radio" class="check__index" id="male" name="gender" value="Lessthan500$">
-                        <label for="Less than 500$">Good 3.5+</label><br>
-                       
-                    </div>
-
-
-                </div>
-        
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
-      </div>
-    </div>
-  </div>
-</div> --}}
- {{!-- end modal  --}}
-
              </form>
               
             </div>
@@ -513,7 +415,7 @@
               <p>Decresere 5%</p>
               <b><p>$210 total</p></b>
               <p>Includes taxes & fees</p>
-              <a href="" class="btn btn-background-slide btn-sm ">Pay now</a>
+              <a href="/bookTour/online" class="btn btn-background-slide btn-sm ">Pay now</a>
               </div>
          
       </div>
@@ -544,15 +446,12 @@
               <div class="col-5 text-right" style="padding-right: 0;">
               <b><p>$299 total</p></b>
               <p>Includes taxes & fees</p>
-              <a href="" class="btn btn-background-slide btn-sm">Pay at property</a>
+              <a href="/bookTour/direct" class="btn btn-background-slide btn-sm">Pay direct</a>
               </div>
          </div> 
       </div>
       
-      {{!-- <div class="modal-footer">
-        <button type="button" class="btn btn-danger" onclick="deleteConfim()">Delete</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div> --}}
+    
     </div>
   </div>
 </div>
