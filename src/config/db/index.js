@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const dotevn = require('dotenv')
+
  async function connect() {
-dotevn.config();
+
    try {
-    await mongoose.connect(process.env.database, {
+    await mongoose.connect('mongodb+srv://new__User1:oUyXL65e12w0mRIp@cluster0.gkzod.mongodb.net/travelweb?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,

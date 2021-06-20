@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "watch": "node-sass --watch E:\\learnNodejs\\src\\resources\\scss\\ --output src\\public\\css\\",
-    "start": "node src/index.js",
+    "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,13 +26,12 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "dateformat": "^4.5.1",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.12.11",
+    "mongoose": "^5.12.14",
     "mongoose-delete": "^0.5.3",
     "mongoose-sequence": "^5.3.1",
     "mongoose-slug-generator": "^1.0.4"
