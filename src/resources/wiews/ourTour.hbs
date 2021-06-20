@@ -1,0 +1,399 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="stylesheet" href=".\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reponsive.css">
+    <link rel="stylesheet" href="./css/bookTour.css">
+   
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .sticky {
+          position: fixed;
+          top: 0;
+           background-color: rgba(255, 255, 255, 255);
+           box-shadow: 1px 1px 5px #999;
+           color: #666 !important;
+           z-index: 100   ;
+}
+    </style>
+</head>
+<body style="margin: 0;overflow-x: hidden;" onload="loadingFunction()">
+
+    <div class="ontop" id="ontopbro" onclick="ontop()">
+        <i class="fas fa-angle-double-up"></i>
+    </div>
+
+    <div id="loading">
+        <img src="/image/load.gif" alt="">
+    </div>
+
+           {{> header}}
+   
+            
+ 
+ <div class="container-fluid ourTour-banner row">
+     
+       
+
+      <div class="col-sm-11 contain__nav row " style="position: relative;">
+         <div class="col-sm-2 text-center ">
+             <div class=" contain__nav-item">
+               <i style="color: rgba(187, 187, 21, 0.747);" class="fas fa-star"></i>
+             </div>
+             <a class="resert__a" href="#tour__out-country"><h4>Viet Nam Tour</h4></a>
+         </div>
+         <div class="col-sm-2 text-center ">
+             <div class=" contain__nav-item">
+                  <i class="fas fa-globe-americas"></i>             </div>
+            <a href="#tour__in-country" class="resert__a"> <h4>Out country</h4></a>
+         </div>
+         <div class="col-sm-2 text-center ">
+             <div class=" contain__nav-item">
+                 <i style="color: orange;" class="fab fa-telegram-plane"></i>
+             </div>
+             <h4>Fly</h4>
+         </div>
+         <div class="col-sm-2 text-center ">
+             <div class=" contain__nav-item">
+                 <i style="color: blue;" class="fas fa-hotel"></i>
+             </div>
+             <h4>Hotel</h4>
+         </div>
+         <div class="col-sm-2 text-center " style="position: relative;">
+             <div class=" contain__nav-item">
+                 <i onclick="openCloseFind()" class="fas fa-search"></i>
+             </div>
+             <h4 onclick="openCloseFind()">Find tour</h4>
+        
+         </div>
+                <div class="ourTour__findtour col-lg-9 display__none" id="ourTour__findtour">  
+
+            <h1 style="text-align: center;">Find Your Tour</h1>
+          <div>
+               <form action="/search" method="get">
+              <div class="row justify-content-around mt-3 mb-4  ">
+    
+                  <div class="row flex-column ourTour__cpntain__search">
+                      <label for="sel1">Destrination</label>
+                     <input name="search" type="text" placeholder="Where want you go ?">
+                  </div>
+                  <div class="row flex-column ourTour__cpntain__search">
+                      <label for="sel1">From date</label>
+                     <input name="fromDate" type="date" placeholder="Where want you go ?">
+                  </div>
+                  <div class="row flex-column ourTour__cpntain__search">
+                      <label for="sel1">To date</label>
+                     <input name="toDate"  type="date" placeholder="Where want you go ?">
+                  </div>
+    
+              </div>
+
+              <div class="row justify-content-around">
+                <button type="submit" class="btn btn-background-slide">Find</button>
+              </div>
+             </form>
+          </div>
+
+
+       
+        </div>
+      </div>
+       
+     
+     
+    </div>
+
+
+    
+
+    <div class="container-fuild container__tour" style="margin-bottom: 10rem;">
+        <div class="row justify-content-center  container__tour-content" data-aos="flip-up">
+            <h1 class=" container__tour-title">
+               Hot tour
+             
+            </h1>
+              <a>Xem thêm <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-5 col-lg-3 container__tour-item hotTour"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+               <div class="container__tour-item-hotTour">
+              <i class="fab fa-hotjar"></i>
+                    <span style="opacity: 1 !important;">Hot Tour</span>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+      <div class="container-fuild container__tour" id="tour__in-country" style="margin-bottom: 10rem;">
+        <div class="row justify-content-center  container__tour-content" data-aos="flip-up">
+            <h1 class=" container__tour-title">
+               Tour in country
+             
+            </h1>
+              <a>Xem thêm <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-5 col-lg-3 container__tour-item"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+                 <div class="container__tour-item-hotTour">
+            <i class="fas fa-check"></i>
+                    <span style="opacity: 1 !important;">Sale tour</span>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+
+  <div class="container-fuild container__tour" id="tour__out-country" style="margin-bottom: 10rem;">
+        <div class="row justify-content-center  container__tour-content" data-aos="flip-up">
+            <h1 class=" container__tour-title">
+               Tour <output></output> country
+             
+            </h1>
+              <a>Xem thêm <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-5 col-lg-3 container__tour-item"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+                 <div class="container__tour-item-hotTour">
+              <i class="fas fa-check"></i>
+                    <span style="opacity: 1 !important;">Sale tour</span>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+
+  <div class="container-fuild container__tour" style="margin-bottom: 10rem;">
+        <div class="row justify-content-center  container__tour-content" data-aos="flip-up">
+            <h1 class=" container__tour-title">
+               Love tour
+             
+            </h1>
+              <a>Xem thêm <i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-5 col-lg-3 container__tour-item"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+                  <div class="container__tour-item-hotTour">
+             <i class="fas fa-heart"></i>
+                    <span style="opacity: 1 !important;">Love Tour</span>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+
+
+	<div id="fh5co-destination" >
+        <div class="tour-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul id="fh5co-destination-list" class="animate-box">
+                        <li class="one-forth text-center" style="background-image: url(image/đỉnh\ bàn\ cờ.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Ban Co peak with the statue of De Thich.</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(http://img.v3.news.zdn.vn/w1024/Uploaded/jac_iik/2015_10_30/Anh_1.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Linh Ung Bai But Pagoda.</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/vinh_ha_long.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Ha long bay</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/thien-vien-truc-lam-da-lat.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Truc lam template</h2>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="one-forth text-center" style="background-image: url(image/Phong-Nha-9.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Phong nha cave</h2>
+                                </div>
+                            </a>
+                        </li>
+                       <li class="one-half text-center">
+								<div class="title-bg">
+									<div class="case-studies-summary">
+										<h2>Most Popular Destinations</h2>
+										<a class="btn btn btn-background-slide" href="#">View All Destinations</a>
+									</div>
+								</div>
+							</li>
+                        
+                        <li class="one-forth text-center" style="background-image: url(image/ban-dao-son-tra-ivivu.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Son Tra Peninsula</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/biệt\ thự\ hằng\ \ nga.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Hang nga villa</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/bãi\ rạng.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>The crystal sea water.</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/Cầu-Tình-Yêu-Đà-Nẵng.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Da nang Love bridge</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="one-forth text-center" style="background-image: url(image/Eo-Gio-Quy-Nhon-Vnexpress-1551670722.jpg); ">
+                            <a href="#">
+                                <div class="case-studies-summary">
+                                    <h2>Wind Strait</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>		
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+	<div id="fh5co-testimonial" style="background-image:url(image/img_bg_1.jpg);">
+		<div class="container">
+			<div class="row animate-box justify-content-center">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2 data-aos="fade-down-right">Happy Clients</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4" data-aos="flip-left"  data-aos-easing="linear"
+                                         data-aos-duration="1200">
+					<div class="box-testimony animate-box">
+						<blockquote>
+							 <div class="box__icon__qoute">
+                             <i class="fas fa-quote-right"></i>
+                         </div>
+							<p>&ldquo;You can't just ask customers what they want and then try to give it to them. By the time you perfect it, they already want something new.&rdquo;</p>
+						</blockquote>
+						<p class="author">Phan Ho Nhi, CEO <a href="" target="_blank"></a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+				</div>
+				<div class="col-md-4" data-aos="flip-up"  data-aos-easing="linear"
+                                             data-aos-duration="1200">
+					<div class="box-testimony animate-box">
+						<blockquote>
+							 <div class="box__icon__qoute">
+                             <i class="fas fa-quote-right"></i>
+                         </div>
+							<p>&ldquo;What can't be sold, I don't want to make. Sales are proof of feature owner and feature owner is success.What can't be sold, I don't want to make. &rdquo;</p>
+						</blockquote>
+						<p class="author">Nguyen Thi Phuong Anh, CEO <a href="" target="_blank"></a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+					
+				</div>
+				<div class="col-md-4" data-aos="flip-right"  data-aos-easing="linear"
+                             data-aos-duration="1200">
+					<div class="box-testimony animate-box">
+						<blockquote>
+                            
+                         <div class="box__icon__qoute">
+                             <i class="fas fa-quote-right"></i>
+                         </div>
+						
+                            
+							<p>&ldquo;Aim for success, not perfection. Never give up your right to be wrong, because then you will lose the ability to learn new things and move forward with your life.On the way to success, there is no trace of lazy men.&rdquo;</p>
+						</blockquote>
+						<p class="author">Nguyen Ngoc Khanh, Founder <a href="#"></a> <span class="subtext">Creative Director</span></p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+   {{> footer}}
+  
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/app2.js"></script>
+ 
+      <script>
+  AOS.init();
+
+  function openCloseFind() {
+     document.getElementById('ourTour__findtour').classList.toggle('display__none')
+  }
+      </script>  
+  
+ 
+</body>
+</html>

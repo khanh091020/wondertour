@@ -1,0 +1,106 @@
+{{>adminHeader}}
+
+<div class="container" style="margin-top: 5rem;">
+  <h2>List all tour deleted</h2>
+  <a href="/admin/all-list">Back to list tour</a>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <th>#</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Start day</th>
+        <th>Time</th>
+        <th>Start place</th>
+        <th>Price</th>
+         <th>Sale</th>
+         <th>Time delete</th>
+         <th></th>
+         <th></th>
+         
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{#each listAll}}
+          <tr>
+              <td>{{sum @index 1}}</td>
+        <td>{{this.name}}</td>
+        <td><img style="width: 150px;" src="/{{this.img}}" alt=""></td>
+        <td>{{this.startDay}}</td>
+        <td>{{this.time}}</td>
+        <td>{{this.startPlace}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.priceSale}}</td>
+        <td>{{this.deletedAt}}</td>
+        <td><a href=""  class="btn btn-danger" data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</a></td>
+        <td><button class="btn btn-secondary" data-id="id-40" id="{{this._id}}"   onclick="restoreConfirm(event)">Restore</button></td>
+        </tr>
+          {{else}}
+         <td colspan="5"> Thùng rác trống </td>
+          {{/each}}
+      
+    </tbody>
+  </table>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" id="delete-tour">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE FOCUS TOUR</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to delete ?</p>
+         <p class="text-danger"> This action is not restore. This tour is delete focus.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" onclick="deleteConfim()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ {{!-- end modal  --}}
+
+    <form  name="form__idTour" method="post"></form>
+</body>
+<script src="/assets/js/vendor-all.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/pcoded.min.js"></script>
+<script>
+ var form = document.forms['form__idTour'];
+  var idTour;
+      $('#delete-tour').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+ idTour = button.data('id') 
+})
+ 
+  
+  
+  function deleteConfim() {
+    form.action = "/admin/deleteTour/"+idTour+"/force?_method=DELETE";
+    form.submit();
+
+      }
+
+  function restoreConfirm(event) {
+  
+   
+    var id = event.target.id
+  
+    form.action = "/admin/deleteTour/"+id+"/restore?_method=PATCH";
+    form.submit();
+  }
+   
+</script>
+   
+</body>
+
+</html>
+

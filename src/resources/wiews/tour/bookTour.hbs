@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href=".\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/base.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
+      <link rel="stylesheet" type="text/css" href="/css/reponsive.css">
+      <link rel="stylesheet"  href="/css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+        
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0; background-color: #ededed;" onload="loadingFunction();">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-angle-double-up"></i>
+      </div>
+     <div id="loading">
+        <img src="/image/load.gif" alt="">
+    </div>
+      {{> header}}
+         <div class="container">
+           <h1 class="pl-2 pt-5 pb-5" style="color: #3ebdb7;">Secure booking — only takes 2 minutes!</h1>
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+             <div class="row align-items-center">
+                    <div class="col-sm-1 text-center" style="font-size: 1.5rem;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="col-sm-11">
+                        <h5>COVID-19 alert: Travel requirements are changing rapidly, including need for pre-travel COVID-19 testing and quarantine on arrival.</h5>
+                        <div class="row">
+                            <a href="" class="text-warning mr-4 ml-3">Find out more.</a>
+                        </div>
+                        </div>
+                </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+
+             <div class="row modal-body" style="margin: 0;background-color: #fff;">
+              <div class="col-2 text-center">
+                  <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="col-10">
+                  <b>
+                      <p>
+                          Free cancellation before Thu, Jul 1
+                      </p>
+                  </b>
+                  <p>
+                      You can change or cancel this stay if plans change. Because flexibility matters.
+                  </p>
+              </div>
+          </div>
+           
+           <div class="row infor__order">
+
+              <div class="col-md-7">
+                
+                <div class="col-md-12 booktour__contain__element__info pt-3 pb-3">
+                   <div >
+
+                    <h5>Person infomation</h5>
+                   <p for="">Contact name</p>
+                   <input type="text" placeholder="first name and last name" name="name">
+                   <p for="">Mobie phone number</p>
+                   <input type="number" name="phone">
+                   <div class="row align-items-center pl-3">
+                      <input class="checkbox" type="checkbox" name="receive">
+                      <label style="margin: 0;" for="">Receive text alerts about this trip. </label>
+                   </div>
+                   </div>
+                       
+                       <div>
+                            <h5>Payment by debit/credit card</h5>
+                            <div class="row justify-content-between text-success" style="padding: 0 2rem;">
+                              <div class="row align-items-center">
+                                 <i class="fas fa-check pr-1"></i>
+                                 <p> We use secure transmission</p>
+                              </div>
+                               <div class="row align-items-center">
+                                 <i class="fas fa-check pr-1"></i>
+                                 <p> We protect your personal information</p>
+                              </div>
+                            </div>
+                          <ul class="row pl-3 pt-3" style="list-style: none;">
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_master_card.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_american_express.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_china_union_pay.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_diners_club.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_discover.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_jcb.svg" alt=""> </li>
+                               <li> <img src="https://a.travel-assets.com/dms-svg/payments/cards-cc_visa.svg" alt=""> </li>
+                           </ul>
+                            <p>Card name*</p>
+                            <input type="text" >
+                             <p>Debit/Credit card number*</p>
+                            <input type="text" >
+                            <p>Expiration date*</p>
+                            <input type="date">
+                            <p>Security code*</p>
+                            <input type="number">
+                            <p>Billing ZIP code*</p>
+                            <input type="number" >
+
+                       </div>
+
+                       <div class="mt-3">
+                          
+                             <h5>
+                                Important information about your booking
+                             </h5>
+
+                             <ul>
+                                <li>
+                                   Cancellations or changes made after 3:00pm (Hawaiian Standard Time) on Jul 1, 2021 or no-shows are subject to a property fee equal to 100% of the total amount paid for the reservation.
+                                </li>
+                                <li>Front desk staff will greet guests on arrival.</li>
+                                <li>You'll be asked to pay the following charges at the property</li>
+                             </ul>
+                             <p>By selecting to complete this booking I acknowledge that I have read and accept the Rules & Restrictions, Terms of Use, Privacy Policy.</p>
+                             <a href="" class=" mt-3 btn btn-background-slide">Complete booking</a>
+                       </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                     <div class="container-fluid book__tour__contain-left">
+                        <div class="col-12 book__tour-img" >
+                           <img src="/image/tour44.jpg" alt="">
+                        </div>
+                       <div class="pl-3">
+                        <h5>Tour name</h5>
+                        <p>Start at : 09/10/2002</p>
+                        <p>Time : 3 day 2 nights</p>
+                        <p>Place start : Da nang</p>
+                       </div>
+                     </div>
+
+                     <div class="container-fluid book__tour__contain-left pl-3 pt-3 pb-3">
+                        <h4>Price details</h4>
+                          
+
+                        <div class="row ">
+                          <div class="col-10">
+                        <label for="sel1">Adults number</label>
+                           <select class="form-control" name="adult">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                           </select>
+                                  </div>
+                           <div class="col-2">
+                              $55
+                           </div>
+                      
+                                </div>
+                        
+                        <div class="row">
+                            <div class="col-10">
+                        <label for="sel1">Children number</label>
+                           <select class="form-control" name="adult">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                           </select>
+                                  </div>
+                           <div class="col-2">
+                              $55
+                           </div>
+                          </div>
+
+                    <div class="row  mt-3">
+                       <div class="col-sm-9">
+                          <b><h5>Total</h5></b>
+                       </div>
+                       <div class="col-sm-3"><b><h5>$247</h5></b></div>
+                    </div>
+                    <a href="">Use a coupon, credit, or promotion code</a>
+                    <p class="">Taxes and Fees due at the property are based on current exchange rates, and are payable in local currency.</p>
+              </div>
+           </div>
+
+         </div>
+         </div>
+
+      {{> footer}}
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/app2.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init();
+        
+      </script>
+   </body>
+</html>

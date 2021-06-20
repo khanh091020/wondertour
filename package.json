@@ -1,0 +1,45 @@
+{
+  "name": "learnnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "node-sass --watch E:\\learnNodejs\\src\\resources\\scss\\ --output src\\public\\css\\",
+    "start": "nodemon --inspect src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanh09102002/nodejs.git"
+  },
+  "keywords": [
+    "k8",
+    "k8",
+    "nodejs"
+  ],
+  "author": "khanhdn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanh09102002/nodejs/issues"
+  },
+  "homepage": "https://github.com/khanh09102002/nodejs#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dateformat": "^4.5.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.11",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-sequence": "^5.3.1",
+    "mongoose-slug-generator": "^1.0.4"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7"
+  }
+}

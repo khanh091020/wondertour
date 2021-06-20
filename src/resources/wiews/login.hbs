@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="left-div">
+            <div class="left-image">
+                <img src="..\images\login.png" alt="">
+            </div>
+           
+        </div>
+
+        <!-- right div start  -->
+
+        <div class="right-div">
+            <h4>Welcome Back</h4>
+            <form action="/login.html" class="right-form" id="sendDataLogin">
+
+                <ul>
+                    <li><h3>Login Your Account</h3></li>
+                    <li style="color: red;" id="falseLogin"></li>
+                    <li><i class="fas fa-user"></i> <input type="email" placeholder="Email" required name="email"></li>
+                    <li><i class="fas fa-lock"></i> <input type="password" placeholder="Password" required name="password"></li>
+                    <li><input type="submit" value="Login" formmethod="POST"></li>
+                </ul>
+
+            </form>
+
+            <div class="footer">
+                <ul>
+                    <li><a href="sign-up.html">Create account</a></li>
+                    {{!-- <li><a href="Forgot Password.html">Forgot password?</a></li> --}}
+                </ul>
+            </div>
+            <div class="vr-line"></div>
+        </div>
+
+    </div>
+    <script>
+          $("#sendDataLogin").submit(function(e) {
+
+            e.preventDefault();
+
+            var form = $(this);
+            var url = form.attr('action');
+            
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(), 
+                success: function(data)
+                {
+                    if(data==='false')
+                    {
+                      $('#falseLogin').html('Email or password incorrect !')
+                    }
+               else{
+                 
+                   setCookie('token',data.token,1)
+                    window.location.href = data.link
+                }
+                }   
+
+                });
+             });
+    function setCookie(cname, cvalue, exdays) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                    var expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                    }
+    </script>
+</body>
+</html>

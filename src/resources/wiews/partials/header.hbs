@@ -1,0 +1,115 @@
+ <header class="header">
+        <div class="header__produce" id="produce" >
+            
+            
+             <div class="header__produce-logo">
+                <div class="header__produce-iconmenu-1000" id="menu__navbar-1000" onclick="openmenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+{{!--                
+                  <img src="/image/logo.png" alt="" style="width: 200px;
+                                                         border-radius: 50px;">   --}}
+                <div class="row">
+                    <h4 style="color: #999;margin-bottom: 0;">WONDER</h4> <h4 style="color: var(--primary_color);margin-left: 5px;margin-bottom: 0;">PLACE</h4>
+                </div>
+             </div>
+
+             <div class="header__produce-right">
+                 <div class="header__produce-timecall">
+                     <div class="header__produce-time">
+                        <i class="far fa-clock"></i>
+                        <p>09:00AM — 05:00PM</p>
+                     </div>
+
+                     <div class="header__produce-call">
+                         <i class="fas fa-phone-square-alt"></i>
+                         <a href="tel:+84945806419">+84945806419</a>
+                    </div>
+                 </div>
+                   {{#if _user.username}}
+                   <div class="header__user">
+                       <i class="fas fa-user"></i>
+                       <h5 onclick="openClose__UserTool()">Hello {{_user.username}} <i class="fas fa-chevron-down"></i></h5>
+                       <ul class="list__Tool-User">
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="">Profile</a> </li>
+                           <li class="list__Tool-User-item"> <a href="">Your tours</a> </li>
+                           <li class="list__Tool-User-item"> <a href="">Love tour</a> </li>
+                           <li class="list__Tool-User-item"> <a href=""> Discount code</a></li>
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Log out <i class="fas fa-sign-out-alt"></i></a></li>
+                       </ul>
+                   </div>
+                   {{else}}
+                 <a href="/login.html" class="btn btn-background-slide mar__left_10rem header__produce-right-signup">
+                   SIGN UP
+                 </a>
+                 {{/if}}
+                 <div class="header__">
+
+                 </div>
+             </div>
+        </div>
+           
+        <div>
+
+            <div class="header__navbar " id="navbar">
+               <ul class="header__navber-list">
+                   <li class="header__navbar-list-item "> <a class="marginleft-9" href="/">
+                    HOME
+                   </a></li>
+                   <li class="header__navbar-list-item"> <a href="/outTour.html">
+                    OUR TOUR
+                   </a></li>
+                   <li class="header__navbar-list-item"> <a href="">
+                    FLIGHT
+                   </a></li>
+                    <li class="header__navbar-list-item"> <a href="">
+                    HOTELS
+                   </a> </li>
+                   <li class="header__navbar-list-item"> <a href="/about.html">
+                    ABOUT
+                   </a> </li>
+                   <li class="header__navbar-list-item"> <a href="">
+                    BLOG
+                   </a> </li>
+                   <li class="header__navbar-list-item"> <a href="/contact.html">
+                    CONTACT US
+                   </a> </li>
+                  
+               </ul>
+    
+               <div class="header__navbar-social">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-google-plus-g"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+               </div>
+            </div>
+
+            <div class="header__navbar-max1000" id="navbar__1000">
+                <div class="header__navbar__1000-social">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-google-plus-g"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                   </div>
+
+                <ul class="header__navbar-max1000-list">
+                    <li class="header__navbar-max1000-item"><a href="/index.html">Home</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/about.html">About</a>
+
+                    </li>
+                    <li class="header__navbar-max1000-item"> <a href="/outTour.html">Our Tour</a><i class="fas fa-chevron-down"></i>
+                            
+                    </li>
+                    
+                    <li class="header__navbar-max1000-item"> <a href="">Flight</a><i class="fas fa-chevron-down"></i></li>
+                    <li class="header__navbar-max1000-item"> <a href="">Hotels</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/contact.html">Contact Us</a></i></li>
+                    <li class="header__navbar-max1000-item"> <a href="">Blog</a><i class="fas fa-chevron-down"></i></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    
