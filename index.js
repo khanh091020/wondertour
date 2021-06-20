@@ -4,17 +4,17 @@ const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
 const app = express();
 const port =  process.env.PORT || 3000;
-const db = require('./config/db')
+const db = require('./src/config/db')
 const methodOverride = require('method-override');
-const sortMidderwares = require('./app/midderwares/sortMidderwares');
+const sortMidderwares = require('./src/app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 var session = require('express-session');
-const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
+const checkLoginMidleware = require('./src/app/midderwares/checkLoginMiderwares');
 
 // connect db
 db.connect();
 // import route
-const routes = require('./routes');
+const routes = require('./src/routes');
 
 // read data from clienr 
 var bodyParser = require('body-parser');
@@ -44,7 +44,7 @@ app.use(methodOverride('_method'));
 // set handlebars
 app.engine('hbs', exphbs({
           extname : '.hbs',
-          helpers: require("../src/helper/handlebars"),
+          helpers: require("./src/helper/handlebars"),
           }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources\\wiews'));
