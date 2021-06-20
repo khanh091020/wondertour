@@ -38,7 +38,7 @@ app.use(morgan('combined'));
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
 
-app.set('views', path.join(__dirname, 'views'));
+
 
 
 
@@ -48,7 +48,7 @@ app.engine('hbs', exphbs({
           helpers: require("../src/helper/handlebars"),
           }));
 
-app.set('views', path.join(__dirname, 'resources\\wiews'));
+app.set('views', path.join(__dirname, '/resources/wiews'));
 app.set('view engine', 'hbs');
 app.post('/news',(req,res) => {
   console.log(req.body)
