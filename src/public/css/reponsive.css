@@ -302,6 +302,10 @@
     justify-content: flex-end;
 }
 
+.bookTour__title {
+    padding-top: 5rem !important;
+
+}
 }
 
 @media (max-width : 992px){
@@ -428,12 +432,6 @@
     }
 }
 
-
-@media (max-width: 680px) { 
-
-}
-
-
 @media (max-width: 579px) {
     .contain__other-tour {
         height: 62rem;
@@ -490,7 +488,7 @@
     }
 }
 
-@media (max-width: 444px) { 
+@media (max-width: 450px) { 
     .contain__impression-h1 {
         font-size: 2rem;
     }
@@ -503,6 +501,29 @@
     .form-group {
        margin-bottom: 0.4rem;
     }
+
+    .tourdetail__menu1-help {
+        display: none;
+    }
+    #home {
+        padding : 0
+    }
+    .contain__main-right {
+        padding: 0;
+    }
+
+    .comment-area {
+        max-width: 250px;
+    }
+
+    .header__produce-logo h4 {
+        font-size: 1.2rem;
+    }
+
+    .header__user h5,
+    .header__user i{
+       font-size: 1rem;
+    }
 }
 
 @media (max-width: 350px) {
@@ -513,6 +534,14 @@
     .form-group {
         margin-bottom: 0rem;
      }
+     .comment-area {
+        max-width: 206px;
+    }
+
+    .comment-box {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
 }
 
 

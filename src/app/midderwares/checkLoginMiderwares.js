@@ -9,8 +9,7 @@ module.exports = function (req,res,next) {
     if (req.cookies.token) {
         modal.findOne({_id : jwt.verify(req.cookies.token,'mk')})
             .then(account => {
-                
-                    
+              
                 res.locals._user.username = account.lastName;
                 res.locals._user.emails = account.email;
                     

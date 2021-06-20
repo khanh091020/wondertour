@@ -452,6 +452,14 @@ max-height: 510px;
 overflow-y: scroll;
 }
 
+#menu2 {
+  padding: 0;
+}
+
+#menu2 .container {
+  overflow: hidden;
+}
+
 
 .p {
   color: black;
@@ -469,6 +477,13 @@ overflow-y: scroll;
 .contain__main-right {
   background-color: rgba(255,255,255,0.8);
 }
+
+@media (max-width : 901px) {
+  #tourDetails {
+    padding-top: 3.5rem;
+  }
+}
+
  /* contain nav  */
  .contain__nav {
    background-color: rgba(255, 255, 255,0.9);
@@ -552,7 +567,7 @@ overflow-y: scroll;
 
  .contain__covid {
    margin-top: 1rem;
-   padding: 1rem 0;
+   padding: 1rem 1rem;
    background-color: #343b53;
    color: rgb(255, 255, 255);
    border-radius: 10px;
@@ -875,3 +890,43 @@ overflow-y: scroll;
   width: 100%;
   height: 100%;
 }
+
+  /* book tour  */
+
+  .infor__order input {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #dddcdc;
+    border-radius: 3px;
+    padding: 5px 0;
+    outline-color: #999;
+  }
+
+  .infor__order {
+   padding: 1rem 0;
+   flex-wrap: wrap-reverse;
+  }
+
+  .book__tour-img img{
+   width: 100%;
+   object-fit: cover;
+  }
+
+  .book__tour-img {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .booktour__contain__element__info {
+   
+    background-color: #fff;
+  }
+
+  .book__tour__contain-left {
+    padding: 0;
+    background-color: #fff;
+  }
+  
+  .bookTour__title {
+    color: #3ebdb7;
+  }

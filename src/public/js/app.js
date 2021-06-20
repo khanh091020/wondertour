@@ -48,10 +48,7 @@ function readmoreAndLess() {
     changemoretext.innerHTML = ". Wonder place is committed to bringing our clients the best in value and quality travel arrangements. We are passionate about travel and sharing the world's wonders with you.";
   }
 
-  var index = document.getElementById("index");
- var about = document.getElementById("about");
- var contact = document.getElementById("contact");
- var ourTour = document.getElementById("ourTour");
+  
   // hàm sticky navbar 
   
   var navbar = document.getElementById("navbar");

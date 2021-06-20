@@ -10,6 +10,10 @@
   margin-left: 5rem;
 }
 
+.header__produce-logo a {
+  text-decoration: none;
+}
+
 .header__produce-right {
   margin-right: 5rem;
   display: flex;
@@ -1226,41 +1230,6 @@ z-index: 2;
    font-size: 1.2rem;
  }
 
-  /* book tour  */
-
-  .infor__order input {
-    width: 100%;
-    text-align: center;
-    border: 1px solid #f1f1f1;
-    border-radius: 3px;
-    padding: 5px 0;
-    outline-color: #999;
-  }
-
-  .infor__order {
-   padding: 1rem 0;
-   flex-wrap: wrap-reverse;
-  }
-
-  .book__tour-img img{
-   width: 100%;
-   object-fit: cover;
-  }
-
-  .book__tour-img {
-    padding: 0;
-    margin-bottom: 1rem;
-  }
-
-  .booktour__contain__element__info {
-   
-    background-color: #fff;
-  }
-
-  .book__tour__contain-left {
-    padding: 0;
-    background-color: #fff;
-  }
 
   .tourGrid__filter {
     display: none;
