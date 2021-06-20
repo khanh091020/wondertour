@@ -3,13 +3,14 @@ const path = require('path');
 const morgan = require('morgan');
 const exphbs  = require('express-handlebars');
 const app = express();
-const port =  process.env.PORT || 3000;
+const port = 3000;
 const db = require('./config/db')
 const methodOverride = require('method-override');
 const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 var session = require('express-session');
 const checkLoginMidleware = require('./app/midderwares/checkLoginMiderwares');
+
 
 // connect db
 db.connect();
@@ -57,6 +58,6 @@ app.post('/news',(req,res) => {
 // function route
 routes(app);
 // port listener 
-app.listen(port, () => {
+app.listen(port || process.env.PORT, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 })
