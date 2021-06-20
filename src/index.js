@@ -33,7 +33,7 @@ app.use(sortMidderwares);
  app.use(express.static(path.join(__dirname,'public')));
 
 // set morgan 
-// app.use(morgan('combined'));
+app.use(morgan('combined'));
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
