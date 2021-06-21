@@ -1,5 +1,8 @@
 
-
+  var index = document.getElementById("index");
+  var about = document.getElementById("about");
+  var contact = document.getElementById("contact");
+  var ourTour = document.getElementById("ourTour__findtour");
 // function readmore and readless
 
 function readmoreAndLess() {
