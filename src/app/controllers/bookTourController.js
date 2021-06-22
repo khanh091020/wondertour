@@ -1,12 +1,27 @@
+const modal = require('../controllers/models/tourMany')
+const {mongooseToObject} = require('../../util/mongoose')
 class bookTourController {
 
     // get
     showOnline(req,res,next) {
-        res.render('tour/bookTour');
+        modal.findOne({slug : req.params.slug})
+        .then(tour => {
+            res.render('tour/bookTour',{
+                tour : mongooseToObject(tour)
+            });
+        })
+        .catch(next)
+       
     }
 
     showDirect(req,res,next) {
-        res.render('tour/bookTourDirect');
+        modal.findOne({slug : req.params.slug})
+        .then(tour => {
+            res.render('tour/bookTourDirect',{
+                tour : mongooseToObject(tour)
+            });
+        })
+        .catch(next)
     }
 }
 

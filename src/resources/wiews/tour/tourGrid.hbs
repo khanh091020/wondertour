@@ -307,7 +307,7 @@
                             <p>Start : <span class="ml-2" style="color: #1e90ff;">{{formatDate this.startDay}}</span></p>
                              <p>4.44/5 <b>In</b> 395 <b>Rate</b></p>
                              <div class="row">
-                                <a href="" class="btn" data-toggle="modal" data-target="#book-tour" style="margin-left: 15px; margin-right: 15px;">
+                                <a href="" class="btn" data-toggle="modal" data-target="#book-tour" data-id="{{this.slug}}" style="margin-left: 15px; margin-right: 15px;">
                                 <i class="fas fa-cart-plus"></i>
                                 Book now
                                </a>
@@ -415,7 +415,7 @@
               <p>Decresere 5%</p>
               <b><p>$210 total</p></b>
               <p>Includes taxes & fees</p>
-              <a href="/bookTour/online" class="btn btn-background-slide btn-sm ">Pay now</a>
+              <a href="/bookTour/online" id="bookTouronline" class="btn btn-background-slide btn-sm ">Pay now</a>
               </div>
          
       </div>
@@ -446,7 +446,7 @@
               <div class="col-5 text-right" style="padding-right: 0;">
               <b><p>$299 total</p></b>
               <p>Includes taxes & fees</p>
-              <a href="/bookTour/direct" class="btn btn-background-slide btn-sm">Pay direct</a>
+              <a href="/bookTour/direct" id="bookTourdirect" class="btn btn-background-slide btn-sm">Pay direct</a>
               </div>
          </div> 
       </div>
@@ -466,8 +466,16 @@
   <script src="/js/app2.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
+      $( document ).ready(function() {
+        AOS.init();
       
+         $('#book-tour').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+            var slug = button.data('id') 
+            $('#bookTouronline').attr("href","/bookTour/online/"+slug)
+            $('#bookTourdirect').attr("href","/bookTour/direct/"+slug)
+            })
+
        document.querySelector('.btn__index').classList.add('pa__active')
        $('.btn__index').click(indexPage)
     
@@ -606,12 +614,12 @@
                             <p>Start : <span class="ml-2" style="color: #1e90ff;">`+datetime+`</span></p>
                              <p>4.44/5 <b>In</b> 395 <b>Rate</b></p>
                              <div class="row">
-                                <a href="" class="btn" style="margin-left: 15px; margin-right: 15px;">
+                                <a href="" class="btn" style="margin-left: 15px; margin-right: 15px;" data-toggle="modal" data-target="#book-tour" data-id='`+data.lists[i].slug+`'>
                                 <i class="fas fa-cart-plus"></i>
                                 Book now
                                </a>
 
-                               <a href="/tours/`+data.lists[i].slug+`" class="btn">
+                               <a href="/tours/`+data.lists[i].slug+`" class="btn btn__details">
                                <i class="fas fa-info-circle"></i>
                                Details
                                </a>
@@ -630,7 +638,7 @@
 
 // function readmore and readless
 
-
+});
   </script>
  
 </body>

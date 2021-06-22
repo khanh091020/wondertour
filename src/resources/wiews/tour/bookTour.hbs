@@ -134,13 +134,13 @@
               <div class="col-md-5">
                      <div class="container-fluid book__tour__contain-left">
                         <div class="col-12 book__tour-img" >
-                           <img src="/image/tour44.jpg" alt="">
+                           <img src="/{{tour.img}}" alt="">
                         </div>
                        <div class="pl-3">
-                        <h5>Tour name</h5>
-                        <p>Start at : 09/10/2002</p>
-                        <p>Time : 3 day 2 nights</p>
-                        <p>Place start : Da nang</p>
+                        <h5>{{tour.name}}</h5>
+                        <p>Start at : {{tour.startDay}}</p>
+                        <p>Time : {{tour.time}}</p>
+                        <p>Place start : {{tour.startPlace}}</p>
                        </div>
                      </div>
 
@@ -165,7 +165,7 @@
                            </select>
                                   </div>
                            <div class="col-2">
-                              $55
+                              ${{tour.price}}
                            </div>
                       
                                 </div>
@@ -187,7 +187,7 @@
                            </select>
                                   </div>
                            <div class="col-2">
-                              $55
+                              ${{tour.price}}
                            </div>
                           </div>
 
@@ -195,7 +195,7 @@
                        <div class="col-sm-9">
                           <b><h5>Total</h5></b>
                        </div>
-                       <div class="col-sm-3"><b><h5>$247</h5></b></div>
+                       <div class="col-sm-3"><b><h5>${{tour.price}}</h5></b></div>
                     </div>
                     <a href="">Use a coupon, credit, or promotion code</a>
                     <p class="">Taxes and Fees due at the property are based on current exchange rates, and are payable in local currency.</p>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
   :root {
       --primary_color : rgb(1, 179, 167);
     --text-color : #565656;
@@ -46,9 +47,8 @@ html {
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Lora', serif;
 }
-
 p {
   margin: 0 ;
   padding: 0 ;

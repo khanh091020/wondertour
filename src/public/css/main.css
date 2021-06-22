@@ -275,7 +275,7 @@ a.contain__background-image-info-a{
   background-color: rgb(255, 255, 255,0);
   padding: 0.2rem 0.6rem;
   display: block;
-  max-width: 9rem;
+  max-width: 10rem;
   text-align: center;
   line-height: 2rem;
   color: white;
@@ -288,12 +288,58 @@ a.contain__background-image-info-a{
 
 .contain__other-tour {
   height: 540px;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   position: relative;
   width: 100%;
  display: flex;
  justify-content: center;
 }
+
+/* .contain__other-tour::after {
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 800px;
+    height: 800px;
+    border-radius: 2000px;
+    background: -webkit-linear-gradient(
+330deg
+,rgba(255,74,158,0) 45%,rgba(255,74,158,.4) 100%);
+    background: linear-gradient(
+120deg
+,rgba(255,74,158,0) 45%,rgba(255,74,158,.4) 100%);
+    right: -140px;
+    top: -210px;
+}
+
+.contain__service::before {
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 32px;
+    height: 32px;
+    border-radius: 2000px;
+    background: #ff4a9e;
+    top: -16px;
+    left: 64px;
+}
+
+.contain__service::after {
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 440px;
+    height: 440px;
+    border-radius: 2000px;
+    background: #ffad00;
+    right: -100px;
+    bottom: -80px;
+} */
+
+/* /// */
 
 .contain__other-tour-img {
   width: 100%;
@@ -751,7 +797,7 @@ flex-wrap: wrap;
     padding-top: 450px;
     width: 100%;
     position: relative;
-   
+   background-attachment: fixed;
 }
 
 
