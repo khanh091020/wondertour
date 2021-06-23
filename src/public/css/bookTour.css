@@ -538,6 +538,10 @@ overflow-y: scroll;
       width: 100%;
       max-width: 100%;
     }
+
+    #home .container-fluid .row .col-5 {
+      max-width: 30%;
+    }
   }
 
   @media (max-width:1150px) {
@@ -727,9 +731,38 @@ overflow-y: scroll;
   filter: brightness(60%);
   border-right: 5px solid transparent;
  }
+ .container__tour-item:hover .contain__social ul li{
+   display: block;
+  
+  
+ }
+ .contain__social {
+  position: absolute;
+    right: 15px;
+    top: 50%;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+  
+    color: #fff;
+ }
+ .contain__social ul {
+   list-style: none;
+ }
+
+ .contain__social ul li {
+  
+  animation: lightSpeedIn .3s ease-in;
+   display: none;
+  margin: 8px 0;
+ 
+ }
 
  
-
+ .contain__social ul li a {
+   padding: 3px 6px;
+   border-radius: 50%;
+   background-color: #f1f1f1;
+ }
 
 .card {
   margin-bottom: 2rem;
@@ -930,3 +963,5 @@ overflow-y: scroll;
   .bookTour__title {
     color: #3ebdb7;
   }
+
+  

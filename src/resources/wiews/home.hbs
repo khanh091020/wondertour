@@ -16,9 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-     .test {
-         transform: scaleX(1) !important;
-     }
+    
     </style>
 </head>
 <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction()">
@@ -38,15 +36,7 @@
        <h3>Find Your Tour</h3>
      <div class="find__tour">
         <form action="/search">
-            {{!-- <div class="form-group">
-                <label for="sel1">From :</label>
-                <select class="form-control" id="fromplace" name="fromplace">
-                  <option>Ha Noi</option>
-                  <option>Quang Nam</option>
-                  <option>Da Nang</option>
-                  <option>Ha Tinh</option>
-                </select>
-            </div> --}}
+          
 
             <div class="form-group">
                 <label for="sel1">  Destinations :</label>
@@ -202,21 +192,32 @@
      
   <!-- close container slider  -->
          <div class="contain__other-tour"  data-aos-duration="1300" data-aos="fade-up">
+             
              <div class="contain__other-tour-img">
+                   <div class="hover14 column">
                  <a class="contain__other-tour-img-link">
-                     <img src="./image/baloon1.jpg" alt="">
+                     <figure>
+                         <img src="./image/baloon1.jpg" alt=""> 
+                     </figure>
                      <h3>Balloon Flights</h3>
                  </a>
-
+           </div> 
+           <div class="hover14 column">
                  <a class="contain__other-tour-img-link">
-                    <img src="./image/moutain.jpg" alt="">
+                      <figure> <img src="./image/moutain.jpg" alt=""></figure>
                     <h3>Mountain Holiday</h3>
                 </a>
-
+          </div>
+           <div class="hover14 column">
                 <a class="contain__other-tour-img-link">
+                     <figure>
+
                     <img src="https://media.travelmag.vn/files/kieutrang/2020/05/20/72392271_178758406634802_3697464712968971112_n-1337.jpeg" alt="">
+                     </figure>
                     <h3>Beach Holidays</h3>
                 </a>
+           </div>
+
              </div>
 
              <a href="#" class="contain__other-tuar-more">
@@ -227,9 +228,17 @@
          <div class="tam" >
 
         <div class="contain__discover">
+                  <div class="hover14 column">
+
                  <div class="contain__discover-include-img" id="contain__discover-include-img-id"  data-aos-duration="1300" data-aos="fade-left">
-                     <img src="https://cdn.theculturetrip.com/wp-content/uploads/2018/01/shutterstock_465281915.jpg" alt="">
+                    <figure>
+                        
+                    <img src="https://cdn.theculturetrip.com/wp-content/uploads/2018/01/shutterstock_465281915.jpg" alt="">
+
+                    </figure> 
                  </div>
+
+                  </div>
     
                  <div class="contain__discover-info" id="contain__discover-info-id"  data-aos-duration="1300" data-aos="fade-right">
                      <h1>Discover New Horizons</h1>
@@ -588,7 +597,7 @@
   <script src="./js/jquery.waypoints.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-  AOS.init();
+    AOS.init();
   $('.counter').countUp({
   'time': 2000,
   'delay': 10
