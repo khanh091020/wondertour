@@ -288,66 +288,17 @@ a.contain__background-image-info-a{
 
 .contain__other-tour {
   height: 540px;
-  /* background-color: #f1f1f1; */
   position: relative;
   width: 100%;
  display: flex;
  justify-content: center;
 }
 
-/* .contain__other-tour::after {
-  content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 800px;
-    height: 800px;
-    border-radius: 2000px;
-    background: -webkit-linear-gradient(
-330deg
-,rgba(255,74,158,0) 45%,rgba(255,74,158,.4) 100%);
-    background: linear-gradient(
-120deg
-,rgba(255,74,158,0) 45%,rgba(255,74,158,.4) 100%);
-    right: -140px;
-    top: -210px;
-}
-
-.contain__service::before {
-  content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 32px;
-    height: 32px;
-    border-radius: 2000px;
-    background: #ff4a9e;
-    top: -16px;
-    left: 64px;
-}
-
-.contain__service::after {
-  content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 440px;
-    height: 440px;
-    border-radius: 2000px;
-    background: #ffad00;
-    right: -100px;
-    bottom: -80px;
-} */
-
-/* /// */
-
 .contain__other-tour-img {
   width: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
-  /* left: 4rem; */
-  /* right: 4rem; */
   top: 9%;
   flex-wrap: wrap;
 }
@@ -361,13 +312,17 @@ a.contain__background-image-info-a{
 }
 
 .contain__other-tour-img-link img{
-  margin: 0 1rem;
   width: 370px;
   height: 420px;
   transition: 0.5s;
+  border-radius: 4px;
 }
 
-
+.contain__img__img {
+  margin: 0 1rem;
+  box-shadow: 1px 3px 7px #999;
+  border-radius: 4px;
+}
 
 .contain__other-tour-img-link h3 {
   position: absolute;
@@ -410,15 +365,15 @@ a.contain__background-image-info-a{
 
 
 .contain__discover-include-img {
-
-
+ box-shadow: 1px 3px 7px #999;
  margin-right: 6rem;
+ border-radius: 4px;
 }
 
 .contain__discover-include-img img {
   width: 500px;
   height: 340px;
- 
+  border-radius: 4px;
 }
 .contain__discover-info {
 
@@ -469,8 +424,8 @@ a.contain__background-image-info-a{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;
-  height: 2px;
+  bottom: -2px;
+  height: 3px;
   background-color:var(--primary_color);
   transition: transform 300ms ease-in-out;
    transform-origin: left;
@@ -714,7 +669,7 @@ z-index: 3;
 .contain__people-mission-content {
   background-color: #e8e5e5;
     position: relative;
-    
+    border-radius: 4px;
     width: 243px;
     text-align: center;
     padding: 1.5rem 0.7rem 1.5rem 0.7rem;
@@ -865,6 +820,7 @@ text-align: center;
  margin: 1rem ;
  margin-bottom: 8rem;
  padding: 1rem;
+ border-radius: 4px;
 }
 
 .contain__what-say-content p {
@@ -1084,6 +1040,12 @@ a.footer__policy {
 .contain__counter-team {
   margin: 1rem;
   position: relative;
+}
+
+.contain__counter-team img,
+.contain__counter-happyTravel img,
+.contain__counter-awards img {
+  border-radius: 4px;
 }
 
 

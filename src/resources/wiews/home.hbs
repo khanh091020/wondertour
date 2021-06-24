@@ -3,13 +3,15 @@
 <head>
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
      <link rel="stylesheet" href=".\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/lightslider.css"/>
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/reponsive.css">
     <link rel="stylesheet" href="./css/bookTour.css">
-   <link rel="stylesheet" href="https://www.fontspace.com/cassandra-font-f29711">
+
    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -194,7 +196,7 @@
          <div class="contain__other-tour"  data-aos-duration="1300" data-aos="fade-up">
              
              <div class="contain__other-tour-img">
-                   <div class="hover14 column">
+                   <div class="hover14 column contain__img__img">
                  <a class="contain__other-tour-img-link">
                      <figure>
                          <img src="./image/baloon1.jpg" alt=""> 
@@ -202,13 +204,13 @@
                      <h3>Balloon Flights</h3>
                  </a>
            </div> 
-           <div class="hover14 column">
+           <div class="hover14 column contain__img__img">
                  <a class="contain__other-tour-img-link">
                       <figure> <img src="./image/moutain.jpg" alt=""></figure>
                     <h3>Mountain Holiday</h3>
                 </a>
           </div>
-           <div class="hover14 column">
+           <div class="hover14 column contain__img__img">
                 <a class="contain__other-tour-img-link">
                      <figure>
 
@@ -228,17 +230,16 @@
          <div class="tam" >
 
         <div class="contain__discover">
-                  <div class="hover14 column">
-
+                 
                  <div class="contain__discover-include-img" id="contain__discover-include-img-id"  data-aos-duration="1300" data-aos="fade-left">
-                    <figure>
+                   
                         
                     <img src="https://cdn.theculturetrip.com/wp-content/uploads/2018/01/shutterstock_465281915.jpg" alt="">
 
-                    </figure> 
+                
                  </div>
 
-                  </div>
+                 
     
                  <div class="contain__discover-info" id="contain__discover-info-id"  data-aos-duration="1300" data-aos="fade-right">
                      <h1>Discover New Horizons</h1>
@@ -271,9 +272,9 @@
 
          </div>
 
-         <div class="contain__service " >
-             <h1 class="contain__service-title"  data-aos-duration="1300" data-aos="fade-right">OUR SERVICE</h1>
-             <div class="contain__service-include "  data-aos-duration="1300" data-aos="flip-up">
+         <div class="contain__service" >
+             <h1 class="contain__service-title"  >OUR SERVICE</h1>
+             <div class="contain__service-include " >
                 <div class="contain__service-include-content row">
 
                         <div class="contain__service-include-detial ">
@@ -328,19 +329,23 @@
                 </div>
              </div>
          </div>
+   {{!-- tesst --}}
+                  <h1 class="contain__hotTour-title mt-5 mb-5" id="contain__hotTour-title-id" >Hot tour</h1>
+     	<div class="container-fluid pl-4 pr-4 mt-4 mb-5" style="">
+	
+		<ul id="autoWidth" class="cs-hidden">
+		
+       {{#each tours}}
 
-         <h1 class="contain__hotTour-title" id="contain__hotTour-title-id"  data-aos-duration="1300" data-aos="fade-right">Hot tour</h1>
-         
-<div class="contain__include_hottour" >
-
-    <div class="contain__hotTour"  id="contain__hotTour-id"  data-aos-duration="1300" data-aos="fade-left">  
-       <p class="contain__hotTour-price-tour">$790</p>
-        <div class="contain__hotTour-img">
-            <img src="./image/ngu-hanh-son-ivivu.jpg" alt="">
-        </div>
-        <div class="contain__include-hotour">
-            <div class="contain__hotTour-infomation">
-                <h3>Ngu Hanh Son , Da Nang</h3>
+		<li class="item-a">
+			
+            <div class="box">
+			  
+                    <div class="cardd" style="background-image: url(/{{this.img}});">
+        <div class="cardd-body">
+            <h2 class="cardd-title">{{this.name}}</h2>
+            {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga placeat odio pariatur doloribus sint?</p> --}}
+            <div class="card__info">
                 <div class="contain__hotTour-infomation-rate">
                     <div class="contain__hotTour-infomation-star">
                         <i class="fas fa-star"></i>
@@ -349,58 +354,50 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                      <p>4 customer reviews</p>
+                      <p style="margin-bottom: 0;">4 customer reviews</p>
                 </div>
-                <p class="contain__hotTour-description">
-                    Ngu Hanh Son is one of the attractions that attracts tourists in Da Nang with many caves and beautiful natural scenery. Please "carry" the Marble Mountains travel guide of Wonder Place to have an interesting trip to Ngu Hanh Son  Wonder Place to have an interesting trip to Ngu Hanh Son....
-                </p>
-                <a href="" class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">Buy this tour</a>
-    
-                
-            </div>
-    
-        </div>
-    </div>
-    
-    <div class="contain__hotTour"  id="contain__hotTour-id2"  data-aos-duration="1300" data-aos="fade-right"> 
-       <p class="contain__hotTour-price-tour">$990</p>
-        <div class="contain__hotTour-img">
-            <img src="./image/halongbay.jpg" alt="">
-        </div>
-    
-        <div class="contain__include-hotour">
-    
-            <div class="contain__hotTour-infomation">
-                <h3>Ha Long Bay , Quang Ninh</h3>
-                <div class="contain__hotTour-infomation-rate">
+                <p style="margin-bottom: 0;">Time long : <span style="color: #4da3ff;">{{this.time}}</span></p>
+                <p style="margin-bottom: 0;">Start place : <span style="color: #4da3ff;">{{this.startPlace}}</span></p>
+                <p style="margin-bottom: 0;">Remaining tours : <span style="color: #4da3ff;">{{this.countLeft}}</span></p>
+                 <div class="contain__hotTour-infomation-rate">
+                      <p style="margin-bottom: 0;">Share on : </p>
                     <div class="contain__hotTour-infomation-star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                      
+                        <a href="" class="ml-1 mr-1"> <i style="color: blue;" class="fab fa-facebook"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(243, 84, 10);" class="fab fa-instagram"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: #0077b5;" class="fab fa-linkedin-in"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(0, 162, 255);" class="fab fa-twitter"></i> </a>
+                   
                     </div>
-                      <p>5 customer reviews</p>
                 </div>
-                <p class="contain__hotTour-description">
-                   Halong Bay is a beautiful natural wonder in northern Vietnam near the Chinese border. The Bay is dotted with 1,600 limestone islands and islets and covers an area of over 1,500 sqkm. This extraordinary area was dotted with 1,600 limestone islands and islets and covers an area of over 1,500 sqkm...
-                </p>
-                <a href="" class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">Buy this tour</a>
-    
-                
+              
             </div>
+            <a href="/tours/{{this.slug}}" class="button mt-2">Details</a>
         </div>
-    </div>
-</div>
+        <div class="cardd-price-tour">{{this.price}}$</div>
+        </div>
+		</div>	  
+			
+		</li>
 
-
+       {{/each}}
+		
+		</ul>
+			
+			
+	
+	
+	</div>
+	
+          {{!-- close tesst --}}
+     
          <div class="contain__people-mission" >
            
                  <h1  data-aos-duration="1300" data-aos="fade-right">Different People — One Mission</h1>
                  <div class="contain__people-list">
                  
 
-                 <div class="contain__people-mission-content"  data-aos-duration="1300" data-aos="flip-up">
+                 <div class="contain__people-mission-content" >
                     <h3 class="contain__people-name">Nguyễn Thị Phương Anh</h3>
                     <p class="contain__people-position">Developer</p>
                     <a href="tel:+8494506419" class="contain__people-tell">+84 945 806 419<a>
@@ -409,7 +406,7 @@
                         <img class="contain__people-include-img-img" src="./image/avatar.jpg" alt="">
                  </div>
 
-                 <div class="contain__people-mission-content"  data-aos-duration="1300" data-aos="flip-up">
+                 <div class="contain__people-mission-content" >
                     <h3 class="contain__people-name">Phan Hồ Nhi</h3>
                     <p class="contain__people-position">Designer</p>
                     <a href="tel:+8494506419" class="contain__people-tell">+84 945 806 419</a>
@@ -418,7 +415,7 @@
                         <img class="contain__people-include-img-img" src="./image/avater2.jpg" alt="">
                  </div>
 
-                 <div class="contain__people-mission-content"  data-aos-duration="1300" data-aos="flip-up">
+                 <div class="contain__people-mission-content" >
                     <h3 class="contain__people-name">Lê Khánh Dương</h3>
                     <p class="contain__people-position">Management</p>
                     <a  href="tel:+8494506419" class="contain__people-tell">+84 945 806 419</a>
@@ -428,7 +425,7 @@
                         <img class="contain__people-include-img-img" src="./image/lekhanhduong.png" alt="">
                  </div>
 
-                 <div class="contain__people-mission-content"  data-aos-duration="1300" data-aos="flip-up">
+                 <div class="contain__people-mission-content" >
                     <h3 class="contain__people-name">Nguyễn Ngọc Khánh</h3>
                     <p class="contain__people-position">Founder, Owner</p>
                     <a href="tel:+8494506419" class="contain__people-tell">+84 945 806 419</a>
@@ -440,6 +437,8 @@
              </div>
 
     </div>
+
+      
 
     <div class="contain__impression" style="  background-image: url(./image/impression.jpg);">
         <div class="contain__impression-include">
@@ -459,29 +458,29 @@
         <h1 class="contain__what-say-title" >What people say</h1>
         <div class="contain__what-say-include">
 
-            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="flip-up">
+            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="fade-left">
                 <p>In the journey of traveling to the West, I like and am very satisfied "happy and joyful" because the guide Nguyen Ngoc Khanh  is very dedicated, lovely and sociable to connect people together. It can be said that this is the most satisfying, interesting and meaningful trip.</p>
                 <h2>John Shooben</h2>
 
-                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="flip-up">
+                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="fade-left">
                     <img src="./image/nhanxet1.png" alt="" class="contain__what-say-img">
                 </div>
             </div>
 
-            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="flip-up">
+            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="fade-left">
                 <p>In the journey of traveling to the West, I like and am very satisfied "happy and joyful" because the guide Nguyen Ngoc Khanh  is very dedicated, lovely and sociable to connect people together. It can be said that this is the most satisfying, interesting and meaningful trip.</p>
                 <h2>Le Linh Chi</h2>
 
-                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="flip-up">
+                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="fade-left">
                     <img src="./image/gaixinh1.jpg" alt="" class="contain__what-say-img">
                 </div>
             </div>
 
-            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="flip-up">
+            <div class="contain__what-say-content"  data-aos-duration="1300" data-aos="fade-left">
                 <p>In the journey of traveling to the West, I like and am very satisfied "happy and joyful" because the guide Nguyen Ngoc Khanh  is very dedicated, lovely and sociable to connect people together. It can be said that this is the most satisfying, interesting and meaningful trip.</p>
                 <h2>Cecily Sinh</h2>
 
-                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="flip-up">
+                <div class="contain__what-say-include-img"  data-aos-duration="1300" data-aos="fade-left">
                     <img src="./image/gaixinh3.jpg" alt="" class="contain__what-say-img">
                 </div>
             </div>
@@ -524,7 +523,7 @@
          	<div id="fh5co-blog-section" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row justify-content-center fh5co-blog__title" >
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box"  data-aos-duration="1300" data-aos="flip-right">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box" >
 						<h1>Recent From Blog</h1>
 						<p>Travel blog synthesizes travel experiences, destinations, delicious food. Travel blog will bring you the most accurate and complete information.</p>
 					</div>
@@ -533,7 +532,7 @@
 			<div class="container">
 				<div class="row row-bottom-padded-md">
 				
-					<div class="col-lg-4 col-md-4 col-sm-6"  data-aos-duration="1300" data-aos="flip-up">
+					<div class="col-lg-4 col-md-4 col-sm-6" >
 						<div class="fh5co-blog animate-box">
 							<a href="#"><img class="img-responsive" src="https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg" alt=""></a>
 							<div class="blog-text">
@@ -547,7 +546,7 @@
 							</div> 
 						</div>
 					</div>
-                    	<div class="col-lg-4 col-md-4 col-sm-6"  data-aos-duration="1300" data-aos="flip-up">
+                    	<div class="col-lg-4 col-md-4 col-sm-6" >
 						<div class="fh5co-blog animate-box">
 							<a href="#"><img class="img-responsive" src="image/blog2.jpg" alt=""></a>
 							<div class="blog-text">
@@ -562,7 +561,7 @@
 						</div>
 					</div>
 					<div class="clearfix visible-sm-block"></div>
-					<div class="col-lg-4 col-md-4 col-sm-6"  data-aos-duration="1300" data-aos="flip-up">
+					<div class="col-lg-4 col-md-4 col-sm-6"  >
 						<div class="fh5co-blog animate-box">
 							<a href="#"><img class="img-responsive" src="https://imgcp.aacdn.jp/img-a/1720/auto/global-aaj-front/article/2017/06/595048184fa06_5950474045019_1189093891.jpg" alt=""></a>
 							<div class="blog-text">
@@ -589,15 +588,37 @@
            {{> footer}}
   
   
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/lightslider.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/app2.js"></script>
   <script src="./js/jquery.countup.min.js"></script>
   <script src="./js/jquery.waypoints.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+   
+   
+
+	// JavaScript Document
+
+       
+ AOS.init();
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+          auto : true,
+          speed:1500,
+            pauseOnHover: true,
+          pause:  4000,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+
+  
+
   $('.counter').countUp({
   'time': 2000,
   'delay': 10

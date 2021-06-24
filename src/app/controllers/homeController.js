@@ -1,15 +1,26 @@
 const cityDestination = require('./models/cityDestination')
+const tour = require('./models/tourMany')
 const {mutipleMongooseTobject} = require('../../util/mongoose')
 class homeController{
 
     index(req,res,next) {
-         cityDestination.find({})
-         .then(cityDestinations => {
+         
+        Promise.all([cityDestination.find({}),tour.find({})])
+        .then(([cityDestinations,tours]) => {
             res.render('home', {
-                cityDestinations : mutipleMongooseTobject(cityDestinations)
+                cityDestinations : mutipleMongooseTobject(cityDestinations),
+                tours : mutipleMongooseTobject(tours)
             });
-         })
-         .catch(next)
+        })
+        .catch(next)
+
+        //  cityDestination.find({})
+        //  .then(cityDestinations => {
+        //     res.render('home', {
+        //         cityDestinations : mutipleMongooseTobject(cityDestinations)
+        //     });
+        //  })
+        //  .catch(next)
        
     }
 
