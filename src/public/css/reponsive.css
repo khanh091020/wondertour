@@ -43,7 +43,7 @@
     }
 
     .contain__other-tour-img-link h3 {
-        left: 23%;
+        left: 19%;
     }
 
     .contain__other-tour {
@@ -326,19 +326,10 @@
 }
 
 @media (max-width: 874px) {
-    .contain__other-tour {
-        height: 42rem;
-       max-height: 42rem;
-    }
-
-    .contain__other-tour-img-link img {
-        margin-bottom: 3rem;
-        
-    }
-
-    .contain__other-tour-img-link h3  {
-        bottom: 15%;
-    }
+   
+.contain__img__img {
+     margin-bottom: 3rem;
+}
 
     .contain__hotTour {
         margin: 3rem 0;
@@ -395,6 +386,13 @@
     }
     .header__produce-timecall {
         display: none !important;
+    }
+}
+
+@media (max-width:851px)  {
+    .contain__other-tour {
+        height: 42rem;
+        max-height: 42rem;
     }
 }
 
