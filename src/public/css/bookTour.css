@@ -448,7 +448,7 @@ right: 0;
      background-color: rgba(255, 255, 255, 255);
      box-shadow: 1px 1px 5px #999;
      color: #666 !important;
-     z-index: 7   ;
+     z-index: 99   ;
      }
 
 .tab-pane {

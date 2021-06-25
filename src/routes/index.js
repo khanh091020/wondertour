@@ -9,6 +9,7 @@ const signUp = require('./signUp');
 const logout = require('./logout');
 const comment = require('./comment');
 const filter = require('./filter');
+const blog = require('./blog');
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -20,6 +21,7 @@ const bookTour = require('./bookTour');
 
 function route(app) {
     // user link 
+    app.use('/blog',blog);
     app.use('/bookTour',bookTour);
     app.use('/search',search);
     app.use('/index.html',indexRouter);

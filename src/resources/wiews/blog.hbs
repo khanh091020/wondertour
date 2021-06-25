@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href=".\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/css/lightslider.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <link rel="stylesheet" href="./css/base.css">
+      <link rel="stylesheet" href="./css/main.css">
+      <link rel="stylesheet" href="./css/reponsive.css">
+      <link rel="stylesheet" href="./css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction();">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-arrow-alt-circle-up"></i>
+      </div>
+      <input type="hidden" id="about">
+      <div id="loading">
+         <img src="/image/load.gif" alt="">
+      </div>
+      {{> header}}
+       <div class="blog__banner-til">
+            <h1  >Wonder place blog</h1>
+            <h4  >Blog sharing travel information and experiences</h4>
+         </div>
+      <div class="container-fluid  flex-column d-flex align-items-center">
+        
+         <!-- begin slider  -->
+         <div class="container"   >
+            {{!-- tesst --}}
+            <div class="d-flex align-items-center justify-content-end pr-4">
+               <button type="button" id="goToPrevSlide"><i class="fas fa-angle-left"></i></button>
+               <button type="button" id="goToNextSlide" class="ml-1"><i class="fas fa-angle-right"></i></button>
+            </div>
+            <div class="container-fluid pl-4 pr-4 mt-4 pb-3" style=" border-bottom: 1px dashed rgb(179, 177, 177);">
+               <ul id="autoWidth" class="cs-hidden">
+                  {{!-- {{#each tours}} --}}
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3 ">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2 ">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  <li class="item-a">
+                     <div class="contain ml-2 mr-2">
+                        <div class="blog__slider-img" style="background-image: url(https://thumbs.dreamstime.com/z/vacation-planning-concept-25813879.jpg);">
+                        </div>
+                        <div class="blog__slider-content mt-3">
+                           <h3>
+                              <a >
+                              30% Discount to Travel All Around the World
+                              </a>
+                           </h3>
+                        </div>
+                     </div>
+                  </li>
+                  {{!-- {{/each}} --}}
+               </ul>
+            </div>
+            {{!-- close tesst --}}
+         </div>
+         <!-- end slider  -->
+         <div class="col-11 row pt-3 container__all-items pb-4">
+            <div class="col-lg-8">
+               <div class="blog__contain-firstPost">
+                  <h2>
+                     Las Casas Filipinas Acuzar in Bataan, Philippines
+                  </h2>
+                  <p>MARCH 9, 2021  NO COMMENTS</p>
+                  <div class="fistPostImg mt-3 mb-3">
+                     <img src="https://nganbalo.com/wp-content/uploads/2021/03/P1032130.jpg" alt="" class="w-100">
+                  </div>
+                  <p>
+                   Hi guys, how are you? I've been going to this Las Casas Filipinas de Acuzar area in Bataan since the end of January, but I'm too lazy to come here to share it with everyone. Basically because I think this epidemic will probably be written and no one will read it :( But you guys just save it, when the epidemic is over or you have a chance to go to the Philippines to play.Introduction to Las Casas Filipinas de Acuzar I took each of these pictures when I was outside, but when I went inside, I was busy filming and forgot to take anything. Please watch the video I took below. Let me introduce a little bit about Las Casas Filipinas de Acuzar. This is a resort built like a small old town.The owner of…
+                  </p>
+                  <div class="div text-center mt-3">
+                     <button class="btn btn-success  mb-2">
+                     Read more
+                     </button>
+                  </div>
+                  <div class="row d-flex justify-content-between ml-3 mr-3 firstPost__author">
+                     <p>By <span class="text-warning">nguyen ngoc khanh</span> </p>
+                     <div class="contain__hotTour-infomation-star">
+                        <a href="" class="ml-1 mr-1"> <i style="color: blue;" class="fab fa-facebook"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(243, 84, 10);" class="fab fa-instagram"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: #0077b5;" class="fab fa-linkedin-in"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(0, 162, 255);" class="fab fa-twitter"></i> </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12 col-sm-6">
+                     <div class="col-12 mt-4">
+                        <div class="blogPost mt-3 mb-3">
+                           <img src="https://nganbalo.com/wp-content/uploads/2021/03/P1032130.jpg" alt="" class="w-100">
+                        </div>
+                        <h3 class="webkitbox">Mall of Asia – Destinations not to be missed in Metro Manila</h3>
+                        <p>JANUARY 14, 2021  NO COMMENTS</p>
+                        <p class="webkitbox">Most tourists have heard of the Mall of Asia in Metro Manila, right? Today…</p>
+                        <div>
+                           <button class="btn btn-success  mb-2">
+                           Read more
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                  </div>
+               </div>
+               <div class="text-center mt-3">
+                  <button class="btn btn-outline-secondary">
+                  Load more...
+                  </button>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="col-lg-12 mt-2">
+                  <div class="blog__about__til">
+                     About
+                  </div>
+                  <div class="blogPost mt-3 mb-3">
+                     <img src="https://farm2.staticflickr.com/1816/43911590032_8054f66956_z_d.jpg" alt="" class="w-100">
+                  </div>
+                  <p class="text-justify">
+                    My name is Ngan, currently living in Manila, Philippines. This blog is the heart of N and his friends who are passionate about traveling and experiencing. I hope you will find useful information here.
+                     If you have any questions or organizations that want to cooperate, please email nganbalo.com@gmail.com
+                     N is very willing to help and cooperate.
+                     You can invite N 1 cup of coffee below:
+                     Thank you! :)
+                     Facebook Instagram YouTube
+                  </p>
+                  <div class="blog__me__social">
+                     <a href="" class="ml-1 mr-1"> <i  class="fab fa-facebook"></i> </a>
+                     <a href="" class="ml-1 mr-1"> <i  class="fab fa-instagram"></i> </a>
+                     <a href="" class="ml-1 mr-1"> <i  class="fab fa-linkedin-in"></i> </a>
+                     <a href="" class="ml-1 mr-1"> <i class="fab fa-twitter"></i> </a>
+                  </div>
+               </div>
+               <div class="col-lg-12 mt-2">
+                  <div class="blog__about__til">Travelling schedule</div>
+                  <div class="row align-items-center mt-3">
+                     <div class="col-5">
+                        <img src="https://nganbalo.com/wp-content/uploads/2020/05/42411320641_29f1a551d4_z.jpg" class="w-100" alt="">
+                     </div>
+                     <div class="col-7">
+                        <h5>
+                          Osaka itinerary 3 days 2 nights
+                        </h5>
+                     </div>
+                  </div>
+                  <div class="row align-items-center mt-3">
+                     <div class="col-5">
+                        <img src="https://nganbalo.com/wp-content/uploads/2020/05/42411320641_29f1a551d4_z.jpg" class="w-100" alt="">
+                     </div>
+                     <div class="col-7">
+                        <h5>
+                          Osaka itinerary 3 days 2 nights
+                        </h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-12 mt-2">
+                  <div class="row align-items-center mt-3">
+                     <div class="col-5">
+                        <img src="https://nganbalo.com/wp-content/uploads/2020/09/the-podium.png" class="w-100" alt="">
+                     </div>
+                     <div class="col-7">
+                        <h5>
+                         the podium
+                           The Podium Shopping Center in Metro Manila
+                        </h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{> footer}}
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="js/lightslider.js"></script>
+      <script src="./js/app.js"></script>
+      <script src="./js/app2.js"></script>
+      <script>
+         AOS.init();
+          
+           var slider =  $('#autoWidth').lightSlider({
+                autoWidth:true,
+                  auto : true,
+                  speed:700,
+                  item : 3,
+                    autoWidth: false,
+                    pauseOnHover: true,
+                  pause:  3000,
+                loop:true,
+                  responsive : [
+                    {
+                        breakpoint:1000,
+                        settings: {
+                            item:2,
+                          }
+                    },
+                    {
+                        breakpoint:480,
+                        settings: {
+                            item:1,
+                            
+                          }
+                    }
+                ],
+                onSliderLoad: function() {
+                    $('#autoWidth').removeClass('cS-hidden');
+                } 
+            });  
+         
+          $('#goToPrevSlide').on('click', function () {
+            slider.goToPrevSlide();
+         });
+         $('#goToNextSlide').on('click', function () {
+            slider.goToNextSlide();
+         });
+      
+      </script>
+   </body>
+</html>
