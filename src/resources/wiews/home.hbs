@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    
+   
     </style>
 </head>
 <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction()">
@@ -331,6 +331,10 @@
          </div>
    {{!-- tesst --}}
                   <h1 class="contain__hotTour-title mt-5 mb-5" id="contain__hotTour-title-id" >Hot tour</h1>
+                 <div class="d-flex align-items-center justify-content-end pr-4">
+                      <button type="button" id="goToPrevSlide"><i class="fas fa-hand-point-left"></i></button>
+                       <button type="button" id="goToNextSlide" class="ml-1"><i class="fas fa-hand-point-right"></i></button>
+                 </div>
      	<div class="container-fluid pl-4 pr-4 mt-4 mb-5" style="">
 	
 		<ul id="autoWidth" class="cs-hidden">
@@ -605,10 +609,11 @@
 
        
  AOS.init();
-    $('#autoWidth').lightSlider({
+  var slider =  $('#autoWidth').lightSlider({
         autoWidth:true,
           auto : true,
-          speed:1500,
+          speed:1000,
+       
             pauseOnHover: true,
           pause:  4000,
         loop:true,
@@ -617,7 +622,12 @@
         } 
     });  
 
-  
+  $('#goToPrevSlide').on('click', function () {
+    slider.goToPrevSlide();
+});
+$('#goToNextSlide').on('click', function () {
+    slider.goToNextSlide();
+});
 
   $('.counter').countUp({
   'time': 2000,
