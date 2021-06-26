@@ -1,4 +1,4 @@
-
+  var onscroll50; 
   var index = document.getElementById("index");
   var about = document.getElementById("about");
   var contact = document.getElementById("contact");
@@ -63,8 +63,10 @@ function myFunction() {
   checkontop();
 
   // open navbar change 
- if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  
+   onscroll50 = document.body.scrollTop > 50 || document.documentElement.scrollTop > 50;
+  // alert(onscroll50)
+ if (onscroll50) {
+  addNavOnscroll50();
    navbar.classList.add("sticky");
    for(var i=0;i<listItem.length;i++) {
     listItem[i].classList.add("text666");
@@ -74,7 +76,7 @@ function myFunction() {
     }
   
  } else {
- 
+  removeNavOnscroll50();
    navbar.classList.remove("sticky");
    for(var i=0;i<lists.length;i++) {
     lists[i].classList.remove("text666");
@@ -184,4 +186,6 @@ function ontop() {
 function openClose__UserTool() {
   $('.list__Tool-User').toggleClass('display__block');
 }
+
+
 
