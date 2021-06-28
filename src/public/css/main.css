@@ -1,22 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .header__produce {
 	min-height: 70px;
 	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0 10%;
 	margin-bottom: 3px;
 }
 
-.header__produce-logo {
-	margin-left: 5rem;
-}
+
 
 .header__produce-logo a {
 	text-decoration: none;
 }
 
 .header__produce-right {
-	margin-right: 5rem;
 	display: flex;
 }
 
@@ -131,6 +130,7 @@ a.header__produce-right-signup {
 	justify-content: space-between;
 	background-color: #162e44;
 	color: #fff;
+	padding: 0 10%;
 }
 
 .header__navber-list {
@@ -166,9 +166,7 @@ a.header__produce-right-signup {
 
 
 
-a.marginleft-9 {
-	margin-left: 4rem;
-}
+
 
 .header__navbar-list-item a:hover {
 	background-color: #304559;
@@ -192,9 +190,7 @@ a.marginleft-9 {
 	transform: scaleX(1);
 }
 
-.header__navbar-social {
-	margin-right: 4rem;
-}
+
 
 .header__navbar-social a {
 	text-decoration: none;
@@ -330,7 +326,8 @@ a.contain__background-image-info-a {
 .contain__other-tour-img-link h3 {
 	position: absolute;
 	bottom: 5%;
-	left: 30%;
+	left: 20%;
+    transform: translateX(-1%);
 	font-weight: 600;
 	color: rgba(255, 255, 255, 0.9);
 	font-size: 1.5rem;
@@ -381,6 +378,7 @@ a.contain__background-image-info-a {
 
 .contain__discover-info h1 {
 	margin: 0 0 1.2rem 0;
+	
 }
 
 .contain__discover-info-detail {}
@@ -464,8 +462,9 @@ a.contain__background-image-info-a {
 .contain__service-title {
 	text-align: center;
 	margin-bottom: 2.5rem;
-	color: rgba(0, 0, 0, 0.7);
-	font-weight: 400;
+	color: rgba(0, 0, 0, 0.8);
+	font-weight: 410;
+	
 }
 
 .contain__service-include {}
@@ -539,8 +538,17 @@ a.contain__hotTour-btn {
 	margin: 0;
 	margin-top: 3rem;
 	font-weight: 400;
+}
+
+.contain__hotTour-title h1 {
+	
 	color: rgba(0, 0, 0, 0.8);
-	text-transform: uppercase;
+	font-size: 3.5rem;
+}
+.contain__hotTour-title h5 {
+	font-size: 2rem;
+	font-family: 'Satisfy', cursive;
+	color: #47d2d6;
 }
 
 .contain__hotTour {
@@ -639,13 +647,17 @@ a.contain__hotTour-btn {
 
 /* contain people mission */
 
-.contain__people-mission {}
+.contain__people-mission {
+	background-position: top;
+	background-image: url(/image/h1-background-img-1.jpg);
+}
 
 .contain__people-mission h1 {
 	text-align: center;
 	margin-bottom: 10rem;
-	font-weight: 400;
+	font-size: 3rem;
 	color: rgba(0, 0, 0, 0.8);
+    font-weight: 410;
 }
 
 .contain__people-mission-content {
@@ -733,9 +745,10 @@ a.contain__hotTour-btn {
 	color: #fff;
 	position: absolute;
 	text-align: center;
-	top: 25%;
-	left: 15%;
-	right: 15%;
+	top: 50%;
+	
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 
 .contain__impression-h1 {}
@@ -768,6 +781,9 @@ a.contain__impression-btn:hover {
 	padding-top: 4rem;
 	padding-bottom: 10rem;
 	margin: 0;
+	font-weight: 410;
+	font-size: 2.5rem;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 .contain__what-say-include {
@@ -937,8 +953,9 @@ a.footer__policy {
 
 .contain__counter-title {
 	margin-top: 3rem;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-align: center;
+	 font-family: 'Satisfy', cursive;
 }
 
 .contain__counter-awards {
@@ -1057,11 +1074,24 @@ a.footer__policy {
 /* slider  */
 
 .carousel-caption h1 {
+	font-size: 2.5rem;
+	text-shadow: 2px 2px 4px #999;
 	animation: moveLiner__bottom 1s ease-in;
 }
 
 .carousel-caption h6 {
+	font-size: 1.3rem;
+	text-shadow: 2px 2px 4px #999;
 	animation: moveLiner__right 1s ease-in;
+}
+
+@media(max-width:600px) {
+	.carousel-caption h1 {
+		font-size: 1.5rem;
+	}
+	.carousel-caption h6 {
+		font-size: 1rem;
+	}
 }
 
 .carousel-indicators {
@@ -1206,12 +1236,19 @@ a.footer__policy {
 }
 
 .blog__banner-til {
-	color: #007c74;
+	color: #fff;
+		 text-shadow: 2px 2px 4px #555;
 	text-align: center;
 	width: 100%;
-	background-image: url(/image/rm184-katie-20.jpg);
-	padding: 2rem 0;
+	background-image: url(https://previews.123rf.com/images/atlasfoto/atlasfoto2007/atlasfoto200700200/151520076-composition-with-blogger-accessories-on-mint-background-travel-blog.jpg);
+	background-position: center;
+	background-size: cover;
+	padding: 12% 1rem;
 	margin-bottom: 1rem;
+}
+
+.blog__banner-til h1 {
+   font-size: 3.5rem;
 }
 
 .container__all-items {
@@ -1264,3 +1301,174 @@ a.footer__policy {
 		margin-top: 2rem;
 	}
 }
+
+/* photographer page  */
+.photograp__banner {
+	padding-top: 20%;
+	background-position:  center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-bottom: 5%;
+	background-attachment: fixed;
+}
+.photograp__banner h1 {
+	font-size: 3.5rem;
+    color: #01ff4f;
+    text-shadow: 2px 1px 1px #fff;
+    font-weight: 500;
+    font-family: 'Lora', serif;
+}
+.contain__photograp-til h5 {
+	margin: 1rem 0;
+}
+
+.contain__photograp-til {
+	margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.photographer__contain-peo {
+	background-color: #f1f1f1;
+	border: 1px solid #01b3a7	;
+}
+.photographer__contain-peo-info{
+	position: relative;
+	padding: 2.5rem 1rem;
+}
+.photographer__contain-peo-info h4 {
+	position: absolute;
+	top: 40px;	
+    left: 200px;
+}
+.photographer__peo-info {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.photographer__peo-info span {
+	color: blue;
+}
+
+.photographer__indivial-img {
+	position: absolute;
+    border-radius: 50%;
+    width: 20%;
+	min-width: 100px;
+	min-height: 100px;
+    border: 4px solid #fff;
+    left: 25px;
+    top: -65px;
+}
+.photographer__contain-stamp {
+	position: absolute;
+    top: -35px;
+    left: 70%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.photographer__contain-stamp img {
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0 5px;
+	border-radius: 50%;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+
+.list__photo-service-item {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list__photo-service-item div{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.list__photo-service-item p {
+	margin-bottom: 8px;
+}
+
+.list__photo-service-item div img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width: 65%;
+	max-height: 65%;
+	transform: translate(-50%,-50%);
+}
+.list__photo-service {
+	padding-left: 0;
+}
+.photograp__service {
+	padding: 0 1rem;
+} 
+.photograp__service h1 {
+	margin-bottom: 2rem;
+	color: #333;
+	font-family: 'Lora', serif;;
+}
+.photograp__trust-contain i{
+  font-size: 6rem;
+ margin-bottom: 1rem;
+ color: rgb(33, 168, 44);
+}
+.photograp__trust-contain {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+@media(max-width : 992px) {
+	.photographer__contain-btn .btn-success {
+		margin-bottom: 5px;
+	}
+}
+@media(max-width : 768px) {
+	.photographer__contain-btn .btn-success {
+		margin-bottom: 0;
+	}
+}
+@media(max-width : 443px) {
+	.photographer__contain-btn .btn-success {
+		margin-bottom: 5px;
+	}
+}
+
+/* photographer detals  */
+.profileHead {
+	align-items: center;
+	background-color: #f1f1f1;
+	justify-content: flex-start;
+	position: relative;
+	padding: 3rem 0 3rem 10%;
+}
+.profileHead div h1 {
+	margin-bottom: 1rem;
+}
+.profileHead__contain-img {
+	width: 200px;
+	margin-right: 2.5rem;
+	position: relative;
+}
+.profileHead img {
+   width: 100%;
+   position: absolute;
+   top: -185px;
+   right : 0;
+	border: 4px solid #999;
+   position: absolute;
+	border-radius: 50%;
+
+}
+
+
+

@@ -42,9 +42,13 @@
        height: 312px;
     }
 
-    .contain__other-tour-img-link h3 {
-        left: 19%;
+    .header__navbar {
+        padding : 0 5%;
     }
+    .header__produce {
+        padding: 0 6%;
+    }
+
 
     .contain__other-tour {
         height: 415px;
@@ -105,7 +109,12 @@
     }
 
    
-
+    .header__navbar {
+        padding : 0;
+    }
+    .header__produce {
+        padding: 0 3%;
+    }
     
 
     a.contain__impression-btn {
@@ -532,6 +541,11 @@
     .header__user i{
        font-size: 1rem;
     }
+
+    .slider__hottour {
+        padding-left: 0!important;
+        padding-right: 0!important
+    }
 }
 
 @media (max-width: 350px) {
@@ -550,6 +564,8 @@
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
+
+   
 }
 
 

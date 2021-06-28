@@ -10,6 +10,9 @@ const logout = require('./logout');
 const comment = require('./comment');
 const filter = require('./filter');
 const blog = require('./blog');
+const photographers = require('./photographers');
+
+
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -33,6 +36,7 @@ function route(app) {
     app.use('/sign-up.html',signUp);
     app.use('/create-comment',comment);
     app.use('/tours',tourDetails);
+    app.use('/photographer',photographers);
     // admin link
     app.use('/admin/index',indexadmin);
     app.use('/admin/createTour',createTour);

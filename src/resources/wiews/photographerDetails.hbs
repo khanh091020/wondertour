@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/base.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/reponsive.css">
+      <link rel="stylesheet" href="/css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+         body {
+             text-align: center;
+         }
+         .photograp__banner {
+            min-height: 260px;
+         }
+          @media(max-width:769px) {
+           .photographerDetails__body-info {
+             padding-left: 2rem;
+             margin-bottom: 2rem;
+           }
+          }
+          .photographerDetails__body-imgWork img,
+            .col-sm-6 img{
+            width: 100%;
+            box-shadow: 2px 2px 4px #999;
+            border-radius: 4px;
+            }
+
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction();">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-arrow-alt-circle-up"></i>
+      </div>
+      <input type="hidden" id="about">
+      <div id="loading">
+         <img src="/image/load.gif" alt="">
+      </div>
+      {{> header}}
+      <div class="container__fluid">
+      <div class="photograp__banner" style="background-image: url({{item.img1}})">
+            
+       </div>
+      
+      <div class="profileHead row">
+              <div class="profileHead__contain-img">
+                     <img src="/{{item.img}}" alt="" >
+              </div>
+              
+             <div>
+             <h1>{{item.firstName}} {{item.lastName}} , Photographer</h1>
+             <div class="contain__hotTour-infomation-star contain__tourdetails-share mb-3">
+                      
+                        <a href="" class="ml-1 mr-1"> <i style="color: blue;" class="fab fa-facebook"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(243, 84, 10);" class="fab fa-instagram"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: #0077b5;" class="fab fa-linkedin-in"></i> </a>
+                        <a href="" class="ml-1 mr-1"> <i style="color: rgb(0, 162, 255);" class="fab fa-twitter"></i> </a>
+                   
+                    </div>
+            <a href="" class="btn btn-success">Request a shoot</a>
+             </div>
+           
+        
+      </div>
+
+      <div class="container pt-5 pb-5 photographerDetails__body">
+       <div class="row align-items-center">
+            <div class="col-sm-6 text-left photographerDetails__body-info">
+           
+           <div class="row align-items-center">
+             <h5>ID : <span class="text-primary">{{item.id}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Full name : <span class="text-primary">{{item.firstName}} {{item.lastName}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Age : <span class="text-primary">{{item.age}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Style : <span class="text-primary">{{item.style}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Like : <span class="text-primary">{{item.like}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Home town : <span class="text-primary">{{item.address}}</span></h5>
+           </div>
+           <div class="row align-items-center">
+             <h5>Language speak : <span class="text-primary">{{item.language}}</span></h5>
+           </div>
+            <div class="row align-items-center">
+             <h5>Phone : <span class="text-primary">0{{item.phone}}</span></h5>
+           </div>
+            <div class="row align-items-center">
+             <h5>Email : <span class="text-primary">{{item.email}}</span></h5>
+           </div>
+            </div>
+         <div class="col-sm-6">
+            <img src="{{item.img2}}" style="min-height: 220px;" class="w-100" alt="">
+         </div>
+      </div>
+       </div>
+
+       <div class="container-fluid mb-5">
+          <h2 class="mb-4">
+             Some Thinh's Latest Work
+          </h2>
+          <div class="row">
+             <div class="col-md-4 mt-4">
+                <div class="photographerDetails__body-imgWork">
+                   <img src="{{item.img1}}"  alt="">
+                </div>
+             </div>
+             
+             <div class="col-md-4 mt-4">
+                <div class="photographerDetails__body-imgWork">
+                   <img src="{{item.img2}}"  alt="">
+                </div>
+             </div>
+
+             <div class="col-md-4 mt-4">
+                <div class="photographerDetails__body-imgWork">
+                   <img src="{{item.img3}}"  alt="">
+                </div>
+             </div>
+          </div>
+       </div>
+      </div>
+       
+      {{> footer}}
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>  
+      <script type="text/javascript" src="js/lightslider.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/app2.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
+</html>

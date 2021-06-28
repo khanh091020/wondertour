@@ -14,10 +14,12 @@ function addNavOnscroll50() {
     const nav = $('.navbar__active');
     nav.css('background-color','rgba(255,255,255,0.95)');
     nav.css('color','#01b3a7');
+    $('.header__navbar-social a').css('color','#666')
 }
 
 function removeNavOnscroll50() {
     const nav = $('.navbar__active');
     nav.css('background-color','#304559');
     nav.css('color','#fff');
+    $('.header__navbar-social a').css('color','#fff')
 }

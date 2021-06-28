@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
   :root {
       --primary_color : rgb(1, 179, 167);
     --text-color : #565656;
@@ -176,6 +178,10 @@ a{
   font-size: 2.3rem;
     color: var(--primary_color);
 }
+ #goToPrevSlide i:hover,
+ #goToNextSlide i:hover{
+  color: #034e47;
+}
 
 
 
@@ -249,10 +255,16 @@ html {
 
 body {
   font-family: 'Lora', serif;
+  
 }
 p {
   margin: 0 ;
   padding: 0 ;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  
 }
 
 
