@@ -28,7 +28,6 @@ function route(app) {
     app.use('/blog',sortMidderwares,blog);
     app.use('/bookTour',bookTour);
     app.use('/search',search);
-    app.use('/index.html',indexRouter);
     app.use('/outTour.html',outTour);
     app.use('/contact.html',contact);
     app.use('/login.html',login);

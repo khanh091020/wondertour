@@ -60,7 +60,26 @@ module.exports = {
           return btn;
          },
          
-        
+         displayLogin(name)
+        {
+          if(name!='')
+          {
+            return `<div class="header__user">
+            <i class="fas fa-user"></i>
+            <h5 onclick="openClose__UserTool()">Hello ${name} <i class="fas fa-chevron-down"></i></h5>
+            <ul class="list__Tool-User">
+                <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="">Profile</a> </li>
+                <li class="list__Tool-User-item"> <a href="">Your tours</a> </li>
+                <li class="list__Tool-User-item"> <a href="">Love tour</a> </li>
+                <li class="list__Tool-User-item"> <a href=""> Discount code</a></li>
+                <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Log out <i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>`
+          }
+          return ` <a href="/login.html" class="btn btn-background-slide mar__left_10rem header__produce-right-signup">
+          SIGN UP 
+        </a>`
+        },
 
         
      }

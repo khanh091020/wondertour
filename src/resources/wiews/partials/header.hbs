@@ -28,7 +28,7 @@
                     </div>
                  </div>
                   
-                   {{#if _user.username}}
+                   {{!-- {{#if _user.username}}
                    <div class="header__user">
                        <i class="fas fa-user"></i>
                        <h5 onclick="openClose__UserTool()">Hello {{_user.username}} <i class="fas fa-chevron-down"></i></h5>
@@ -45,7 +45,8 @@
                    SIGN UP 
                  </a>
                  {{/if}}
-                 
+                  --}}
+                  {{{displayLogin _user.username}}}
              </div>
         </div>
            

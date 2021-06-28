@@ -23,7 +23,7 @@ class loginController {
             req.session.token = token;
                res.json({
                
-                   link : '/index.html'
+                   link : '/'
                })
            }
            else {

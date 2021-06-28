@@ -2,7 +2,7 @@
      logout(req,res,next) {
         // res.clearCookie("token");
         req.session.destroy();
-        res.redirect('/index.html')
+        res.redirect('/')
      }
  }
 

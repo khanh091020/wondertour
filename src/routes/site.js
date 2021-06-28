@@ -4,6 +4,6 @@ const newContrller = require('../app/controllers/siteController');
 const index = require('../../src/app/controllers/homeController')
 
 route.get("/about.html",newContrller.index);
-route.use('/',index.index)
+route.get('/',index.index)
 
 module.exports = route;
