@@ -959,13 +959,15 @@ overflow-y: scroll;
   }
 
   .booktour__contain__element__info {
-   
+    box-shadow: 0px 0px 1.5px 0px #999;
     background-color: #fff;
   }
 
   .book__tour__contain-left {
+    margin-top: 1rem;
     padding: 0;
     background-color: #fff;
+    box-shadow: 0px 0px 1.5px 0px #999;
   }
   
   .bookTour__title {

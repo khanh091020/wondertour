@@ -134,27 +134,33 @@
                         </div>
                         <div class="container-fluid mb-3" >
                            <div class="row">
-                              <div class="col-sm-4">
-                                 <p>Date start :</p>
+                              <div class="col-sm-10">
+                                 <p>Date start  : <span class="ml-3" style="color: #1e90ff"> {{formatDate object.startDay}}</span></p>
                               </div>
-                              <div class="col-sm-6" >
-                                 <p style="color: #1e90ff">{{formatDate object.startDay}}</p>
+                             
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-10">
+                                 <p>Other day  : 
+                           <select name="" id="" class="ml-3" style="border:none;color: #1e90ff;outline: var(--primary_color);">
+                           <option value="">21/08/2021</option>
+                           <option value="">21/08/2021</option>
+                           <option value="">{{formatDate this.startDay}}</option>
+                           <option value="">{{formatDate this.startDay}}</option>
+                           <option value="">{{formatDate this.startDay}}</option>
+                        </select>
+                                 </p>
+                              </div>
+                             
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-10">
+                                 <p>Time long  : <span class="ml-3" style="color: #1e90ff"> {{object.time}}</span></p>
                               </div>
                            </div>
                            <div class="row">
-                              <div class="col-sm-4">
-                                 <p>Time long :</p>
-                              </div>
-                              <div class="col-sm-8" >
-                                 <p style="color: #1e90ff">{{object.time}}</p>
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="col-sm-4">
-                                 <p>Place start :</p>
-                              </div>
-                              <div class="col-sm-8">
-                                 <p style="color: #1e90ff">{{object.startPlace}}</p>
+                               <div class="col-sm-10">
+                                 <p>Place start  : <span class="ml-3" style="color: #1e90ff"> {{object.startPlace}}</span></p>
                               </div>
                            </div>
                         </div>
@@ -189,7 +195,7 @@
                            </div>
                         </div>
                         <div class="mb-3 col-12">
-                           <div class="row ml-1"><h4>Share on</h4></div>
+                          
                              <div class="contain__hotTour-infomation-star contain__tourdetails-share">
                       
                         <a href="" class="ml-1 mr-1"> <i style="color: blue;" class="fab fa-facebook"></i> </a>

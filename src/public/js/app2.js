@@ -23,3 +23,15 @@ function removeNavOnscroll50() {
     nav.css('color','#fff');
     $('.header__navbar-social a').css('color','#fff')
 }
+
+//  book tour 
+
+function openListPhotographer() {
+    $('.displayListPhotographer').toggleClass('display__block')
+ }
+ function changeSingerTour() {
+    $('#checkBoxSingerTour').prop('checked','checked')
+ }
+ function cancelSingerTour() {
+    $('#checkBoxSingerTour').prop('checked',false)
+ }

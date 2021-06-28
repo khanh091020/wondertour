@@ -14,7 +14,11 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
-      
+      <style>
+         .displayListPhotographer {
+           display: none;
+        }
+      </style>
    </head>
    <body style="overflow-x : hidden;margin: 0; background-color: #ededed;" onload="loadingFunction();">
        <div class="ontop" id="ontopbro" onclick="ontop()">
@@ -115,6 +119,31 @@
                        </div>
                      </div>
 
+                 
+                        <div class="container-fluid book__tour__contain-left pl-3 pt-3 pb-3 pr-3">
+                        <h4 class="text-danger">Special requirements</h4>
+                        
+                         <div class="row align-items-center pl-3">
+                      <input class="checkbox" type="checkbox" name="receive" onchange="openListPhotographer()">
+                       <label style="margin: 0;" for="">Private photographer</label>
+                         </div>
+                         <div class="displayListPhotographer" class="ml-1">
+                           <p >Please choose 
+                        <select name="" id="" class="ml-3" style="border:none;color: #1e90ff;outline: var(--primary_color);">
+                           {{#each photographers}}
+                           <option value=""> id : {{this.id}}/name : {{this.firstName}} {{this.lastName}}</option>
+                           {{/each}}
+                         </select>  
+                         </p>
+                         <a href="/photographer" class="text-danger">Click for more infomation here !</a>
+                         </div>
+                         <div class="row align-items-center pl-3">
+                     <a href="#" data-toggle="modal" data-target="#singerTourModal"> <input id="checkBoxSingerTour" class="checkbox" type="checkbox" name="receive"></a>
+                       <label style="margin: 0;" for="">Require singer tour</label>
+                         </div>
+                       </div>
+
+
                      <div class="container-fluid book__tour__contain-left pl-3 pt-3 pb-3">
                         <h4>Price details</h4>
                           
@@ -175,7 +204,28 @@
 
          </div>
          </div>
-
+             {{!-- modal singer tour  --}}
+       <div class="modal fade" id="singerTourModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Comfilm choose singer tour</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+              <p class="text-warning">Booking a single tour incurs an additional 40% of the tour price</p>
+              <p class="text-warning">You will have your own private tour guide and some special services</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" onmousedown="cancelSingerTour()">cancel</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" onmousedown="changeSingerTour()">Confilm</button>
+            </div>
+         </div>
+      </div>
+      </div>
+       {{!-- close modal  --}}
       {{> footer}}
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -184,7 +234,7 @@
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
          AOS.init();
-        
+       
       </script>
    </body>
 </html>
