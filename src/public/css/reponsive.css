@@ -113,7 +113,7 @@
         padding : 0;
     }
     .header__produce {
-        padding: 0 3%;
+        padding: 0 0%;
     }
     
 
@@ -275,8 +275,8 @@
 }
 
 .header__navbar-max1000-item {
-  margin: 1rem 0;
- 
+
+ overflow-y: scroll;
   display: flex;
   align-items: center;
   justify-content: space-between;

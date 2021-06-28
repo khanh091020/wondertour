@@ -6,28 +6,20 @@ module.exports = function (req,res,next) {
         username : '',
         emails : ''
     }
-    if (req.cookies.token) {
-        modal.findOne({_id : jwt.verify(req.cookies.token,'mk')})
+    if (req.session.token) {
+        modal.findOne({_id : jwt.verify(req.session.token,'mk')})
             .then(account => {
-              
-                res.locals._user.username = account.lastName;
-                res.locals._user.emails = account.email;
-                    
+              console.log(req.session.token)
+               Object.assign(res.locals._user, {
+               username : account.lastName,
+               emails : account.email
+               })
+               console.log(res.locals._user) 
                
             })
             .catch(next)
-    } else {
-        
-    }
-    // if(req.cookies.token != null) {
-    //     console.log(req.cookies)
-    //     modal.findOne({_id : jwt.verify(req.cookies.token,'mk')})
-    //     .then(account => {
-            
-    //          res.locals._user = account;
-          
-    //     })
-    // }
+    } 
+   
 
 
     next()

@@ -1309,7 +1309,6 @@ a.footer__policy {
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding-bottom: 5%;
-	background-attachment: fixed;
 }
 .photograp__banner h1 {
 	font-size: 3.5rem;
@@ -1432,6 +1431,17 @@ a.footer__policy {
 		margin-bottom: 5px;
 	}
 }
+@media(max-width : 944px) {
+	.profileHead h1 {
+		/* margin-top: 2rem; */
+	}
+}
+@media(max-width : 962px) {
+	.profileHead img {
+		width: 71% !important;
+		top: -148px !important; 
+	}
+}
 @media(max-width : 768px) {
 	.photographer__contain-btn .btn-success {
 		margin-bottom: 0;
@@ -1441,6 +1451,12 @@ a.footer__policy {
 	.photographer__contain-btn .btn-success {
 		margin-bottom: 5px;
 	}
+	.profileHead {
+		padding: 3rem 2rem 3rem 2rem !important;
+	}
+	html {
+		overflow-x: hidden;
+	}
 }
 
 /* photographer detals  */
@@ -1449,7 +1465,7 @@ a.footer__policy {
 	background-color: #f1f1f1;
 	justify-content: flex-start;
 	position: relative;
-	padding: 3rem 0 3rem 10%;
+	padding: 3rem 1rem 3rem 10%;
 }
 .profileHead div h1 {
 	margin-bottom: 1rem;

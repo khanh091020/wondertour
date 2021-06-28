@@ -20,9 +20,9 @@ class loginController {
             var token =  jwt.sign({
                 _id : account._id
             },'mk');
-           
+            req.session.token = token;
                res.json({
-                   token : token,
+               
                    link : '/index.html'
                })
            }

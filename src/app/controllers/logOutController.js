@@ -1,6 +1,7 @@
  class logoutController {
      logout(req,res,next) {
-        res.clearCookie("token");
+        // res.clearCookie("token");
+        req.session.destroy();
         res.redirect('/index.html')
      }
  }

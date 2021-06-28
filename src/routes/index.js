@@ -11,6 +11,7 @@ const comment = require('./comment');
 const filter = require('./filter');
 const blog = require('./blog');
 const photographers = require('./photographers');
+const sortMidderwares = require('../app/midderwares/checkLoginMiderwares');
 
 
 
@@ -24,7 +25,7 @@ const bookTour = require('./bookTour');
 
 function route(app) {
     // user link 
-    app.use('/blog',blog);
+    app.use('/blog',sortMidderwares,blog);
     app.use('/bookTour',bookTour);
     app.use('/search',search);
     app.use('/index.html',indexRouter);

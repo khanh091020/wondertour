@@ -25,15 +25,18 @@ app.use(bodyParser.urlencoded({
 // cokies parser 
 app.use(cookieParser())
 // custom sortMidderwares 
-app.use(checkLoginMidleware);
 app.use(sortMidderwares);
 // sesion
-
+app.use(session({
+  secret: '2C44-4D44-WppQ38S',
+  resave: true,
+  saveUninitialized: true
+}));
 // set staic file 
  app.use(express.static(path.join(__dirname,'public')));
 
 // set morgan 
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));
@@ -56,6 +59,7 @@ app.post('/news',(req,res) => {
 });
 
 // function route
+app.use(checkLoginMidleware);
 routes(app);
 // port listener 
 app.listen(process.env.PORT || port, () => {
