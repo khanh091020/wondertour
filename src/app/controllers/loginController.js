@@ -21,6 +21,7 @@ class loginController {
                 _id : account._id
             },'mk');
             req.session.token = token;
+            req.session.name = account.lastName;
                res.json({
                
                    link : '/'

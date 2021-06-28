@@ -7,17 +7,18 @@ module.exports = function (req,res,next) {
         emails : ''
     }
     if (req.session.token) {
-        modal.findOne({_id : jwt.verify(req.session.token,'mk')})
-            .then(account => {
-              console.log(req.session.token)
-               Object.assign(res.locals._user, {
-               username : account.lastName,
-               emails : account.email
-               })
-               console.log(res.locals._user) 
+        // modal.findOne({_id : jwt.verify(req.session.token,'mk')})
+        //     .then(account => {
+             
+            //    Object.assign(res.locals._user, {
+            //    username : account.lastName,
+            //    emails : account.email
+            //    })
                
-            })
-            .catch(next)
+               
+            // })
+            // .catch(next)
+            res.locals.session = req.session
     } 
    
 
