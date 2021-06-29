@@ -529,9 +529,17 @@ span.fade2 {
   height: 2.2rem;
 }
 
-.btn {
-   
-    
+.btn_btn {
+  background-color: var(--background-color); 
+  color: #222;
+  padding: .5em 1em  ;
+  border-color: var(--primary_color) ;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  --background-color: #fff;
+  --border-size: 2px;
+  --accent-color: #50ba87;
   }
 
   .btn-background-slide-danger {
