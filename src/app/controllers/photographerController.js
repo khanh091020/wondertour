@@ -20,7 +20,7 @@ class photographerController {
 
       photographer.find({})
       .then(list => {
-        res.render('photographer', {
+        res.render('photo/photographer', {
             photographers : mutipleMongooseTobject(list)
         });
       })
@@ -31,7 +31,7 @@ class photographerController {
     showDetails(req,res,next) {
       photographer.findOne({slug : req.params.slug})
       .then(item => {
-         res.render('photographerDetails', {
+         res.render('photo/photographerDetails', {
            item : mongooseToObject(item)
          })
       })

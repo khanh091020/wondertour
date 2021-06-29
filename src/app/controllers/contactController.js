@@ -3,7 +3,7 @@
 class contactController{
 
     index(req,res) {
-        res.render('contact');
+        res.render('others/contact');
     }
 
   

@@ -7,7 +7,7 @@ class homeController{
          
         Promise.all([cityDestination.find({}),tour.find({})])
         .then(([cityDestinations,tours]) => {
-            res.render('home', {
+            res.render('others/home', {
                 cityDestinations : mutipleMongooseTobject(cityDestinations),
                 tours : mutipleMongooseTobject(tours)
             });

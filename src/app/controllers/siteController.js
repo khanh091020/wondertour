@@ -3,7 +3,7 @@
 class siteController{
 
     index(req,res) {
-        res.render('about');
+        res.render('others/about');
     }
 
    

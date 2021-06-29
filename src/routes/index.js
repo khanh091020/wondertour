@@ -12,7 +12,7 @@ const filter = require('./filter');
 const blog = require('./blog');
 const photographers = require('./photographers');
 const sortMidderwares = require('../app/midderwares/checkLoginMiderwares');
-
+const account = require('./account')
 
 
 // admin
@@ -37,6 +37,7 @@ function route(app) {
     app.use('/create-comment',comment);
     app.use('/tours',tourDetails);
     app.use('/photographer',photographers);
+    app.use('/account',account)
     // admin link
     app.use('/admin/index',indexadmin);
     app.use('/admin/createTour',createTour);

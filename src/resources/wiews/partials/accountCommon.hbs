@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="/css/lightslider.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <link rel="stylesheet" href="/css/base.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/reponsive.css">
+      <link rel="stylesheet" href="/css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+        
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0;background-color: #f1f1f1;" onload="loadingFunction();">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-arrow-alt-circle-up"></i>
+      </div>
+      <input type="hidden" id="about">
+      <div id="loading">
+         <img src="/image/load.gif" alt="">
+      </div>
+      {{> header}}
+      <div class="container-fluid" style="padding: 0;">
+          <h1 class="pt-5 pb-5 text-center" style="color: #fff;background-color: var(--primary_color);">Account management</h1>
+       <div class="container">
+           <ul class="row align-items-center justify-content-around account__nav-bar">
+               <li>
+                   <h5 id="firstNavAccount">Details account</h5>
+               </li>
+               <li>
+                  <h5 > My tour</h5>
+               </li>
+               <li>
+                   <h5 >My photographer</h5>
+               </li>
+                 <li>
+                     <h5 >
+                  Love tour
+                     </h5>
+                 </li>
+           </ul>
+       </div>
+
+       <div class="container" id="account__contain">
+        <div class="col-sm-8 account__formDetails">
+              <form>
+               <div class="form-group">
+                    <label for="exampleInputPassword1">First Name</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="number" class="form-control">
+                </div>
+
+                 <div class="form-group">
+                    <label for="exampleInputPassword1">Address</label>
+                    <input type="text" class="form-control">
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            <a href="" class="text-danger mt-2" data-toggle="modal" data-target="#changePassModal">Change password !</a>
+        </div>
+       </div>
+       
+      </div>
+      {{!-- modal change pass  --}}
+         <div class="modal " tabindex="-1" id="changePassModal" >
+            <div class="modal-dialog " style="max-width: 500px;"> 
+                <div class="modal-content">
+               
+                <div class="modal-body">
+                   <form action="">
+                       <div class="form-group">
+                            <label for="exampleInputPassword1">Old password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                         <div class="form-group">
+                            <label for="exampleInputPassword1">New password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                         <div class="form-group">
+                            <label for="exampleInputPassword1">New password repeat</label>
+                            <input type="password" class="form-control">
+                        </div>
+                   </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div>
+      {{!-- close modal  --}}
+      {{> footer}}
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="js/lightslider.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/app2.js"></script>
+      <script>
+         AOS.init();
+        $('#firstNavAccount').css({'text-decoration':'line-through','color':'#01b3a7'});
+        var list__account__nav =  $('.account__nav-bar h5');
+         list__account__nav.click(function() {
+             list__account__nav.css({'text-decoration':'none','color':'#565656'})
+             $(this).css({'text-decoration':'line-through','color':'#01b3a7'});
+         })
+      </script>
+   </body>
+</html>

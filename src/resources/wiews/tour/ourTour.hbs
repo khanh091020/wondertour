@@ -66,12 +66,12 @@
              <div class=" contain__nav-item">
                <i style="color: rgba(187, 187, 21, 0.747);" class="fas fa-star"></i>
              </div>
-             <a class="resert__a" href="#tour__out-country"><h4>Viet Nam Tour</h4></a>
+             <a class="resert__a" href="#tour__in-country"><h4>Viet Nam Tour</h4></a>
          </div>
          <div class="col-sm-2 text-center ">
              <div class=" contain__nav-item">
                   <i class="fas fa-globe-americas"></i>             </div>
-            <a href="#tour__in-country" class="resert__a"> <h4>Out country</h4></a>
+            <a href="#tour__out-country" class="resert__a"> <h4>Out country</h4></a>
          </div>
          <div class="col-sm-2 text-center ">
              <div class=" contain__nav-item">
@@ -170,8 +170,81 @@
       <div class="container-fuild container__tour" id="tour__in-country">
         <div class="row justify-content-center  container__tour-content">
             <h1 class=" container__tour-title">
-               Tour in country
+              Tour North Viet Nam
              
+            </h1>
+              <a href="/search?search=&fromDate=&toDate=">See more<i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3  container__tour-item"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+                 <div class="container__tour-item-hotTour">
+            <i class="fas fa-check"></i>
+                    <span style="opacity: 1 !important;">Sale tour</span>
+               </div>
+                <div class="contain__social">
+                   <ul>
+                       <li> <a href=""> <i style="color: blue;" class="fab fa-facebook"></i> </a></li>
+                       <li> <a href=""> <i style="color: rgb(243, 84, 10);" class="fab fa-instagram"></i> </a></li>
+                       <li> <a href=""> <i style="color: #0077b5;" class="fab fa-linkedin-in"></i> </a></li>
+                       <li> <a href=""> <i style="color: rgb(209, 47, 18);" class="fab fa-google"></i> </a></li>
+                   </ul>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+
+    
+      <div class="container-fuild container__tour" >
+        <div class="row justify-content-center  container__tour-content">
+            <h1 class=" container__tour-title">
+            Tour Central Viet Nam
+            </h1>
+              <a href="/search?search=&fromDate=&toDate=">See more<i class="fas fa-angle-double-right"></i></a>
+        </div>
+        <div class="row justify-content-around" data-aos="zoom-out-right">
+            {{#each tours}}
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3  container__tour-item"  style="background-image: url({{this.img}});">
+                <div class="container__tour-item-info">
+                    <h3>{{this.name}}</h3>
+                    <h5>{{this.time}}</h5>
+                    <h5>{{formatDate this.startDay}}</h5>
+                     <h1>{{this.price}}$</h1>
+                     <a class="btn btn-background-slide" href="/tours/{{this.slug}}">Book now <i class="fas fa-long-arrow-alt-right"></i></a class="btn btn-background-slide contain__background-image-info-a contain__hotTour-btn">
+                </div>
+                 <div class="container__tour-item-hotTour">
+            <i class="fas fa-check"></i>
+                    <span style="opacity: 1 !important;">Sale tour</span>
+               </div>
+                <div class="contain__social">
+                   <ul>
+                       <li> <a href=""> <i style="color: blue;" class="fab fa-facebook"></i> </a></li>
+                       <li> <a href=""> <i style="color: rgb(243, 84, 10);" class="fab fa-instagram"></i> </a></li>
+                       <li> <a href=""> <i style="color: #0077b5;" class="fab fa-linkedin-in"></i> </a></li>
+                       <li> <a href=""> <i style="color: rgb(209, 47, 18);" class="fab fa-google"></i> </a></li>
+                   </ul>
+               </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+
+
+    
+      <div class="container-fuild container__tour" >
+        <div class="row justify-content-center  container__tour-content">
+            <h1 class=" container__tour-title">
+                           Tour South Viet Nam 
+
             </h1>
               <a href="/search?search=&fromDate=&toDate=">See more<i class="fas fa-angle-double-right"></i></a>
         </div>
@@ -206,7 +279,7 @@
   <div class="container-fuild container__tour" id="tour__out-country">
         <div class="row justify-content-center  container__tour-content">
             <h1 class=" container__tour-title">
-               Tour <output></output> country
+               Tour out country
              
             </h1>
               <a href="/search?search=&fromDate=&toDate=">See more<i class="fas fa-angle-double-right"></i></a>

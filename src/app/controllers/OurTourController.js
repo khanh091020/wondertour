@@ -6,7 +6,7 @@ class outTourController{
         Tour.find({})
         .then(tours => {
           
-            res.render('ourTour',{
+            res.render('tour/ourTour',{
             tours : mutipleMongooseTobject(tours)
                       });
         }

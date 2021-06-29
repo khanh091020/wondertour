@@ -1,6 +1,6 @@
 class blogController {
     show(req,res,next) {
-        res.render('blog');
+        res.render('others/blog');
     }
 }
 

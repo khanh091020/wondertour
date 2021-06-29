@@ -530,16 +530,7 @@ span.fade2 {
 }
 
 .btn {
-    background-color: var(--background-color); 
-    color: #222;
-    padding: .5em 1em  ;
-    border-color: var(--primary_color) ;
-    outline: none;
-    position: relative;
-    cursor: pointer;
-    --background-color: #fff;
-    --border-size: 2px;
-    --accent-color: #50ba87;
+   
     
   }
 
@@ -574,6 +565,16 @@ span.fade2 {
   }
   
   .btn.btn-background-slide {
+    background-color: var(--background-color); 
+    color: #222;
+    padding: .5em 1em  ;
+    border-color: var(--primary_color) ;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    --background-color: #fff;
+    --border-size: 2px;
+    --accent-color: #50ba87;
     transition: color 300ms ease-in-out;
     z-index: 1;
   }
