@@ -35,3 +35,20 @@ function openListPhotographer() {
  function cancelSingerTour() {
     $('#checkBoxSingerTour').prop('checked',false)
  }
+
+ // book photographer
+  
+ $('#photographerModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) 
+    var recipient = button.data('name') 
+    var modal = $(this)
+    modal.find('.modal-boy-child2').html(`
+    <h4 class="text-danger">Note !</h4>
+    <p class="text-warning">Our photographer is only available in Hanoi, Hue, Danang, Quang Nam and Ho Chi Minh City.</p>
+    <p class="text-warning">Are you sure to require to book ${recipient} ?</p>`)
+   }) 
+
+$('#showSuccessToast').click(function() {
+   $(".toast").toast('show');
+}) 
+ 

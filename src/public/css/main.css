@@ -304,8 +304,6 @@ a.contain__background-image-info-a {
 
 .contain__other-tour-img-link {
 	margin-left: 0 0.5rem;
-	position: relative;
-	display: block;
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -324,14 +322,14 @@ a.contain__background-image-info-a {
 }
 
 .contain__other-tour-img-link h3 {
-	position: absolute;
-	bottom: 5%;
-	left: 20%;
-    transform: translateX(-1%);
 	font-weight: 600;
-	color: rgba(255, 255, 255, 0.9);
-	font-size: 1.5rem;
-	text-shadow: 2px 2px 4px #000000;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px #000000;
+    width: 100%;
+    text-align: center;
+    bottom: 5%;
 }
 
 .contain__other-tuar-more {

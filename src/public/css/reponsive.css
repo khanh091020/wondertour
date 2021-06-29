@@ -276,7 +276,6 @@
 
 .header__navbar-max1000-item {
 
- overflow-y: scroll;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -287,7 +286,7 @@
 
 .header__navbar-max1000-item:hover {
     background-color: var(--primary_color);
-    color: #fff;
+   
 }
 
 .header__navbar-max1000-item a{
@@ -504,6 +503,9 @@
 @media (max-width: 500px) {
     .mobie__socials {
         display: none !important;
+    }
+    .contain__discover {
+        margin: 5rem 1rem;
     }
 }
 
