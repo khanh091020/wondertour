@@ -15,7 +15,31 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Document</title>
       <style>
-        
+        .mobie__socials {
+            display: none !important;
+        }
+    .bookTour__icon {
+        color: rgb(204, 204, 39);
+    }
+
+    .slider__img__contain div{
+         height: 100%;
+    }
+
+    .slider__img__contain {
+        height: 100%;
+    }
+    .tour__items  {
+        background-color: #fff;
+    }
+    .page-link:focus {
+	outline-style: none;
+	box-shadow: none;
+	border-color: transparent; 
+     }
+      
+    
+     }
       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;background-color: #f1f1f1;" onload="loadingFunction();">
@@ -29,26 +53,35 @@
       {{> header}}
       <div class="container-fluid" style="padding: 0;">
           <h1 class="pt-5 pb-5 text-center" style="color: #fff;background-color: var(--primary_color);">Account management</h1>
+          
        <div class="container">
            <ul class="row align-items-center justify-content-around account__nav-bar">
                <li>
+                   <a href="/account/details">
                    <h5 id="firstNavAccount">Details account</h5>
+                   </a>
                </li>
                <li>
-                  <h5 > My tour</h5>
+                   <a href="/account/my-tour">
+                  <h5 id="mytourNav"> My tour</h5>
+                   </a>
                </li>
                <li>
-                   <h5 >My photographer</h5>
+                   <a href="/account/my-photographer">
+                   <h5 id="myphotoNav">My photographer</h5>
+                   </a>
                </li>
                  <li>
-                     <h5 >
+                     <a href="/account/love-tour">
+                     <h5 id="lovetourNav">
                   Love tour
                      </h5>
+                     </a>
                  </li>
            </ul>
        </div>
 
-       <div class="container" id="account__contain">
+       <div class="container account__main-contain" id="account__contain-details">
         <div class="col-sm-8 account__formDetails">
               <form>
                <div class="form-group">
@@ -82,11 +115,160 @@
             <a href="" class="text-danger mt-2" data-toggle="modal" data-target="#changePassModal">Change password !</a>
         </div>
        </div>
-       
+
+       <div class="container-fluid account__main-contain" id="account__contain-mytour">
+            <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Tour name</th>
+        <th>Start day</th>
+        <th>Book time</th>
+        <th>Start place</th>
+        <th>Total price</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{!-- {{#each listAll}} --}}
+          <tr>
+        <td><img style="width: 150px;object-fit: cover;" src="/image/bana-hills.jpg" alt=""></td>
+        <td>ba ba hill good</td>
+        <td>09/10/2111</td>
+        <td>8:5:3 01/01/2111</td>
+        <td>Da nang</td>
+        <td>10000$</td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-success btn-sm">Details</a></td>
+        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+        </tr>
+          {{!-- {{else}}
+        
+          {{/each}} --}}
+      
+    </tbody>
+  </table>
+       </div>
+
+            <div class="container-fluid account__main-contain" id="account__contain-myphoto">
+            <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Photographer name</th>
+        <th>Photo date</th>
+        <th>Book time</th>
+        <th>Your place</th>
+        <th>Price</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{!-- {{#each listAll}} --}}
+          <tr>
+        <td><img style="width: 150px;object-fit: cover;" src="/image/Photographer-in-Hanoi-profile.jpg" alt=""></td>
+        <td>ba ba hill good</td>
+        <td>09/10/2111</td>
+        <td>8:5:3 01/01/2111</td>
+        <td>Da nang</td>
+        <td>10000$/h</td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-success btn-sm">Details photographer</a></td>
+        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+        </tr>
+          {{!-- {{else}}
+        
+          {{/each}} --}}
+      
+    </tbody>
+  </table>
+       </div>
+
+       <div class="container-fluid account__main-contain" id="account__contain-lovetour">
+
+        <div id="contain__list-tour" >
+            <div class="container account__contain-tourItems  d-flex justify-content-center" >
+                <div class="col-lg-10">
+
+                    {{#each listSearch}}
+                  
+                      <div class="row tour__items ">
+                        <div class="col-5">
+                            <div id="slider{{this.slug}}" class="carousel slide slider__img__contain" data-ride="carousel" >
+                            <div class="carousel-inner">
+                                <div  class="carousel-item active">
+                                
+                                <div class="carousel__background-slider" style="background-image: url('/{{this.img1}}');" alt="First slide">
+
+                                </div>
+
+                                </div>
+                                <div  class="carousel-item">
+                                
+                                <div class="carousel__background-slider" style="background-image: url('/{{this.img2}}');" alt="Second slide">
+
+                                </div>
+
+                                </div>
+                                <div  class="carousel-item">
+                                
+                                <div class="carousel__background-slider" style="background-image: url('/{{this.img3}}');" alt="Third slide">
+
+                                </div>
+
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#slider{{this.slug}}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#slider{{this.slug}}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            </div>
+                        </div>
+                        <div class="col-7" style="display: flex;align-items: center;">
+                           
+                             <div class="col-12">
+                                  <h4 style="color: #999;margin-bottom: 0;">{{this.name}}</h4>
+                            <p>Journeys : <span class="ml-2" style="color: #1e90ff;">{{this.time}}</span> </p>
+
+                            <div class="row col-12">
+                                <div class="time">Time :    </div>
+                                <div class="time__content ml-2" style="color: #1e90ff;">{{this.time}}</div>
+                            </div>
+                            <p>Start : <span class="ml-2" style="color: #1e90ff;">{{formatDate this.startDay}}</span></p>
+                             <p>4.44/5 <b>In</b> 395 <b>Rate</b></p>
+                             <div class="row mt-1">
+                               <a href="/tours/{{this.slug}}" class="btn_btn btn btn__details ml-3">
+                               <i class="fas fa-info-circle"></i>
+                               Details
+                               </a>
+                             </div>
+                             </div>
+                        </div>
+                    <div class="tour__items__price">
+                        <h4>Price : {{this.price}} $</h4>
+                    </div>
+                     </div>
+                   
+                  
+                      {{else}}
+                      <h1 id="notFind">No matching results were found</h1>
+                    {{/each}}
+                </div>
+            </div>
+                
+             </div>
+       </div>
+
       </div>
       {{!-- modal change pass  --}}
          <div class="modal " tabindex="-1" id="changePassModal" >
-            <div class="modal-dialog " style="max-width: 500px;"> 
+            <div class="modal-dialog " style="max-width: 500px;top:50%;transform: translateY(-50%);"> 
                 <div class="modal-content">
                
                 <div class="modal-body">
@@ -122,7 +304,27 @@
       <script src="/js/app2.js"></script>
       <script>
          AOS.init();
-        $('#firstNavAccount').css({'text-decoration':'line-through','color':'#01b3a7'});
+         if(location.href.includes('details'))
+            {
+            $('#firstNavAccount').css({'text-decoration':'line-through','color':'#01b3a7'});
+            $('#account__contain-details').addClass('display__block');
+            }
+         if(location.href.includes('my-tour')) 
+            {
+            $('#mytourNav').css({'text-decoration':'line-through','color':'#01b3a7'});
+            $('#account__contain-mytour').addClass('display__block');
+            }
+         if(location.href.includes('my-photographer')) 
+            {
+            $('#myphotoNav').css({'text-decoration':'line-through','color':'#01b3a7'});
+            $('#account__contain-myphoto').addClass('display__block');
+            }
+         if(location.href.includes('love-tour')) 
+            {
+            $('#lovetourNav').css({'text-decoration':'line-through','color':'#01b3a7'});
+            $('#account__contain-lovetour').addClass('display__block');
+            }
+
         var list__account__nav =  $('.account__nav-bar h5');
          list__account__nav.click(function() {
              list__account__nav.css({'text-decoration':'none','color':'#565656'})

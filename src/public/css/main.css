@@ -1308,10 +1308,19 @@ a.footer__policy {
 	background-repeat: no-repeat;
 	padding-bottom: 5%;
 }
+.photograp__banner::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .photograp__banner h1 {
 	font-size: 3.5rem;
-    color: #01ff4f;
-    text-shadow: 2px 1px 1px #fff;
+    color: #fff;
+    text-shadow: -2px 5px 6px #000;
     font-weight: 500;
     font-family: 'Lora', serif;
 }
@@ -1510,7 +1519,15 @@ a.footer__policy {
 	display: flex;
 	justify-content: center;
 }
-
+.account__main-contain {
+	background-color: #fff;
+	border: 1px solid #999;
+    border-radius: 4px;
+   margin-bottom: 1rem;
+	padding: 1rem;
+	overflow-x: scroll;
+	display: none;
+}
 .account__formDetails a {
 	display: block;
 	margin-top: 1rem;

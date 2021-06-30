@@ -44,7 +44,10 @@
          .contain__main-right {
          background-color: rgba(255,255,255,0.8);
          }
-        
+       
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+           border-color: #dee2e6 #dee2e6 #dee2e6;
+        }
       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction();">
@@ -166,12 +169,12 @@
                         </div>
                         <div class="container-fluid mb-3">
                            <div class="row">
-                              <div class="col-5">
+                              <div class="col-6 col-sm-5">
                                  <h4 style="color: #d52020;">{{object.price}}$</h4>
                                  <p>Remaining tours :  <b style="color: #d52020;">{{object.countLeft}}</b></p>
                               </div>
                               <div class="col-5">
-                                 <a href="/bookTour/direct/{{object.slug}}" class="btn">
+                                 <a href="/bookTour/direct/{{object.slug}}" class="btn btn_btn">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
                                  </a> 
@@ -183,11 +186,11 @@
                               <h5 style="color: #1e90ff;" class="pl-3">Preferential prices when paying online</h5>
                            </div>
                            <div class="row">
-                              <div class="col-5">
+                              <div class="col-6 col-sm-5">
                                  <h4 style="color: #d52020;">Decrease 5%</h4>
                               </div>
                               <div class="col-5">
-                                 <a href="/bookTour/online/{{object.slug}}" class="btn">
+                                 <a href="/bookTour/online/{{object.slug}}" class="btn btn_btn">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
                                  </a>
@@ -207,10 +210,31 @@
                         </div>
                          
                      </div>
-                     <div id="menu1" class="container tab-pane fade">
+                     <div id="menu1" class="container tab-pane fade pb-5">
                         <br>
-                        <h3>dectiption</h3>
-                        <p class="mb-3">{{object.description}}</p>
+                        <h2 class="text-info">Tour schedule</h2>
+                        <div class="container-fluid" style="padding-left: 0;">
+                           <h4>FIRST DAY : DA NANG - SON TRA SELLER - SUNWHEEL (Lunch, Dinner)</h4>
+                           <p><b>In the morning : </b>Pick you up at Da Nang (Airport, Station, central meeting point) from 07h00 to 13h00 (After this time, you join the group by yourself). The car takes you to eat the famous specialty of Da Nang "Pork rice paper with 2 skins & Quang noodles". Check-in K / hotel 4 * stay.</p>
+                           <p><b>In the afternoon : </b>Go to Son Tra Peninsula to see the coastal city of Da Nang on high, visit Linh Ung Tu - the place with the highest 67m Buddha statue in Vietnam and swim in My Khe beach in Da Nang.</p>
+                            <img src="/image/ivivu-chua-linh-ung.jpg" class="w-100 mt-2 mb-1" alt="">
+                            <p class="text-center"><i>Linh Ung Pagoda </i></p>
+                            <h4>SECOND DAY : BUDDHA MUSEUM - HOI AN CITY (BREAKFAST, LUNCH, DIGHT)</h4>
+                            <p><b>In the morning : </b>Breakfast. Round the Dragon Bridge to leave an impression on the Love Bridge, strolling to enjoy the fresh air on the banks of Han Giang with the statue of Hoa Long Carp - The symbol of Da Nang people's desire to rise. Visit Quan The Am Pagoda - Museum of Buddhism and Stone Sculpture Village. Shopping for Central specialties.</p>
+                             <img src="/image/cau-rong-da-nang-phun-lua-may-gio.jpg" class="w-100 mt-2 mb-1" alt="">
+                              <p class="text-center"><i>Fire-breathing dragon bridge</i></p>
+                           <p><b>At noon : </b>Lunch at the restaurant.</p>
+                           <p><b>In the Afternoon : </b>Depart for Hoi An, walk around and shop around the Old Town with: Japanese Covered Bridge, Hundreds of Years Old House, Phuoc Kien Assembly Hall & Handicraft Workshop. Departure back to Da Nang.</p>
+                           <img src="/image/hoi_an.jpg" class="w-100 mt-2 mb-1" alt="">
+                           <p class="text-center"><i>Hoi An</i></p>
+                           <p><b>In the afternoon : </b>Dinner at restaurant. Freely enjoy a cruise on the Han River to see Da Thanh at night, take photos of Han River Quay Bridge, Dragon Bridge spitting fire and water at weekends.</p>
+                            <h4>FINALLY DAY: Ba Na (Golden Bridge) - Hue Ancient Capital (Breakfast, Lunch, Dinner)</h4>
+                            <p><b>In the morning : </b>Breakfast. Departure to Ba Na - Nui Chua. You will enjoy the feeling of floating when sitting on the Cabin floating in the middle of the clouds. Visit Linh Ung Pagoda with 27m high statue of Shakyamuni Buddha, visit Ba Chua Mau Thuong Ngan temple. Visit Golden Bridge - HOT The unique bridge located in Thien Thai garden in Ba Na Hill - was built on an altitude of 1,400m above sea level, the bridge consists of 8 spans and has a length of 150m. The bridge is supported by giant hands. People walk as if lost in the middle of a fairy scene where there are clouds, the sky is immense. (Ba Na cable car ticket is self-sufficient)</p>
+                            <img src="/image/53fd7eed4293d0e2df0a6ecda3b0ded3c3f8f2ef.jpg" alt="" class="w-100 mt-2 mb-1">
+                            <p class="text-center"><i>Golden Bridge (Vietnam)</i></p>
+                              <p><b>At noon : </b>Lunch at the restaurant at the foot of the mountain.</p>
+                           <p><b>In the afternoon : </b>Depart for Hue Ancient Capital - World Cultural Heritage, go through the tunnel of Hai Van Pass, stop at Lang Co fishing village to take souvenir photos. Check in to a 4 * hotel to rest.</p>
+                        </div>
                      </div>
                      <div id="menu2" class="container tab-pane fade">
                         <div class="container">
@@ -223,13 +247,13 @@
                                     <div class="comment-box ml-2">
                                        <h4>Add a comment</h4>
                                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
-                                       <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" rows="4" id="comment"></textarea> </div>
+                                       <div class="comment-area"> <textarea  class="form-control" placeholder="what is your view?" rows="4" id="comment"></textarea> </div>
                                                                                                         <input type="hidden" id="slug__tour" value="{{object.slug}}">
                                        <div class="comment-btns mt-2">
                                           <div class="row d-flex justify-content-right">
                                              <div class="col-4 d-flex justify-content-between" >
-                                                <div class="pull-left"> <button class="btn btn-background-slide-danger  btn-sm mr-2">Cancel</button> </div>
-                                                <div class="pull-right"> <button class="btn btn-background-slide  btn-sm" id="send__comment">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                                                <div class="pull-left"> <button class="btn btn-danger   btn-sm mr-2" onclick="resertComment()">Cancel</button> </div>
+                                                <div class="pull-right"> <button class="btn btn-success btn-sm" id="send__comment">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
                                              </div>
                                           </div>
                                        </div>
@@ -284,9 +308,9 @@
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
- 
-
-         
+        function resertComment() {
+           $('.comment-area textarea').val('')
+        }
          $('#send__comment').click(function() {
              $.post("/create-comment",
                   {
