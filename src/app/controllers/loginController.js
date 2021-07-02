@@ -24,7 +24,7 @@ class loginController {
             req.session.name = account.lastName;
                res.json({
                
-                   link : '/'
+                   link : '/index.html'
                })
            }
            else {
