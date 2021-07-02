@@ -46,7 +46,7 @@ function route(app) {
     app.use('/admin/updateTour',updateTour)
     app.use('/admin/deleteTour',deleteTour);
     // #
-    app.use('/index.html',sitee);
+    app.use('/index.html',sitee);   
     app.use('/',sitee);
    
 }
