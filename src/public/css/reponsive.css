@@ -342,6 +342,7 @@
     .discount2 {
         margin-top: 1rem;
     }
+   
 }
 
 
@@ -477,9 +478,7 @@
     a.footer__policy {
         margin-right: 10px;
     }
-    .ourTour__findtour .justify-content-around {
-        padding: 0 2rem;
-    }
+  
     .ourTour__findtour {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -512,6 +511,11 @@
         min-height: 235px;
     }
 }
+@media (max-width: 575px) { 
+    .contain__other-tour-img {
+        top: 6% ;
+    }
+ }
 
 @media (max-width: 500px) {
     .mobie__socials {

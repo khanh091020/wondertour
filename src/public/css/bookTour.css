@@ -73,11 +73,7 @@
       }
 }
 
-@media (max-width:680px) {
- .ourTour__cpntain__search {
-   width: 100%;
- }
-}
+
 
 @media (max-width:576px) {
   .contain__nav {

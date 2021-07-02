@@ -2,7 +2,7 @@
 <div class="col-sm-10">
   
 </div>
-     <div class="container" style="margin-top: 5rem;">
+     <div class="container admin__createTour__contain" style="margin-top: 5rem;" >
         <form action="/admin/createTour" method="POST">
             <div class="form-group">
               <label for="name">Tour name</label>
@@ -79,3 +79,10 @@
      </div>
    
 {{>adminFooter}}
+<style>
+  @media(max-width:992px) {
+     .admin__createTour__contain {
+        margin-top: 10rem !important;
+    }
+  }
+</style>
