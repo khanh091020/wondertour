@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="/css/animate.css">
+      <link rel="stylesheet" href="/css/lightslider.css">
+      <link rel="stylesheet" href="\fontawesome-free-5.15.2-web\fontawesome-free-5.15.2-web\css\all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/base.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/reponsive.css">
+      <link rel="stylesheet" href="/css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Wonder Place</title>
+      <style>
+         body {
+             text-align: center;
+         }
+         h6 {
+            margin-bottom: 0;
+            margin-top: .5rem;
+         }
+          .row {
+              margin-left: 0;
+              margin-right: 0;
+          }
+          .lSPager  {
+             display: none;
+          }
+          @media (max-width: 576px){
+            .ourTour__findtour {
+                margin-top: 0; 
+            }
+            }
+         @media (max-width: 698px){
+           .hotel__goodPrice-icon {
+           margin: 1rem 1rem 0 0 !important;
+           }
+           .hotel__goodPrice-headLeft {
+              justify-content: center;
+           }
+            }
+         a {
+            color: #000;
+         }
+         a:hover {
+            color: #000;
+         }
+         .header__navbar-list-item a {
+            color: #edf6f9 ;
+         }
+       
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0;" onload="loadingFunction();">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-arrow-alt-circle-up"></i>
+      </div>
+     
+      <div id="loading">
+         <img src="/image/load.gif" alt="">
+      </div>
+      {{> header}}
+    
+ <div class="container-fluid ourTour-banner row" style="background-image: url(/image/banner_hotel.jpg);">
+     
+       
+
+    
+                <div class=" col-lg-9 ourTour__findtour" id="hotelFindTour">  
+          <div>
+               <form action="/" method="get">
+              <div class="row justify-content-around mt-3 mb-4  ">
+    
+                  <div class="row flex-column ourTour__cpntain__search ">
+                      <label for="sel1">Destrination</label>
+                     <input name="search" type="text" placeholder="Where want you go ?">
+                  </div>
+                  <div class="row flex-column ourTour__cpntain__search">
+                      <label for="sel1">Check-in</label>
+                     <input name="fromDate" type="date" placeholder="Where want you go ?">
+                  </div>
+                  <div class="row flex-column ourTour__cpntain__search">
+                      <label for="sel1">Check-out</label>
+                     <input name="toDate"  type="date" placeholder="Where want you go ?">
+                  </div>
+    
+              </div>
+
+              <div class="row justify-content-around">
+                <a href="https://www.google.com/travel/hotels" target="_blank" rel="noopener noreferrer" class="btn btn-background-slide">Find</a>
+              </div>
+             </form>
+          </div>
+
+        </div>
+    
+    </div>
+
+
+        <div class="container hotel__service mt-5 mb-5">
+        <div class="row align-items-center justify-content-center">
+             <div class="col-sm-6 col-lg-3 mt-3">
+                 <div class="hotel__service-items">
+                 <div class="hotel__service-img">
+                     <img src="/image/icon_support_247.svg" alt="">
+                 </div>
+                 <div class="hotel__service-info">
+                     <h5>
+                         <b>Support 24/7</b>
+                     </h5>
+                     <p>Chat is there, called listening, regardless of night, day off and holidays.</p>
+                 </div>
+                 </div>
+             </div>
+
+              <div class="col-sm-6 col-lg-3 mt-3">
+                 <div class="hotel__service-items">
+                 <div class="hotel__service-img">
+                     <img src="/image/icon_best_price.svg" alt="">
+                 </div>
+                 <div class="hotel__service-info">
+                     <h5>
+                         <b>Good price</b>
+                     </h5>
+                     <p>Guarantee the best price when booking close to the date of your trip.</p>
+                 </div>
+                 </div>
+             </div>
+
+              <div class="col-sm-6 col-lg-3 mt-3">
+                 <div class="hotel__service-items">
+                 <div class="hotel__service-img">
+                     <img src="/image/icon_payment.svg" alt="">
+                 </div>
+                 <div class="hotel__service-info">
+                     <h5>
+                         <b>Easy payment</b>
+                     </h5>
+                     <p>Includes additional bank transfer and in-store cash.</p>
+                 </div>
+                 </div>
+             </div>
+
+              <div class="col-sm-6 col-lg-3 mt-3">
+                 <div class="hotel__service-items">
+                 <div class="hotel__service-img">
+                     <img src="/image/icon_total_hotel.svg" alt="">
+                 </div>
+                 <div class="hotel__service-info">
+                     <h5>
+                         <b>8000+ hotels</b>
+                     </h5>
+                     <p>Thousands of hotels, especially 4-star and 5-star, allow you to freely choose.</p>
+                 </div>
+                 </div>
+             </div>
+        </div>
+    </div>
+ 
+     <div class="container mb-5 mt-3" style="padding : 0">
+         <h4 class="text-left ml-3 mb-3"><b>Discount code for you</b></h4>
+        <div class="row">
+           <div class="col-lg-6">
+
+           <div>
+               <div class="hotel__discount w-100">
+             <div class="row">
+                 <p class="text-muted" style="font-size: 1rem;">Enter code</p> <h5 class="pt-2 pb-2 pl-2 pr-2 text-white" >LOVE</h5>
+             </div>
+             <div class="row justify-content-between">
+                 <p><b>5% off up to 20$/hotels</b></p>
+                <a href=""> <p class="text-primary">Program Terms & Conditions</p></a>
+             </div>
+             <div class="row">
+                 <p class="text-muted">Expiry date: 26/06 - 31/07 | Enter code at checkout</p>
+             </div>
+         </div>
+           </div>
+           
+           </div>
+
+         <div class="col-lg-6 discount2">
+             <div>
+               <div class="hotel__discount w-100">
+             <div class="row">
+                 <p class="text-muted" style="font-size: 1rem;">Enter code</p> <h5 class="pt-2 pb-2 pl-2 pr-2 text-white" >YOU</h5>
+             </div>
+             <div class="row justify-content-between">
+                 <p><b>5% off up to 20$/hotels</b></p>
+                <a href=""> <p class="text-primary">Program Terms & Conditions</p></a>
+             </div>
+             <div class="row">
+                 <p class="text-muted">Expiry date: 26/06 - 31/07 | Enter code at checkout</p>
+             </div>
+         </div>
+           </div>
+         </div>
+        </div>
+     </div>
+     
+     <div class="container">
+      <h4 class="text-left mb-5 ml-2"><b>Hotels by location</b></h4>
+     </div>
+
+     <div class="container hotelByPlace">
+            <ul id="SliderNow" class="cs-hidden" style="height: 178px !important;">
+                  {{!-- {{#each tours}} --}}
+                  <li class="item-a" style="margin-right: 20px !important;">
+                     <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels?utm_campaign=sharing&utm_medium=link&utm_source=htls&ts=CAESABpSCjQSMDIlMHgzMTQyMTljNzkyMjUyYTEzOjB4ZmMxNGUzYTA0NDQzNjQ4NzoHRGEgTmFuZxoAEhoSFAoHCOUPEAcYBRIHCOUPEAcYBhgBMgIQACoLCgcoAToDVk5EGgA&rp=eOHU35LNpqLb5AF48MDYtbeyyf3PAXiIm5WZsOSOo9QBeM23u7H7ps-DEHifxNCNyvvypV44AQ&ap=MAA&destination=Da%20Nang&ved=0CAAQ5JsGahcKEwiQhIv_gsPxAhUAAAAAHQAAAAAQIA">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/Cầu-Tình-Yêu-Đà-Nẵng.jpg);">
+                         
+                        </div>
+                        <h6>Da Nang</h6>
+                        <p class="text-muted">More 1900+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                      <li class="item-a" style="margin-right: 20px !important;">
+                     <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels?utm_campaign=sharing&utm_medium=link&utm_source=htls&ts=CAESABpbCj0SOTIlMHgzMTc1MjkyOTJlOGQzZGQxOjB4ZjE1ZjVhYWQ3NzNjMTEyYjoQSG8gQ2hpIE1pbmggQ2l0eRoAEhoSFAoHCOUPEAcYBRIHCOUPEAcYBhgBMgIQACoLCgcoAToDVk5EGgA&rp=eLvG8v6hxLC6wgF486br35PYpMOxAXi0uL6nvPqQhBN4vtuUoYLUwIxseNqguuOrp9vqwAE4AQ&ap=MAA&destination=Ho%20Chi%20Minh%20City&ved=0CAAQ5JsGahgKEwiQhIv_gsPxAhUAAAAAHQAAAAAQkgM">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/hochiminh.png);">
+                         
+                        </div>
+                        <h6>Ho Chi Minh City</h6>
+                        <p class="text-muted">More 4000+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels?utm_campaign=sharing&utm_medium=link&utm_source=htls&ts=CAESABpQCjISLjIlMHgzMTM1YWI5YmQ5ODYxY2ExOjB4ZTc4ODdmN2I3MmNhMTdhOToFSGFub2kaABIaEhQKBwjlDxAHGAUSBwjlDxAHGAYYATICEAAqCwoHKAE6A1ZORBoA&rp=eOvHiZm8t67b4QF49qDXyNCNp42UAXjDrPvQmJnPj4IBeIbgit2Cz92DoAF484iu7eHj-IwTOAE&ap=MAA&destination=Hanoi&ved=0CAAQ5JsGahgKEwiQhIv_gsPxAhUAAAAAHQAAAAAQ3QU">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/hanoi.png);">
+                         
+                        </div>
+                        <h6>Ha Noi</h6>
+                        <p class="text-muted">More 1900+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/da-lat.png);">
+                         
+                        </div>
+                        <h6>Da Lat</h6>
+                        <p class="text-muted">More 2000+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/nha-trang.png);">
+                         
+                        </div>
+                        <h6>Nha Trang</h6>
+                        <p class="text-muted">More 1000+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/hoi-an.png);">
+                         
+                        </div>
+                        <h6>Hoi An</h6>
+                        <p class="text-muted">More 800+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/phu-quoc.png);">
+                         
+                        </div>
+                        <h6>Phu Quac</h6>
+                        <p class="text-muted">More 700+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/hue.png);">
+                         
+                        </div>
+                        <h6>Hue</h6>
+                        <p class="text-muted">More 500+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/ha-long.png);">
+                         
+                        </div>
+                        <h6>Ha Long</h6>
+                        <p class="text-muted">More 750+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+
+                   <li class="item-a" style="margin-right: 20px !important;">
+                     <a href="">
+                     <div class="hotelByPlace-item">
+                        <div class="hotelByPlace__slider-item-img" style="background-image: url(/image/hai-phong.png);">
+                         
+                        </div>
+                        <h6>Hai Phong</h6>
+                        <p class="text-muted">More 400+ hotel</p>
+                     </div>
+                     </a>
+                  </li>
+                  {{!-- {{/each}} --}}
+             </ul>
+             
+               <button type="button" class="hotel__slider-btn-pre" id="goToPrevSlideHT"><i class="fas fa-long-arrow-alt-left"></i></button>
+               <button type="button" class="hotel__slider-btn-next" id="goToNextSlideHT"><i class="fas fa-long-arrow-alt-right"></i></button>
+           
+     </div>
+   
+    <div class="container-fluid text-left pb-4 mb-5 mt-4 pt-4 pb-4  ml-2" style="background-color: #edf6f9;">
+       <div class="container">
+          <div class="row justify-content-between mb-5">
+             <h4>
+              <b>Best price hotel</b>
+            </h4>
+            <div class="hotel__goodPrice-headLeft row">
+               <div class="hotel__goodPrice-icon ml-4">
+                  <div class="text-center">
+                     <i class="fas fa-hotel"></i>
+                  </div>
+                  <p class="text-muted">New hotel</p>
+               </div>
+
+                <div class="hotel__goodPrice-icon ml-4">
+                  <div class="text-center">
+                    <i class="fas fa-dollar-sign"></i>
+                  </div>
+                  <p class="text-muted">Attractive price</p>
+               </div>
+
+                <div class="hotel__goodPrice-icon ml-4">
+                  <div class="text-center">
+                     <i class="fas fa-sync-alt"></i>
+                  </div>
+                  <p class="text-muted">Weekly update</p>
+               </div>
+
+                <div class="hotel__goodPrice-icon ml-4">
+                  <div class="text-center">
+                <i class="far fa-thumbs-up"></i>
+                  </div>
+                  <p class="text-muted">Exclusively for you</p>
+               </div>
+               
+            </div>
+          </div>
+
+          <div class="row">
+             
+            <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/entity/CgoI4OKiv46u3thPEAE?utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwi44qz9jMPxAhUAAAAAHQAAAAAQAg&ts=CAESABogCgIaABIaEhQKBwjlDxAHGAUSBwjlDxAHGAYYATICEAAqCwoHKAE6A1ZORBoA&rp=OAE" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://photos.hotelbeds.com/giata/original/36/369175/369175a_hb_ro_066.jpg);">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2" > <h5><b>Amiana Resort Nha Trang</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Nha Trang City</p></div>
+                        <div class="row justify-content-between">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">110.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>100.54$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+             <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/entity/CgsIwomM_vbwt_G5ARAB?utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwiQsq-8jsPxAhUAAAAAHQAAAAAQAg&ts=CAESABogCgIaABIaEhQKBwjlDxAHGAUSBwjlDxAHGAYYATICEAAqCwoHKAE6A1ZORBoA&rp=OAE" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh4.googleusercontent.com/proxy/dZAYvAypQFEEF0B9OEm2YCcyZc8PUwaM43cNeQCER4jweR9Iat8-W4aJgj6vxv8REVTnpgWL_ldOlBf-qXeHRRmJhRn6s5veG5l317TYD8KaUiP0pI3z9Xn-oc6p96iqslrFpAMw1Wgg0hnointHSXDLr8pAgq8=w592-h404-n-k-no-v1">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2" > <h5><b>Vinpearl Resort & Spa Ha Long</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Quang Ninh</p></div>
+                        <div class="row justify-content-between">
+                           <div class="row">
+                          <span class="mr-2">9</span>
+                          <p class="text-muted">Great(500 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 9</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">220.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>190.54$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+             <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/Hanoi/entity/ChYIpb6ZpaOEpuuQARoJL20vMGdzX2NkEAE?tcfs=GAI&ts=CAESCgoCCAMKAggDEAAaUAoyEi4yJTB4MzEzNWFiOWJkOTg2MWNhMToweGU3ODg3ZjdiNzJjYTE3YTk6BUhhbm9pGgASGhIUCgcI5Q8QBxgFEgcI5Q8QBxgGGAEyAhAAKhMKBygBOgNWTkQaACIGCgQQvJNw&ictx=3&ap=MAFabAoGCICfSRAAEgAiA1ZORCoWCgcI5Q8QBxgFEgcI5Q8QBxgGGAEoALABAFgBYABoAXIECAIYAJoBLhIFSGFub2kaJTB4MzEzNWFiOWJkOTg2MWNhMToweGU3ODg3ZjdiNzJjYTE3YTmSAQIgAQ&ved=0CAAQ5JsGahcKEwj44d3Bj8PxAhUAAAAAHQAAAAAQAg&utm_campaign=sharing&utm_medium=link&utm_source=htls" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh5.googleusercontent.com/p/AF1QipPflCofEwE3lFWTgWC9WJJCptKckYd3YuvFZfXi=w592-h404-n-k-no-v1)">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2" > <h5><b>Sofitel Legend Metropole Hanoi Hotel</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Ha Noi</p></div>
+                        <div class="row justify-content-between">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">160.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>150$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+             <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/entity/CgoI4OKiv46u3thPEAE?utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwjwoOm-i8PxAhUAAAAAHQAAAAAQAg&ts=CAESABogCgIaABIaEhQKBwjlDxAHGAUSBwjlDxAHGAYYATICEAAqCwoHKAE6A1ZORBoA&rp=OAE" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh5.googleusercontent.com/p/AF1QipPVEDHZfEnXoNClM6P6oxaMLpAGmYuZBKTmbku5=w592-h404-n-k-no-v1">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2" > <h5><b>Premier Village Ha Long Bay Resort</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Quang Ninh</p></div>
+                        <div class="row justify-content-between">
+                           <div class="row">
+                          <span class="mr-2">6.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 6.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">450$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>400$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+             <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/travel/hotels/entity/CgoI4OKiv46u3thPEAE?utm_campaign=sharing&utm_medium=link&utm_source=htls&ved=0CAAQ5JsGahcKEwjwoOm-i8PxAhUAAAAAHQAAAAAQAg&ts=CAESABogCgIaABIaEhQKBwjlDxAHGAUSBwjlDxAHGAYYATICEAAqCwoHKAE6A1ZORBoA&rp=OAE" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh5.googleusercontent.com/p/AF1QipNt__taZhtThhEAKO2Dsl94M8wMN4BsbwkiII6O=w592-h404-n-k-no-v1);">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2" > <h5><b>Phu Quoc Long Beach Resort</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Phu Quac</p></div>
+                        <div class="row justify-content-between">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">160.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>150.5$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+            </a>
+            
+          </div>
+       </div>
+    </div>
+      
+      <div class="container mb-5 pt-4 pb-4" style="background-color: #edf6f9;border-radius: 10px;">
+           <div class="row">
+              <div class="col-lg-8">
+                 <div class="row align-items-center">
+                 <div class="col-3">
+                    <i class="fas fa-mail-bulk icon__register__receive"></i>
+                 </div>
+                 <div class="col-9">
+                      <p><b>
+                         Want to save up to 50% on hotel and flight bookings?
+                      </b></p>
+                      <p class="text-muted">
+                         Enter your phone number so that Wonder Place can send you the latest promotions!
+                      </p>
+                 </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 row align-items-center contain__input-register">
+                  <div class="row align-items-center">
+                     <input type="email" placeholder="Enter your email" class="input__register__receive col-7 col-xl-8">
+                     <button class="btn-sm btn-success btn btn__register__receive col-5 col-xl-4">Register</button>
+                  </div>
+              </div>
+           </div>
+      </div>
+
+      {{> footer}}
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="/js/lightslider.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/app2.js"></script>
+      <script>
+         AOS.init();
+         var sliderNow
+         $(document).ready(function() {
+           sliderNow =  $('#SliderNow').lightSlider({
+                  auto : true,
+                  speed:700,
+                  item : 6,
+                    autoWidth: true,
+                    pauseOnHover: true,
+                  pause:  3000,
+                loop:true,
+                  slideMargin: 25,
+                onSliderLoad: function() {
+                    $('#SliderNow').removeClass('cS-hidden');
+                } 
+            });  
+         })
+         $('#goToPrevSlideHT').on('click', function () {
+            sliderNow.goToPrevSlide();
+         });
+         $('#goToNextSlideHT').on('click', function () {
+            sliderNow.goToNextSlide();
+         });
+      </script>
+   </body>
+</html>

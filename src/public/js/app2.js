@@ -51,4 +51,9 @@ function openListPhotographer() {
 $('#showSuccessToast').click(function() {
    $(".toast").toast('show');
 }) 
+
+// change color heart 
+$('.contain__icon__heart-product').click(function() {
+    $(this).find('.heart__icon').toggleClass('heart__pink')
+})
  

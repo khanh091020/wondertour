@@ -1,4 +1,3 @@
-const indexRouter = require('./home')
 const outTour = require('./our__tour');
 const contact = require('./contact');
 const sitee = require('./site');
@@ -13,6 +12,7 @@ const blog = require('./blog');
 const photographers = require('./photographers');
 const sortMidderwares = require('../app/midderwares/checkLoginMiderwares');
 const account = require('./account')
+const affiliatService = require('./affiliatService')
 
 
 // admin
@@ -38,6 +38,7 @@ function route(app) {
     app.use('/tours',tourDetails);
     app.use('/photographer',photographers);
     app.use('/account',account)
+    app.use('/affiliate-service',affiliatService)
     // admin link
     app.use('/admin/index',indexadmin);
     app.use('/admin/createTour',createTour);
@@ -45,7 +46,9 @@ function route(app) {
     app.use('/admin/updateTour',updateTour)
     app.use('/admin/deleteTour',deleteTour);
     // #
+    app.use('/index.html',sitee);
     app.use('/',sitee);
+   
 }
 
 module.exports = route;

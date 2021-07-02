@@ -10,6 +10,19 @@
  
 }
 
+.contain__icon__heart-product {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   max-width: 28px;
+   cursor: pointer;
+   z-index: 2;
+}
+
+.heart__pink {
+  fill : #FF3366 !important;
+}
+
 
 /* tesst */
 
@@ -613,6 +626,22 @@ span.fade2 {
     transform: scaleX(1);
   }
 
+  .btn__register__receive {
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+.icon__register__receive {
+  font-size: 2.2rem;
+    color: var(--primary_color);
+}
+.input__register__receive {
+  border: none;
+  outline: none;
+  padding: 4px 10px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
   /* button trong */
 
   .button--bordre{
@@ -620,6 +649,7 @@ span.fade2 {
    font-size: 1.3rem;
    padding: .3rem .7rem;
   }
+
 
 
   /* common responsive  */

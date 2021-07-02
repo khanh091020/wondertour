@@ -327,7 +327,10 @@
         z-index: 10;
     }
 
-   
+   .contain__input-register {
+       margin-top: 1rem;
+       justify-content: center;
+   }
 
     .tourGrid__filter {
         display: block;
@@ -335,6 +338,9 @@
 
     #btn__close__filter {
         display : block
+    }
+    .discount2 {
+        margin-top: 1rem;
     }
 }
 
@@ -470,6 +476,13 @@
 
     a.footer__policy {
         margin-right: 10px;
+    }
+    .ourTour__findtour .justify-content-around {
+        padding: 0 2rem;
+    }
+    .ourTour__findtour {
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
