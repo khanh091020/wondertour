@@ -56,4 +56,4 @@ $('#showSuccessToast').click(function() {
 $('.contain__icon__heart-product').click(function() {
     $(this).find('.heart__icon').toggleClass('heart__pink')
 })
- 
+
