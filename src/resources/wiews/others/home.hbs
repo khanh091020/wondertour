@@ -641,11 +641,13 @@
   <script>
    
    
-
+    
 	// JavaScript Document
 
-       
- AOS.init();
+      document.addEventListener('DOMContentLoaded', () => {
+          AOS.init();
+      })
+
   var slider =  $('#autoWidth').lightSlider({
         autoWidth:true,
           auto : true,
