@@ -22,7 +22,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 500px;
-    background-position: center top;
+    background-position: center;
     margin-bottom: 3rem;
     justify-content: center;
     align-items: flex-end;
@@ -74,11 +74,9 @@
 }
 
 
-
 @media (max-width:576px) {
   .contain__nav {
-    margin-top: 5rem;
-    
+    margin: 5rem 1rem 0;
   }
 
   .ourTour-banner {
@@ -90,6 +88,7 @@
     margin-top: 33rem;
   }
 }
+
 
 @media (max-width:334px) { 
  
@@ -187,16 +186,20 @@
 }
 
 .container__tour-item-info a {
-  border: transparent;
-  text-shadow: none;
-  color: var(--primary_color) !important;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 4px #999;
+  box-shadow: 1px 1px 5px #f1f1f1;
+  color: #fff;
+  
 }
 
 .container__tour-item-info a:hover {
-  color: #fff !important;
-
-
+  background-color: rgba(255,255,255,.8);
+  box-shadow: none;
+  color : var(--primary_color)
 }
+
   
 .box__icon__qoute  {
   background-color: var(--primary_color);

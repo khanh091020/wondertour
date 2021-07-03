@@ -5,10 +5,10 @@
       --primary_color : rgb(1, 179, 167);
     --text-color : #565656;
 }
-
-.col-md-12 {
- 
+.carousel-caption {
+  z-index: 0;
 }
+
 
 .contain__icon__heart-product {
    position: absolute;
@@ -260,6 +260,10 @@ button:focus {
 .btn:hover {
   border-color: transparent;
   animation: jello 1s ease-in;
+}
+
+.btn__notAnimate {
+
 }
 
 html {
@@ -677,15 +681,21 @@ span.fade2 {
    border-radius: 6px;
  }
 
-.container__findTour input,
+
 .ourTour__findtour input ,
-.contain__seach input {
+.contain__seach input,
+.find__tour input {
   outline: none;
   border-radius: 12px;
   padding: 1px 5px;
   border: none;
   text-align: center;
  }
+ .ourTour__findtour input ,
+.contain__seach input {
+  box-shadow: 1px 1px 5px #999;
+
+}
 
 input.checkbox {
   width: 20px !important;

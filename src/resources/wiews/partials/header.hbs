@@ -100,16 +100,16 @@
                    </div>
 
                 <ul class="header__navbar-max1000-list">
-                    <li class="header__navbar-max1000-item"><a href="/index.html">Home</a></li>
-                    <li class="header__navbar-max1000-item"> <a href="/outTour.html">Our Tour</a><i class="fas fa-chevron-down"></i>
+                    <li class="header__navbar-max1000-item"><a href="/index.html"><i class="fas fa-home mr-2"></i>Home</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/outTour.html"><i class="fas fa-stream mr-2"></i>Our Tour</a>
                     </li>
-                    <li class="header__navbar-max1000-item"> <a href="/photographer">Photographer</a></i></li>
-                    <li class="header__navbar-max1000-item"> <a href="/affiliate-service/hotel">Hotels</a></li>
-                     <li class="header__navbar-max1000-item"> <a href="/affiliate-service/flight">Flight</a><i class="fas fa-chevron-down"></i></li>
-                     <li class="header__navbar-max1000-item"> <a href="/about.html">About</a>
+                    <li class="header__navbar-max1000-item"> <a href="/photographer"><i class="fas fa-camera-retro mr-2"></i>Photographer</a></i></li>
+                    <li class="header__navbar-max1000-item"> <a href="/affiliate-service/hotel"><i class="fas fa-hotel mr-2 "></i>Hotels</a></li>
+                     <li class="header__navbar-max1000-item"> <a href="/affiliate-service/flight"><i class="fas fa-paper-plane mr-2"></i>Flight</a></li>
+                     <li class="header__navbar-max1000-item"> <a href="/about.html"><i class="fas fa-question-circle mr-2"></i>About</a>
                     </li>
-                    <li class="header__navbar-max1000-item"> <a href="/blog">Blog</a><i class="fas fa-chevron-down"></i></li>
-                    <li class="header__navbar-max1000-item"> <a href="/contact.html">Contact Us</a></i></li>
+                    <li class="header__navbar-max1000-item"> <a href="/blog"><i class="fab fa-blogger-b mr-2"></i>Blog</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/contact.html"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></i></li>
                 </ul>
             </div>
 
@@ -117,7 +117,14 @@
     </header>
 
     <script>
-     // A $( document ).ready() block.
+    var listItemNavMobie = document.querySelectorAll('.header__navbar-max1000-item a');
+    for(var i =0;i<listItemNavMobie.length;i++) {
+        if(listItemNavMobie[i].href === location.href) 
+        {
+            listItemNavMobie[i].style.backgroundColor = "#01b3a7";
+            listItemNavMobie[i].style.color = "#fff";
+        }
+    }
 
     </script>
 
