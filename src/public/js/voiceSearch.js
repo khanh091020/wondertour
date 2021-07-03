@@ -52,7 +52,7 @@ const app = {
 			if(searchFormInput.value !== "") {
 				setTimeout(function () {
 					searchForm.submit()
-				}, 750)
+				}, 200)
 			}
 			else {
 				searchFormInput.placeholder = "Can't recognize voice, please speak again !"
@@ -126,7 +126,8 @@ const app = {
 			}
 			else if(
 				this.textVoiceList[currentIndex].toLowerCase().trim() === "làm mới" ||
-				this.textVoiceList[currentIndex].toLowerCase().trim() === "clear"
+				this.textVoiceList[currentIndex].toLowerCase().trim() === "clear" ||
+				this.textVoiceList[currentIndex].toLowerCase().trim() === "refresh"
 			)
 				this.textVoiceList = []
 		}
