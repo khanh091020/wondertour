@@ -25,7 +25,7 @@ const bookTour = require('./bookTour');
 
 function route(app) {
     // user link 
-    app.use('/blog',sortMidderwares,blog);
+    app.use('/blog',blog);
     app.use('/bookTour',bookTour);
     app.use('/search',search);
     app.use('/outTour.html',outTour);

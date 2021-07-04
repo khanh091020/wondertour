@@ -15,6 +15,7 @@ const Tours = new Schema({
     startDay : {type : Date},
     slug : {type : String, slug: 'name',unique : true} ,
     countLeft : Number,
+    video_id : String,
     img1 : String,
     img2 : String,
     img3 : String,
