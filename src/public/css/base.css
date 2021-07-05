@@ -97,14 +97,14 @@ a{
   padding: 1.5rem;
   background: linear-gradient(
     rgb(0 0 0 / 0),
-    rgb(0 0 0 / 0.25) 15%,
+    rgb(0 0 0 / 0.55) 25%,
     rgb(0 0 0 / 1)
   );
 }
 
 .cardd-body p {
   color: hsl(0deg 50% 100% / 0.8);
-  margin-bottom: 1.25em;
+  margin-bottom: 1.3em;
 }
 
 @media (hover: hover), (prefers-reduced-motion: no-preference) {
@@ -114,7 +114,7 @@ a{
   }
 
   .cardd:hover .cardd-body {
-    transform: translateY(0);
+    transform: translateY(-71px);
     transition-delay: 400ms;
   }
 

@@ -42,7 +42,32 @@
         .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
            border-color: #dee2e6 #dee2e6 #dee2e6;
         }
-      </style>
+        .contain__hotTour-infomation-star {
+           margin-right: 0;
+        }
+        #menu1 h2 {
+            border: 1px dashed;
+           padding: .3rem 1rem;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+        }
+         #menu1 h2 i {
+            padding: 3px 7px;
+         }
+        #menu1 .container-fluid  {
+           padding: .5rem 20px 1rem !important;
+           animation: fadeInUp .5s linear;
+        }
+        #menu1 .fa-check{
+           margin-right: 5px;
+            color: green;
+        }
+        #menu1 .fa-times {
+           margin-right: 5px;
+           color: red;
+        }
+       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;">
        <div class="ontop" id="ontopbro" onclick="ontop()">
@@ -90,8 +115,9 @@
                      <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#home">Book tour</a>
                      </li>
+                     
                      <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">Description</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu1">Pakage details</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#menu2">Comment</a>
@@ -104,8 +130,8 @@
                         <br>
                         <div class="container-fluid mb-3" style="padding-right: đ;">
                            <div class="container-fluid">
-                              <div class="row">
-                                 <div class="col-sm-4">
+                              <div class="row align-items-center mb-1">
+                                 <div class="col-4 col-lg-2 col-xl-3 booktour__contain-star">
                                     <div class="row bookTour__icon">
                                        <i class="fas fa-star"></i>
                                        <i class="fas fa-star"></i>
@@ -119,7 +145,7 @@
                                  </div>
                               </div>
                               <div class="row">
-                                 <div class="col-6">
+                                 <div class="col-6 col-lg-4 col-xl-5 booktour__contain-tt">
                                     <div class="row justify-content-between align-items-center" >
                                        <i class="fas fa-eye"></i> 
                                        <p>989</p>
@@ -166,12 +192,12 @@
                         </div>
                         <div class="container-fluid mb-3">
                            <div class="row">
-                              <div class="col-6 col-sm-5">
+                              <div class="col-6 col-sm-5 col-lg-3 col-xl-5 contain__bookNow">
                                  <h4 style="color: #d52020;">{{object.price}}$</h4>
                                  <p>Remaining tours :  <b style="color: #d52020;">{{object.countLeft}}</b></p>
                               </div>
                               <div class="col-5">
-                                 <a href="/bookTour/direct/{{object.slug}}" class="btn btn_btn">
+                                 <a href="/bookTour/direct/{{object.slug}}" class="btn btn_btn btn-sm">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
                                  </a> 
@@ -183,11 +209,11 @@
                               <h5 style="color: #1e90ff;" class="pl-3">Preferential prices when paying online</h5>
                            </div>
                            <div class="row">
-                              <div class="col-6 col-sm-5">
+                              <div class="col-6 col-sm-5 col-lg-3 col-xl-5 contain__bookNow">
                                  <h4 style="color: #d52020;">Decrease 5%</h4>
                               </div>
                               <div class="col-5">
-                                 <a href="/bookTour/online/{{object.slug}}" class="btn btn_btn">
+                                 <a href="/bookTour/online/{{object.slug}}" class="btn btn_btn btn-sm">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
                                  </a>
@@ -209,8 +235,33 @@
                      </div>
                      <div id="menu1" class="container tab-pane fade pb-5">
                         <br>
-                        <h2 class="text-info">Tour schedule</h2>
-                        <div class="container-fluid" style="padding-left: 0;">
+                        <h2 class="text-info"><span>Tour price includes</span> <i id="tour__service-include-btn" class="fas fa-angle-up "></i></h2>
+                          <div class="container-fluid" id="tour__service-include" style="padding-left: 0;">
+                              <p><i class="fas fa-check"></i> Sightseeing bus (16, 29, 35, 45 seats depending on the number of guests) according to the program</p>
+                              <p><i class="fas fa-check"></i> Round-trip airfare SGN - Phu Yen/Quy Nhon - SGN</p>
+                              <p><i class="fas fa-check"></i> Free 15 kg checked baggage & 7 kg hand luggage</p>
+                              <p><i class="fas fa-check"></i> Standard hotel 2 guests / room or 3 guests / room</p>
+                                    <p class="ml-3"><i class="fas fa-wifi"></i> Free wifi</p>
+                                    <p class="ml-3"><i class="fas fa-water"></i> Poor</p>
+                                    <p class="ml-3"><i class="fas fa-snowflake"></i> Air conditioning</p>
+                                    <p class="ml-3"><i class="fas fa-broom"></i> Housekeeping</p>
+                                    <p class="ml-3"><i class="fas fa-coffee"></i> Breakfast included</p>
+                              <p><i class="fas fa-check"></i> Sightseeing tickets according to the program</p>
+                              <p><i class="fas fa-check"></i> Main meals according to the program from 5.5$-10$ VND</p>
+                              <p><i class="fas fa-check"></i> Travel insurance with the highest compensation 5000$/case</p>
+                              <p><i class="fas fa-check"></i> Tax</p>
+                          </div>
+                        
+                       
+                        <h2 class="text-info"><span>Tour price not includes</span> <i id="tour__service-not-include-btn" class="fas fa-angle-down "></i></h2>
+                        <div class="container-fluid display__none" id="tour__service-not-include" style="padding-left: 0;">
+                             <p><i class="fas fa-times"></i> Personal expenses: meals outside the program, laundry, cancellation costs, flight upgrade and flight upgrade, excess baggage, single room surcharge, etc.</p>
+                              <p><i class="fas fa-times"></i> Sightseeing expenses outside the program….</p>
+                        </div>     
+                                   
+
+                         <h2 class="text-info"><span>Tour schedule</span> <i class="fas fa-angle-down " id="tour__schedule-btn"></i></h2>
+                        <div class="container-fluid display__none" id="tour__schedule" style="padding-left: 0;">
                            <h4>FIRST DAY : DA NANG - SON TRA SELLER - SUNWHEEL (Lunch, Dinner)</h4>
                            <p><b>In the morning : </b>Pick you up at Da Nang (Airport, Station, central meeting point) from 07h00 to 13h00 (After this time, you join the group by yourself). The car takes you to eat the famous specialty of Da Nang "Pork rice paper with 2 skins & Quang noodles". Check-in K / hotel 4 * stay.</p>
                            <p><b>In the afternoon : </b>Go to Son Tra Peninsula to see the coastal city of Da Nang on high, visit Linh Ung Tu - the place with the highest 67m Buddha statue in Vietnam and swim in My Khe beach in Da Nang.</p>
@@ -231,6 +282,21 @@
                             <p class="text-center"><i>Golden Bridge (Vietnam)</i></p>
                               <p><b>At noon : </b>Lunch at the restaurant at the foot of the mountain.</p>
                            <p><b>In the afternoon : </b>Depart for Hue Ancient Capital - World Cultural Heritage, go through the tunnel of Hai Van Pass, stop at Lang Co fishing village to take souvenir photos. Check in to a 4 * hotel to rest.</p>
+                       
+                       
+                       
+                       
+                        </div>
+
+                        <h2 class="text-info"><span>Conditions of tour cancellation</span> <i id="tour__cancel-btn" class="fas fa-angle-down "></i></h2>
+                        <div class="container-fluid display__none" id="tour__cancel" style="padding-left: 0;">
+                              <p><i class="fas fa-check"></i> Transfer to other tourist routes 20 days before departure date: No cost.</p>
+                               <p><i class="fas fa-check"></i> If canceling or changing to other tours immediately after registration arrives 15-19 days before departure: Tour cancellation cost: 50% of tour deposit.</p>
+                               <p><i class="fas fa-check"></i> If canceling or changing to other tours from 12-14 days before departure date: Tour cancellation cost: 100% tour deposit.</p>
+                               <p><i class="fas fa-check"></i> If the tour is canceled within 08-11 days before the departure date: Tour cancellation cost: 50% of the tour price.</p>
+                               <p><i class="fas fa-check"></i> If the tour is canceled within 05-07 days before the departure date: Tour cancellation cost: 70% of the tour price.</p>
+                               <p><i class="fas fa-check"></i> If the tour is canceled within 02-04 days before the departure date: Tour cancellation cost: 90% of the tour fare.</p> 
+                               <p><i class="fas fa-check"></i> If the tour is canceled within 1 day before the departure date: Tour cancellation cost: 100% of the tour fare.</p>
                         </div>
                      </div>
                      <div id="menu2" class="container tab-pane fade">
@@ -297,6 +363,18 @@
       <script src="/js/app2.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
+         $('#tour__service-include-btn').click(detailsDisplayContent)
+         $('#tour__service-not-include-btn').click(detailsDisplayContent)
+         $('#tour__schedule-btn').click(detailsDisplayContent)
+         $('#tour__cancel-btn').click(detailsDisplayContent)
+
+         function detailsDisplayContent(event) {
+            $(this).toggleClass('transform__180')
+          var String = event.target.id
+          var ID = String.replace("-btn",'')
+          $("#"+ID).toggleClass('display__none')
+         }
+
          AOS.init();
         var currentdate = new Date(); 
                 var datetime =currentdate.getDate() + "/"

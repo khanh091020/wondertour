@@ -33,7 +33,7 @@
 
 
 .container__tour h1 {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
     justify-content: center;
     /* text-align: center; */
     text-shadow: 1px 1px 3px #52b59e;
@@ -181,7 +181,9 @@
  color: #fff;
  text-shadow: 0 0 1.5px #FF0000;
   margin: 2rem .5rem 2rem 1.5rem;
-  
+}
+.container__tour-item-info h5 i {
+  font-size: 1.1rem;
 }
 
 .container__tour-item-info a {
@@ -560,6 +562,20 @@ overflow-y: scroll;
 
     #home .container-fluid .row .col-5 {
       max-width: 30%;
+    }
+  }
+  @media (min-width:1050px) and (max-width:1200px) {
+    .booktour__contain-star {
+      flex: 1 0 20.666667%;
+    max-width: 29.666667%;
+    }
+    .booktour__contain-tt {
+      flex: 1 0 50.666667%;
+    max-width: 50.666667%;
+    }
+    .contain__bookNow {
+      flex: 1 0 50.666667%;
+    max-width: 50.666667%;
     }
   }
   @media screen and (max-width: 1000px) and (min-width:900px) {
