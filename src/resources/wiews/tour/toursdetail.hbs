@@ -15,12 +15,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Wonder Place</title>
       <style>
-         .container__left {
-         top: 135px;
-         position: fixed;
-         right: 0;
-         }
-        
+         
          .tab-pane {
          max-height: 510px;
          overflow-y: scroll;
@@ -126,47 +121,52 @@
                   <!-- Tab panes -->
                   <div class="tab-content">
                      <div id="home" class="container tab-pane active">
-                         <div class="container"></div>
+                         
                         <br>
-                        <div class="container-fluid mb-3" style="padding-right: đ;">
+                        <div class="">
+
+                        <div class="container-fluid mb-3" style="padding-right: 0;">
                            <div class="container-fluid">
-                              <div class="row align-items-center mb-1">
-                                 <div class="col-4 col-lg-2 col-xl-3 booktour__contain-star">
-                                    <div class="row bookTour__icon">
+                              <div class="row align-items-center mb-1 ">
+                                
+                                    <div class="row bookTour__icon mr-4 ">
                                        <i class="fas fa-star"></i>
                                        <i class="fas fa-star"></i>
                                        <i class="fas fa-star"></i>
                                        <i class="fas fa-star"></i>
                                        <i class="fas fa-star"></i>
                                     </div>
-                                 </div>
-                                 <div class="col-8">
+                                 
+                                 
                                     <p>4.44/5 <b>In</b> 395 <b>Rate</b></p>
-                                 </div>
+                                
                               </div>
+
                               <div class="row">
-                                 <div class="col-6 col-lg-4 col-xl-5 booktour__contain-tt">
-                                    <div class="row justify-content-between align-items-center" >
+                                
+                                    <div class="row  align-items-center" >
                                        <i class="fas fa-eye"></i> 
-                                       <p>989</p>
+                                       <p class="ml-2 mr-2">989</p>
                                        <i class="fas fa-thumbs-up"></i> 
-                                       <p>55</p>
+                                       <p class="ml-2 mr-2">55</p>
                                        <i class="fas fa-comments"></i> 
-                                       <p>0</p>
+                                       <p class="ml-2 mr-2">0</p>
                                     </div>
-                                 </div>
+                                
                               </div>
+
                            </div>
                         </div>
+
                         <div class="container-fluid mb-3" >
                            <div class="row">
-                              <div class="col-sm-10">
+                             
                                  <p>Date start  : <span class="ml-3" style="color: #1e90ff"> {{formatDate object.startDay}}</span></p>
-                              </div>
+                              
                              
                            </div>
                            <div class="row">
-                              <div class="col-sm-10">
+                             
                                  <p>Other day  : 
                            <select name="" id="" class="ml-3" style="border:none;color: #1e90ff;outline: var(--primary_color);">
                            <option value="">21/08/2021</option>
@@ -176,27 +176,27 @@
                            <option value="">{{formatDate this.startDay}}</option>
                         </select>
                                  </p>
-                              </div>
+                             
                              
                            </div>
                            <div class="row">
-                              <div class="col-sm-10">
+                              
                                  <p>Time long  : <span class="ml-3" style="color: #1e90ff"> {{object.time}}</span></p>
-                              </div>
+                             
                            </div>
                            <div class="row">
-                               <div class="col-sm-10">
+                              
                                  <p>Place start  : <span class="ml-3" style="color: #1e90ff"> {{object.startPlace}}</span></p>
-                              </div>
+                             
                            </div>
                         </div>
                         <div class="container-fluid mb-3">
                            <div class="row">
-                              <div class="col-6 col-sm-5 col-lg-3 col-xl-5 contain__bookNow">
+                              <div class="mr-3">
                                  <h4 style="color: #d52020;">{{object.price}}$</h4>
                                  <p>Remaining tours :  <b style="color: #d52020;">{{object.countLeft}}</b></p>
-                              </div>
-                              <div class="col-5">
+                              </div> 
+                              <div class="   ">
                                  <a href="/bookTour/direct/{{object.slug}}" class="btn btn_btn btn-sm">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
@@ -206,13 +206,13 @@
                         </div>
                         <div class="container-fluid mb-3">
                            <div class="row">
-                              <h5 style="color: #1e90ff;" class="pl-3">Preferential prices when paying online</h5>
+                              <h5 style="color: #1e90ff;" class="">Paying online</h5>
                            </div>
-                           <div class="row">
-                              <div class="col-6 col-sm-5 col-lg-3 col-xl-5 contain__bookNow">
-                                 <h4 style="color: #d52020;">Decrease 5%</h4>
+                           <div class="row align-items-center">
+                              <div class="mr-3 ">
+                                 <h4 style="color: #d52020;margin-bottom: 0;">Decrease 5%</h4>
                               </div>
-                              <div class="col-5">
+                              <div class="">
                                  <a href="/bookTour/online/{{object.slug}}" class="btn btn_btn btn-sm">
                                  <i class="fas fa-cart-plus"></i>
                                  Book now
@@ -220,7 +220,7 @@
                               </div>
                            </div>
                         </div>
-                        <div class="mb-3 col-12">
+                        <div class="mb-3 row">
                           
                              <div class="contain__hotTour-infomation-star contain__tourdetails-share">
                       
@@ -230,6 +230,8 @@
                         <a href="" class="ml-1 mr-1"> <i style="color: rgb(0, 162, 255);" class="fab fa-twitter"></i> </a>
                    
                     </div>
+                        </div>
+
                         </div>
                          
                      </div>

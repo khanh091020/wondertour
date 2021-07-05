@@ -74,7 +74,7 @@ a{
 
 .cardd {
   width: 100%;
-  padding: clamp(1.5rem, 20vh, 10rem) 0 0;
+  padding: clamp(1.5rem, 19vh, 10rem) 0 0;
  
   background-size: cover;
   color: white;
