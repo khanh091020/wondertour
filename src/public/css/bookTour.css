@@ -14,6 +14,7 @@
   .resert__a {
     text-decoration: none !important;
     color: #666;
+    /* font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif; */
   }
 
   
@@ -59,6 +60,38 @@
 
 .ourTour-banner label {
   font-size: 1.5rem;
+}
+.outtour__container-ads {
+  padding: 0 1.6rem;
+}
+.contain__pakage-photographer {
+  padding: 1rem;
+  background-color: #e0fffd;
+  border: 1px dashed #00AD7C;
+  border-radius: 5px;
+  position: relative;
+}
+.contain__pakage-photographer h5 {
+  font-size: 1rem;
+}
+.contain__pakage-photographer .btn-light {
+
+}
+.contain__pakage-photographer i {
+  font-size: 3.5rem;
+  padding-bottom: .8rem;
+  color: #ff42d6;
+  border-bottom: 1px solid #999;
+}
+.contain__pakage-photographer-icon {
+  position: absolute;
+    padding: .3rem .5rem;
+    transform: rotate(
+-10deg
+);
+    top: -31px;
+    left: -36px;
+    color: #fff;
 }
 
 @media (max-width:1204px) {
@@ -153,7 +186,7 @@
 
 .container__tour-content {
   display: flex;
-  margin: 3rem 0;
+  margin: 1.8rem 0 3rem 0;
   padding: 0 1rem;
   justify-content: space-between !important;
   align-items: center;
@@ -498,6 +531,7 @@ overflow-y: scroll;
 .contain__main-right {
   background-color: rgba(255,255,255,0.8);
 }
+
 
 @media (max-width : 901px) {
   #tourDetails {
