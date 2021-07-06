@@ -1,6 +1,7 @@
 // open and close filter 
 
 $( document ).ready(function() {
+  AOS.init();
     const currentLocation = location.href;
         const menuItems = document.querySelectorAll('.header__navbar-list-item a');
         for(let i = 0;i<menuItems.length;i++) {
