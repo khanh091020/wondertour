@@ -1010,6 +1010,7 @@ a.footer__policy {
 .contain__counter-happyTravel img,
 .contain__counter-awards img {
 	border-radius: 4px;
+	width: 100%;
 }
 
 

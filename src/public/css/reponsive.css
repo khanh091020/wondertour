@@ -549,6 +549,10 @@
     .photograp__banner h1 {
         font-size: 2.5rem;
     }
+    .contain__discover-include-img img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 350px) {
