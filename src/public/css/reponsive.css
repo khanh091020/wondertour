@@ -596,3 +596,20 @@
         display: none !important;
     }
 }
+
+/* height  */
+@media (max-height: 670px) {
+    .cardd {
+        padding: clamp(1.5rem, 21vh, 10rem) 0 0 !important;
+    }
+  }
+@media (min-height: 740px) {
+    .cardd {
+        padding: clamp(1.5rem, 19vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 800px) {
+    .cardd {
+        padding: clamp(1.5rem, 18vh, 10rem) 0 0 !important;
+    }
+  }

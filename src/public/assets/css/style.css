@@ -8516,7 +8516,7 @@ table.dataTable tbody > tr.selected td.select-checkbox:after, table.dataTable tb
 	-webkit-animation: pulse 2s infinite;
 	animation: pulse 2s infinite;
 	border-radius: 0.25rem;
-    display: none !important;
+    display: none !important    ;
 }
 
 .fixed-button .btn {
