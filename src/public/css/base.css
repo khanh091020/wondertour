@@ -74,7 +74,7 @@ a{
 
 .cardd {
   width: 100%;
-  padding: clamp(1.5rem, 19vh, 10rem) 0 0;
+  padding: clamp(1.5rem, 20vh, 10rem) 0 0;
  
   background-size: cover;
   color: white;
@@ -89,22 +89,22 @@ a{
 }
 
 
-.cardd:hover .cardd-title {
+/* .cardd:hover .cardd-title {
   bottom : 10px;
-}
+} */
 
 .cardd-body {
   padding: 1.5rem;
   background: linear-gradient(
     rgb(0 0 0 / 0),
-    rgb(0 0 0 / 0.55) 25%,
+    rgb(0 0 0 / 0.35) 15%,
     rgb(0 0 0 / 1)
   );
 }
 
 .cardd-body p {
   color: hsl(0deg 50% 100% / 0.8);
-  margin-bottom: 1.3em;
+  margin-bottom: 1.25em;
 }
 
 @media (hover: hover), (prefers-reduced-motion: no-preference) {
@@ -114,8 +114,8 @@ a{
   }
 
   .cardd:hover .cardd-body {
-    transform: translateY(-71px);
-    transition-delay: 400ms;
+    transform: translateY(-6.5%);
+    transition-delay: 300ms;
   }
 
   .cardd-body > *:not(.cardd-title) {
@@ -217,10 +217,10 @@ a{
   background: white;
 }
 .cardd-title {
- bottom: 20px;
+ /* bottom: -20px; */
   position: relative;
   width: max-content;
-  padding-bottom: 4px;
+  /* padding-bottom: 4px; */
 }
 
 
