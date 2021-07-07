@@ -613,3 +613,19 @@
         padding: clamp(1.5rem, 18vh, 10rem) 0 0 !important;
     }
   }
+  @media (min-height: 850px) {
+    .cardd {
+        padding: clamp(1.5rem, 17vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 900px) {
+    .cardd {
+        padding: clamp(1.5rem, 16vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 950px) {
+    .cardd {
+        padding: clamp(1.5rem, 15vh, 10rem) 0 0 !important;
+    }
+  }
+
