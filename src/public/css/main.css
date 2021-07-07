@@ -319,6 +319,7 @@ a.contain__background-image-info-a {
 	margin: 0 1rem;
 	box-shadow: 1px 3px 7px #999;
 	border-radius: 4px;
+	overflow: hidden;
 }
 
 .contain__other-tour-img-link h3 {

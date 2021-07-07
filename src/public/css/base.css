@@ -8,6 +8,60 @@
 .carousel-caption {
   z-index: 0;
 }
+.first__advantage {
+  font-family: Arial, sans-serif;
+  box-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  z-index: 888888888;
+  zoom: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  background: rgba(171, 220, 241, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.first__advantage-contain {
+  background-color: #ebf6fb;
+  position: relative;
+  width: 35%;
+  min-width: 350px;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center  ;
+  animation: fadeInDown .3s ease-in-out;
+}
+.first__advantage-contain h1 {
+  color : #fe4365;
+  font-size: 3rem;
+}
+.first__advantage-contain input {
+  width: 80%;
+  padding: .5rem 1rem;
+  outline: none;
+  border: 1px solid #8d9eaa;
+}
+.first__advantage-contain h3 {
+  color : #8d9eaa;
+}
+.first__advantage-contain h5 {
+  color : #43566a;
+}
+.first__advantage-contain .fa-times{
+  position: absolute;
+  top : 5px;
+  right : 5px;
+  padding : 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.first__advantage-contain .fa-times:hover {
+  color: #be1d1d;
+}
 
 
 .contain__icon__heart-product {

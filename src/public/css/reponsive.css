@@ -82,9 +82,7 @@
         margin-left: 5rem;
     }
 
-    a.contain__background-image-info-a {
-        padding: 0.1rem 0.3rem;
-    }
+ 
 
     .contain__other-tour-img-link img {
         width: 249px;
@@ -363,10 +361,7 @@
 
    
 
-    a.contain__background-image-info-a {
-        padding: 0;
-        margin-bottom: 1rem;
-    }
+  
 
     .contain__hotTour::after {
         right: -1px;
@@ -452,10 +447,7 @@
         padding-top: 506px;
     }
 
-    a.contain__background-image-info-a {
-        padding: 0.2rem;
-    }
-
+   
     .footer__bottom p {
         margin-left: 10px;
     }
@@ -607,6 +599,11 @@
         padding: clamp(1.5rem, 21vh, 10rem) 0 0 !important;
     }
   }
+  @media (max-height: 600px) {
+    .cardd {
+        padding: clamp(1.5rem, 26vh, 10rem) 0 0 !important;
+    }
+  }
 @media (min-height: 740px) {
     .cardd {
         padding: clamp(1.5rem, 19vh, 10rem) 0 0 !important;
@@ -630,6 +627,26 @@
   @media (min-height: 950px) {
     .cardd {
         padding: clamp(1.5rem, 15vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 1000px) {
+    .cardd {
+        padding: clamp(1.5rem, 13vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 1050px) {
+    .cardd {
+        padding: clamp(1.5rem, 12vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 1100px) {
+    .cardd {
+        padding: clamp(1.5rem, 12vh, 10rem) 0 0 !important;
+    }
+  }
+  @media (min-height: 1150px) {
+    .cardd {
+        padding: clamp(1.5rem, 10vh, 10rem) 0 0 !important;
     }
   }
 

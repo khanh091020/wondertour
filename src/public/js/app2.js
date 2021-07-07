@@ -25,6 +25,15 @@ function removeNavOnscroll50() {
     $('.header__navbar-social a').css('color','#fff')
 }
 
+// home 
+
+      // first adv
+   setTimeout(function() {
+      $('.first__advantage').addClass('display__flex')
+   },8000)
+    $('.first__advantage-close').click(function() {
+      $('.first__advantage').removeClass('display__flex')
+    })
 //  book tour 
 
 function openListPhotographer() {
