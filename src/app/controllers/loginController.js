@@ -18,7 +18,7 @@ class loginController {
          
            if(account != null) {
             var token =  jwt.sign({
-                _id : account._id
+                email : account.email
             },'mk');
             req.session.token = token;
             req.session.name = account.lastName;

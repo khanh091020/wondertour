@@ -15,8 +15,6 @@ class loadListTourController {
    
     }
 
-  
-
     show__deleted(req,res,next) {
         model.findDeleted({})
         .then(lists => {

@@ -63,7 +63,7 @@
                         <a href="" class="ml-1 mr-1"> <i style="color: rgb(0, 162, 255);" class="fab fa-twitter"></i> </a>
                    
                     </div>
-            <button href="" class="btn btn-success" data-toggle="modal" data-target="#photographerModal" data-name="{{item.firstName}} {{item.lastName}}" >Request a shoot</button>
+            <button href="" class="btn btn-success" data-toggle="modal" data-target="#photographerModal" data-city="{{this.address}}" data-name="{{item.firstName}} {{item.lastName}}" >Request a shoot</button>
              </div>
            
         
@@ -89,7 +89,7 @@
              <h5>Like : <span class="text-primary">{{item.like}}</span></h5>
            </div>
            <div class="row align-items-center">
-             <h5>Home town : <span class="text-primary">{{item.address}}</span></h5>
+             <h5>Work in : <span class="text-primary">{{item.address}}</span></h5>
            </div>
            <div class="row align-items-center">
              <h5>Language speak : <span class="text-primary">{{item.language}}</span></h5>
@@ -153,16 +153,7 @@
                   <label for="exampleFormControlInput1">Enter date</label>
                   <input required type="date" class="form-control" id="exampleFormControlInput1">
                </div>
-               <div class="form-group">
-                  <label for="exampleFormControlSelect1">Choose city</label>
-                  <select class="form-control" id="">
-                     <option>Ha noi</option>
-                     <option>Hue</option>
-                     <option>Da Nang</option>
-                     <option>Quang Nam</option>
-                     <option>Ho Chi Minh city</option>
-                  </select>
-               </div>
+              
                
                <div class="form-group">
                   <label for="exampleFormControlTextarea1">Tell us more about your photoshoot *

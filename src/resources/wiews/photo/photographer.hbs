@@ -110,10 +110,11 @@ Explore the best photo spots and learn how to make the most out of your smartpho
                                         <p>ID : <span>{{this.id}}</span></p>
                                         <p>Name : <span>{{this.lastName}}</span></p>
                                         <p>Age : <span>{{this.age}}</span></p>
+                                        <p>Work in : <span>{{this.address}}</span></p>
                                         <p>Language : <span>{{this.language}}</span></p>
                                     </div> 
                                 <div class="photographer__contain-btn">
-                                    <button  data-toggle="modal" data-target="#photographerModal" data-name="{{this.firstName}} {{this.lastName}}" class="btn btn-success">
+                                    <button  data-toggle="modal" data-target="#photographerModal" data-city="{{this.address }}" data-name="{{this.firstName}} {{this.lastName}}" class="btn btn-success">
                                         Request to book {{this.lastName}}
                                     </button>
                                    
@@ -242,16 +243,7 @@ Explore the best photo spots and learn how to make the most out of your smartpho
                   <label for="exampleFormControlInput1">Enter date</label>
                   <input required type="date" class="form-control" id="exampleFormControlInput1">
                </div>
-               <div class="form-group">
-                  <label for="exampleFormControlSelect1">Choose city</label>
-                  <select class="form-control" id="">
-                     <option>Ha noi</option>
-                     <option>Hue</option>
-                     <option>Da Nang</option>
-                     <option>Quang Nam</option>
-                     <option>Ho Chi Minh city</option>
-                  </select>
-               </div>
+              
                
                <div class="form-group">
                   <label for="exampleFormControlTextarea1">Tell us more about your photoshoot *
