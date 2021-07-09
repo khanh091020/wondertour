@@ -184,20 +184,20 @@
                         <div class="row ">
                           <div class="col-10">
                         <label for="sel1">Adults number</label>
-                           <select class="form-control" name="adult">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
+                           <select class="form-control" name="numberAdult" id="numberAdult">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
                            </select>
                                   </div>
-                           <div class="col-2" style="padding: 0;">
+                           <div class="col-2" style="padding: 0;" id="totalPriceAdult">
                               ${{tour.price}}
                            </div>
                       
@@ -205,22 +205,23 @@
                         
                         <div class="row">
                             <div class="col-10">
-                        <label for="sel1">Children number</label>
-                           <select class="form-control" name="adult">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                              <option>6</option>
-                              <option>7</option>
-                              <option>8</option>
-                              <option>9</option>
-                              <option>10</option>
+                        <label for="sel1">Children number (< 12 ages free 20%)</label>
+                           <select class="form-control" name="numberChildren" id="numberChildren">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
                            </select>
                                   </div>
-                           <div class="col-2" style="padding: 0;">
-                              ${{tour.price}}
+                           <div class="col-2" style="padding: 0;" id="totalPriceChildren">
+                              ${{bookTour__childrenPrice tour.price}}
+                              <input type="hidden" id="onePrice" value="{{tour.price}}">
                            </div>
                           </div>
 
@@ -228,7 +229,7 @@
                        <div class="col-sm-9">
                           <b><h5>Total</h5></b>
                        </div>
-                       <div class="col-sm-3"><b><h5>${{tour.price}}</h5></b></div>
+                       <div class="col-sm-3"><b><h5 id="totalPrice">${{bookTour__totalFisrt tour.price}}</h5></b></div>
                     </div>
                     <a href="">Use a coupon, credit, or promotion code</a>
                     <p class="">Taxes and Fees due at the property are based on current exchange rates, and are payable in local currency.</p>
@@ -266,7 +267,7 @@
       <script src="/js/app2.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
-           
+          
       </script>
    </body>
 </html>

@@ -1,7 +1,26 @@
 // open and close filter 
 
 $( document ).ready(function() {
-  AOS.init();
+  AOS.init({
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+    
+  
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: true, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+  });
     const currentLocation = location.href;
         const menuItems = document.querySelectorAll('.header__navbar-list-item a');
         for(let i = 0;i<menuItems.length;i++) {
@@ -44,6 +63,29 @@ function openListPhotographer() {
  }
  function cancelSingerTour() {
     $('#checkBoxSingerTour').prop('checked',false)
+ }
+      // booktour total price 
+ var totalPriceAdult = $('#totalPriceAdult')
+ var totalPriceChildren = $('#totalPriceChildren')
+ var onePrice = $('#onePrice')
+ var totalPrice = $('#totalPrice')
+
+ $('#numberAdult').change(function() {
+     totalPriceAdult.html('$' + $(this).val()*onePrice.val());  
+     totalPrice.html('$' + (getNumberFromString(totalPriceAdult.text())+getNumberFromString(totalPriceChildren.text())));
+ })
+
+//  close book tour 
+
+ $('#numberChildren').change(function() {
+     totalPriceChildren.html('$' + $(this).val() * (onePrice.val()-(onePrice.val()*20/100)));   
+     totalPrice.html('$' + (getNumberFromString(totalPriceAdult.text())+getNumberFromString(totalPriceChildren.text())));
+ })
+
+ function getNumberFromString(text) {
+     var number = text.match(/\d/g);
+     number = number.join("");
+     return parseFloat(number)
  }
 
  // book photographer
