@@ -8,7 +8,7 @@ class commentController{
     create(req,res,next) {
       
     var token = req.session.token;
-    console.log(token)
+   
     if(!token) {
       return res.json({
         link : '/login.html'

@@ -46,13 +46,7 @@ function removeNavOnscroll50() {
 
 // home 
 
-      // first adv
-   setTimeout(function() {
-      $('.first__advantage').addClass('display__flex')
-   },8000)
-    $('.first__advantage-close').click(function() {
-      $('.first__advantage').removeClass('display__flex')
-    })
+  
 //  book tour 
 
 function openListPhotographer() {
@@ -102,6 +96,7 @@ function openListPhotographer() {
    }) 
 
 $('#showSuccessToast').click(function() {
+  $('.photo__cus-phone').html('Our staff will call your phome number <b>'+$("#photo__cus-phone-input").val()+'</b> to confirm. Thank you !')
    $(".toast").toast('show');
 }) 
 

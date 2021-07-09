@@ -27,7 +27,13 @@
      <div id="loading">
         <img src="/image/load.gif" alt="">
     </div>
+     <div class="first__advantage">
+       
+    </div>
       {{> header}}
+
+ 
+
          <div class="container">
            <h1 class="pl-2 pt-5 pb-5 bookTour__title">Secure booking — only takes 2 minutes!</h1>
               <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -129,7 +135,7 @@
                                 <li>You'll be asked to pay the following charges at the property</li>
                              </ul>
                              <p>By selecting to complete this booking I acknowledge that I have read and accept the Rules & Restrictions, Terms of Use, Privacy Policy.</p>
-                             <a href="" class=" mt-3 btn btn-background-slide">Complete booking</a>
+                             <a href="" class=" mt-3 btn btn-background-slide" id="btn__completeBooking">Complete booking</a>
                        </div>
                 </div>
               </div>
@@ -267,7 +273,10 @@
       <script src="/js/app2.js"></script>
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       <script>
-          
+          $('#btn__completeBooking').click(function(e) {
+             e.preventDefault();
+             $('.first__advantage').addClass('display__flex')
+          })
       </script>
    </body>
 </html>
