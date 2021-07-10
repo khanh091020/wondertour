@@ -49,26 +49,56 @@ function removeNavOnscroll50() {
   
 //  book tour 
 
-function openListPhotographer() {
-    $('.displayListPhotographer').toggleClass('display__block')
- }
- function changeSingerTour() {
-    $('#checkBoxSingerTour').prop('checked','checked')
- }
- function cancelSingerTour() {
-    $('#checkBoxSingerTour').prop('checked',false)
- }
+
       // booktour total price 
  var totalPriceAdult = $('#totalPriceAdult')
  var totalPriceChildren = $('#totalPriceChildren')
  var onePrice = $('#onePrice')
  var totalPrice = $('#totalPrice')
 
+ function openListPhotographer() {
+  $('.displayListPhotographer').toggleClass('display__block')
+}
+function changeSingerTour() {
+     totalPrice.html('$' + (getNumberFromString(totalPrice.text())+150));
+     $('#checkBoxSingerTour').prop('checked','checked')
+}
+function cancelSingerTour() {
+  totalPrice.html('$' + (getNumberFromString(totalPrice.text()) - 150));
+  $('#checkBoxSingerTour').prop('checked',false)
+}
+
  $('#numberAdult').change(function() {
      totalPriceAdult.html('$' + $(this).val()*onePrice.val());  
      totalPrice.html('$' + (getNumberFromString(totalPriceAdult.text())+getNumberFromString(totalPriceChildren.text())));
  })
+ 
+ $('.bookTour__success-close').click(function(){
+  $('.first__advantage').removeClass('display__flex')
+})
+$('#btn__completeBooking').click(function(e) {
+   e.preventDefault();
+   if($('#checkBoxSingerTour').is(':checked')) {
+      $('.bill__singer').html('yes')
+      $('.bill__singerTour').addClass('display__flex')
+   }
+   else {
+    $('.bill__singerTour').removeClass('display__flex')
+   }
+   if($('#check__photographer').is(':checked')) {
+      $('.bill__photo').html($('#photographer__value').val())
+   }
 
+  
+
+   $('.bill__adult-number').html($('#numberAdult').val())
+   $('.bill__adult-price').html($('#totalPriceAdult').text())
+   $('.bill__children-number').html($('#numberChildren').val())
+   $('.bill__children-price').html($('#totalPriceChildren').text())
+   $('.bill__total-price').html($('#totalPrice').text())
+
+   $('.first__advantage').addClass('display__flex')
+})
 //  close book tour 
 
  $('#numberChildren').change(function() {

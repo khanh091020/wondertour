@@ -1015,4 +1015,51 @@ overflow-y: scroll;
     color: #3ebdb7;
   }
 
+  .bookTour__success {
+    background-color:#ebf6fb;
+    padding: 1rem;
+    border-radius: 6px;
+    border-top: 5px solid var(--primary_color);
+    max-width: 40%;
+    min-width:350px;
+    position: relative;
+  }
+  .bookTour__success-icon i {
+    font-size : 3rem;
+    color:var(--primary_color);
+    text-align: center;
+  }
+  .code__tour-order {
+    padding: .5rem 1rem;
+    border: 1px dashed var(--primary_color);
+    max-width: 230px;
+    color: var(--primary_color);
+  }
+  .bookTour__success__header {
+    padding-bottom: 1rem;
+    border-bottom: 1.5px solid rgb(219, 214, 214);
+  }
+  .bookTour__success-body {
+    padding-bottom : 1rem;
+    border-bottom: 1.5px solid rgb(219, 214, 214);
+  }
+  .book__success-foot{
+    padding : .5rem 0;
+    border-bottom: 1.5px solid rgb(219, 214, 214);
+  }
+  .bookTour__success-close {
+    padding: .5rem;
+    font-size:1.1rem;
+   position: absolute;
+   top: 10px;
+   right : 10px;
+   cursor: pointer;
+  }
+  .bookTour__success-close:hover {
+    color: red;
+  }
+  .bill__singerTour {
+    display: none
+  }
+
   

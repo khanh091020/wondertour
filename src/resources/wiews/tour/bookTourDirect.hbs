@@ -27,6 +27,66 @@
  <div id="loading">
         <img src="/image/load.gif" alt="">
     </div>
+    <div class="first__advantage">
+         <div class="bookTour__success">
+            <i class="fas fa-times bookTour__success-close"></i>
+              <div class="bookTour__success-icon text-center">
+                 <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="text-center bookTour__success__header">
+                  <h4 class="mt-2"><b>Successfully submitted tour request</b></h4>
+              <div class="d-flex justify-content-center"> <h5 class="code__tour-order">Code order : T65774</h5></div>
+               <p class="text-muted">Wonder tour will call you in the room in 30 minutes to confirm and payment instructions</p>
+              </div>
+            
+              <div>
+                <h5 class="mt-4"><b>{{tour.name}}</b></h5>
+                <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="d-flex align-items-center bookTour__success-body">
+                     <div class="col-7" style="padding-left: 0;">
+                         <p>Start date : <b>{{formatDateDetails tour.startDay}}</b></p>
+                         <p>Start place : <b>{{tour.startPlace}}</b></p>
+                         <p>Time long : <b>{{tour.time}}</b></p>
+                         <p>Photographer : <b class="bill__photo">none</b></p>
+                         <p>Singer tour : <b class="bill__singer">none</b></p>
+                     </div>
+                     <div class="col-5">
+                        <img src="/{{tour.img}}" class="w-100" alt="">
+                     </div>
+                    </div>   
+                    <div class="book__success-foot">
+                       <div class="d-flex justify-content-between">
+                         <p>Adult number : <b class="bill__adult-number">5</b></p>
+                         <p><b class="bill__adult-price">50$</b></p>
+                       </div>
+                       <div class="d-flex justify-content-between">
+                           <p>Children number : <b class="bill__children-number">5</b></p>
+                           <p><b class="bill__children-price">50$</b></p>
+                       </div>
+                        <div class="justify-content-between bill__singerTour">
+                          <p class="">Singer tour : +150$</p>
+                           <p><b>$150</b></p>
+                       </div>
+                    </div>           
+                  <div class="mt-2">
+                     <p><b>Total</b></p>
+                     <div class="d-flex align-items-center justify-content-between pb-2" style="border-bottom: 1px solid rgb(219, 214, 214);">
+                         <p class="text-muted">Including taxes, fees, VAT</p>
+                         <p><b class="bill__total-price">
+                                55$
+                         </b></p>
+                     </div>
+                  </div>
+              </div>
+            <div class="text-center"><a href="/account/my-tour" class="mt-3 btn btn-primary">Go to your tour order</a></div>
+         </div>
+    </div>
       {{> header}}
          <div class="container">
            <h1 class="pl-2 pt-5 pb-5 bookTour__title">Secure booking — only takes 2 minutes!</h1>
@@ -101,13 +161,13 @@
                                 <li>You'll be asked to pay the following charges at the property</li>
                              </ul>
                              <p>By selecting to complete this booking I acknowledge that I have read and accept the Rules & Restrictions, Terms of Use, Privacy Policy.</p>
-                             <a href="" class=" mt-3 btn btn-background-slide">Complete booking</a>
+                             <a href="" class=" mt-3 btn btn-background-slide" id="btn__completeBooking">Complete booking</a>
                        </div>
                        
                 </div>
               </div>
               <div class="col-md-5">
-                     <div class="container-fluid book__tour__contain-left">
+                     <div class="container-fluid book__tour__contain-left" style="margin-top:0 ;">
                         <div class="col-12 book__tour-img" >
                            <img src="/{{tour.img}}" alt="">
                         </div>
@@ -124,14 +184,14 @@
                         <h4 class="text-danger">Special requirements</h4>
                         
                          <div class="row align-items-center pl-3">
-                      <input class="checkbox" type="checkbox" name="receive" onchange="openListPhotographer()">
+                      <input class="checkbox" id="check__photographer" type="checkbox" name="receive" onchange="openListPhotographer()">
                        <label style="margin: 0;" for="">Private photographer</label>
                          </div>
                          <div class="displayListPhotographer" class="ml-1">
                            <p >Please choose 
-                        <select name="" id="" class="ml-3" style="border:none;color: #1e90ff;outline: var(--primary_color);">
+                        <select name="photographer__value" id="photographer__value" class="ml-3" style="border:none;color: #1e90ff;outline: var(--primary_color);">
                            {{#each photographers}}
-                           <option value=""> id : {{this.id}}/name : {{this.firstName}} {{this.lastName}}</option>
+                           <option value="id : {{this.id}}/name : {{this.firstName}} {{this.lastName}}"> id : {{this.id}}/name : {{this.firstName}} {{this.lastName}}</option>
                            {{/each}}
                          </select>  
                          </p>
@@ -139,7 +199,7 @@
                          </div>
                          <div class="row align-items-center pl-3">
                      <a href="#" data-toggle="modal" data-target="#singerTourModal"> <input id="checkBoxSingerTour" class="checkbox" type="checkbox" name="receive"></a>
-                       <label style="margin: 0;" for="">Require singer tour</label>
+                       <label style="margin: 0;" for="">Require singer tour (+150$)</label>
                          </div>
                        </div>
 
@@ -215,7 +275,7 @@
             </button>
             </div>
             <div class="modal-body">
-              <p class="text-warning">Booking a single tour incurs an additional 40% of the tour price</p>
+              <p class="text-warning">Booking a single tour incurs an additional 150$ of the tour price</p>
               <p class="text-warning">You will have your own private tour guide and some special services</p>
             </div>
             <div class="modal-footer">
