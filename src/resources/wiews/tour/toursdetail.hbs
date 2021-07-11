@@ -394,6 +394,7 @@
                         alert('You need login to comment this post !')
                         window.location.href = data.link
                      }
+                     console.log(data)
                      $('#not__have-comment').remove()
                    $('#countComment').html("Unread comments("+(data.count+1)+")");
                     $( "#contain__comment" ).prepend(` <div class="card p-3 mt-2">
