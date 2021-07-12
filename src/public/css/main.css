@@ -301,6 +301,7 @@ a.contain__background-image-info-a {
 	justify-content: center;
 	top: 11%;
 	flex-wrap: wrap;
+	overflow-y: hidden;
 }
 
 .contain__other-tour-img-link {
