@@ -118,9 +118,7 @@ function checkontop () {
 // loading webside
 
 var preloader = document.getElementById("loading");
-document.addEventListener('DOMContentLoaded', (event) => {
-  loadingFunction()
-})
+$( document ).ready(loadingFunction);
 function loadingFunction(){
   preloader.style.display = 'none';
 };
