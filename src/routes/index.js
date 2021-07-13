@@ -13,7 +13,7 @@ const photographers = require('./photographers');
 const sortMidderwares = require('../app/midderwares/checkLoginMiderwares');
 const account = require('./account')
 const affiliatService = require('./affiliatService')
-
+const order = require('./order')
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -39,6 +39,7 @@ function route(app) {
     app.use('/photographer',photographers);
     app.use('/account',account)
     app.use('/affiliate-service',affiliatService)
+    app.use('/api/order',order)
     // admin link
     app.use('/admin/index',indexadmin);
     app.use('/admin/createTour',createTour);

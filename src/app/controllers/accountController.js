@@ -3,6 +3,8 @@ const account = require('../controllers/models/account')
 const {mutipleMongooseTobject} = require('../../util/mongoose')
 const {mongooseToObject} = require('../../util/mongoose')
 const jsonwebtoken = require('jsonwebtoken')
+const order = require('./models/order')
+
 class accountControlller {
     showAccountDetail(req,res,next) {
        if(req.session.token)
@@ -29,5 +31,15 @@ class accountControlller {
         })
         .catch(next)
     }
+    
+    showOrders(req,res,next) {
+           order.find({email : req.email}).populate('tour',['name','img','price'])
+           .then(orders => {
+               res.render('partials/accountCommon',{
+                   orders
+               })
+           })
+           .catch(next)
+     }
 }
 module.exports = new accountControlller
