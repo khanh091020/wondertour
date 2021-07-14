@@ -18,35 +18,42 @@
         .mobie__socials {
             display: none !important;
         }
-    .bookTour__icon {
-        color: rgb(204, 204, 39);
-    }
+        .bookTour__icon {
+            color: rgb(204, 204, 39);
+        }
 
-    .slider__img__contain div{
-         height: 100%;
-    }
+        .slider__img__contain div{
+            height: 100%;
+        }
 
-    .slider__img__contain {
-        height: 100%;
-    }
-    .tour__items  {
-        background-color: #fff;
-    }
-    .page-link:focus {
-	outline-style: none;
-	box-shadow: none;
-	border-color: transparent; 
-     }
-      .contain__icon__heart-product {
-       top: 1.3rem;
-       left: 1.3rem;
-   }
-    @media(max-width:600px) {
+        .slider__img__contain {
+            height: 100%;
+        }
+        .tour__items  {
+            background-color: #fff;
+        }
+        .page-link:focus {
+        outline-style: none;
+        box-shadow: none;
+        border-color: transparent; 
+        }
         .contain__icon__heart-product {
-       top: 1rem;
-       left: 1rem;
-   }
-    }   
+        top: 1.3rem;
+        left: 1.3rem;
+        }
+        @media(max-width:600px) {
+            .contain__icon__heart-product {
+        top: 1rem;
+         left: 1rem;
+         }
+        }   
+        .fa-check {
+            color: green
+        }
+        .warning__cancel-tour {
+            padding-bottom: .5rem;
+        border-bottom: .5px solid rgba(0,0,0,.1);
+        }
       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;background-color: #f1f1f1;" onload="loadingFunction();">
@@ -135,6 +142,7 @@
         <th>Photographer</th>
         <th>Singer tour</th>
         <th>Total price</th>
+        <th>Status</th>
          <th></th>
          <th></th>
       </tr>
@@ -151,8 +159,11 @@
             <td>{{this.photographer}}</td>
             <td>{{this.singerTour}}</td>
             <td>{{this.totalPrice}}$</td>
+            <td class='statusOrder'>{{this.status}}</td>
             <td><a href="/tours/{{this.tourID.slug}}" class="btn btn-success btn-sm">Details</a></td>
-            <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+            <td>
+                {{{checkCancelOrder this.status this._id}}}
+            </td>
             </tr>
           {{else}}
           <h1 class="mt-5">You don't have order tour . <a href="/outTour.html">Book tour now !</a> </h1>
@@ -310,15 +321,48 @@
             </div>
             </div>
       {{!-- close modal  --}}
+
+       {{!-- modal cancel tour  --}}
+         <div class="modal " tabindex="-1" id="cancelTourModal" >
+            <div class="modal-dialog " style="max-width: 600px;top:50%;transform: translateY(-50%);"> 
+                <div class="modal-content">
+               
+                <div class="modal-body">
+                  <h4 class="text-danger warning__cancel-tour">Are you sure you want to cancel this tour? The amount of your refund will be calculated according to our terms!</h4>
+                      <p><i class="fas fa-check"></i> Transfer to other tourist routes 20 days before departure date: No cost.</p>
+                       <p><i class="fas fa-check"></i> If canceling or changing to other tours immediately after registration arrives 15-19 days before departure: Tour cancellation cost: 50% of tour deposit.</p>
+                       <p><i class="fas fa-check"></i> If canceling or changing to other tours from 12-14 days before departure date: Tour cancellation cost: 100% tour deposit.</p>
+                       <p><i class="fas fa-check"></i> If the tour is canceled within 08-11 days before the departure date: Tour cancellation cost: 50% of the tour price.</p>
+                       <p><i class="fas fa-check"></i> If the tour is canceled within 05-07 days before the departure date: Tour cancellation cost: 70% of the tour price.</p>
+                        <p><i class="fas fa-check"></i> If the tour is canceled within 02-04 days before the departure date: Tour cancellation cost: 90% of the tour fare.</p> 
+                        <p><i class="fas fa-check"></i> If the tour is canceled within 1 day before the departure date: Tour cancellation cost: 100% of the tour fare.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="cancelTourFunc()">Confirm</button>
+                </div>
+                </div>
+            </div>
+            </div>
+      {{!-- close modal  --}}
       {{> footer}}
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
       <script type="text/javascript" src="js/lightslider.js"></script>
       <script src="/js/app.js"></script>
       <script src="/js/app2.js"></script>
       <script>
          AOS.init();
+          var listStatus = $('.statusOrder');
+          for(let i = 0; i < listStatus.length;i++) {
+             if(listStatus[i].textContent === 'paid')           
+                 listStatus[i].style.color = 'green'
+             else if(listStatus[i].textContent === 'unpaid')           
+                 listStatus[i].style.color = 'orange'
+            else        
+                 listStatus[i].style.color = 'red'
+          }
          if(location.href.includes('details'))
             {
             $('#firstNavAccount').css({'text-decoration':'line-through','color':'#01b3a7'});
@@ -345,6 +389,18 @@
              list__account__nav.css({'text-decoration':'none','color':'#565656'})
              $(this).css({'text-decoration':'line-through','color':'#01b3a7'});
          })
+
+         var idOrder;
+         $('#cancelTourModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+             idOrder = button.data('id') 
+         })
+         function cancelTourFunc() {
+             $.post('/api/order?_method=PUT',{id : idOrder},function (res) {
+                 if(res.message === 'canceled')
+                    window.location.href = res.link
+             });
+         }
       </script>
    </body>
 </html>

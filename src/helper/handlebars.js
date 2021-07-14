@@ -58,6 +58,12 @@ module.exports = {
         },
         bookTour__totalFisrt(price) {
           return (price - (price*20)/100) + price;
+        },
+        checkCancelOrder(status,id)
+        {
+          if(status !== 'canceled')
+          return `<a href=""  class="btn btn-danger btn-sm" data-id="${id}"  data-toggle="modal" data-target="#cancelTourModal">Cancel</a>`
+          return ''
         }
 
         
