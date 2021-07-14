@@ -13,7 +13,7 @@ class signUpController {
         var password = req.body.password;
         var passwordRepeat = req.body.passwordRepeat;
         
-         account.findOne({email : new RegExp(`^${email}$`, 'i')})
+         account.findOne({email : new RegExp(email, 'i')})
        .then(accountt => {
            if(accountt != null)
            {

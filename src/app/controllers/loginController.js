@@ -12,7 +12,7 @@ class loginController {
        const email = req.body.email;
        const password = req.body.password;
          
-       account.findOne({email : new RegExp(`^${email}$`, 'i') , password : password
+       account.findOne({email : new RegExp(email, 'i') , password : password
     })
        .then(account => {
          

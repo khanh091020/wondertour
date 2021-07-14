@@ -9,8 +9,7 @@ class accountControlller {
     showAccountDetail(req,res,next) {
        if(req.session.token)
        {
-            var email = jsonwebtoken.verify(req.session.token,'mk')
-           account.findOne({email : new RegExp(email.email, 'i')})
+           account.findOne({email : new RegExp(req.email, 'i')})
          .then(account => {
              res.render('partials/accountCommon',
              {
@@ -47,5 +46,8 @@ class accountControlller {
            })
            .catch(next)
      }
+     
+     // post
+     // add love tour 
 }
 module.exports = new accountControlller
