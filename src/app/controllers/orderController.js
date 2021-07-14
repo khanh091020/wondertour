@@ -3,19 +3,25 @@ const order = require('./models/order')
 class orderController {
   // post 
   // create order object
-  createOrder(req, res,next) {
-    const {userName,phone,userEmail,tourDate,tourID,
-        photographer,singerTour,adultNumber,childrenNumber,totalPrice}  = req.body
-    if(!userName || !phone) return res.status(400).json({
+  async createOrder(req, res,next) {
+    const {userName,phone,tourDate,tourID,
+        photographer,check__photographer,singerTour,adultNumber,chilrenNumber,totalPrice}  = req.body
+       
+    if(!userName || !phone) return res.json({
         success: false,
-        message: 'Please enter enough information'
+        message: 'Please complete all information !'
     })
-
-    order.create(req.body)
-    .then()
-    .catch(err => {
-        return res.status(400).json({success:false, message : 'Internal server error'})
-    })
+    req.body.userEmail = req.email
+    req.body.singerTour = singerTour ? true : false
+    req.body.photographer = check__photographer ? photographer : 'none'
+    delete req.body.check__photographer
+    try {
+      await  order.create(req.body)
+      res.send('success')
+    } catch (error) {
+      res.json({success: false, message: 'Error creating' ,error})
+    }
+    
   }
   
 }

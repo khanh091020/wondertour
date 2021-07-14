@@ -132,6 +132,8 @@
         <th>Start day</th>
         <th>Book time</th>
         <th>Start place</th>
+        <th>Photographer</th>
+        <th>Singer tour</th>
         <th>Total price</th>
          <th></th>
          <th></th>
@@ -139,20 +141,22 @@
     </thead>
     <tbody>
       
-          {{!-- {{#each listAll}} --}}
-          <tr>
-        <td><img style="width: 150px;object-fit: cover;" src="/image/bana-hills.jpg" alt=""></td>
-        <td>ba ba hill good</td>
-        <td>09/10/2111</td>
-        <td>8:5:3 01/01/2111</td>
-        <td>Da nang</td>
-        <td>10000$</td>
-        <td><a href="/tours/{{this.slug}}" class="btn btn-success btn-sm">Details</a></td>
-        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
-        </tr>
-          {{!-- {{else}}
-        
-          {{/each}} --}}
+          {{#each orders}}
+            <tr>
+            <td><img style="width: 150px;object-fit: cover;" src="/{{this.tourID.img}}" alt=""></td>
+            <td>{{this.tourID.name}}</td>
+            <td>{{this.tourDate}}</td>
+            <td>{{formatDateDetails this.createdAt}}</td>
+            <td>{{this.tourID.startPlace}}</td>
+            <td>{{this.photographer}}</td>
+            <td>{{this.singerTour}}</td>
+            <td>{{this.totalPrice}}$</td>
+            <td><a href="/tours/{{this.tourID.slug}}" class="btn btn-success btn-sm">Details</a></td>
+            <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+            </tr>
+          {{else}}
+          <h1 class="mt-5">You don't have order tour . <a href="/outTour.html">Book tour now !</a> </h1>
+          {{/each}}
       
     </tbody>
   </table>

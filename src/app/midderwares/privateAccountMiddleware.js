@@ -2,10 +2,7 @@ const jwt = require('jsonwebtoken')
 
 const checkToken = (req, res, next) => {
    const token = req.session.token
-   if(!token) return res.json({
-     success: false,
-     message: 'Please login to order this tour !'
-   })
+   if(!token) return res.redirect('/login.html')
 
   try {
     const decaded = jwt.verify(token,'mk')

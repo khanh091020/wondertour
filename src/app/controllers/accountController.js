@@ -33,10 +33,16 @@ class accountControlller {
     }
     
     showOrders(req,res,next) {
-           order.find({email : req.email}).populate('tour',['name','img','price'])
+        if(!req.email)
+        {
+            res.json({
+                success : false, message : 'Please login to order this tour !'
+            })
+        }
+           order.find({userEmail : req.email}).populate('tourID',['name','img','slug','startPlace']).sort({createdAt : 'desc'})
            .then(orders => {
                res.render('partials/accountCommon',{
-                   orders
+                   orders : mutipleMongooseTobject(orders)
                })
            })
            .catch(next)

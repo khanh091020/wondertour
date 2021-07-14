@@ -14,6 +14,8 @@ const sortMidderwares = require('../app/midderwares/checkLoginMiderwares');
 const account = require('./account')
 const affiliatService = require('./affiliatService')
 const order = require('./order')
+const priviteOrderMiddleware = require('../app/midderwares/privateOrderMiddleware')
+const privateAccountMiddleware = require('../app/midderwares/privateAccountMiddleware')
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -37,9 +39,9 @@ function route(app) {
     app.use('/create-comment',comment);
     app.use('/tours',tourDetails);
     app.use('/photographer',photographers);
-    app.use('/account',account)
+    app.use('/account',privateAccountMiddleware,account)
     app.use('/affiliate-service',affiliatService)
-    app.use('/api/order',order)
+    app.use('/api/order',priviteOrderMiddleware,order)
     // admin link
     app.use('/admin/index',indexadmin);
     app.use('/admin/createTour',createTour);

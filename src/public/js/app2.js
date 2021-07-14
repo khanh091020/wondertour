@@ -42,10 +42,12 @@ function removeNavOnscroll50() {
 }
 function changeSingerTour() {
      totalPrice.html('$' + (getNumberFromString(totalPrice.text())+150));
+  
      $('#checkBoxSingerTour').prop('checked','checked')
 }
 function cancelSingerTour() {
   totalPrice.html('$' + (getNumberFromString(totalPrice.text()) - 150));
+ 
   $('#checkBoxSingerTour').prop('checked',false)
 }
 
@@ -57,28 +59,37 @@ function cancelSingerTour() {
  $('.bookTour__success-close').click(function(){
   $('.first__advantage').removeClass('display__flex')
 })
+ 
 $('#btn__completeBooking').click(function(e) {
    e.preventDefault();
-   if($('#checkBoxSingerTour').is(':checked')) {
-      $('.bill__singer').html('yes')
-      $('.bill__singerTour').addClass('display__flex')
-   }
-   else {
-    $('.bill__singerTour').removeClass('display__flex')
-   }
-   if($('#check__photographer').is(':checked')) {
-      $('.bill__photo').html($('#photographer__value').val())
-   }
+   $("input[name='totalPrice']").val(getNumberFromString($('#totalPrice').text()));
+   console.log($("input[name='totalPrice']"))
+   $.post( '/api/order', $('#postDataOrder').serialize(), function(res){
+      if(res.success === false) {
+        alert(res.message)
+        return;
+      }
+      
+     if($('#checkBoxSingerTour').is(':checked')) {
+          $('.bill__singer').html('yes')
+          $('.bill__singerTour').addClass('display__flex')
+      }
+      else {
+        $('.bill__singerTour').removeClass('display__flex')
+      }
+      if($('#check__photographer').is(':checked')) {
+          $('.bill__photo').html($('#photographer__value').val())
+      }
 
+      $('.bill__adult-number').html($('#numberAdult').val())
+      $('.bill__adult-price').html($('#totalPriceAdult').text())
+      $('.bill__children-number').html($('#numberChildren').val())
+      $('.bill__children-price').html($('#totalPriceChildren').text())
+      $('.bill__total-price').html($('#totalPrice').text())
+
+      $('.first__advantage').addClass('display__flex')
+});
   
-
-   $('.bill__adult-number').html($('#numberAdult').val())
-   $('.bill__adult-price').html($('#totalPriceAdult').text())
-   $('.bill__children-number').html($('#numberChildren').val())
-   $('.bill__children-price').html($('#totalPriceChildren').text())
-   $('.bill__total-price').html($('#totalPrice').text())
-
-   $('.first__advantage').addClass('display__flex')
 })
 //  close book tour 
 
@@ -223,4 +234,8 @@ particlesJS("particles-js", {
     },
     "retina_detect": true
   });
+
+ 
+   
+  
 
