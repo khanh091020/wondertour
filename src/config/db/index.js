@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
       console.log('sucess');
       
    } catch (error) {
-       console.log('failuse');
+       console.log('connect failuse');
    }
 
 }
