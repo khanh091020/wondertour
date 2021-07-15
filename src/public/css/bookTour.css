@@ -485,10 +485,14 @@
 }
 
 .container__left {
-  top: 135px;
+  /* top: 135px;
   position: fixed;
   
-right: 0;
+right: 0; */
+position: -webkit-sticky;
+position: sticky; 
+top : 20px;
+ max-height : 588px
 }
 
 .sticky {
@@ -507,7 +511,6 @@ overflow-y: scroll;
 
 #menu2 {
   padding: 0;
-  padding-bottom: 1.5rem;
 }
 
 #menu2 .container {
@@ -586,6 +589,9 @@ overflow-y: scroll;
       position: inherit;
       max-width: 100%;
       flex: 1;
+    }
+    .tab-pane {
+      max-height: none !important;
     }
 
     #container__right {
@@ -814,7 +820,7 @@ overflow-y: scroll;
  }
 
 .card {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border: none;
   box-shadow: 5px 6px 6px 2px #e9ecef;
   border-radius: 4px

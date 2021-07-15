@@ -62,6 +62,11 @@
            margin-right: 5px;
            color: red;
         }
+         @media (max-width:1050px) { 
+              #container__left {
+                 max-height: none !important;
+               }
+         }
        </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;">
@@ -108,14 +113,14 @@
                   <!-- Nav tabs -->
                   <ul class="nav nav-tabs">
                      <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#home">Book tour</a>
+                        <a class="nav-link active" data-toggle="tab" href="#home" id="homeBtn">Book tour</a>
                      </li>
                      
                      <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu1">Pakage details</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu1" id="menu1Btn">Pakage details</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#menu2">Comment</a>
+                        <a class="nav-link" data-toggle="tab" href="#menu2" id="menu2Btn">Comment</a>
                      </li>
                   </ul>
                   <!-- Tab panes -->
@@ -235,7 +240,7 @@
                         </div>
                          
                      </div>
-                     <div id="menu1" class="container tab-pane fade pb-5">
+                     <div id="menu1" class="container tab-pane fade pb-2">
                         <br>
                         <h2 class="text-info"><span>Tour price includes</span> <i id="tour__service-include-btn" class="fas fa-angle-up "></i></h2>
                           <div class="container-fluid" id="tour__service-include" style="padding-left: 0;">
@@ -363,7 +368,7 @@
          $('#tour__service-not-include-btn').click(detailsDisplayContent)
          $('#tour__schedule-btn').click(detailsDisplayContent)
          $('#tour__cancel-btn').click(detailsDisplayContent)
-
+         
          function detailsDisplayContent(event) {
             $(this).toggleClass('transform__180')
           var String = event.target.id
@@ -371,7 +376,15 @@
           $("#"+ID).toggleClass('display__none')
          }
 
-         
+         $('#homeBtn').click(function() {
+            $('.container__left').css('max-height','588px')
+         })
+         $('#menu1Btn').click(setContainLeft680)
+         $('#menu2Btn').click(setContainLeft680)
+         function setContainLeft680() {
+             $('.container__left').css('max-height','680px')
+         }
+
         var currentdate = new Date(); 
                 var datetime =currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -398,12 +411,12 @@
                      $('#not__have-comment').remove()
                    $('#countComment').html("Unread comments("+(data.count+1)+")");
                     $( "#contain__comment" ).prepend(` <div class="card p-3 mt-2">
-                                             <div class="d-flex justify-content-between align-items-center">
-                                                <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">`+data.nameAccount+`</small> <small class="font-weight-bold">`+data.comment+`</small></span> </div>
-                                                <small>`+datetime+`</small>
-                                             </div>
-                                             <div class="action d-flex justify-content-between mt-2 align-items-center">
-                                                <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                              <div class="d-flex justify-content-between align-items-center">
+                              <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">`+data.nameAccount+`</small> <small class="font-weight-bold">`+data.comment+`</small></span> </div>
+                                    <small>`+datetime+`</small>
+                                   </div>
+                               <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                   <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
                                                 <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                                              </div>
                                           </div>`);

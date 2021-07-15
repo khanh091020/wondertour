@@ -87,15 +87,15 @@ function myFunction() {
 //  close nav
 
 // tour details fix
- var container__left = document.getElementById("container__left");
- if(container__left != null) {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("container__left").style.top = '60px';
-   }
-   else {
-    document.getElementById("container__left").style.top = '135px';
-   }
- }
+//  var container__left = document.getElementById("container__left");
+//  if(container__left != null) {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     document.getElementById("container__left").style.top = '60px';
+//    }
+//    else {
+//     document.getElementById("container__left").style.top = '135px';
+//    }
+//  }
  /************** */
 
 
