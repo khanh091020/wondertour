@@ -430,7 +430,9 @@
 
 
 @media (max-width: 741px) {
-    
+    .mobie__socials {
+        display: none !important;
+    }
 
     .carousel-caption {
         top : 120px
@@ -495,9 +497,7 @@
  }
 
 @media (max-width: 500px) {
-    .mobie__socials {
-        display: none !important;
-    }
+  
     .contain__discover {
         margin: 5rem 1rem;
     }

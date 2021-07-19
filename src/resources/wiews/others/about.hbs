@@ -34,6 +34,20 @@
                 padding-top: 7rem;
          }
      }
+     .ourTour-banner {
+         justify-content:flex-end;
+         align-items:center;
+         padding-right: 10%;
+         background-attachment:fixed ;
+         margin-top: 3rem;
+     }
+     @media (max-width:500px) {
+         .ourTour-banner {
+             justify-content: center;
+             align-items:center;
+             padding-right:0
+         }
+     }
     </style>
 </head>
 <body style="overflow-x : hidden;margin: 0;">
@@ -48,8 +62,10 @@
 
            {{> header}}
    
+ 
          <div class="container pl-5 pr-5">
-             <div class="row container__title" >
+            
+              <div class="row container__title" >
               <h1 style="color: rgb(209, 149, 19);margin-bottom: 0;margin-right: 1rem;">ABOUT</h1> <h1 style="color: #999;margin-bottom: 0;margin-right: 1rem;">WONDER</h1> <h1 style="color: var(--primary_color);margin-left: 5px;margin-bottom: 0;">PLACE</h1>
              </div>
 
@@ -58,7 +74,7 @@
                   <img src="http://static.ybox.vn/2016/11/28/d3d2e49a-b500-11e6-9219-cac091044fd5.jpg" style="width: 100%;" alt="">
              </div>
                  <div class="col-lg-7">
-                   <h2>Company</h2>
+                  <div class="row"> <h2 class="title__post">Company</h2></div>
                     <h5 style="text-align: justify;">With outstanding reputation and quality, after 16 years of establishment and development, Wonder Place has officially become one of the 16 leading travel companies in Asia.
                           The largest trading system in Vietnam
                            In order to have a strong business growth, Wonder Place has constantly developed a wide transaction system throughout Vietnam and is the travel company with the largest transaction system in Vietnam with more than 800 officers - employees and a series of branches spanning all three domains. Simultaneously with the domestic transaction system, Wonder Place has set up transaction offices in a series of countries such as Thailand, Cambodia, the US, Singapore...
@@ -69,8 +85,8 @@
              </div>
 
                 <div class=" align-items-center">
-                 <div class="row">
-                   <h2>Vision</h2>
+                 <div class="row" data-aos="fade-left">
+                   <h2 class="title__post">Vision</h2>
                     <h5 style="text-align: justify;">Satisfying the value of spiritual life and improving the quality of life of customers is the foundation of core values for Wonder Place. These practical values will always be the driving force for the entire innovation, creation and development of tourism products and services with the best quantity and quality of services.
                                 Wonder Place always aims to become a leading quality and prestigious travel service company in Vietnam and enhance the image position of Vietnam in the international arena.
                                 Developing according to the trend of Integration - Sustainability - Business efficiency associated with indigenous cultural values, community benefits.
@@ -81,9 +97,9 @@
              </div>
              </div>
 
-             <div class="row mb-4">
+             <div class="row mb-4" data-aos="fade-right">
                  <div class="col-lg-5">
-                   <h2>Mission</h2>
+                   <div class="row"><h2 class="title__post">Mission</h2></div>
                     <h5 style="text-align: justify;">Mission: to innovate and develop tourism products and services of good quality to meet the diverse and abundant needs of domestic and international customers. Responsibility: Ensuring the values and benefits of customers as well as satisfying the needs of safety in the tourism service industry when customers use Wonder Place products. Maximize the synergy from the tourism services. main field of activity, contributing to the development of Vietnam's tourism to a new height.
                             We want to bring understanding
                             We want to build solidarity
@@ -102,6 +118,37 @@
 
             
          </div>
+
+                <div class="container-fluid ourTour-banner row" data-aos="fade-up" style="background-image: url(/img/1025.jpeg);">
+                    <form action="">
+                       <div class="about__recieve">
+                         <div class="container">
+                           <div class="row">
+                               <div class="col-2">
+                               <img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-gmail-icon-download-png-and-vector-1.png" alt="">
+                               </div>
+                                <div class="col-10"> <h3>Sign up for bonus</h3></div>
+                           </div>
+                           <div class="mb-2 mt-2">
+                               <p>Full name</p>
+                               <input class="form-control" type="text" name="" placeholder="Enter your name " id="">
+                           </div>
+                            <div class="mb-2">
+                               <p>Email</p>
+                               <input class="form-control" type="text" name="" placeholder="Enter your email " id="">
+                           </div>
+                            <div class="mb-2">
+                               <p>Phone</p>
+                               <input class="form-control" type="text" name="" placeholder="Enter your phone " id="">
+                           </div>
+                            <div class="mt-3 text-right">
+                               <button type="submit" class="btn btn-primary">Register</button>
+                           </div>
+                       </div>
+                   </div>
+                   </form>
+                </div>
+
    
            {{> footer}}
   

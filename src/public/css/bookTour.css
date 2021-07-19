@@ -509,6 +509,8 @@ max-height: 510px;
 overflow-y: scroll;
 }
 
+
+
 #menu2 {
   padding: 0;
 }
@@ -973,8 +975,6 @@ overflow-y: scroll;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-origin: content-box; */
-  /* background-clip: content-box; */
   width: 100%;
   height: 100%;
 }

@@ -1146,15 +1146,51 @@ a.footer__policy {
 
 .container__title {
 	display: flex;
-	justify-content: center;
-	padding: 4rem 0 2rem 0;
-	margin-bottom: 2rem;
+    justify-content: center;
+    padding: 4rem 0 2rem 0;
+    margin-bottom: 2rem;
 }
 
 .container__title h1 {
 	border-bottom: 1px dashed #999;
+	font-size: 3rem;
 }
-
+.title__post {
+	position: relative;
+}
+.title__post::after {
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 90%;
+    border-bottom: 2px solid #53b87b;
+}
+.about__recieve {
+	display: flex;
+	align-items: center;
+	height:100%
+}
+.about__recieve .container{
+	background-color: #fff;
+	width: 30%;
+	min-width: 350px;
+	padding: 1rem;
+	border-radius: 7px;
+	box-shadow: 1px 1px 5px #999
+}
+.about__recieve .container h3 {
+	color: #666;
+    margin-bottom: 0;
+}
+.about__recieve .container p {
+	margin-bottom: 0;
+	color: #999
+}
+.about__recieve img {
+	width: 30px;
+	margin : 0;
+}
 
 /* mobie__socials  */
 
