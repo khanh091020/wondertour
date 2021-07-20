@@ -1,0 +1,156 @@
+{{>adminHeader}}
+
+<div class="col-sm-12">
+  <div class="container-fluid " style="margin-top: 5rem;padding-left: 75px;">
+    <div class="row">
+        <h1 class="ml-5 mr-5">List tour order</h1>
+        
+    </div>
+  <form action="" method="post" id="formControl" >
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+          <th></th>
+         <th>Customer</th>
+         <th>Phone</th>
+         <th>Email</th>
+        <th>Photographer name</th>
+        <th>Photo date</th>
+        <th>Book time</th>
+        <th>Place</th>
+        <th>Price</th>
+         <th></th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{!-- {{#each listAll}} --}}
+          <tr>
+        <th>1</th>
+        <td>Nguyen van nam</td>
+        <td>945883374</td>
+        <td>khanhjj70@gmail.com</td>
+        <td>Tran van nam</td>
+        <td>09/10/2111</td>
+        <td>8:5:3 01/01/2111</td>
+        <td>Da nang</td>
+        <td>10$/h</td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-primary btn-sm">Details</a></td>
+        <td><a href="" class="btn btn-success btn-sm">Comfirm paid</a></td>
+        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+        </tr>
+          {{!-- {{else}}
+        
+          {{/each}} --}}
+         <tr>
+        <th>2</th>
+        <td>Nguyen van nam</td>
+        <td>945883374</td>
+        <td>khanhjj70@gmail.com</td>
+        <td>Tran van hoa</td>
+        <td>09/10/2111</td>
+        <td>8:5:3 01/01/2111</td>
+        <td>Da nang</td>
+        <td>10$/h</td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-primary btn-sm">Details</a></td>
+        <td><a href="" class="btn btn-success btn-sm">Comfirm paid</a></td>
+        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+        </tr>
+         <tr>
+        <th>3</th>
+        <td>Nguyen van nam</td>
+        <td>945883374</td>
+        <td>khanhjj70@gmail.com</td>
+        <td>John Aleksandra</td>
+        <td>09/10/2111</td>
+        <td>8:5:3 01/01/2111</td>
+        <td>Da nang</td>
+        <td>10$/h</td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-primary btn-sm">Details</a></td>
+        <td><a href="" class="btn btn-success btn-sm">Comfirm paid</a></td>
+        <td><a href=""  class="btn btn-danger btn-sm" data-id="{{this._id}}"  data-toggle="modal" data-target="#cancel-tour">Cancel</a></td>
+        </tr>
+      
+    </tbody>
+  </table>
+  </form>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" id="delete-tour">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE ADMIN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to delete ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" onclick="deleteConfim()">Delete</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ {{!-- end modal  --}}
+ <!-- add admin modal -->
+<div class="modal" tabindex="-1" id="add-admin">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">ADD ADMIN</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form action="" method="post">
+              <input type="text" class="form-control mb-2" placeholder="First name">
+              <input type="text" class="form-control mb-2" placeholder="Last name">
+              <input type="email" class="form-control mb-2" placeholder="Email">
+              <input type="password" class="form-control mb-2" placeholder="Password">
+              <input type="number" class="form-control mb-2" placeholder="Phone">
+              <input type="address" class="form-control mb-2" placeholder="Address">
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="">Add</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+ {{!-- end modal  --}}
+<style>
+.table td, .table th {
+         white-space: normal !important;
+         padding : 1.05rem .4rem !important	;
+         }
+ 
+         
+</style>
+
+    <form  name="form__idTour" method="post"></form>
+ <script src="/assets/js/vendor-all.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/pcoded.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+<script>
+  $('#formControl').submit(e => {
+    e.preventDefault();
+  }) 
+
+</script>
+</body>
+
+</html>
+

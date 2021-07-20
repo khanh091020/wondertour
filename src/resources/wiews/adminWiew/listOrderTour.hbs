@@ -1,0 +1,164 @@
+{{>adminHeader}}
+
+<div class="col-sm-12">
+  <div class="container-fluid " style="margin-top: 5rem;padding-left: 75px;">
+    <div class="row">
+        <h1 class="ml-5 mr-5">List tour order</h1>
+        
+    </div>
+  
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Customer</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Tour name</th>
+        <th>Book time</th>
+        <th>Photographer</th>
+        <th>Singer tour</th>
+        <th>Total price</th>
+        <th>Status</th>
+         <th></th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{#each orders}}
+            <tr>
+                <th>{{sum @index 1}}</th>
+            <td>{{this.userName}}</td>
+            <td>{{this.phone}}</td>
+            <td>{{this.userEmail}}</td>
+            <td>{{this.tourID.name}}</td>
+            <td>{{formatDateDetails this.createdAt}}</td>
+            <td>{{this.photographer}}</td>
+            <td>{{this.singerTour}}</td>
+            <td>{{this.totalPrice}}$</td>
+            <td class='statusOrder' id='status{{this._id}}'>{{this.status}}</td>
+            <td><a href="/tours/{{this.tourID.slug}}" class="btn btn-primary btn-sm">Details</a></td>
+            <td>{{{checkPaidOrder this.paid this._id}}}</td>
+            <td>
+                {{{checkCancelOrder this.status this._id}}} 
+            </td>
+            </tr>
+          {{else}}
+          <h1 class="mt-5">You don't have order tour . </h1>
+          {{/each}}
+      
+    </tbody>
+  </table>
+
+</div>
+</div>
+
+
+<!-- Modal -->
+ {{!-- modal cancel tour  --}}
+         <div class="modal " tabindex="-1" id="cancelTourModal" >
+            <div class="modal-dialog " style="max-width: 600px"> 
+                <div class="modal-content">
+               
+                <div class="modal-body">
+                  <h4 class="text-danger warning__cancel-tour">Are you sure you want to cancel this tour? </h4>
+                      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger"  onclick="cancelTourFunc()">Confirm</button>
+                </div>
+                </div>
+            </div>
+            </div>
+      {{!-- close modal  --}}
+
+      {{!-- modal confirm --}}
+         <div class="modal " tabindex="-1" id="confirmPaymentTour" >
+            <div class="modal-dialog " style="max-width: 600px"> 
+                <div class="modal-content">
+               
+                <div class="modal-body">
+                  <h4 class="text-primary warning__cancel-tour">Are you sure you want to confirm this payment? </h4>
+                      
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success"  onclick="confirmPaymentTour()">Confirm</button>
+                </div>
+                </div>
+            </div>
+            </div>
+      {{!-- close modal  --}}
+ {{!-- end modal  --}}
+
+<style>
+.table td, .table th {
+         white-space: normal !important;
+         padding : 1.05rem .4rem !important	;
+         }
+ 
+         
+</style>
+
+    <form  name="form__idTour" method="post"></form>
+ <script src="/assets/js/vendor-all.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/pcoded.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+<script>
+ 
+
+   var listStatus = $('.statusOrder');
+   changeColorStatus()
+        function changeColorStatus () {
+           for(let i = 0; i < listStatus.length;i++) {
+             if(listStatus[i].textContent === 'paid')           
+                 listStatus[i].style.color = 'green'
+             else if(listStatus[i].textContent === 'unpaid')           
+                 listStatus[i].style.color = 'orange'
+            else        
+                 listStatus[i].style.color = 'red'
+          }
+        }
+
+          var idOrder;
+          var button;
+         $('#cancelTourModal').on('show.bs.modal', function (event) {
+             button = $(event.relatedTarget) 
+             idOrder = button.data('id') 
+           
+         })
+          $('#confirmPaymentTour').on('show.bs.modal', function (event) {
+             button = $(event.relatedTarget) 
+             idOrder = button.data('id') 
+         })
+       
+          function cancelTourFunc() {
+          axios.post('/admin/api/order?_method=PUT', {id : idOrder})
+          .then(function (response) {
+              button.remove()
+              $('#status'+idOrder).html('canceled')
+              changeColorStatus()
+              $('#cancelTourModal').modal('hide')
+          })
+         }
+    function confirmPaymentTour () {
+       axios.post('/admin/api/order/ispaid?_method=PUT', {id : idOrder})
+          .then(function (response) {
+              button.remove()
+              $('#status'+idOrder).html('paid')
+              changeColorStatus()
+              $('#confirmPaymentTour').modal('hide')
+          })
+    }
+</script>
+</body>
+
+</html>
+

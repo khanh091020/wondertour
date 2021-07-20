@@ -1,0 +1,91 @@
+{{>adminHeader}}
+
+<div class="col-sm-12">
+  <div class="container-fluid " style="margin-top: 5rem;padding-left: 75px;">
+    <h1 class="ml-5">List account User</h1>
+  <form action="" method="post" id="formControl" >
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+         <th>Phone</th>
+         <th>Address</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+          {{#each listAccount}}
+          <tr >
+          
+          <td>{{sum @index 1}}</td>
+          <td>{{this.firstName}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.email}}</td>
+          <td>{{#if this.phone}} {{this.phone}} {{else}}Not update{{/if}}</td>
+           <td>{{#if this.address}} {{this.address}} {{else}}Not update{{/if}}</td>
+      
+        <td><button href="" class="btn btn-success " {{#if this.admin}}disabled{{/if}}>Active</button></td>
+        <td><button href=""  class="btn btn-danger" {{#if this.admin}}disabled{{/if}} data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</button></td>
+        </tr>
+          {{else}}
+         <td colspan="5">Not have account</td>
+          {{/each}}
+      
+    </tbody>
+  </table>
+  </form>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" id="delete-tour">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">DELETE USER</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure to delete ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-danger" onclick="deleteConfim()">Delete</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.table td, .table th {
+         white-space: normal !important;
+         padding : 1.05rem .4rem !important	;
+         }
+ 
+         
+</style>
+ {{!-- end modal  --}}
+
+    <form  name="form__idTour" method="post"></form>
+ <script src="/assets/js/vendor-all.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/pcoded.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+<script>
+  $('#formControl').submit(e => {
+    e.preventDefault();
+  }) 
+
+</script>
+</body>
+
+</html>
+

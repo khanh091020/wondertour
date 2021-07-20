@@ -24,6 +24,7 @@ const createTour = require('./adminRoute/createTour');
 const deleteTour = require('./adminRoute/deleteTour');
 const indexadmin = require('./adminRoute/adminIndex');
 const bookTour = require('./bookTour');
+const adminOrder = require('./adminRoute/orderAdmin');
 
 function route(app) {
     // user link 
@@ -43,11 +44,12 @@ function route(app) {
     app.use('/affiliate-service',affiliatService)
     app.use('/api/order',priviteOrderMiddleware,order)
     // admin link
-    app.use('/admin/index',indexadmin);
+    app.use('/admin/api/order',adminOrder);
     app.use('/admin/createTour',createTour);
     app.use('/admin/all-list',listAllTour);
     app.use('/admin/updateTour',updateTour)
     app.use('/admin/deleteTour',deleteTour);
+    app.use('/admin',indexadmin);
     // #
     app.use('/index.html',sitee);   
     app.use('/',sitee);

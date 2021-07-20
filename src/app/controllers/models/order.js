@@ -12,7 +12,8 @@ const order = new Schema({
     adultNumber : {type :Number},
     chilrenNumber : {type : Number},
     totalPrice : {type : Number},
-    status : {type : String}
+    status : {type : String},
+    paid :  {type : Boolean}
 },{
     timestamps : true
 })

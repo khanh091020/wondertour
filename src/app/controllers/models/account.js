@@ -6,7 +6,11 @@ const account = new schema({
     lastName : String,
     email : String,
     password : String,
-    loveTour : Array
+    loveTour : Array,
+    phone : Number,
+    address : String,
+    admin : Boolean,
+    boss : Boolean
 },
 {
     collection : 'account'
