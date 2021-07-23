@@ -25,7 +25,7 @@ function addImage(e) {
            let img = new Image();
            img.src = reader.result;
 
-           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3">
+           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                  <div class="fileDisplayArea__item">
                       <img src="${img.src}" alt="">
                  </div>
@@ -53,7 +53,7 @@ function addImage2(e) {
            let img = new Image();
            img.src = reader.result;
 
-           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3">
+           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                  <div class="fileDisplayArea__item">
                       <img src="${img.src}" alt="">
                  </div>
@@ -82,7 +82,7 @@ function addImage3(e) {
            let img = new Image();
            img.src = reader.result;
 
-           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3">
+           fileDisplayArea.prepend(` <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                  <div class="fileDisplayArea__item">
                       <img src="${img.src}" alt="">
                  </div>
