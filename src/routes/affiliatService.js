@@ -2,7 +2,7 @@ const express = require('express')
 const route = express.Router()
 const hotelController = require('../app/controllers/hotelController')
 
-
+route.get('/hotel/details',hotelController.showHotelDetails)
 route.get('/hotel',hotelController.showHotel)
 route.get('/flight',hotelController.showFlight)
 

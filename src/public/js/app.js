@@ -1,5 +1,11 @@
   var onscroll50; 
- 
+ // loading webside
+
+var preloader = document.getElementById("loading");
+setTimeout(loadingFunction,1500)
+function loadingFunction(){
+  preloader.style.display = 'none';
+};
 // function readmore and readless
 
 function readmoreAndLess() {
@@ -115,13 +121,7 @@ function checkontop () {
   }
 }
 
-// loading webside
 
-var preloader = document.getElementById("loading");
-setTimeout(loadingFunction,2000)
-function loadingFunction(){
-  preloader.style.display = 'none';
-};
 
 // setTimeout(2000,loadingFunction)
 

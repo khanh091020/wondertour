@@ -99,9 +99,9 @@
             <div class="col-lg-5  container__left" id="container__left">
                <div class="container tourdetail__nav">
                   <div class="row justify-content-around">
-                     <i class="fas fa-chevron-left"></i>
-                     <i class="fas fa-stream"></i>
-                     <i class="fas fa-chevron-right"></i>
+                     <a href="/tours/hang-nga-villa"><i class="fas fa-chevron-left text-muted"></i></a>
+                     <a href="/outTour.html"><i class="fas fa-stream text-muted"></i></a>
+                     <a href="/tours/marble-mountains-ngu-hanh-son"><i class="fas fa-chevron-right text-muted"></i></a>
                   </div>
                </div>
                <div class="container-fluid mt-3 contain__main-right">
@@ -374,12 +374,12 @@
          }
 
          $('#homeBtn').click(function() {
-            $('.container__left').css('max-height','588px')
+            $('.container__left').css('max-height','600px')
          })
          $('#menu1Btn').click(setContainLeft680)
          $('#menu2Btn').click(setContainLeft680)
          function setContainLeft680() {
-             $('.container__left').css('max-height','680px')
+             $('.container__left').css('max-height','700px')
          }
 
         var currentdate = new Date(); 

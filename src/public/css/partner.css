@@ -1,0 +1,115 @@
+/* base  */
+img {
+    border-radius: 7px;
+ }  
+ .row {
+     margin-left:0;
+     margin-right: 0;
+ }  
+
+.slick-prev:before, .slick-next:before {
+  color: red;
+  }   
+  #partnerIndex__listRoom-wait .background__img {
+    padding-top: 70%;
+    margin: 0 1rem;
+    background-position: center;
+}
+#partnerIndex__listRoom-wait .background__img .row {
+     position: absolute;
+     background-color: rgba(0, 0, 0, 0.6);
+     bottom:0;
+     right:0;
+     left: 0;
+     height: 4rem;
+     border-bottom-left-radius: 8px;
+     border-bottom-right-radius: 8px;
+     padding: 0 1rem;
+     align-items:center;   
+     justify-content:space-between
+}
+
+
+#list__createRomm-option .text-center {
+   padding: 1rem;
+   box-shadow: 0px 1px 8px 1px #999;
+   border-radius:7px
+}
+#list__createRomm-option .text-center:hover {
+  box-shadow: 0px 2px 8px 0px var(--primary_color);
+}
+#list__createRomm-option p {
+  display:-webkit-box;
+  -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.createRomm-option-head i {
+  font-size: 1.6rem;
+  color: var(--primary_color);
+}
+.hotel__manage-title {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--primary_color);
+}
+/* list__card-utilities  */
+.card__utilities {
+   background: #fff;
+   border-radius: 7px;
+}
+.card__utilities-head {
+  padding: 1rem 3rem .7rem 3rem;
+  border-bottom: 2px solid #dfdcdc;
+}
+/* rating  */
+.rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+.rate:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.rate:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
+}
+.rate:not(:checked) > label:before {
+  content: '★ ';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+/* // */
+.general__policy {
+  background: #fff;
+  border-radius: 7px;
+  padding: 1rem 0;
+}
+.fileDisplayArea__item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit:cover;
+  border: 1px solid #999;
+}
+.hotel__img {
+  margin-bottom: 2rem;
+}

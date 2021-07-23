@@ -1,0 +1,42 @@
+ <div class="header__produce" id="produce" style="background: rgb(211, 230, 252);">
+         <div class="header__produce-logo">
+            <div class="header__produce-iconmenu-1000" id="menu__navbar-1000" onclick="openmenu()">
+               <i class="fas fa-bars"></i>
+            </div>
+            <a href="/index.html">
+               <div class="row mr__ml-15">
+                  <h4 style="color: #999;margin-bottom: 0;">WONDER</h4>
+                  <h4 style="color: var(--primary_color);margin-left: 5px;margin-bottom: 0;">PLACE</h4>
+               </div>
+            </a>
+         </div>
+         <div class="header__produce-right">
+            <div class="header__produce-timecall">
+               <div class="header__produce-time">
+                  <i class="fas fa-home"></i>
+                  <a href="/partnership">Home</a>
+               </div>
+               <div class="header__produce-call">
+                  <i class="fas fa-phone-square-alt"></i>
+                  <a href="tel:+84945806419">+84945806419</a>
+               </div>
+            </div>
+            {{!-- {{#if session.name}} --}}
+            <div class="header__user">
+               <i class="fas fa-user"></i>
+               <h5 onclick="openClose__UserTool()">Hello Ngoc Khanh <i class="fas fa-chevron-down"></i></h5>
+               <ul class="list__Tool-User">
+                  <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/partnership/general-info">General information</a> </li>
+                  <li class="list__Tool-User-item"> <a href="/partnership/payment-info">Payment Information</a> </li>
+                  <li class="list__Tool-User-item"> <a href="/partnership/hotel-management">Hotel management</a> </li>
+                  <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/index.html"> Log out <i class="fas fa-sign-out-alt"></i></a></li>
+               </ul>
+            </div>
+            {{!-- {{else}}
+            <a href="/login.html" class="btn btn-sm btn-background-slide mar__left_10rem header__produce-right-signup">
+            SIGN IN 
+            </a>
+            {{/if}} --}}
+            {{!-- {{{displayLogin _user.username}}} --}}
+         </div>
+      </div>

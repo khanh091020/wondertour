@@ -24,8 +24,8 @@ div.header__produce-timecall {
 	align-items: center;
 }
 
-.header__produce-time {
-	align-items: center;
+.header__produce-time a{
+	font-size:1.15rem
 }
 
 .header__produce-timecall div {
@@ -44,6 +44,7 @@ div.header__produce-timecall {
 
 .header__produce-time {
 	display: flex;
+	align-items: center;
 }
 
 .header__produce-call {
@@ -57,12 +58,13 @@ div.header__produce-timecall {
 	color: var(--primary_color);
 }
 
-.header__produce-call a {
+.header__produce-right a {
 	text-decoration: none;
 	color: var(--text-color);
+	
 }
 
-.header__produce-call a:hover {
+.header__produce-right a:hover {
 	color: #5fc3b5;
 }
 
@@ -1273,6 +1275,7 @@ a.footer__policy {
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 250px;
+	border-radius: 7px;
 }
 
 .blog__banner-til {
@@ -1307,6 +1310,7 @@ a.footer__policy {
 	background-color: #000000;
 	color: #fff;
 	text-align: center;
+	border-radius: 4px;
 }
 
 .webkitbox {
@@ -1673,16 +1677,24 @@ a.footer__policy {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	transition: all .2s ease-in	;
-}
-
-.hotel__list-item:hover .hotel__list-item-img{
-	
-}
-
-.hotel__list-item-img {
 	background-position: center;
 	background-size: cover;
 	padding-top: 50%;
+}
+.hotel__list-item-info .row h5 {
+	
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;	
+	overflow: hidden;
+}
+.hotel__list-item-img-item {
+	 position: absolute;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+	 left: 50%;
+	 font-size: 2rem;
+	 color: #fff;
+	 z-index: 1;
 }
 
 /* flight page  */
@@ -1692,4 +1704,208 @@ a.footer__policy {
 	border-radius: 4px;
 	height: 90px;
 	}
+.flight-Airline-img {
+	width: 28px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.flight__time-start-items {
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #999;
+	padding : 5px;
+	margin :5px;
+	color: var(--text-color);
+	background-color: #fff;
+	
+}
+.flight-item-left-img {
+	width : 18px
+}
+.flight__tiket-item-img {
+	width : 35px;
+}
+.flight__contain-top {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid rgb(11, 221, 193);
+}
 
+/* hotel details  */
+
+
+.hotel__detaols-facticy div img{
+   width: 25px;
+}
+.hotel__detaols-facticy .col-sm-2{
+	flex: 0 0 20%;
+    max-width: 20%;
+	margin-bottom: 10px;
+}
+.hotel__detaols-facticy div p {
+	font-size: .8rem	;	
+}
+.hotel__detaols-facticy .last-child-parent {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.hotel__detaols-facticy .last-child {
+	width: 56px;
+	border-radius: 50%;
+	color: #00B6F3;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	height:56px;
+	background: #CCF0FD;
+}
+.hotel__detaols-facticy .last-child p {
+	font-size: 1.1rem;
+}
+.rewiews__percent-item {
+	width: 50%;
+	height:10px;
+	border-radius: 3px;
+	background : #E2E8F0;
+	position: relative;
+}
+.rewiews__percent-item div{
+	position: absolute;
+	top : 0;
+	left : 0;
+	bottom: 0;
+	border-radius: 3px;
+	background : #00B6F3;
+}
+.text-size-86 {
+	width: 86px;
+}
+.rewiew__comment {
+	padding: 5px 4px;
+    background: #edf7fd;
+    border-radius: 7px;
+}
+.hotel__details-img .col-sm-6,
+.hotel__details-img {
+	padding-right: 10px;
+    padding-left: 10px;
+}
+.contain__list-room-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border: 1px solid var(--primary_color);
+	border-radius:10px;
+	margin-bottom: 2rem;
+}
+.room__item-people {
+	text-align: center;
+    border-left: 1px dashed #70d4a1;
+    border-right: 1px dashed #70d4a1;
+}
+.room__item-bed {
+	text-align: center;
+    border-right: 1px dashed #70d4a1;
+}
+.room__facitilies-items-contain {
+	max-height: 10rem;
+	overflow:scroll;
+	justify-content:space-between
+}
+.room__facitilies-items-contain .col-sm-6 img {
+	max-width: 40px;
+}
+.hotel__description {
+	position: relative;
+}
+.hotel__description-info {
+  position:absolute;
+  left: 0;
+  top: 50%;
+  transform:translateY(-50%);
+  box-shadow:1px 1px 5px #999;
+  background: #fff;
+  border-radius: 7px;
+  padding: 1rem;
+}
+.hotel__description-info p {
+	max-height: 132px;
+	overflow-y: hidden;
+}
+/* partner rewiew  */
+.partner__rewiew-top {
+	padding : 0;
+	margin:0;
+	margin-bottom: 2rem ;
+}
+.partner__rewiew-top .background__img {
+	border-radius: 0 !important; 
+	padding-top: 35%;
+}
+.partner__rewiew-head-left div
+ {
+	position: absolute;
+	top : 50%;
+	left:50%;
+	transform : translate(-50%, -50%);
+	width : 90%
+}
+.partner__rewiew-head-left div i {
+	margin-right: 10px
+}
+.partner__rewiew-option ,
+.partner__rewiew-option .text-center {
+    margin-bottom: 2rem;
+}
+.partner__rewiew-option .text-center {
+	 padding : 1.5rem
+}
+.partner__rewiew-option-hotel {
+	background : #e1f3fa;
+	border-radius : 15px
+}
+.partner__rewiew-step {
+	flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 100%;
+}
+.partner__rewiew-step .col-10 {
+	font-size:.8rem
+}
+.partner__why-choose-item {
+	padding-top:130%
+}
+.partner__reweiw-slider .myslider .background__img {
+	height: 270px;
+	 width: 415px;
+	 border-radius:10px
+ }    
+ .partner__reweiw-slider .myslider .background__img h2,
+  .partner__why-choose-item div {
+	 position: absolute;
+	left: 50%;
+	top: 85%;
+	font-size: 1.8rem;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-shadow: 1px 1px 4px #999;
+  } 
+  .partner__why-choose-item div p {
+	  font-size: 1.1rem;
+  }
+  .partner__why-choose-item div {
+	  top : 80%	;
+	  width: 90%;
+	  text-align: center;
+  }
+  .partner__rewiew-accompany div {
+	position: absolute;
+    left: 30%;
+    top: 50%;
+    font-size: 1.8rem;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 1px 1px 4px #999;
+    max-width: 550px;
+  }

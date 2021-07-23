@@ -61,6 +61,15 @@ app.post('/news',(req,res) => {
 // function route
 app.use(checkLoginMidleware);
 routes(app);
+
+// Quyền truy cập 
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 // port listener 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

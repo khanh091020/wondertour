@@ -16,6 +16,7 @@ const affiliatService = require('./affiliatService')
 const order = require('./order')
 const priviteOrderMiddleware = require('../app/midderwares/privateOrderMiddleware')
 const privateAccountMiddleware = require('../app/midderwares/privateAccountMiddleware')
+const partnership = require('./partnerhip')
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -28,6 +29,7 @@ const adminOrder = require('./adminRoute/orderAdmin');
 
 function route(app) {
     // user link 
+    app.use('/partnership',partnership)
     app.use('/blog',blog);
     app.use('/bookTour',bookTour);
     app.use('/search',search);

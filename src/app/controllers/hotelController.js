@@ -1,9 +1,14 @@
 class hotelController{
     showHotel(req,res,next) {
-        res.render('others/hotel')
+        res.render('hotel/hotel')
     }
     showFlight(req,res,next) {
-        res.render('others/flight')
+        res.render('flight/flight')
+    }
+
+    // get 
+    showHotelDetails(req,res,next) {
+        res.render('hotel/hotelDetails')
     }
 }
 module.exports = new hotelController

@@ -492,7 +492,7 @@ right: 0; */
 position: -webkit-sticky;
 position: sticky; 
 top : 20px;
- max-height : 588px
+ max-height : 600px
 }
 
 .sticky {
@@ -621,6 +621,7 @@ overflow-y: scroll;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  background : #fff
  }
 
  .contain__covid {
@@ -667,8 +668,16 @@ overflow-y: scroll;
  }
 
  .contain__main-sort {
+   padding: .1rem;
+   border-radius: 4px;
   outline: var(--primary_color);
   border: 1px solid var(--primary_color);
+ }
+ .tourGrid_contain__left__left {
+   background : #fff;
+   border-radius: 7px;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
  }
 
  /* tour grid item  */
@@ -677,6 +686,7 @@ overflow-y: scroll;
    padding: 1rem 0;
    border: 1px dashed #d2e0e0;
    position: relative;
+   background: #fff;
  }
 
  .tour__items__price {
@@ -684,7 +694,7 @@ overflow-y: scroll;
   border-bottom-left-radius: 4px;
   position: absolute;
   color: #fff;
-  background-color: #00AD7C;
+  background-color: rgba(0, 173, 124, .8);
   top: 10px;
   right: -7px;
   padding: 1px 9px 0px 9px;

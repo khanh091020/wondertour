@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <link rel="stylesheet" href="https://kenwheeler.github.io/slick/slick/slick-theme.css">
+      <link rel="stylesheet" type="text/css" href="/css/base.css">
+      <link rel="stylesheet" type="text/css" href="/css/main.css">
+      <link rel="stylesheet" type="text/css" href="/css/reponsive.css">
+      <link rel="stylesheet"  href="/css/bookTour.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Wonder Place</title>
+      <style>
+         img {
+         border-radius: 5px;
+         object-fit: cover;
+         }
+         .footer img {
+         border-radius: 0;
+         object-fit: contain;
+         }
+         .modal-body {
+         padding: 2rem 1rem;
+         }
+         .modal-content {
+         border-radius: 1.3rem;
+         }
+         .wrap-modal-slider {
+         padding: 0 30px;
+         opacity: 0;
+         transition: all 0.3s;
+         }
+         .wrap-modal-slider.open {
+         opacity: 1;
+         }
+            .slick-prev:before, .slick-next:before {
+            color: red;
+            }
+         .modal.show .modal-dialog {
+         max-width: 900px;
+         }
+         .tourGrid__searchbtn-top {
+         justify-content:center
+         }
+         .hotel__list-item-info .row h5 {
+            display: -webkit-box;
+         }
+         .hotel__list-item-info {
+            padding: 0 2rem;
+         }
+         .hotel__list-item {
+            box-shadow: 0px 1px 6px #999;
+            margin-bottom: 1rem;
+         }
+         .relative__hotel .slick-prev {
+            left:5px
+         }
+         .relative__hotel .slick-next {
+            right:5px
+         }
+         .hotelDetail__contain-imgAll .hotel__list-item-img {
+            border-radius: 7px ;
+            padding-top: 60%;
+         }
+         .contain__list-room-item .hotel__list-item-img {
+            padding-top: 65%;
+            border-radius:4px
+         }
+         .wrap-modal-slider .hotel__list-item-img {
+            padding-top: 67%;
+            border-radius:7px
+         }
+      </style>
+   </head>
+   <body style="overflow-x : hidden;margin: 0;">
+      <div class="ontop" id="ontopbro" onclick="ontop()">
+         <i class="fas fa-arrow-alt-circle-up"></i>
+      </div>
+      <div id="loading">
+         <img src="/image/load.gif" alt="">
+      </div>
+      {{> header}}
+      <div class="container">
+         <form action="/search/hotel" method="GET">
+            <div class="contain__seach">
+               <div class="row  ml-3 mr-3 mt-2 mb-2 align-items-center">
+                  <i class="fas mr-3 fa-map-marker-alt text-danger"></i>
+                  <div>
+                     <p>Destination</p>
+                     <input type="text" name="search" value="" placeholder="Where do you go ?">
+                  </div>
+               </div>
+               <div class="row  ml-3 mr-3 mt-2 mb-2 align-items-center text-primary">
+                  <i class="fas mr-3 fa-calendar-check"></i>
+                  <div>
+                     <p>Check in</p>
+                     <input type="date" name="fromDate" value="">
+                  </div>
+               </div>
+               <div class="row  ml-3 mr-3 mt-2 mb-2 align-items-center text-primary">
+                  <i class="fas mr-3 fa-calendar-check"></i>
+                  <div>
+                     <p>Check out</p>
+                     <input type="date" name="toDate" value="">
+                  </div>
+               </div>
+               <div class="row  ml-3 mr-3 align-items-center tourGrid__searchbtn-top">
+                  <div class="div">
+                     <button type="submit" href="" class="btn btn-background-slide btn-sm">Search</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+         <p class="text-muted mt-3 mb-4"><a href="/index.html">Home  </a><i class="fas fa-angle-right"></i>  <a href="/affiliate-service/hotel">Hotel</a>  <i class="fas fa-angle-right"></i>  Muong Thanh Luxury Phu Quoc </p>
+         <div class="row mb-3">
+            <div class="col-sm-8">
+               <h3>Muong Thanh Luxury Phu Quoc  </h3>
+               <div class="contain__hotTour-infomation-star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <div class="d-flex">
+                  <div class="d-flex">
+                     <span class="mr-2">5.5</span>
+                     <p class="text-muted">Great(111 rate)</p>
+                  </div>
+                  <p class="ml-2 mr-2"> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                  <a href="#">See reviews </a>
+               </div>
+               <p class="text-muted"><i class="fas fa-map-marker-alt mr-2"></i>Duong To Commune, Phu Quoc District, Kien Giang</p>
+            </div>
+            <div class="col-sm-4">
+               <div class="row mr-1 justify-content-end">
+                  <div class="mr-4">
+                     <p style="text-decoration: line-through;">43.50$/night</p>
+                     <h5><b>40$</b>/night</h5>
+                  </div>
+                  <div>
+                     <a href="#containRoom" class="btn btn_btn btn-sm">
+                     Choose room
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row mb-3 hotelDetail__contain-imgAll">
+            <div class="col-sm-6 hotel__details-img">
+               <div class="col-sm-12" style="padding:0">
+                  <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel1.jpg)'>
+
+                     </div>
+               </div>
+            </div>
+            <div class="col-sm-6 hotel__details-img" style="padding:0">
+               <div class="d-flex flex-wrap justify-content-between align-content-between h-100">
+                  <div class="col-sm-6">
+                     <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel2.jpg)'>
+
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                        <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel3.jpg)'>
+
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                       <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'>
+
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                        <div data-toggle="modal" data-target="#exampleModalCenter" class="hotel__list-item-img background-brightNess" style='position: relative;background-image:url(/img/imgHotel5.jpg)'>
+                            <div class='d-flex align-items-center  hotel__list-item-img-item'>
+                               <p class="mr-2">+10</p>
+                               <i class="fas fa-images"></i>
+                            </div>    
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row mb-4 mt-3">
+            <div class="col-sm-6">
+               <div class="row ml-1 mr-1   align-items-center justify-content-between">
+                  <h4><b>Hotel facilities</b></h4>
+                  <a href="">See all facilities</a>
+               </div>
+               <div class="row hotel__detaols-facticy">
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/massage.png" alt="">
+                        <p class="text-muted">Massage</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/Amenities_wifi.png" alt="">
+                        <p class="text-muted">Free internet</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/spa-stone 1.png" alt="">
+                        <p class="text-muted">Spa</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/swimming-pool-person 1.png" alt="">
+                        <p class="text-muted">Poor</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/doi-ngoai-te.png" alt="">
+                        <p class="text-muted">Currency exchange</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/giu-hanh-ly.png" alt="">
+                        <p class="text-muted">Luggage storage</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/reception-hotel-24h.svg" alt="">
+                        <p class="text-muted">24 hour front desk</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/shop-1 1.png" alt="">
+                        <p class="text-muted">Souvenir store</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2">
+                     <div class='text-center'>
+                        <img src="/img/air_conditioner.png" alt="">
+                        <p class="text-muted">Air conditioning</p>
+                     </div>
+                  </div>
+                  <div class="col-4 col-sm-2 last-child-parent">
+                     <div class='last-child'>
+                        <p>+17</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <div class="row ml-2 mr-2 align-items-center justify-content-between">
+                  <h4>Rewiews</h4>
+                  <a href="">See all rewiews</a>
+               </div>
+               <div class="d-flex">
+                  <div class="col-sm-6">
+                     <div>
+                        <div class="rewiews__percent">
+                           <div class="row align-items-center justify-content-between ml-1">
+                              <p class="text-size-86">Location</p>
+                              <div class="rewiews__percent-item">
+                                 <div style="width: 90%;"></div>
+                              </div>
+                              <p class='text-success'>9.0</p>
+                           </div>
+                           <div class="row align-items-center justify-content-between ml-1">
+                              <p class="text-size-86">Price</p>
+                              <div class="rewiews__percent-item">
+                                 <div style="width: 86%;"></div>
+                              </div>
+                              <p class='text-success'>8.6</p>
+                           </div>
+                           <div class="row align-items-center justify-content-between ml-1">
+                              <p class="text-size-86">Toilet</p>
+                              <div class="rewiews__percent-item">
+                                 <div style="width: 92%;"></div>
+                              </div>
+                              <p class='text-success'>9.2</p>
+                           </div>
+                           <div class="row align-items-center justify-content-between ml-1">
+                              <p class="text-size-86">Convenient</p>
+                              <div class="rewiews__percent-item">
+                                 <div style="width: 88%;"></div>
+                              </div>
+                              <p class='text-success'>8.8</p>
+                           </div>
+                           <div class="row align-items-center justify-content-between ml-1">
+                              <p class="text-size-86">Serve</p>
+                              <div class="rewiews__percent-item">
+                                 <div style="width: 81%;"></div>
+                              </div>
+                              <p class='text-success'>8.1</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="rewiew__comment">
+                        <div class="d-flex justify-content-between ">
+                           <h6 class="pl-1 pr-1 col-9"><b>A memorable 3-night stay at Sheraton</b></h6>
+                           <div class="pl-1 pr-1 col-3">
+                              <svg width="40" height="40" fill="none">
+                                 <path d="M30.932 6.553a8.237 8.237 0 100 16.472 7.682 7.682 0 001.858-.235.416.416 0 01.46.613 11.383 11.383 0 01-9.797 5.872 2.083 2.083 0 100 4.167 16.183 16.183 0 0015.714-16.584v-2.07a8.245 8.245 0 00-8.235-8.235zM10.393 6.553a8.237 8.237 0 000 16.472 7.662 7.662 0 001.859-.235.417.417 0 01.461.613 11.383 11.383 0 01-9.796 5.872 2.083 2.083 0 000 4.166A16.185 16.185 0 0018.63 16.858v-2.07a8.245 8.245 0 00-8.236-8.235z" fill="#E2E8F0"></path>
+                              </svg>
+                           </div>
+                        </div>
+                        <p class="pl-1">My stay at Sheraton was amazing, well deserved 5 stars...</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="containRoom" class="mb-5">
+            <h4 class="mb-3"><b>Choose room</b></h4>
+            <div class="row contain__list-room-item">
+               <div class="col-sm-6 d-flex flex-wrap">
+                  <div class="col-sm-5">
+                     <a href="" data-toggle="modal" data-target="#modal__room-wiew">
+                         <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'></div>
+                     </a>
+                     <div class="d-flex w-100 justify-content-between mt-2">
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'></div></a>
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel5.jpg)'></div></a>
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel6.jpg)'></div></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-7">
+                     <h5>Deluxe Ocean View</h5>
+                     <div class="d-flex">
+                        <p>
+                           <svg width="16" height="16" fill="none">
+                              <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="square"></path>
+                              <path d="M11.333 11.333L5 5M11.334 8.333v3h-3M4.667 7.667v-3h3" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </svg>
+                           33m2
+                        </p>
+                        <p>
+                           <svg width="16" height="16" fill="none" style="margin-left: 20px;">
+                              <path d="M8 9.333a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M14.667 8c-1.778 3.111-4 4.667-6.667 4.667S3.11 11.11 1.333 8c1.778-3.111 4-4.667 6.667-4.667S12.889 4.89 14.667 8z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </svg>
+                           See wiew
+                        </p>
+                     </div>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M13.444 6.111H5.667c-.86 0-1.556.696-1.556 1.556v4.666c0 .86.697 1.556 1.556 1.556h7.777c.86 0 1.556-.697 1.556-1.556V7.667c0-.86-.697-1.556-1.556-1.556z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M9.556 11.555a1.556 1.556 0 100-3.11 1.556 1.556 0 000 3.11zM11.889 6.111V4.556A1.556 1.556 0 0010.333 3H2.556A1.556 1.556 0 001 4.556v4.666a1.555 1.555 0 001.556 1.556H4.11" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Refunds are not supported
+                     </p>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M11.31 11.976l1.862 1.862M3.241 3.908l4.966 4.965M4.483 2.667L7.586 5.77 5.103 8.253 2 5.149M3.241 13.838l10.552-10.55a5.036 5.036 0 01-1.242 4.965c-2.194 2.194-3.724 2.482-3.724 2.482" stroke="#48BB78" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Breakfast free
+                     </p>
+                     <p>
+                        <svg viewBox="0 0 20 20" fill="none" style="width: 16px; height: 16px;">
+                           <path d="M10 17.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zM10 6.667h.008" stroke="#4A5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M9.167 10H10v3.333h.833" stroke="#4A5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Guests over 12 years old will be considered as adults
+                     </p>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M12.739 6.478L6.652 15l1.217-5.478H3L9.087 1 7.87 6.478h4.87z" stroke="#ED8936" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Confirmed in 30 minutes
+                     </p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="d-flex flex-wrap ">
+                     <div class="col-sm-3 room__item-people">
+                        <svg width="24" height="24" fill="none">
+                           <path d="M12 12.25a4.75 4.75 0 100-9.5 4.75 4.75 0 000 9.5zM12 13.25a7.508 7.508 0 00-7.5 7.5.5.5 0 00.5.5h14a.5.5 0 00.5-.5 7.508 7.508 0 00-7.5-7.5z" fill="#718096"></path>
+                        </svg>
+                        <p>X2 people</p>
+                     </div>
+                     <div class="col-sm-3 room__item-bed">
+                        <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                           <g clip-path="url(#icon_bed_double_svg__clip0)" fill="#718096">
+                              <path d="M22.5 11.75h-21a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h16a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0024 17.25v-4a1.5 1.5 0 00-1.5-1.5zM2.5 10.25a.5.5 0 00.5.5h18a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5H5a2.5 2.5 0 00-2.5 2.5v5zm4-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H4.767a.5.5 0 01-.433-.75A2.5 2.5 0 016.5 7.25zm9 0h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75h-5.466a.5.5 0 01-.433-.75A2.5 2.5 0 0115.5 7.25z"></path>
+                           </g>
+                           <defs>
+                              <clipPath id="icon_bed_double_svg__clip0">
+                                 <path fill="#fff" d="M0 0h24v24H0z"></path>
+                              </clipPath>
+                           </defs>
+                        </svg>
+                        <p>1 single bed</p>
+                        <p class="text-muted">--- or ---</p>
+                        <div class="d-flex justify-content-center">
+                           <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                              <path d="M21 11.75H3a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h13a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0022.5 17.25v-4a1.5 1.5 0 00-1.5-1.5zM4 10.25a.5.5 0 00.5.5h15a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5h-11A2.5 2.5 0 004 5.25v5zm7-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H9.267a.5.5 0 01-.433-.75A2.5 2.5 0 0111 7.25z" fill="#A0AEC0"></path>
+                           </svg>
+                           <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                              <path d="M21 11.75H3a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h13a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0022.5 17.25v-4a1.5 1.5 0 00-1.5-1.5zM4 10.25a.5.5 0 00.5.5h15a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5h-11A2.5 2.5 0 004 5.25v5zm7-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H9.267a.5.5 0 01-.433-.75A2.5 2.5 0 0111 7.25z" fill="#A0AEC0"></path>
+                           </svg>
+                        </div>
+                        <p>2 single bed</p>
+                     </div>
+                     <div class="col-sm-6 text-right">
+                        <span class="code__text-sm">-05%</span>
+                        <p style="text-decoration: line-through;">43.50$/night</p>
+                        <h3><b>40$</b>/night</h3>
+                        <div class="d-flex" style="float: right;">
+                           <p class="text-muted">Enter code</p>
+                           <h5 class="ml-2 mr-2"><b class="text-success">LOVE</b></h5>
+                           <span class="code__text-sm">-05%</span>
+                        </div>
+                        <h3><b>38$</b>/night</h3>
+                        <a href="" class="btn btn_btn">
+                        <i class="fas fa-cart-plus"></i>
+                        Book now
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+              {{!-- item  --}}
+                 <div class="row contain__list-room-item">
+               <div class="col-sm-6 d-flex flex-wrap">
+                  <div class="col-sm-5">
+                     <a href="" data-toggle="modal" data-target="#modal__room-wiew">
+                         <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'></div>
+                     </a>
+                     <div class="d-flex w-100 justify-content-between mt-2">
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'></div></a>
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel5.jpg)'></div></a>
+                        <a href="" class="display__block" style="width:31%" data-toggle="modal" data-target="#modal__room-wiew"><div class="hotel__list-item-img" style='background-image:url(/img/imgHotel6.jpg)'></div></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-7">
+                     <h5>Deluxe Ocean View</h5>
+                     <div class="d-flex">
+                        <p>
+                           <svg width="16" height="16" fill="none">
+                              <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="square"></path>
+                              <path d="M11.333 11.333L5 5M11.334 8.333v3h-3M4.667 7.667v-3h3" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </svg>
+                           33m2
+                        </p>
+                        <p>
+                           <svg width="16" height="16" fill="none" style="margin-left: 20px;">
+                              <path d="M8 9.333a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                              <path d="M14.667 8c-1.778 3.111-4 4.667-6.667 4.667S3.11 11.11 1.333 8c1.778-3.111 4-4.667 6.667-4.667S12.889 4.89 14.667 8z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </svg>
+                           See wiew
+                        </p>
+                     </div>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M13.444 6.111H5.667c-.86 0-1.556.696-1.556 1.556v4.666c0 .86.697 1.556 1.556 1.556h7.777c.86 0 1.556-.697 1.556-1.556V7.667c0-.86-.697-1.556-1.556-1.556z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M9.556 11.555a1.556 1.556 0 100-3.11 1.556 1.556 0 000 3.11zM11.889 6.111V4.556A1.556 1.556 0 0010.333 3H2.556A1.556 1.556 0 001 4.556v4.666a1.555 1.555 0 001.556 1.556H4.11" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Refunds are not supported
+                     </p>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M11.31 11.976l1.862 1.862M3.241 3.908l4.966 4.965M4.483 2.667L7.586 5.77 5.103 8.253 2 5.149M3.241 13.838l10.552-10.55a5.036 5.036 0 01-1.242 4.965c-2.194 2.194-3.724 2.482-3.724 2.482" stroke="#48BB78" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Breakfast free
+                     </p>
+                     <p>
+                        <svg viewBox="0 0 20 20" fill="none" style="width: 16px; height: 16px;">
+                           <path d="M10 17.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zM10 6.667h.008" stroke="#4A5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M9.167 10H10v3.333h.833" stroke="#4A5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Guests over 12 years old will be considered as adults
+                     </p>
+                     <p>
+                        <svg width="16" height="16" fill="none">
+                           <path d="M12.739 6.478L6.652 15l1.217-5.478H3L9.087 1 7.87 6.478h4.87z" stroke="#ED8936" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        Confirmed in 30 minutes
+                     </p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="d-flex flex-wrap ">
+                     <div class="col-sm-3 room__item-people">
+                        <svg width="24" height="24" fill="none">
+                           <path d="M12 12.25a4.75 4.75 0 100-9.5 4.75 4.75 0 000 9.5zM12 13.25a7.508 7.508 0 00-7.5 7.5.5.5 0 00.5.5h14a.5.5 0 00.5-.5 7.508 7.508 0 00-7.5-7.5z" fill="#718096"></path>
+                        </svg>
+                        <p>X2 people</p>
+                     </div>
+                     <div class="col-sm-3 room__item-bed">
+                        <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                           <g clip-path="url(#icon_bed_double_svg__clip0)" fill="#718096">
+                              <path d="M22.5 11.75h-21a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h16a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0024 17.25v-4a1.5 1.5 0 00-1.5-1.5zM2.5 10.25a.5.5 0 00.5.5h18a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5H5a2.5 2.5 0 00-2.5 2.5v5zm4-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H4.767a.5.5 0 01-.433-.75A2.5 2.5 0 016.5 7.25zm9 0h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75h-5.466a.5.5 0 01-.433-.75A2.5 2.5 0 0115.5 7.25z"></path>
+                           </g>
+                           <defs>
+                              <clipPath id="icon_bed_double_svg__clip0">
+                                 <path fill="#fff" d="M0 0h24v24H0z"></path>
+                              </clipPath>
+                           </defs>
+                        </svg>
+                        <p>1 single bed</p>
+                        <p class="text-muted">--- or ---</p>
+                        <div class="d-flex justify-content-center">
+                           <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                              <path d="M21 11.75H3a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h13a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0022.5 17.25v-4a1.5 1.5 0 00-1.5-1.5zM4 10.25a.5.5 0 00.5.5h15a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5h-11A2.5 2.5 0 004 5.25v5zm7-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H9.267a.5.5 0 01-.433-.75A2.5 2.5 0 0111 7.25z" fill="#A0AEC0"></path>
+                           </svg>
+                           <svg width="24" height="24" fill="none" class="svgFillAll jss1488">
+                              <path d="M21 11.75H3a1.5 1.5 0 00-1.5 1.5v4a1.5 1.5 0 001.125 1.45.5.5 0 01.375.483v1.067a1 1 0 102 0v-1a.5.5 0 01.5-.5h13a.5.5 0 01.5.5v1a1 1 0 002 0v-1.064a.5.5 0 01.375-.483A1.5 1.5 0 0022.5 17.25v-4a1.5 1.5 0 00-1.5-1.5zM4 10.25a.5.5 0 00.5.5h15a.5.5 0 00.5-.5v-5a2.5 2.5 0 00-2.5-2.5h-11A2.5 2.5 0 004 5.25v5zm7-3h2a2.5 2.5 0 012.166 1.25.5.5 0 01-.433.75H9.267a.5.5 0 01-.433-.75A2.5 2.5 0 0111 7.25z" fill="#A0AEC0"></path>
+                           </svg>
+                        </div>
+                        <p>2 single bed</p>
+                     </div>
+                     <div class="col-sm-6 text-right">
+                        <span class="code__text-sm">-05%</span>
+                        <p style="text-decoration: line-through;">43.50$/night</p>
+                        <h3><b>40$</b>/night</h3>
+                        <div class="d-flex" style="float: right;">
+                           <p class="text-muted">Enter code</p>
+                           <h5 class="ml-2 mr-2"><b class="text-success">LOVE</b></h5>
+                           <span class="code__text-sm">-05%</span>
+                        </div>
+                        <h3><b>38$</b>/night</h3>
+                        <a href="" class="btn btn_btn">
+                        <i class="fas fa-cart-plus"></i>
+                        Book now
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="modal__room-wiew"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                     <div class="modal-body">
+                        <div class="d-flex flex-wrap">
+                           <div class="col-md-8">
+                              <div class="wrap-modal-slider">
+                                 <div class="your-class">
+                                     <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel5.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel6.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel7.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel8.jpeg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel9.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel10.jpg)'> </div>
+                        </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+                              <div class="room__facitilies">
+                                 <h5>Deluxe Ocean View</h5>
+                                 <div class="d-flex">
+                                    <p>
+                                       <svg width="16" height="16" fill="none">
+                                          <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2z" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="square"></path>
+                                          <path d="M11.333 11.333L5 5M11.334 8.333v3h-3M4.667 7.667v-3h3" stroke="#4A5568" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                       </svg>
+                                       33m2
+                                    </p>
+                                    <p>
+                                       <svg width="16" height="16" fill="none" style="margin-left: 20px;">
+                                          <path d="M8 9.333a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                                          <path d="M14.667 8c-1.778 3.111-4 4.667-6.667 4.667S3.11 11.11 1.333 8c1.778-3.111 4-4.667 6.667-4.667S12.889 4.89 14.667 8z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                                       </svg>
+                                       See wiew
+                                    </p>
+                                 </div>
+                                 <p>
+                                    <svg width="16" height="16" fill="none">
+                                       <path d="M13.444 6.111H5.667c-.86 0-1.556.696-1.556 1.556v4.666c0 .86.697 1.556 1.556 1.556h7.777c.86 0 1.556-.697 1.556-1.556V7.667c0-.86-.697-1.556-1.556-1.556z" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                                       <path d="M9.556 11.555a1.556 1.556 0 100-3.11 1.556 1.556 0 000 3.11zM11.889 6.111V4.556A1.556 1.556 0 0010.333 3H2.556A1.556 1.556 0 001 4.556v4.666a1.555 1.555 0 001.556 1.556H4.11" stroke="#4A5568" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Refunds are not supported
+                                 </p>
+                                 <p>
+                                    <svg width="16" height="16" fill="none">
+                                       <path d="M11.31 11.976l1.862 1.862M3.241 3.908l4.966 4.965M4.483 2.667L7.586 5.77 5.103 8.253 2 5.149M3.241 13.838l10.552-10.55a5.036 5.036 0 01-1.242 4.965c-2.194 2.194-3.724 2.482-3.724 2.482" stroke="#48BB78" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Breakfast free
+                                 </p>
+                                 <div class="room__facitilies-items">
+                                    <p><b>Room facilities</b></p>
+                                    <div class="row room__facitilies-items-contain">
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/Amenities_wifi.png" alt="">
+                                             <p class="text-muted">Free internet</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/ket-sat.png" alt="">
+                                             <p class="text-muted">Safe vault</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/sofa.svg" alt="">
+                                             <p class="text-muted">Sofa</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/towel.svg" alt="">
+                                             <p class="text-muted">Towel</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/bathrobe.svg" alt="">
+                                             <p class="text-muted">Bathrobe</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/slipper.svg" alt="">
+                                             <p class="text-muted">Slipper</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/hairdryer.svg" alt="">
+                                             <p class="text-muted">Hairdryert</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/modern-tv-wide.svg" alt="">
+                                             <p class="text-muted">Modern tv wide</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/electric-kettle.svg" alt="">
+                                             <p class="text-muted">Electric kettle</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/reception-hotel-24h.svg" alt="">
+                                             <p class="text-muted">Reception hotel</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/la-do.png" alt="">
+                                             <p class="text-muted">Flat iron</p>
+                                          </div>
+                                       </div>
+                                       <div class="col-12 col-sm-6">
+                                          <div class="text-center">
+                                             <img src="/img/air_conditioner.png" alt="">
+                                             <p class="text-muted">Air conditioner</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <a href="" class="btn btn_btn btn-sm btn">
+                                 <i class="fas fa-cart-plus"></i>
+                                 Book now
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {{!-- close modal  --}}
+         </div>
+         <div class="hotel__description">
+            <h4><b>Hotel description</b></h4>
+            <div class="row">
+               <div class="col-sm-5">
+               </div>
+               <div class="col-sm-7 hotel__description-img" style="max-height: 400px;">
+                  <img src="/img/imgHotel1.jpg" alt="" class="w-100 h-100">
+               </div>
+               <div class="col-sm-7 hotel__description-info">
+                  <h5>
+                     Sheraton Nha Trang Hotel
+                  </h5>
+                  <p>Conveniently located in the restaurant, sightseeing, beach area of ​​Nha Trang city, Sheraton Nha Trang Hotel &amp; Spa is the most attractive place for you to relax after a busy day. Located just 0.5 Km from the city center and 35. Km from the airport, this 5-star hotel attracts many visitors every year. With the main tourist attractions of the city such as Thap Tram Huong, Tran Phu Bridge, Nha Trang Night Market quite close, visitors coming to the hotel are very satisfied with this location of the hotel.</p>
+                  <div class="mt-3"><a href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-secondary">See more</a></div>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+      <div class="container-fluid pb-5 pt-4 mt-4" style="background:#f7fafc">
+           <div class="container card-textArea__cmt">
+            <div class="card-textArea">
+               <div class="row">
+                  <div class="col-10">
+                     <div class="comment-box ml-2">
+                        <h4>Add a comment</h4>
+                        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                        <div class="comment-area"> <textarea class="form-control" placeholder="what is your view?" rows="4" id="comment"></textarea> </div>
+                        <input type="hidden" id="slug__tour" value="ban-co-peak">
+                        <div class="comment-btns mt-2">
+                           <div class="row d-flex justify-content-right">
+                              <div class="col-4 d-flex justify-content-between">
+                                 <div class="pull-left"> <button class="btn btn-danger   btn-sm mr-2" onclick="resertComment()">Cancel</button> </div>
+                                 <div class="pull-right"> <button class="btn btn-success btn-sm" id="send__comment">Send <i class="fa fa-long-arrow-right ml-1"></i></button> </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+               <div class="col-md-12">
+                  <div class="headings d-flex justify-content-between align-items-center mb-3">
+                     <h5 id="countComment">Unread comments(5)</h5>
+                  </div>
+                  <div id="contain__comment">
+                     <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">Khanh</small> <small class="font-weight-bold">love</small></span> </div>
+                           <small>06/25/2021 07:44:30</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                           <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                           <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                        </div>
+                     </div>
+                     <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">Nhi</small> <small class="font-weight-bold">uhurn</small></span> </div>
+                           <small>06/22/2021 22:32:31</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                           <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                           <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                        </div>
+                     </div>
+                     <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">Nhi</small> <small class="font-weight-bold">uhurn</small></span> </div>
+                           <small>06/22/2021 22:32:30</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                           <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                           <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                        </div>
+                     </div>
+                     <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">Khanh</small> <small class="font-weight-bold">yes i like it</small></span> </div>
+                           <small>06/20/2021 23:23:14</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                           <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                           <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                        </div>
+                     </div>
+                     <div class="card p-3 mt-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">Khanh</small> <small class="font-weight-bold">it so very good</small></span> </div>
+                           <small>06/20/2021 23:19:30</small>
+                        </div>
+                        <div class="action d-flex justify-content-between mt-2 align-items-center">
+                           <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                           <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container"><h3><b>Relative hotel</b></h3></div>
+           <div class="relative__hotel container">
+             <a target="_blank" rel="noopener noreferrer" href="" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://photos.hotelbeds.com/giata/original/36/369175/369175a_hb_ro_066.jpg);">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2"> <h5><b>Amiana Resort Nha Trang</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Nha Trang City</p></div>
+                        <div class="row justify-content-between" style="margin:0">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">110.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>100.54$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+            </a>
+
+            <a target="_blank" rel="noopener noreferrer" href="" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh4.googleusercontent.com/proxy/dZAYvAypQFEEF0B9OEm2YCcyZc8PUwaM43cNeQCER4jweR9Iat8-W4aJgj6vxv8REVTnpgWL_ldOlBf-qXeHRRmJhRn6s5veG5l317TYD8KaUiP0pI3z9Xn-oc6p96iqslrFpAMw1Wgg0hnointHSXDLr8pAgq8=w592-h404-n-k-no-v1">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2"> <h5><b>Vinpearl Resort &amp; Spa Ha Long</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Quang Ninh</p></div>
+                        <div class="row justify-content-between " style="margin:0">
+                           <div class="row">
+                          <span class="mr-2">9</span>
+                          <p class="text-muted">Great(500 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 9</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">220.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>190.54$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+            <a target="_blank" rel="noopener noreferrer" href="" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh5.googleusercontent.com/p/AF1QipPflCofEwE3lFWTgWC9WJJCptKckYd3YuvFZfXi=w592-h404-n-k-no-v1)">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2"> <h5><b>Sofitel Legend Metropole Hanoi Hotel</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Ha Noi</p></div>
+                        <div class="row justify-content-between" style="margin:0">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">160.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>150$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+
+
+               
+            </a>
+
+            <a target="_blank" rel="noopener noreferrer" href="" class="col-sm-6 col-lg-4 col-xl-3 mt-4 display__block">
+               <div class="hotel__list-item">
+                  <div class="hotel__list-item-img" style="background-image: url(https://lh5.googleusercontent.com/p/AF1QipNt__taZhtThhEAKO2Dsl94M8wMN4BsbwkiII6O=w592-h404-n-k-no-v1);">
+                     
+                  </div>
+                   <div class="hotel__list-item-info">
+
+                      <div class="row mt-2"> <h5><b>Phu Quoc Long Beach Resort</b></h5></div>
+                       <div class="row">
+                          <div class="contain__hotTour-infomation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        </div>
+                       </div>
+                      <div class="row mt-1 mb-1">  <p class="text-muted"><i class="fas fa-map-marker-alt"></i> Phu Quac</p></div>
+                        <div class="row justify-content-between" style="margin:0">
+                           <div class="row">
+                          <span class="mr-2">5.5</span>
+                          <p class="text-muted">Great(111 rate)</p>
+                           </div>
+                           <p> <i class="fas fa-grin-stars" style="color: var(--primary_color);"></i> 5.5</p>
+                        </div>
+                        <div class="row justify-content-end mt-4">
+                           <p class="text-mute" style="text-decoration: line-through;">160.5$</p>
+                        </div>
+                       <div class="row justify-content-end mt-2">
+                           <h5><b>150.5$</b></h5>
+                        </div>
+
+                   </div>
+               </div>
+            </a>
+           </div>
+      </div>
+      {{!-- hotel description modal  --}}
+      <!-- Button trigger modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><b>Hotel description</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body" style="max-height:600px;overflow-y: scroll;">
+                  <div class="container">
+                     <img style='max-height:400px' src="/img/imgHotel1.jpg" alt="" class="w-100">
+                  </div>
+                  <div class="container mt-4">
+                     <p>
+                        Conveniently located in the restaurant, sightseeing, and beach areas of Nha Trang, Sheraton Nha Trang Hotel & Spa is the most inviting place for you to take a break from your busy days. Located just 0.5 Km from the city center and 35. Km from the airport, this 5-star hotel attracts many visitors every year. With the main tourist attractions of the city such as Thap Tram Huong, Tran Phu Bridge, Nha Trang Night Market quite close, visitors when coming to the hotel are very satisfied with this location of the hotel.
+                        The hotel has six modern restaurants and bars, including Altitude – the highest bar in Nha Trang on the 28th floor. Located on the ground floor, Toastina is a modern and chic outdoor cafe serving sandwiches, freshly baked pastries and doughnuts. It also serves ground fruit, smoothies, iced coffee, and an à la carte menu of bread, pasta, wood-fired pizza and Asian cuisine. Some culinary places around the hotel are highly appreciated such as: Pizza Giang, Hai Au Restaurant.
+                        The hotel's recreational facilities include:
+                        Hot tub.
+                        Gym.
+                        Sauna room.
+                        Swimming pool outdoor.
+                        Sheraton Club Lounge.
+                        Sheraton Adventure Club children's play area.
+                        Spa with 9 modern treatment rooms.
+                        Sheraton Nha Trang Hotel & Spa offers impeccable service, satisfying even the most demanding guests with superb luxury amenities. Facilities such as 24-hour room service, free Wi-Fi in all rooms, wheelchair accessible, private check in/check out, daily housekeeping are always ready to serve all guests. In addition, the hotel has a total of 1,600 m2 of conference rooms, including 2 large banquet rooms on the same floor and seven small meeting rooms with modern conference equipment. Sheraton Nha Trang Hotel & Spa has 280 rooms facing the sea and all have balconies. All furnishings are comfortable and cozy, and many even offer amenities such as: Television
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{!-- close modal  --}}
+      <!-- Modal -->
+      <!-- Button trigger modal -->
+      <div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <div class="wrap-modal-slider">
+                     <div class="your-class">
+                        <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel1.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel2.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel3.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel4.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel5.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel6.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel7.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel8.jpeg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel9.jpg)'> </div>
+                        </div>
+                         <div>
+                            <div class="hotel__list-item-img" style='background-image:url(/img/imgHotel10.jpg)'> </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{!-- close modal  --}}
+      {{> footer}}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+      <script src="/js/app.js"></script>
+      <script src="/js/app2.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         $(document).ready(function(){
+          $('.your-class').slick();
+          
+            $('.relative__hotel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 555,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+            });
+             });
+         
+          $('.modal').on('shown.bs.modal', function (e) {
+          $('.your-class').slick('setPosition');
+          $('.wrap-modal-slider').addClass('open');
+          })
+             
+      </script>
+   </body>
+</html>
