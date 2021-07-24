@@ -33,7 +33,7 @@
                 }
            else{
              
-                window.location.href = data.link
+            location = location.href
             }
             }   
     

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 class loginController {
     //get
     index(req,res) {
-        res.render('others/login');
+        res.redirect('/index.html')
     }
 
     // post 

@@ -3,7 +3,7 @@ const account = require('../controllers/models/account');
 class signUpController {
     // get
     index(req,res) {
-        res.render('others/createAccount');
+        res.redirect('/index.html');
     }
 
     // post
