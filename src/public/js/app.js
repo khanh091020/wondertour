@@ -1,3 +1,69 @@
+  // open close window
+
+  // login
+  $( document ).ready(function() {
+  
+    const modal__login_signUpForm = $('#modal__login-signUpForm')
+    $('.header__produce-right-signup').click(function(e) {
+        e.preventDefault()
+        modal__login_signUpForm.addClass('display__flex')
+    })
+    
+    $('.login__signUp-close').click(function(){
+      modal__login_signUpForm.removeClass('display__flex')
+    })
+   
+    
+    $("#sendDataLogin").submit(function(e) {
+    
+        e.preventDefault();
+    
+        var form = $(this);
+        var url = form.attr('action');
+        
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(), 
+            success: function(data)
+            {
+                if(data==='false')
+                {
+                  $('#falseLogin').html('Email or password incorrect !')
+                }
+           else{
+             
+                window.location.href = data.link
+            }
+            }   
+    
+            });
+         });
+    
+         $("#sendDataSignUp").submit(function(e) {
+    
+            e.preventDefault();
+        
+            var form = $(this);
+            var url = form.attr('action');
+            
+            $.ajax({
+                   type: "POST",
+                   url: url,
+                   data: form.serialize(), 
+                   success: function(data)
+                   {
+                       $('#checkSignUp').html(data)
+                   }
+                 });
+        
+            
+        });
+        
+});
+  
+  // close login
+  
   var onscroll50; 
  // loading webside
 

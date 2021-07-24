@@ -1,3 +1,41 @@
+   <div id="modal__login-signUpForm">
+          <div class="contain__form__login-signUp">
+        <div class="form-modal">
+               <i class="fas fa-times login__signUp-close"></i>
+        
+        <div class="form-toggle">
+            <button id="login-toggle" onclick="toggleLogin()">log in</button>
+            <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+        </div>
+    
+        <div id="login-form">
+            <form action="/login.html" class="right-form" id="sendDataLogin">
+                <p style="color: red;" id="falseLogin"></p>
+                <input required type="text" name="email" placeholder="Enter email"/>
+                <input required type="password"  name="password" placeholder="Enter password"/>
+                <button type="submit" formmethod="POST"  class="btn login">login</button>
+                <p><a href="javascript:void(0)">Forgotten account</a></p>
+            </form>
+        </div>
+    
+        <div id="signup-form">
+            <form action="/sign-up.html" class="right-form createNew-form" id="sendDataSignUp">
+               <div id="checkSignUp"></div>
+                <input required type="email" name="email" placeholder="Enter your email"/>
+                <input required type="number" name="phone" placeholder="Enter your phone"/>
+                <input required type="text" name="firstName" placeholder="Enter first name"/>
+                <input required type="text" name="lastName" placeholder="Choose last name"/>
+                <input required type="password"  name="password" placeholder="Password"/>
+                <input required type="password" name="passwordRepeat" placeholder="Password repeat"/>
+                <button type="submit" formmethod="POST"  class="btn signup">create account</button>
+                <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
+            </form>
+        </div>
+    
+    </div>
+    </div>
+    
+   </div>
  <header class="header">
         <div class="header__produce" id="produce" >
             
@@ -125,6 +163,8 @@
             listItemNavMobie[i].style.color = "#fff";
         }
     }
+
+   
 
     </script>
 
