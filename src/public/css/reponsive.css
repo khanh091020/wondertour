@@ -448,6 +448,12 @@
         margin: 1rem 1rem 0;
         border-radius: 10px !important;
     }
+    #tourDetails #container__right .contain__img {
+        padding: 15px 0 0;
+    }
+    #tourDetails #container__right {
+         padding: 20px 15px 15px;
+    }
 }
 
 
@@ -489,7 +495,7 @@
     }
 
     .contain__impression {
-        padding-top: 506px;
+        padding-top: 400px;
     }
 
    
@@ -610,6 +616,12 @@
     }
     .partner__reweiw-slider .myslider .background__img {
         width: 370px;
+    }
+    .contain__counter-info h1 {
+        font-size: 2rem
+    }
+    .contain__counter--decrip {
+      font-size:1.5rem
     }
 }
 
