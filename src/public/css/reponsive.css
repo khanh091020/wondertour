@@ -130,6 +130,9 @@
     .tour__grid-left {
         display: none;
     }
+    .partner__rewiew-accompany div {
+        left:38% ;  
+    }
 }
 
 @media (max-width: 1000px) {
@@ -273,7 +276,7 @@
 }
 
 .header__navbar-max1000-item a{
-  padding: 1rem;
+  padding: .8rem;
   padding-left: .5rem;
   text-align: left;
   display: block;
@@ -301,6 +304,9 @@
 }
 #flight__container-right {
     padding-left: 0 !important;
+}
+.partner__rewiew-top {
+    margin: 3.8rem 0 2rem;
 }
 }
 
@@ -339,7 +345,19 @@
     .hotel__description-img {
         height: 500px !important
     }
-    
+    .partner__rewiew-contain-slider {
+        max-width: 100%;
+    }
+    .parner__rewiew-4step {
+        max-width: 100%;
+    }
+    .partner__rewiew-head-left h1,
+    .partner__rewiew-accompany h1 {
+        font-size:1.8rem
+    }
+    .partner__reweiw-slider .myslider .background__img {
+        width: 345px;
+    }
    
 }
 
@@ -422,6 +440,13 @@
 {
     .container {
         max-width: 100%;
+    }
+    .partner__reweiw-slider .myslider .background__img {
+        width: 414px;
+    }
+    .partner__rewiew-top .col-md-7 {
+        margin: 1rem 1rem 0;
+        border-radius: 10px !important;
     }
 }
 
@@ -534,6 +559,22 @@
     .contain__form__login-signUp {
         padding: 0 1.3rem;
     }
+    .contain__people-mission h1 {
+        font-size: 2rem;
+        margin: 0 1rem 8rem;
+    }
+    .contain__what-say-title {
+        font-size:3.5rem;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 7rem;
+    }
+    .first__advantage-contain h1 {
+        font-size:2.4rem ;
+    }
+    .partner__rewiew-head-left h1, .partner__rewiew-accompany h1 {
+        font-size:1.5rem
+    }
 }
 
 
@@ -541,6 +582,40 @@
   
     .contain__discover {
         margin: 5rem 1rem;
+    }
+    h1 {
+        font-size:2rem
+    }
+    .contain__hotTour-title h1 {
+        font-size:2.5rem
+    }
+    .h2, h2 {
+        font-size:1.65rem
+    }
+    #fh5co-testimonial .fh5co-heading h2 {
+        font-size:2.65rem
+    }
+    .blog__banner-til h1 {
+        font-size: 3rem;
+    }
+    .h4, h4 {
+        font-size:1.25rem
+    }
+    h3, h3 {
+        font-size: 1.55rem;
+    }
+    .container__findTour__opencls {
+        right: -6.2rem;
+        padding: 5px 1rem 0;
+    }
+    .partner__reweiw-slider .myslider .background__img {
+        width: 370px;
+    }
+}
+
+@media (max-width: 475px) {  
+    .partner__rewiew-head-left h1, .partner__rewiew-accompany h1 {
+        font-size:1.25rem
     }
 }
 
@@ -586,6 +661,14 @@
         width: 100%;
         height: auto;
     }
+
+    .contain__what-say-title {
+        font-size:3rem
+    }
+    .partner__reweiw-slider .myslider .background__img {
+        width: 290px;
+    } 
+   
 }
 
 @media (max-width: 350px) {
@@ -604,6 +687,9 @@
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
+    .partner__reweiw-slider .myslider .background__img {
+        width: 250px;
+    } 
 
    
 }

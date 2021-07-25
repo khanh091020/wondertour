@@ -251,8 +251,6 @@ a.header__produce-right-signup {
 	right: -8rem;
 	padding: 5px 2rem;
 	transform: rotate( 90deg);
-	/* align-items: center; */
-	/* width: 200px; */
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
@@ -658,7 +656,7 @@ a.contain__hotTour-btn {
 .contain__people-mission h1 {
 	text-align: center;
 	margin-bottom: 10rem;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	color: rgba(0, 0, 0, 0.8);
     font-weight: 410;
 }
@@ -748,8 +746,8 @@ a.contain__hotTour-btn {
 	color: #fff;
 	position: absolute;
 	text-align: center;
-	top: 50%;
-	
+	top: 50%; 
+	width: 90%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
@@ -1842,6 +1840,7 @@ a.footer__policy {
 .partner__rewiew-top .background__img {
 	border-radius: 0 !important; 
 	padding-top: 35%;
+	min-height: 150px;
 }
 .partner__rewiew-head-left div
  {
@@ -1909,6 +1908,9 @@ a.footer__policy {
     color: #fff;
     text-shadow: 1px 1px 4px #999;
     max-width: 550px;
+  }
+  .partner__rewiew-accompany {
+	  min-height: 220px;
   }
 
   /* login form  */
