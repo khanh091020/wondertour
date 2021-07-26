@@ -155,21 +155,6 @@ a.header__produce-right-signup {
 	background-color: #304559;
 }
 
-/* .navbar__active::before  {
-	content: '' !important;
-	position: absolute !important;
-	left: 0 !important;
-	right: 0 !important;
-	top: 0 !important;
-	height:2px !important;
-	background-color: var(--primary_color) !important;
-	transform: scaleX(1) !important;
-} */
-
-
-
-
-
 .header__navbar-list-item a:hover {
 	background-color: #304559;
 }
@@ -1549,7 +1534,7 @@ a.footer__policy {
 }
 /* account page  */
 .account__nav-bar {
-	padding: 1rem 0;
+	padding: 1rem;
 	font-size: 1.3rem;
 	margin-bottom: 0;
 }
@@ -1586,6 +1571,9 @@ a.footer__policy {
 .account__formDetails a {
 	display: block;
 	margin-top: 1rem;
+}
+.acc__management-til {
+	color: #fff;background-color: var(--primary_color);
 }
 
 /* hotel page  */

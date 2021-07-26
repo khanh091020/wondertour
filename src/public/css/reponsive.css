@@ -310,6 +310,9 @@
 .partner__rewiew-top {
     margin: 3.8rem 0 2rem;
 }
+.acc__management-til {
+    margin-top:3rem
+}
 }
 
 @media (max-width : 992px){
@@ -360,6 +363,7 @@
     .partner__reweiw-slider .myslider .background__img {
         width: 345px;
     }
+   
    
 }
 
@@ -456,6 +460,12 @@
     #tourDetails #container__right {
          padding: 20px 15px 15px;
     }
+    .table__row-body img{
+        margin-bottom: .75rem;
+    }
+    .table-part-item-img {
+        padding-left: 0;
+    }
 }
 
 
@@ -550,6 +560,7 @@
     max-width: 310px;
     transform: translate(-50%, -50%);
     }
+   
    
  }
 @media (max-width: 575px) { 

@@ -32,8 +32,8 @@
                   $('#falseLogin').html('Email or password incorrect !')
                 }
            else{
-             
-            location = location.href
+                let link = location.href
+                location = link.split('#')[0]
             }
             }   
     

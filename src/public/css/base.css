@@ -8,6 +8,16 @@
 .carousel-caption {
   z-index: 0;
 }
+.mr-l-0 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.radius-7 {
+  border-radius:7px
+}
 
 .background__img {
   border-radius: 8px;
@@ -952,4 +962,17 @@ input.checkbox {
     padding-bottom: 1rem;
     border-bottom: 4px solid #EDF2F7;
 }
+
+/* table list item  */
+.table__row-item {
+   padding: 1rem;
+   margin-bottom: 1.5rem;
+   background: #f1f1f1;
+   border-radius: 7px;
+ }
+ .table__row-header {
+   padding-bottom: .3rem;
+   margin-bottom: .8rem;
+   border-bottom: 1px solid #999;
+ }
 
