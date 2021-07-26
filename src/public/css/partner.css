@@ -119,6 +119,7 @@ img {
 
 
 /* reponsive partner  */
+
 @media (max-width:800px) {
   #partnerIndex__listRoom-wait .background__img h5 {
     font-size: 1rem;

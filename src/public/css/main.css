@@ -1681,7 +1681,7 @@ a.footer__policy {
 .hotel__list-item-info .row h5 {
 	
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;	
+    -webkit-line-clamp: 2;	
 	overflow: hidden;
 }
 .hotel__list-item-img-item {
@@ -1697,6 +1697,9 @@ a.footer__policy {
 
  .hotel__list-item-info {
 	padding: 0 2rem;
+ }
+ .hotel__list-item-info .row h5 {
+	display: -webkit-box;
  }
  .hotel__list-item {
 	box-shadow: 0px 1px 6px #999;
