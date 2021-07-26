@@ -975,4 +975,13 @@ input.checkbox {
    margin-bottom: .8rem;
    border-bottom: 1px solid #999;
  }
+ @media (max-width:768px) 
+{
+  .table-part-item-img {
+    padding-left: 0;
+}
+.table__row-body img{
+  margin-bottom: .75rem;
+}
+}
 

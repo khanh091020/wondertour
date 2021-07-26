@@ -453,6 +453,9 @@
     .partner__rewiew-top .col-md-7 {
         margin: 1rem 1rem 0;
         border-radius: 10px !important;
+        flex: 1;
+        max-width: 100%;
+     
     }
     #tourDetails #container__right .contain__img {
         padding: 15px 0 0;
@@ -460,12 +463,10 @@
     #tourDetails #container__right {
          padding: 20px 15px 15px;
     }
-    .table__row-body img{
-        margin-bottom: .75rem;
-    }
-    .table-part-item-img {
-        padding-left: 0;
-    }
+    .partner__rewiew-head-left {   
+         flex: 0 0 100%;
+        max-width: 100%;}
+   
 }
 
 

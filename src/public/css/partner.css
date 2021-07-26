@@ -7,9 +7,7 @@ img {
      margin-right: 0;
  }  
 
-.slick-prev:before, .slick-next:before {
-  color: red;
-  }   
+
   #partnerIndex__listRoom-wait .background__img {
     width: 343px;
     height:262px;
@@ -31,15 +29,15 @@ img {
 }
 
 
-#list__createRomm-option .text-center {
+.list__createRomm-option .text-center {
    padding: 1rem;
    box-shadow: 0px 1px 8px 1px #999;
    border-radius:7px
 }
-#list__createRomm-option .text-center:hover {
+.list__createRomm-option .text-center:hover {
   box-shadow: 0px 2px 8px 0px var(--primary_color);
 }
-#list__createRomm-option p {
+.list__createRomm-option p {
   display:-webkit-box;
   -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
@@ -119,13 +117,76 @@ img {
 
 
 /* reponsive partner  */
+@media(max-width:1200px) {
+  .header__produce {
+    padding : 0 2%
+  }
+}
+@media(max-width: 958px) {
+  .create__new-room {
+    padding: .2rem .3rem;
+    font-size:.9rem
+  }
+}
+@media(max-width:920px) {
 
+  .partner__index-sort {
+    margin-top: 1.5rem;
+  }
+}
 @media (max-width:800px) {
   #partnerIndex__listRoom-wait .background__img h5 {
     font-size: 1rem;
   }
   #partnerIndex__listRoom-wait .background__img p {
     font-size: .8rem;
+  }
+  .header__produce-call {
+    display:none
+  }
+  .header__user  {
+    margin-left: 1rem;
+  }
+  .h4, h4 {
+    font-size:1.35rem
+  }
+  .partner__index-title{
+    padding: 0;
+  }
+  .partner__index-title h4 {
+    margin-left: 0 !important;
+  }
+  .create__new-room {
+    margin-right:  0 !important;
+
+  }
+  .h1, h1 {
+    font-size:2rem
+  }
+}
+
+@media(max-width : 560px) {
+  .header__produce-logo {
+    display : none;
+  }
+  .header__produce-right {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 .5rem;
+}
+.header__produce-timecall div {
+  margin : 0
+}
+.h1, h1 {
+  font-size:1.8rem
+}
+.h3, h3 {
+  font-size:1.45rem
+}
+}
+@media (max-width:553px) {
+  .partner__index-search {
+    margin-top: 1rem;
   }
 }
 @media (max-width:480px) {
@@ -146,5 +207,10 @@ img {
   #partnerIndex__listRoom-wait .background__img {
     width: 315px;
     height:257px
+  }
+}
+@media (max-width:389px) {
+  .partner__general-changepass {
+    margin-bottom: 1rem;
   }
 }

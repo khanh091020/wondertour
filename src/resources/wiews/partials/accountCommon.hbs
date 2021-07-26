@@ -166,44 +166,7 @@
              {{else}}
                 <h1 class="mt-5">You don't have order tour . <a href="/outTour.html">Book tour now !</a> </h1>
              {{/each}}
-            {{!-- <table class="table table-hover">
-               <thead>
-                  <tr>
-                     <th>Image</th>
-                     <th>Tour name</th>
-                     <th>Start day</th>
-                     <th>Book time</th>
-                     <th>Start place</th>
-                     <th>Photographer</th>
-                     <th>Singer tour</th>
-                     <th>Total price</th>
-                     <th>Status</th>
-                     <th></th>
-                     <th></th>
-                  </tr>
-               </thead>
-               <tbody>
-                  {{#each orders}}
-                  <tr>
-                     <td><img style="width: 150px;object-fit: cover;" src="/{{this.tourID.img}}" alt=""></td>
-                     <td>{{this.tourID.name}}</td>
-                     <td>{{this.tourDate}}</td>
-                     <td>{{formatDateDetails this.createdAt}}</td>
-                     <td>{{this.tourID.startPlace}}</td>
-                     <td>{{this.photographer}}</td>
-                     <td>{{this.singerTour}}</td>
-                     <td>{{this.totalPrice}}$</td>
-                     <td class='statusOrder'>{{this.status}}</td>
-                     <td><a href="/tours/{{this.tourID.slug}}" class="btn btn-success btn-sm">Details</a></td>
-                     <td>
-                        {{{checkCancelOrder this.status this._id}}} 
-                     </td>
-                  </tr>
-                  {{else}}
-                  <h1 class="mt-5">You don't have order tour . <a href="/outTour.html">Book tour now !</a> </h1>
-                  {{/each}}
-               </tbody>
-            </table> --}}
+          
          </div>
          <div class="container-fluid account__main-contain" id="account__contain-myphoto">
              <div class="table__row-list">
