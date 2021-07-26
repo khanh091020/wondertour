@@ -220,7 +220,7 @@ a.header__produce-right-signup {
 	transition: transform .5s linear;
 	background-color: rgba(1, 179, 167, 0.9);
 	padding: 1rem;
-	z-index: 5;
+	z-index: 10;
 	min-width: 360px;
 	color: #f1f1f1;
 	max-width: 500px
@@ -1478,6 +1478,15 @@ a.footer__policy {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+#book__photo-toast {
+	position: fixed;
+	top: 40%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background-color: #23c22b;
+	width: 300px;
+ }
+
 @media(max-width : 992px) {
 	.photographer__contain-btn .btn-success {
 		margin-bottom: 5px;
@@ -1694,8 +1703,27 @@ a.footer__policy {
 	 font-size: 2rem;
 	 color: #fff;
 	 z-index: 1;
+	 cursor: pointer;
 }
 
+ .hotel__list-item-info {
+	padding: 0 2rem;
+ }
+ .hotel__list-item {
+	box-shadow: 0px 1px 6px #999;
+	margin-bottom: 1rem;
+ }
+ .hotelDetail__contain-imgAll .hotel__list-item-img {
+	border-radius: 7px ;
+	padding-top: 60%;
+ }
+ .contain__list-room-item .hotel__list-item-img {
+	padding-top: 65%;
+	border-radius:4px
+ }
+ .room__facitilies-items-contain img{
+	width: 30px;
+ }
 /* flight page  */
 .flight__slider-item {
 	width: 213px;

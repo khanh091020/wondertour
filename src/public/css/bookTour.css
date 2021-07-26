@@ -1036,8 +1036,7 @@ overflow-y: scroll;
     padding: 1rem;
     border-radius: 6px;
     border-top: 5px solid var(--primary_color);
-    max-width: 40%;
-    min-width:350px;
+     width: 600px;
     position: relative;
   }
   .bookTour__success-icon i {

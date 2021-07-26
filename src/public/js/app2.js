@@ -109,12 +109,16 @@ $('#btn__completeBooking').click(function(e) {
  }
 
  // book photographer
-  
+ $(".toast").toast({
+  autohide : true,
+  animation : true,
+  delay : 5000
+ });
  $('#photographerModal').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget) 
-    var namePhotographer = button.data('name') 
-    var cityPhotographer = button.data('city')
-    var modal = $(this)
+   let button = $(event.relatedTarget) 
+   let namePhotographer = button.data('name') 
+   let cityPhotographer = button.data('city')
+   let modal = $(this)
     modal.find('.modal-boy-child2').html(`
     <h4 class="text-danger">Note !</h4>
     <p class="text-warning">This photographer is only available in ${cityPhotographer}.</p>
@@ -123,7 +127,7 @@ $('#btn__completeBooking').click(function(e) {
 
 $('#showSuccessToast').click(function() {
   $('.photo__cus-phone').html('Our staff will call your phome number <b>'+$("#photo__cus-phone-input").val()+'</b> to confirm. Thank you !')
-   $(".toast").toast('show');
+   $("#book__photo-toast").toast('show');
 }) 
 
 // change color heart 
@@ -152,6 +156,8 @@ $('.contain__icon__heart-product').click(function() {
      document.getElementById("signup-form").style.display="none";
      document.getElementById("login-form").style.display="block";
  }
+
+
  
 
  

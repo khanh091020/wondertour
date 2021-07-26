@@ -133,9 +133,9 @@
 
                     <h5>Person infomation</h5>
                    <p >Contact name</p>
-                   <input type="text" placeholder="first name and last name" name="userName">
+                   <input type="text" placeholder="first name and last name" value="{{#if session.name}}{{session.firstName}} {{session.name}}{{/if}}" name="userName">
                    <p >Mobie phone number</p>
-                   <input type="number" name="phone">
+                   <input type="number" name="phone" value="{{#if session.phone}}{{session.phone}}{{/if}}">
                      <p >Address</p>
                    <input type="text">
                      <p >Province</p>

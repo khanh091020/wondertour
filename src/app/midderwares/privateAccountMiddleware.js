@@ -2,7 +2,9 @@ const jwt = require('jsonwebtoken')
 
 const checkToken = (req, res, next) => {
    const token = req.session.token
-   if(!token) return res.redirect('/login.html')
+   if(!token) return res.json({
+     message: 'You need login to continue'
+   })
 
   try {
     const decaded = jwt.verify(token,'mk')

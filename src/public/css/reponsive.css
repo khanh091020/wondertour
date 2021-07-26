@@ -488,6 +488,12 @@
     }
 }
 
+@media (max-width: 650px) {
+    .bookTour__success {
+        width: 90% !important;
+    }
+}
+
 @media (max-width: 579px) {
     .contain__other-tour {
         height: 62rem;
@@ -510,6 +516,13 @@
     .ourTour__findtour {
         margin-left: 1rem;
         margin-right: 1rem;
+    }
+    .bookTour__success-body .col-sm-7 {
+        margin-bottom: 1rem;
+    }
+    .bookTour__success {
+        margin-top: 22rem !important;
+        margin-bottom: 1.5rem !important;
     }
 }
 @media (max-width: 576px) { 
