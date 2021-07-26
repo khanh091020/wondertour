@@ -450,6 +450,9 @@ figure {
 .transform__180 {
   transform: rotate(180deg);
 }
+.transform__0 {
+  transform:translateX(0) !important
+}
 
 .transform__dis180 {
   transform: rotate(-180deg);
@@ -735,9 +738,7 @@ span.fade2 {
     display: none;
 }
 
-.header__navbar-max1000 {
-  display: none;
-}
+
 
 .header__produce-iconback-1000 {
   display: none;

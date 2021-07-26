@@ -109,11 +109,7 @@ $('#btn__completeBooking').click(function(e) {
  }
 
  // book photographer
- $(".toast").toast({
-  autohide : true,
-  animation : true,
-  delay : 5000
- });
+
  $('#photographerModal').on('show.bs.modal', function (event) {
    let button = $(event.relatedTarget) 
    let namePhotographer = button.data('name') 

@@ -217,13 +217,14 @@ a.header__produce-right-signup {
 	border-radius: 10px;
 	position: fixed;
 	top: 10rem;
-	transition: transform .5s linear;
+	transition: transform .3s ease-in-out;
 	background-color: rgba(1, 179, 167, 0.9);
 	padding: 1rem;
 	z-index: 10;
 	min-width: 360px;
 	color: #f1f1f1;
-	max-width: 500px
+	max-width: 500px;
+	transform: translateX(-100%);
 }
 
 
