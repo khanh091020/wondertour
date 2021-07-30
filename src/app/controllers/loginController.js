@@ -21,9 +21,11 @@ class loginController {
                 email : account.email
             },'mk');
             req.session.token = token;
+            req.session._id = account._id;
             req.session.firstName = account.firstName;
             req.session.name = account.lastName;
             req.session.phone = account.phone;
+           
                res.json({
                    link : '/index.html'
                })

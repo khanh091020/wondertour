@@ -7,11 +7,12 @@ class tourDetailsController {
    async index(req,res,next) {
      var listComment;
 
-     Promise.all([tourr.findOne({slug : req.params.slug}) ,comment.find({slugTour : req.params.slug}).sort({createdAt : 'desc'}),comment.countDocuments({slugTour : req.params.slug})])
-     .then(([object,commentList,count]) => {
+     Promise.all([tourr.findOne({slug : req.params.slug}),tourr.find({}) ,comment.find({slugTour : req.params.slug}).sort({createdAt : 'desc'}),comment.countDocuments({slugTour : req.params.slug})])
+     .then(([object,listTour,commentList,count]) => {
       res.render('tour/toursdetail',
         {
           object : mongooseToObject(object),
+          tours : mutipleMongooseTobject(listTour),
           commentList : mutipleMongooseTobject(commentList),
           count : count
         })

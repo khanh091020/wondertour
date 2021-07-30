@@ -4,6 +4,7 @@ class orderController {
   // post 
   // create order object
   async createOrder(req, res,next) {
+   
     const {userName,phone,tourDate,tourID,
         photographer,check__photographer,singerTour,adultNumber,chilrenNumber,totalPrice,status}  = req.body
        

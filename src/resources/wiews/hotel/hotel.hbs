@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="/css/main.css">
       <link rel="stylesheet" href="/css/reponsive.css">
       <link rel="stylesheet" href="/css/bookTour.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +55,11 @@
          .mr__ml-15 {
             margin: 0 -15px;
          }
-       
+         @media(max-width:443px) {
+            #hotelFindTour {
+               margin-bottom: 2rem;
+            }
+         }
       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;" >
@@ -88,6 +93,36 @@
                   <div class="row flex-column ourTour__cpntain__search">
                       <label for="sel1">Check-out</label>
                      <input name="toDate"  type="date" placeholder="Where want you go ?">
+                  </div>
+                  <div class="row flex-column ourTour__cpntain__search ">
+                      <label for="sel1">People number</label>
+                     <input name="people" type="text" placeholder="1 adult 1 child" readonly style="cursor: pointer;">
+                     <div class="contain__people-number">
+                        <div class="row mr-l-0 align-items-center mb-2">
+                           <div class="col-5">
+                              <p>Adults</p>
+                           </div>
+                          <div class="col-7">
+                              <div class="row mr-l-0 align-items-center justify-content-between">
+                              <button type="button" data-id='hotel__search-adult' class="hotel__decreasePeople__btn"><i class="fas fa-minus"></i></button>
+                              <p class="text-muted hotel__search-adult">1</p>
+                              <button type="button" data-id="hotel__search-adult" class="hotel__increasePeople__btn"><i class="fas fa-plus"></i></button>
+                           </div>
+                          </div>
+                        </div>
+                         <div class="row mr-l-0 align-items-center">
+                           <div class="col-5">
+                              <p>Children</p>
+                           </div>
+                          <div class="col-7">
+                              <div  class="row mr-l-0 align-items-center justify-content-between">
+                              <button type="button" data-id='hotel__search-chidren' class="hotel__decreasePeople__btn"><i class="fas fa-minus"></i></button>
+                              <p class="text-muted hotel__search-chidren" >1</p>
+                              <button type="button" data-id='hotel__search-chidren' class="hotel__increasePeople__btn"><i class="fas fa-plus" ></i></button>
+                           </div>
+                          </div>
+                        </div>
+                     </div>
                   </div>
     
               </div>
@@ -602,7 +637,6 @@
 
       {{> footer}}
       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
       <script type="text/javascript" src="/js/lightslider.js"></script>
       <script src="/js/app.js"></script>
@@ -630,6 +664,23 @@
          $('#goToNextSlideHT').on('click', function () {
             sliderNow.goToNextSlide();
          });
+          $('input[name="people"]').click(function () {
+             $('.contain__people-number').toggleClass('display__block')
+          })
+       $('.hotel__increasePeople__btn').click(function () {
+          let queryValue = $(this).attr('data-id')
+          let currentValue = $(`.${queryValue}`).text()
+          $(`.${queryValue}`).text(parseInt(currentValue) + 1)
+          $('input[name="people"]').val($('.hotel__search-adult').text() + ' adults ' + $('.hotel__search-chidren').text() + ' children ' )
+       })
+        $('.hotel__decreasePeople__btn').click(function () {
+          
+           let queryValue = $(this).attr('data-id')
+          let currentValue = $(`.${queryValue}`).text()
+          if(parseInt(currentValue) === 0 ) return
+          $(`.${queryValue}`).text(parseInt(currentValue) - 1)
+           $('input[name="people"]').val($('.hotel__search-adult').text() + ' adults ' + $('.hotel__search-chidren').text() + ' children ' )
+       })
       </script>
    </body>
 </html>

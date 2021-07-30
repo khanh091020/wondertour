@@ -1709,6 +1709,27 @@ a.footer__policy {
 	border-radius: 7px ;
 	padding-top: 60%;
  }
+ .ourTour__cpntain__search {
+	 position: relative;
+ }
+ .ourTour__cpntain__search .contain__people-number {
+	 position: absolute;
+	 right:0;
+	 border-radius: 5px;
+	 border: 1px solid var(--primary_color);
+	 padding : .4rem 0;
+	 bottom: -105%;
+	 color: #999;
+    text-shadow: none;
+	 width: 100%;
+	 display: none;
+ }
+ .ourTour__cpntain__search .contain__people-number button {
+	border: 1px solid var(--primary_color);
+   border-radius: 50%;
+   color: #666;
+   font-size: .8rem;
+ }
  .contain__list-room-item .hotel__list-item-img {
 	padding-top: 65%;
 	border-radius:4px

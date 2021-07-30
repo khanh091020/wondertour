@@ -17,6 +17,8 @@ const order = require('./order')
 const priviteOrderMiddleware = require('../app/midderwares/privateOrderMiddleware')
 const privateAccountMiddleware = require('../app/midderwares/privateAccountMiddleware')
 const partnership = require('./partnerhip')
+// web webNhanh
+const webnhanh = require('./webnhanh/webnhanh')
 
 // admin
 const listAllTour = require('./adminRoute/listAllTour');
@@ -45,6 +47,8 @@ function route(app) {
     app.use('/account',privateAccountMiddleware,account)
     app.use('/affiliate-service',affiliatService)
     app.use('/api/order',priviteOrderMiddleware,order)
+    // web nhanh
+    app.use('/web-nhanh',webnhanh)
     // admin link
     app.use('/admin/api/order',adminOrder);
     app.use('/admin/createTour',createTour);

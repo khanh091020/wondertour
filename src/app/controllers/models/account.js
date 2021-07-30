@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const account = new schema({
+const account = new Schema({
     firstName : String,
     lastName : String,
     email : String,
@@ -11,6 +11,7 @@ const account = new schema({
     address : String,
     admin : Boolean,
     boss : Boolean
+    
 },
 {
     collection : 'account'

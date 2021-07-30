@@ -1,0 +1,173 @@
+   <div id="modal__login-signUpForm">
+          <div class="contain__form__login-signUp">
+        <div class="form-modal">
+               <i class="fas fa-times login__signUp-close"></i>
+        
+        <div class="form-toggle">
+            <button id="login-toggle" onclick="toggleLogin()">log in</button>
+            <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+        </div>
+    
+        <div id="login-form">
+            <form action="/login.html" class="right-form" id="sendDataLogin">
+                <p style="color: red;" id="falseLogin"></p>
+                <input required type="text" name="email" placeholder="Enter email"/>
+                <input required type="password"  name="password" placeholder="Enter password"/>
+                <button type="submit" formmethod="POST"  class="btn login">login</button>
+                <p><a href="javascript:void(0)">Forgotten account</a></p>
+            </form>
+        </div>
+    
+        <div id="signup-form">
+            <form action="/sign-up.html" class="right-form createNew-form" id="sendDataSignUp">
+               <div id="checkSignUp"></div>
+                <input required type="email" name="email" placeholder="Enter your email"/>
+                <input required type="number" name="phone" placeholder="Enter your phone"/>
+                <input required type="text" name="firstName" placeholder="Enter first name"/>
+                <input required type="text" name="lastName" placeholder="Choose last name"/>
+                <input required type="password"  name="password" placeholder="Password"/>
+                <input required type="password" name="passwordRepeat" placeholder="Password repeat"/>
+                <button type="submit" formmethod="POST"  class="btn signup">create account</button>
+                <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
+            </form>
+        </div>
+    
+    </div>
+    </div>
+    
+   </div>
+ <header class="header">
+        <div class="header__produce" id="produce" >
+            
+            
+             <div class="header__produce-logo">
+                <div class="header__produce-iconmenu-1000" id="menu__navbar-1000">
+                    <i class="fas fa-bars"></i>
+                </div>
+               
+               <a href="/index.html">
+                <div class="row " style="margin: 0;">
+                    <h4 style="color: #999;margin-bottom: 0;">WONDER</h4> <h4 style="color: var(--primary_color);margin-left: 5px;margin-bottom: 0;">PLACE</h4>
+                </div>
+             </a>
+             </div>
+
+             <div class="header__produce-right">
+                 <div class="header__produce-timecall">
+                     <div class="header__produce-time">
+                        <i class="fas fa-handshake"></i>
+                         <a href="/partnership/rewiew">Cooperate with us</a>
+                     </div>
+
+                     <div class="header__produce-call">
+                         <i class="fas fa-phone-square-alt"></i>
+                         <a href="tel:+84945806419">+84945806419</a>
+                    </div>
+                   
+                 </div>
+                  
+                   {{#if session.name}}
+                   <div class="header__user">
+                       <i class="fas fa-user"></i>
+                       <h5 onclick="openClose__UserTool()">Hello {{session.name}} <i class="fas fa-chevron-down"></i></h5>
+                       <ul class="list__Tool-User">
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">My account</a> </li>
+                           <li class="list__Tool-User-item"> <a href="/account/my-tour">My tours</a> </li>
+                           <li class="list__Tool-User-item"> <a href="/account/love-tour">Love tour</a> </li>
+                           <li class="list__Tool-User-item"> <a href="/account/my-photographer"> My photographer</a></li>
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Log out <i class="fas fa-sign-out-alt"></i></a></li>
+                       </ul>
+                   </div>
+                   {{else}}
+                 <a href="/login.html" class="btn btn-sm btn-background-slide mar__left_10rem header__produce-right-signup">
+                   SIGN IN 
+                 </a>
+                 {{/if}}
+                 
+                  {{!-- {{{displayLogin _user.username}}} --}}
+             </div>
+        </div>
+           
+        <div>
+
+            <div class="header__navbar " id="navbar">
+               <ul class="header__navber-list">
+                   <li class="header__navbar-list-item"> <a href="/index.html">
+                    Home
+                   </a></li>
+                   <li class="header__navbar-list-item"> <a href="/outTour.html">
+                    Our tour
+                   </a></li>
+                   <li class="header__navbar-list-item"> <a href="/photographer">
+                   Photographer
+                   </a></li>
+                    <li class="header__navbar-list-item"> <a href="/affiliate-service/hotel">
+                    Hotel
+                   </a> </li>
+                    <li class="header__navbar-list-item"> <a href="/affiliate-service/flight">
+                    Flight
+                   </a></li>
+                   <li class="header__navbar-list-item"> <a href="/about.html">
+                    About
+                   </a> </li>
+                   <li class="header__navbar-list-item"> <a href="/blog">
+                    Blog
+                   </a> </li>
+                   <li class="header__navbar-list-item"> <a href="/contact.html">
+                    Contact us
+                   </a> </li>
+                   
+                   
+                  
+               </ul>
+    
+               <div class="header__navbar-social">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-google-plus-g"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+               </div>
+            </div>
+
+            <div class="header__navbar-max1000" id="navbar__1000">
+                <div class="header__navbar__1000-social">
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-google-plus-g"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                   </div>
+                 
+
+                <ul class="header__navbar-max1000-list">
+                     <li class="header__navbar-max1000-item"><a href="/partnership/rewiew"><i class="fas fa-handshake mr-2"></i>Cooperate with us</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/index.html"><i class="fas fa-home mr-2"></i>Home</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/outTour.html"><i class="fas fa-stream mr-2"></i>Our Tour</a>
+                    </li>
+                    <li class="header__navbar-max1000-item"> <a href="/photographer"><i class="fas fa-camera-retro mr-2"></i>Photographer</a></i></li>
+                    <li class="header__navbar-max1000-item"> <a href="/affiliate-service/hotel"><i class="fas fa-hotel mr-2 "></i>Hotels</a></li>
+                     <li class="header__navbar-max1000-item"> <a href="/affiliate-service/flight"><i class="fas fa-paper-plane mr-2"></i>Flight</a></li>
+                     <li class="header__navbar-max1000-item"> <a href="/about.html"><i class="fas fa-question-circle mr-2"></i>About</a>
+                    </li>
+                    <li class="header__navbar-max1000-item"> <a href="/blog"><i class="fab fa-blogger-b mr-2"></i>Blog</a></li>
+                    <li class="header__navbar-max1000-item"> <a href="/contact.html"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></i></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <script>
+    var listItemNavMobie = document.querySelectorAll('.header__navbar-max1000-item a');
+    for(var i =0;i<listItemNavMobie.length;i++) {
+        if(listItemNavMobie[i].href === location.href) 
+        {
+            listItemNavMobie[i].style.backgroundColor = "#01b3a7";
+            listItemNavMobie[i].style.color = "#fff";
+        }
+    }
+
+   
+
+    </script>
+
+    

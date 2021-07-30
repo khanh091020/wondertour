@@ -10,6 +10,7 @@ const checkToken = (req, res, next) => {
   try {
     const decaded = jwt.verify(token,'mk')
     req.email = decaded.email
+     req.id = req.session._id
     next()
   } catch (error) {
       return res.json({
