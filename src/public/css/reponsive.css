@@ -759,3 +759,11 @@
     }
 }
 
+/* max height  */
+@media(max-height:665px) and (min-height:620px) {
+    .bookTour__success {
+        margin-bottom: 2rem;
+        margin-top: 7rem;
+    }
+}
+

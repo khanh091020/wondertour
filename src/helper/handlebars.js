@@ -62,13 +62,13 @@ module.exports = {
         checkCancelOrder(status,id)
         {
           if(status !== 'canceled')
-          return `<a href=""  class="btn btn-danger btn-sm" data-id="${id}"  data-toggle="modal" data-target="#cancelTourModal">Cancel</a>`
+          return `<a href=""  class="btn btn-danger btn-sm mb-2" data-id="${id}"  data-toggle="modal" data-target="#cancelTourModal">Cancel</a>`
           return ''
         },
         checkPaidOrder(ispaid,id) {
           if(ispaid)
           return ''
-          return `<a href="/tours/{{this.tourID.slug}}" data-toggle="modal" data-target="#confirmPaymentTour"  data-id="${id}" class="btn btn-success btn-sm">Comfirm paid</a>`
+          return `<a href="/tours/{{this.tourID.slug}}" data-toggle="modal" data-target="#confirmPaymentTour"  data-id="${id}" class="btn btn-success btn-sm mb-2">Comfirm paid</a>`
         }
         
 

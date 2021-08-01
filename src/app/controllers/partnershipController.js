@@ -23,6 +23,9 @@ class partnershipController {
     showHotelManagament (req,res,next) {
         res.render('partner/hotelManagement')
     }
+    showPaymentOrder(req,res,next) {
+        res.render('partner/paymentOrder')
+    }
     // api get back
     getBanks(req,res,next)
     {
