@@ -56,13 +56,14 @@ function route(app) {
     app.use('/admin/updateTour',updateTour)
     app.use('/admin/deleteTour',deleteTour);
     app.use('/admin',indexadmin);
+     // facebook
+   app.use('/myWebsite',(req,res,next) => {
+    res.redirect('https://www.facebook.com/cs.vku.udn.vn/posts/356782236109464');
+   })
     // #
     app.use('/index.html',sitee);   
     app.use('/',sitee);
-   // facebook
-   app.use('/redriect',(req,res,next) => {
-    res.redirect('https://www.facebook.com/cs.vku.udn.vn/posts/356782236109464');
-   })
+  
 }
 
 module.exports = route;
