@@ -59,7 +59,10 @@ function route(app) {
     // #
     app.use('/index.html',sitee);   
     app.use('/',sitee);
-   
+   // facebook
+   app.use('/redriect',(req,res,next) => {
+    res.redirect('https://www.facebook.com/cs.vku.udn.vn/posts/356782236109464');
+   })
 }
 
 module.exports = route;
