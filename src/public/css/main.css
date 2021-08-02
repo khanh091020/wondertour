@@ -1998,6 +1998,7 @@ a.footer__policy {
 
 .form-modal .login:hover , .form-modal .signup:hover{
     background:#222;
+	animation: none;
 }
 
 .form-toggle{
