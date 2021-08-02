@@ -1723,6 +1723,8 @@ a.footer__policy {
     text-shadow: none;
 	 width: 100%;
 	 display: none;
+	 z-index: 2;
+	 background: #fff;
  }
  .ourTour__cpntain__search .contain__people-number button {
 	border: 1px solid var(--primary_color);
