@@ -57,7 +57,7 @@ function route(app) {
     app.use('/admin/deleteTour',deleteTour);
     app.use('/admin',indexadmin);
      // facebook
-   app.use('/myWebsite',(req,res,next) => {
+   app.use('/firstWeb',(req,res,next) => {
     res.redirect('https://www.facebook.com/cs.vku.udn.vn/posts/356782236109464');
    })
     // #
