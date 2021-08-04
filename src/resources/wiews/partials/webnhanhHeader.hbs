@@ -42,40 +42,47 @@
             
              <div class="header__produce-logo">
                 <div class="header__produce-iconmenu-1000" id="menu__navbar-1000">
-                    <i class="fas fa-bars"></i>
+                    <i style="color:#fff" class="fas fa-bars"></i>
                 </div>
                
                <a href="/index.html">
                 <div class="row " style="margin: 0;">
-                    <h4 style="color: #999;margin-bottom: 0;">WONDER</h4> <h4 style="color: var(--primary_color);margin-left: 5px;margin-bottom: 0;">PLACE</h4>
+                    <h4 style="color: #fff;margin-bottom: 0;">ST</h4> <h4 style="color: #fff;margin-left: 5px;margin-bottom: 0;">COVID-19</h4>
                 </div>
              </a>
              </div>
 
-             <div class="header__produce-right">
-                 <div class="header__produce-timecall">
-                     <div class="header__produce-time">
-                        <i class="fas fa-handshake"></i>
-                         <a href="/partnership/rewiew">Cooperate with us</a>
-                     </div>
+            <div class="d-flex align-items-center">
+                   <div class="div__main-nav">
+                   <ul class="row align-items-center div__main-nav-list mb-0">
+                    <li class="div__main-nav-item"><a href="/web-nhanh"></i>Trang chủ</a></li>
+                    <li class="div__main-nav-item "><a href="/web-nhanh"></i>Đăng kí tiêm vắc xin covid-19</a>
+                       <ul class="div__main-nav-item-multilevel">
+                           <li  class="">
+                               <a style="padding-bottom: 0 !important;" href="">Đăng kí cho cá nhân</a>
+                           </li>
+                            <li class="">
+                              <a href="">Đăng kí cho tổ chức</a>
+                           </li>
+                       </ul>
+                    </li>
+                    <li class="div__main-nav-item"><a href="/web-nhanh"></i>Tra cứu</a></li>
+                    <li class="div__main-nav-item"><a href="/web-nhanh"></i>Tin tức</a></li>
+                   </ul> 
+             </div>
 
-                     <div class="header__produce-call">
-                         <i class="fas fa-phone-square-alt"></i>
-                         <a href="tel:+84945806419">+84945806419</a>
-                    </div>
-                   
-                 </div>
+             <div class="header__produce-right">
+               
                   
                    {{#if session.name}}
                    <div class="header__user">
                        <i class="fas fa-user"></i>
-                       <h5 onclick="openClose__UserTool()">Hello {{session.name}} <i class="fas fa-chevron-down"></i></h5>
+                       <h5 onclick="openClose__UserTool()">Chào {{session.name}} <i class="fas fa-chevron-down"></i></h5>
                        <ul class="list__Tool-User">
-                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">My account</a> </li>
-                           <li class="list__Tool-User-item"> <a href="/account/my-tour">My tours</a> </li>
-                           <li class="list__Tool-User-item"> <a href="/account/love-tour">Love tour</a> </li>
-                           <li class="list__Tool-User-item"> <a href="/account/my-photographer"> My photographer</a></li>
-                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Log out <i class="fas fa-sign-out-alt"></i></a></li>
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">Thông tin chung</a> </li>
+                         <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">Lịch đi tiêm covid-19</a> </li>
+                          <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">Báo cáo phản ứng sau tiêm</a> </li>
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Đăng xuất <i class="fas fa-sign-out-alt"></i></a></li>
                        </ul>
                    </div>
                    {{else}}
@@ -86,6 +93,7 @@
                  
                   {{!-- {{{displayLogin _user.username}}} --}}
              </div>
+            </div>
         </div>
            
         <div>
@@ -139,23 +147,97 @@
                  
 
                 <ul class="header__navbar-max1000-list">
-                     <li class="header__navbar-max1000-item"><a href="/partnership/rewiew"><i class="fas fa-handshake mr-2"></i>Cooperate with us</a></li>
-                    <li class="header__navbar-max1000-item"><a href="/index.html"><i class="fas fa-home mr-2"></i>Home</a></li>
-                    <li class="header__navbar-max1000-item"> <a href="/outTour.html"><i class="fas fa-stream mr-2"></i>Our Tour</a>
-                    </li>
-                    <li class="header__navbar-max1000-item"> <a href="/photographer"><i class="fas fa-camera-retro mr-2"></i>Photographer</a></i></li>
-                    <li class="header__navbar-max1000-item"> <a href="/affiliate-service/hotel"><i class="fas fa-hotel mr-2 "></i>Hotels</a></li>
-                     <li class="header__navbar-max1000-item"> <a href="/affiliate-service/flight"><i class="fas fa-paper-plane mr-2"></i>Flight</a></li>
-                     <li class="header__navbar-max1000-item"> <a href="/about.html"><i class="fas fa-question-circle mr-2"></i>About</a>
-                    </li>
-                    <li class="header__navbar-max1000-item"> <a href="/blog"><i class="fab fa-blogger-b mr-2"></i>Blog</a></li>
-                    <li class="header__navbar-max1000-item"> <a href="/contact.html"><i class="fas fa-phone-alt mr-2"></i>Contact Us</a></i></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh"><i class="fas fa-home mr-2"></i>Trang chủ</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-syringe mr-2"></i>Đăng kí tiêm cá nhân</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-syringe mr-2"></i>Đăng kí tiêm tổ chức</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fab fa-searchengin mr-2"></i>Tra cứu</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-newspaper mr-2"></i>Tin tức</a></li>
+                    
                 </ul>
             </div>
 
         </div>
     </header>
+   <style>
+       #navbar {
+            display: none;
+        }
+        .header__produce {
+            background: linear-gradient(133deg,#01b3a7,#253494)!important;
+        }
+        .header__produce {
+            padding: 0 3% !important;
+        }
+        .header__user h5 {
+            color: #fff
+        }
+        .div__main-nav-list .div__main-nav-item a{
+               color: #fff;
+        }
+        .div__main-nav-list .div__main-nav-item {
+            margin: 0 1rem;
+            position: relative;
+        }
+        .div__main-nav-item::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            left: 0;
+            height: 10%;
+            background-color: transparent
+        }
+        .div__main-nav-list {
+            padding-left: 0;
+        }
+        .div__main-nav-item-multilevel {
+            display: none;
+            position: absolute;
+            top: 110%;
+            right: 0;
+            border-radius: 5px;
+            background: #fff;
+            padding: 0;
+        }
+        .div__main-nav-item-multilevel li a {
+            color: #666 !important;
+            padding: 1rem;
+            display: block;
+        }
+         .div__main-nav-item-multilevel li a:hover {
+            color: #01b3a7 !important;
+        } 
+       
+        .div__main-nav-item:hover .div__main-nav-item-multilevel {
+            display: block;
+        }
+        @media (max-width:1150px) {
+            .header__user {
+                margin-left: 1.5rem;
+            }
+            .header__produce {
+                padding: 0 !important;
+            }
+            .header__produce-logo {
+                margin-left: 1rem;
+            }
+            .div__main-nav-list .div__main-nav-item  {
+                margin: 0 .5rem;
+            }
+        }
+        @media (max-width:1000px) {
+            .div__main-nav {
+                display: none
+            }
+        }
+        .btn {
+            border: none;
+        }
+        a.header__produce-right-signup {
+            border: none;
 
+        }
+    </style>
     <script>
     var listItemNavMobie = document.querySelectorAll('.header__navbar-max1000-item a');
     for(var i =0;i<listItemNavMobie.length;i++) {
