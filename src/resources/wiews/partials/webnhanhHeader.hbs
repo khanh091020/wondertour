@@ -4,31 +4,31 @@
                <i class="fas fa-times login__signUp-close"></i>
         
         <div class="form-toggle">
-            <button id="login-toggle" onclick="toggleLogin()">log in</button>
-            <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+            <button id="login-toggle" onclick="toggleLogin()">Đăng nhập</button>
+            <button id="signup-toggle" onclick="toggleSignup()">Đăng kí</button>
         </div>
     
         <div id="login-form">
             <form action="/login.html" class="right-form" id="sendDataLogin">
                 <p style="color: red;" id="falseLogin"></p>
-                <input required type="text" name="email" placeholder="Enter email"/>
-                <input required type="password"  name="password" placeholder="Enter password"/>
-                <button type="submit" formmethod="POST"  class="btn login">login</button>
-                <p><a href="javascript:void(0)">Forgotten account</a></p>
+                <input required type="text" name="email" placeholder="Nhập email"/>
+                <input required type="password"  name="password" placeholder="Nhập mật khẩu"/>
+                <button type="submit" formmethod="POST"  class="btn login">Đăng nhập</button>
+                <p><a href="javascript:void(0)">Quên mật khẩu</a></p>
             </form>
         </div>
     
         <div id="signup-form">
             <form action="/sign-up.html" class="right-form createNew-form" id="sendDataSignUp">
                <div id="checkSignUp"></div>
-                <input required type="email" name="email" placeholder="Enter your email"/>
-                <input required type="number" name="phone" placeholder="Enter your phone"/>
-                <input required type="text" name="firstName" placeholder="Enter first name"/>
-                <input required type="text" name="lastName" placeholder="Choose last name"/>
-                <input required type="password"  name="password" placeholder="Password"/>
-                <input required type="password" name="passwordRepeat" placeholder="Password repeat"/>
-                <button type="submit" formmethod="POST"  class="btn signup">create account</button>
-                <p>Clicking <strong>create account</strong> means that you are agree to our <a href="javascript:void(0)">terms of services</a>.</p>
+                <input required type="email" name="email" placeholder="Nhập email"/>
+                <input required type="number" name="phone" placeholder="Nhập số điện thoại"/>
+                <input required type="text" name="firstName" placeholder="Nhập họ"/>
+                <input required type="text" name="lastName" placeholder="Nhập tên"/>
+                <input required type="password"  name="password" placeholder="Mật khẩu"/>
+                <input required type="password" name="passwordRepeat" placeholder="Nhập lại mật khẩu"/>
+                <button type="submit" formmethod="POST"  class="btn signup">Tạo tài khoản</button>
+                <p>Khi bấm <strong>tạo tài khoản</strong> nghĩa là bạn đã đồng ý với chính sách của chúng tôi <a href="javascript:void(0)">Chính sách</a>.</p>
             </form>
         </div>
     
@@ -86,7 +86,7 @@
                    </div>
                    {{else}}
                  <a href="/login.html" class="btn btn-sm btn-background-slide mar__left_10rem header__produce-right-signup">
-                   SIGN IN 
+                  Đăng nhập
                  </a>
                  {{/if}}
                  
