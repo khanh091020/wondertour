@@ -97,7 +97,7 @@
            <div class="col-md-7 background__img " style='background-image: url(/img/webnhanh/chung-tay.png)'>
            </div>
        </div>
-       <div class="container partner__rewiew-option">
+       {{!-- <div class="container partner__rewiew-option">
              <div class="row">
                  <div class="col-6 col-lg-3 col-xl-2">
                    <div class="text-center partner__rewiew-option-hotel">
@@ -136,7 +136,7 @@
                    </div>
              </div>
              </div>
-       </div>
+       </div> --}}
        <div class="container partner__rewiew-contain-slider">
            <div class="row">
                <div class="col-md-6 pr-5 mb-4">
@@ -258,7 +258,7 @@
             </div>
        </div>
        <div class="container" style="margin-top: 4rem;">
-           <h3 class="mb-5 pl-3">Why should you cooperate with us?</h3>
+           <h3 class="mb-5 pl-3">Thống kê</h3>
             <div class="row">
 
                 <div class="col-md-4 col-sm-6 mb-4">
@@ -297,8 +297,8 @@
             </div>
        </div>
        <div class="container mb-3" style="margin-top: 3rem;">
-           <h3>Benefits of working with us</h3>
-           <p class="text-muted mb-5"><i>Quality and reputation are first priority</i></p>
+           <h3>Ưu điểm và lưu ý</h3>
+           <p class="text-muted mb-5"><i>Ưu điểm đăng kí tiêm chủng và lưu ý khi tiêm</i></p>
            <div class="row">
                <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
                    <div class="text-left">
@@ -348,21 +348,7 @@
 
 
 
-           <p>City</p>
-            <select class="form-control" name="cityVietNam">
-                <option>-- Chọn tỉnh thành --</option>
-            </select>
-
-              <p>Distric</p>
-            <select class="form-control" name="districVietNam">
-                <option value=""></option>
-            </select>
-
-              <p>Village</p>
-            <select class="form-control" name="villageVietNam">
-                <option value=""></option>
-            </select>
-
+         
       {{>webnhanFooter}}
         {{!-- modal change pass  --}}
          <div class="modal " tabindex="-1" id="changePassModal" >
@@ -403,21 +389,10 @@
       <script src="/js/app.js"></script>
       <script src="/js/app2.js"></script>
        <script>
-           var city =  $('select[name="cityVietNam"]')
-           var district =  $('select[name="districVietNam"]')
-           var village =  $('select[name="villageVietNam"]')
+        
           
           $( document ).ready(function() {
-                 axios.get('https://vapi.vnappmob.com/api/province/')
-                    .then(function (response) {
-                       for(let i = 0; i < response.data.results.length ; i++) {
-                             city.append(`<option value="${response.data.results[i].province_id}">${response.data.results[i].province_name}</option>`)
-                       } 
-                    })
-                    .catch(function (error) {
-                   
-                    })
-
+                 
                         $('.myslider').slick({
                     dots: true,
                     infinite: true,
@@ -428,35 +403,9 @@
                         });
             });
 
-            city.change(function (e) {
-                axios.get(`https://vapi.vnappmob.com/api/province/district/${e.target.value}`)
-                    .then(function (response) {
-                             district.html(' <option>-- Chọn tỉnh thành --</option>')
-                       for(let i = 0; i < response.data.results.length ; i++) {
-                             district.append(`<option value="${response.data.results[i].district_id}">${response.data.results[i].district_name}</option>`)
-                       } 
-                    })
-                    .catch(function (error) {
-                   
-                    })
-            })
-
-             district.change(function (e) {
-
-                axios.get(`https://vapi.vnappmob.com/api/province/ward/${e.target.value}`)
-                    .then(function (response) {
-                        village.html('')
-                       for(let i = 0; i < response.data.results.length ; i++) {
-                             village.append(`<option value="${response.data.results[i].ward_id}">${response.data.results[i].ward_name}</option>`)
-                       } 
-                    })
-                    .catch(function (error) {
-                   
-                    })
-            })
           
             $('.counter').countUp({
-            'time': 2000,
+            'time': 1000,
             'delay': 5
             });
 
