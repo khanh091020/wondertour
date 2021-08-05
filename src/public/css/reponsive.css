@@ -444,6 +444,12 @@
 
 @media (max-width:768px) 
 {
+    .partner__reweiw-slider .myslider .background__img {
+        width: 330px;
+    }
+}
+@media (max-width:767px) 
+{
     .container {
         max-width: 100%;
     }

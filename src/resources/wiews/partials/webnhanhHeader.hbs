@@ -59,7 +59,7 @@
                     <li class="div__main-nav-item "><a href="/web-nhanh"></i>Đăng kí tiêm vắc xin covid-19</a>
                        <ul class="div__main-nav-item-multilevel">
                            <li  class="">
-                               <a style="padding-bottom: 0 !important;" href="">Đăng kí cho cá nhân</a>
+                               <a style="padding-bottom: 0 !important;" href="/web-nhanh/register">Đăng kí cho cá nhân</a>
                            </li>
                             <li class="">
                               <a href="">Đăng kí cho tổ chức</a>
@@ -79,8 +79,8 @@
                        <i class="fas fa-user"></i>
                        <h5 onclick="openClose__UserTool()">Chào {{session.name}} <i class="fas fa-chevron-down"></i></h5>
                        <ul class="list__Tool-User">
-                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="">Thông tin chung</a> </li>
-                         <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="">Lịch đi tiêm covid-19</a> </li>
+                           <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/web-nhanh/generalInfo">Thông tin chung</a> </li>
+                         <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/web-nhanh/lich-di-tiem">Lịch đi tiêm covid-19</a> </li>
                            <li class="list__Tool-User-item"> <a class="list__Tool-User-link-last" href="/log-out"> Đăng xuất <i class="fas fa-sign-out-alt"></i></a></li>
                        </ul>
                    </div>
@@ -147,10 +147,10 @@
 
                 <ul class="header__navbar-max1000-list">
                     <li class="header__navbar-max1000-item"><a href="/web-nhanh"><i class="fas fa-home mr-2"></i>Trang chủ</a></li>
-                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-syringe mr-2"></i>Đăng kí tiêm cá nhân</a></li>
-                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-syringe mr-2"></i>Đăng kí tiêm tổ chức</a></li>
-                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fab fa-searchengin mr-2"></i>Tra cứu</a></li>
-                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/t"><i class="fas fa-newspaper mr-2"></i>Tin tức</a></li>
+                    <li class="header__navbar-max1000-item"><a href="/web-nhanh/register"><i class="fas fa-syringe mr-2">Đăng kí tiêm cá nhân</i></a></li>
+                    <li class="header__navbar-max1000-item"><a href=""><i class="fas fa-syringe mr-2"></i>Đăng kí tiêm tổ chức</a></li>
+                    <li class="header__navbar-max1000-item"><a href=""><i class="fab fa-searchengin mr-2"></i>Tra cứu</a></li>
+                    <li class="header__navbar-max1000-item"><a href=""><i class="fas fa-newspaper mr-2"></i>Tin tức</a></li>
                     
                 </ul>
             </div>
@@ -162,7 +162,8 @@
             display: none;
         }
         .header__produce {
-            background: linear-gradient(133deg,#01b3a7,#253494)!important;
+            /* background: linear-gradient(133deg,#01b3a7,#253494)!important; */
+            background: linear-gradient(133deg,#b41a1f,#334555,#162e44)!important;
         }
         .header__produce {
             padding: 0 3% !important;

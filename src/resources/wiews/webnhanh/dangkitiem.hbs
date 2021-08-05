@@ -21,6 +21,12 @@
             margin-left: 0;
             margin-right: 0;
         }
+        .buocTiem-item {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 1rem 0;
+            text-align: center;
+        }
      
           </style>
    </head>
@@ -34,22 +40,328 @@
       <input type="hidden" id="about">
      
      {{>webnhanhHeader}}
+         <div class="container-fluid mt-5 mb-5">
+             <h1>
+                 Đăng kí tiêm cá nhân 
+             </h1>
+         </div>
+        <div class="container-fluid pb-4"  style="border-bottom: 1px dashed #999;">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                  <div class="buocTiem-item text-primary">
+                        <h2>
+                        Phần 1
+                    </h2>
+                    <p>Thông tin cá nhân</p>
+                  </div>
+                </div>
 
-           <p>City</p>
-            <select class="form-control" name="cityVietNam">
+                <div class="col-sm-6 col-md-3">
+                  <div class="buocTiem-item">
+                        <h2>
+                        Phần 2
+                    </h2>
+                    <p>Tiền sử bệnh</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                  <div class="buocTiem-item">
+                        <h2>
+                        Phần 3
+                    </h2>
+                    <p>Phiếu đồng ý tiêm</p>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                 <div class="buocTiem-item">
+                        <h2>
+                        Phần 4
+                    </h2>
+                    <p>Hoàn thành</p>
+                 </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dangki__app">
+            <form action="/web-nhanh/taolich" id="formDangKiLich">
+             <div class="container-fluid d-flex align-items-center" id="dangki__app-thongtinchung">
+           <div class="col-11">
+                 <div class="row mt-4">
+                <div class="col-md-4 col-sm-6 col-md-3">
+                    <p>Họ tên</p>
+                    <input class="form-control" type="text" name="name" id="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                     
+                    <p>Ngày sinh</p>
+                    <input class="form-control" type="date" name="birthDay" id="">
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                     
+                    <p>Giới tính</p>
+                    <div class="">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="nam">
+                                <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender"  value="nữ">
+                                <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>
+                            </div>
+                </div>
+            </div>
+
+
+              <div class="row mt-4">
+                <div class="col-md-4 col-sm-6">
+                    <p>Số điện thoại</p>
+                    <input class="form-control" type="Number" name="phone" id="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                     
+                    <p>Số cmnd</p>
+                    <input class="form-control" type="Number" name="cmnd" id="">
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                     
+                    <p>Số bảo hiểm y tế</p>
+                    <input class="form-control" type="Number" name="bhyt" id="">
+                </div>
+
+            </div>
+
+              <div class="row mt-4">
+                <div class="col-md-4 col-sm-6">
+                    <p>Nghề nghiệp</p>
+                    <input class="form-control" type="text" name="job" id="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                     
+                    <p>Ngày muốn được tiêm (dự kiến)</p>
+                    <input class="form-control" type="date" name="dateTiem" id="">
+                </div>
+                 <div class="col-md-4 col-sm-6">
+                     
+                    <p>Dân tộc</p>
+                    <input class="form-control" type="text" name="dantoc" id="">
+                </div>
+                
+            </div>  
+
+             <div class="row mt-4">
+               <div class="col-12">
+                     <p>Địa chỉ</p>
+                  <input class="form-control" type="text" name="address" id="">
+               </div>
+             </div>
+
+        <div class="row mt-4 ">
+            <div class="col-md-4 col-sm-6">
+                <p>Tỉnh</p>
+            <select class="form-control" name="city">
                 <option>-- Chọn tỉnh thành --</option>
             </select>
 
-              <p>Distric</p>
-            <select class="form-control" name="districVietNam">
+            </div>
+            <div class="col-md-4 col-sm-6">
+                 <p>Huyện, quận</p>
+            <select class="form-control" name="distric">
                 <option value=""></option>
             </select>
+            </div>
 
-              <p>Village</p>
-            <select class="form-control" name="villageVietNam">
+            <div class="col-md-4 col-sm-6">
+                  <p>Xã, phường</p>
+            <select class="form-control" name="ward">
                 <option value=""></option>
             </select>
+            </div>
+         </div>
 
+              <div class="row mt-4">
+                <div class="col-md-4 col-sm-6">
+                    <p>Quấc tịch</p>
+                    <input class="form-control" type="text" name="natinonal" id="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                     
+                    <p>Nhóm ưu tiên</p>
+                     <select class="form-control" name="uutien">
+                <option value="Người già">Người già</option>
+                 <option value="Trẻ nhỏ">Người già</option>
+                  <option value="Khuyết tật">Người già</option>
+            </select>
+                </div>
+               
+               <div class="col-md-4 col-sm-6">
+                <p>Số mũi tiên trước đó</p>
+            <select class="form-control" name="muitiem">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+
+            </div>
+            </div>  
+
+           
+
+           </div>
+             </div>
+
+             <div class=" container-fluid mt-5 mb-5 " id="dangki__app-benhli ">
+                   <div class="col-12">
+                        <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <p><b>Tiền sử bị covid 19 trong vòng 6 tháng</b></p>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensucovid" value="true">
+                                <label class="form-check-label" for="inlineRadio1">Có</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensucovid" value="false" >
+                                <label class="form-check-label" for="inlineRadio2">Không</label>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <p><b>Tiền tiêm vắc xin trong 14 ngày qua</b></p>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensutiem14" value="true">
+                                <label class="form-check-label" for="inlineRadio1">Có</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensutiem14" value="false" >
+                                <label class="form-check-label" for="inlineRadio2">Không</label>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <p><b>Tiền sử bệnh cấp tính</b></p>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensubenhcaptinh" value="true">
+                                <label class="form-check-label" for="inlineRadio1">Có</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tiensubenhcaptinh" value="false" >
+                                <label class="form-check-label" for="inlineRadio2">Không</label>
+                                </div>
+                            </div>
+                        </div>
+
+                            <div class="row mb-3">
+                            <div class="col-sm-4">
+                                <p><b>Đang mang thai hoặc nuôi con bằng sữa mẹ </b></p>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="mangthai" value="true">
+                                <label class="form-check-label" for="inlineRadio1">Có</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="mangthai" value="false" >
+                                <label class="form-check-label" for="inlineRadio2">Không</label>
+                                </div>
+                            </div>
+                        </div>
+
+                     
+                   </div>
+             </div>
+               
+                 <div class=" container-fluid" id="dangki__app-xacnhan">
+                    <div class="col-12">
+                         <div class="row">
+                             <div class="col-2">
+
+                             </div>
+                             <p class="text-muted mb-4">
+                             1. Tiêm chủng vắc xin là biện pháp phòng chống dịch hiệu quả, tuy nhiên vắc xin phòng COVID-19 có thể không phòng được bệnh hoàn toàn. Người được tiêm chủng vắc xin phòng COVID-19 có thể phòng được bệnh hoặc giảm mức độ nặng nếu mắc bệnh. Tuy nhiên, sau khi tiêm chủng vẫn phải tiếp tục thực hiện nghiêm các biện pháp phòng chống dịch theo quy định.
+                         </p>
+                         <p class="text-muted mb-4">
+                             2. Tiêm chủng vắc xin phòng COVID-19 có thể gây ra một số hiện tượng bất thường về sức khỏe như các biểu hiện tại chỗ tiêm hoặc toàn thân, bao gồm phản ứng thông thường sau tiêm chủng và tai biến nặng sau tiêm chủng.
+                         </p>
+                         <p class="text-muted mb-4">
+                             3. Khi có triệu chứng bất thường về sức khỏe, người được tiêm chủng cần đến ngay cơ sở y tế gần nhất để được tư vấn, thăm khám và điều trị kịp thời.
+                         </p>
+                         </div>
+                          <p class="text-danger mb-4">
+                              Sau khi đọc hết các điểu khoản trên, bằng việc xác nhận bạn đã đồng ý với các điều khoản đưa ra.
+                          </p>
+                           <div class="row ml-3 mt-4 mb-5">
+                        <button class="btn btn-danger mr-4">Quay lại</button>
+                        <button class="btn btn-primary dangki__app-thongtinchung" type="submit">Xác nhận</button>
+                      </div>
+                    </div>
+
+             </div>
+</form>
+              {{!-- <div class=" container-fluid" id="dangki__app-xacnhan">
+                  <div class="col-12">
+                      <h3>Bạn đã hoàn thành đăng kí tiêm chủng</h3>
+                      <p>
+                          Cảm ơn quý khách đã đăng ký tiêm chủng vắc xin COVID-19. Chúng tôi sẽ thu thập nhu cầu và thông tin để lập danh sách đối tượng đăng ký tiêm vắc xin COVID-19 theo từng địa bàn. Chúng tôi sẽ liên hệ với quý khách theo số điện thoại *** khi có kế hoạch tiêm trong thời gian sớm nhất.
+                      </p>
+                  </div>
+        
+        </div> --}}
+              </div>
+
+
+    
+  {{!-- <div class="table__row-list">
+
+                 <div class="table__row-item">
+                     <div class="table__row-header">
+                        <div class="row mr-l-0 justify-content-between">
+                             <h5 class="mb-0">Index : 1 </h5>
+                             <h5><a href="">See details order</a></h5>
+                        </div>
+                     </div>
+                     <div class="table__row-body">
+                         <div class="row mr-l-0">
+                             <div class="col-md-5 mb-3 table-part-item-img">
+                                   <div class="row mr-l-0 ">
+                                      
+                                       <div class="col-md-12">
+                                             <div>
+                                                 <p>Name : <b></b>Homestay, 1 bedroom, 2 people</p>
+                                                 <p>Price : <b>20$/night</b></p>
+                                                 <p>Amount : <b>20</b></p>
+                                             </div>
+                                       </div>
+                                   </div>
+                             </div>
+                             <div class="col-md-5 mb-3">
+                                    <div>
+                                        <p>In hotel : <b>ID:HT99923/Hoang Ha Hotel</b></p>
+                                        <p>Area : <b>57m2</b></p>
+                                        <p>Order : <b>10</b></p>
+                                        <p>Revenue : <b>200$</b></p>
+                                   </div>
+                             </div>
+                             <div class="col-lg-2 mb-3">
+                                     <a href="" class="btn btn-success">Selling</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                
+             </div> --}}
       {{>webnhanFooter}}
         {{!-- modal change pass  --}}
          <div class="modal " tabindex="-1" id="changePassModal" >
@@ -88,9 +400,9 @@
       <script src="/js/app.js"></script>
       <script src="/js/app2.js"></script>
        <script>
-           var city =  $('select[name="cityVietNam"]')
-           var district =  $('select[name="districVietNam"]')
-           var village =  $('select[name="villageVietNam"]')
+           var city =  $('select[name="city"]')
+           var district =  $('select[name="distric"]')
+           var village =  $('select[name="ward"]')
           
           $( document ).ready(function() {
                  axios.get('https://vapi.vnappmob.com/api/province/')
@@ -132,6 +444,23 @@
             })
           
           
+                 $("#formDangKiLich").submit(function(e) {
+                 alert('ok')
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+
+                var form = $(this);
+                var url = form.attr('action');
+                
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                  alert("Bạn đã hoàn thành đăng kí tiêm chủng . Chi tiết ở lịch tiêm covid của bạn."); // show response from the php script.
+                    }
+                    });
+                    })
            
     </script>
    </body>
