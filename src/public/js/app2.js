@@ -153,7 +153,41 @@ $('.contain__icon__heart-product').click(function() {
      document.getElementById("login-form").style.display="block";
  }
 
+ // đa ngôn ngữ
+ $(function() {
+  // Configuration
+  // Add options
+  i18n.init({
+      resGetPath: '/js/languages/__lng__.json',
+      debug: true,
+      fallbackLng: false,
+      load: 'unspecific'
+  },function () {
+      $('body').i18n();
+  });
+ 
+  $.i18n.setLng('en', function() {
+    $('body').i18n();
+});
 
+$('.switch').click(function() {
+ $(this).toggleClass("active");
+if ($('.span').text() == "EN") {
+    $('.span').text("VI")
+    $.i18n.setLng('vi', function() {
+          $('body').i18n();
+      });
+   
+}
+  else {
+      $('.span').text("EN");
+      $.i18n.setLng('en', function() {
+          $('body').i18n();
+      });
+  }
+})
+
+});
  
 
  

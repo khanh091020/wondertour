@@ -1,0 +1,56 @@
+
+{
+    "header": {
+        "home"      : "Home",
+        "Contactus" : "Contact us",
+        "Blog"   : "Blog",
+        "About"   : "About",
+        "Flight"   : "Flight",
+        "Hotel"   : "Hotel",
+        "Photographer"   : "Photographer",
+        "Ourtour"   : "Our tour",
+        "signin"   : "SIGN IN",
+        "cooperate"   : "Cooperate with us"
+    },
+    "slider": {
+        "1Title"      : "Trust our experience",
+        "1Contain"      : "A team of professional Travel Experts",
+        "2Title"      : "Create Your Tour",
+        "2Contain"      : "Build your Next Holiday Trip with Us",
+        "3Title"      : "Explore The World",
+        "3Contain"      : "Enjoy the Best Destinations with Our Travel Agency",
+        "Balloon"      : "Balloon Flights",
+        "Mountain"      : "Mountain Holiday",
+        "Beach"      : "Beach Holidays",
+        "OtherTours"      : "Other Tours",
+        "find"      : "Find Your Tour"
+    },
+    "Discover": {
+        "title"      : "Discover New Horizons",
+        "about"      : "ABOUT US",
+        "why"      : "WHY CHOOSE US",
+        "mission"      : "OUR MISSION",
+        "aboutContent"      : "Wonder place is committed to bringing our clients the best in value and quality travel arrangements. We are passionate about travel and sharing the world's wonders with you",
+        "whyContent"      : "We are proud to offer excellent quality and value for money in our tours, which give you the chance to experience your chosen destination in an authentic and exciting way ...",
+        "missionContent"      : ". Our mission is to provide the ultimate travel planning experience while becoming a one-stop shop for every travel service available in the industry.",
+        "getTouch"      : "Get in touch",
+        "read"      : "Read more"    
+    },
+    "SERVICE": {
+        "title"      : "OUR SERVICE",
+        "SERVICE1"      : "Personalized Matching",
+        "SERVICE11"      : "Our unique matching system lets you find just the tour you want for your next holiday.",
+        "SERVICE2"      : "Wide Variety of Tours",
+        "SERVICE22"      : "We offer a wide variety of personally picked tours with destinations all over the globe.",
+        "SERVICE3"      : "Qualified Service",
+        "SERVICE33"      : "Our tour managers are qualified, skilled, and friendly to bring you the best service.",
+        "SERVICE4"      : "24/7 Support",
+        "SERVICE44"      : "You can always get professional support from our staff 24/7 and ask any question you have.",
+        "SERVICE5"      : "Handpicked Hotels",
+        "SERVICE55"      : "Our team offers only the best selection of affordable and luxury hotels to our clients.",
+        "SERVICE6"      : "Best Price Guarantee",
+        "SERVICE66"      : "If you find tours that are cheaper than ours, we will compensate the difference.",
+        "Choose" : "Choose your",
+        "Pefect" : "Pefect holiday"
+    }
+}

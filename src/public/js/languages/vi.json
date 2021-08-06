@@ -1,0 +1,56 @@
+{
+    "header": {
+        "home"      : "Trang chủ",
+        "Contactus" : "Liên hệ",
+        "Blog"   : "Tin tức",
+        "About"   : "Về chúng tôi",
+        "Flight"   : "Vé máy bay",
+        "Hotel"   : "Khách sạn",
+        "Photographer"   : "Nhiếp ảnh",
+        "Ourtour"   : "Tour",
+        "signin"   : "Đăng nhập",
+        "cooperate"   : "Hợp tác với chúng tôi"
+    }
+    ,
+    "slider": {
+        "1Title"      : "Uy tín của chúng tôi",
+        "1Contain"      : "Một đội ngũ du lịch chuyên nghiệp",
+        "2Title"      : "Tạo tour của bạn",
+        "2Contain"      : "Xây dựng kì nghỉ với chúng tôi",
+        "3Title"      : "Khám phá thế giới",
+        "3Contain"      : "Tận hưởng những địa điểm du lịch tốt nhất",
+        "find"      : "Tìm kiếm tour",
+        "Balloon"      : "Khinh khí cầu",
+        "Mountain"      : "Kì nghỉ trên núi",
+        "Beach"      : "Kì nghỉ biển",
+        "OtherTours"      : "Xem tour"
+    },
+    "Discover": {
+        "title"      : "Khám phá chân trời mới",
+        "about"      : "VỀ CHÚNG TÔI",
+        "why"      : "LÍ DO CHỌN",
+        "mission"      : "SỨ MỆNH",
+        "whyContent"      : "Chúng tôi tự hào cung cấp chất lượng tuyệt vời và giá trị đồng tiền cho các tour du lịch của mình, giúp bạn có cơ hội trải nghiệm điểm đến đã chọn của mình một cách chân thực và thú vị",
+        "aboutContent"      : "Wonder place cam kết mang đến cho khách hàng những chuyến du lịch giá trị và chất lượng nhất. Chúng tôi đam mê du lịch và chia sẻ những điều kỳ diệu của thế giới với bạn",
+        "missionContent"      : ". Sứ mệnh của chúng tôi là cung cấp trải nghiệm lập kế hoạch du lịch tuyệt vời đồng thời trở thành điểm dừng chân cho mọi dịch vụ du lịch hiện có trong ngành",
+        "getTouch"      : "Thử ngay",
+        "read"      : "Đọc thêm"    
+    },
+    "SERVICE": {
+        "title"      : "DỊCH VỤ",
+        "SERVICE1"      : "Gợi ý thông minh",
+        "SERVICE11"      : "Hệ thống độc đáo của chúng tôi cho phép bạn tìm thấy chuyến tham quan bạn muốn cho kỳ nghỉ tiếp theo.",
+        "SERVICE2"      : "Đa dạng tour",
+        "SERVICE22"      : "Chúng tôi cung cấp nhiều tour du lịch do cá nhân lựa chọn với các điểm đến nổi tiếng trên toàn cầu.",
+        "SERVICE3"      : "Kinh nghiệm",
+        "SERVICE33"      : "Các nhà quản lý tour của chúng tôi có trình độ, tay nghề cao và thân thiện để mang đến cho bạn dịch vụ tốt nhất.",
+        "SERVICE4"      : "Hỗ trợ 24/7",
+        "SERVICE44"      : "Bạn luôn có thể nhận được sự hỗ trợ chuyên nghiệp từ đội ngũ nhân viên của chúng tôi 24/7 và hỏi bất kỳ câu hỏi nào bạn có.",
+        "SERVICE5"      : "Khách sạn chọn lọc",
+        "SERVICE55"      : "Nhóm của chúng tôi chỉ cung cấp lựa chọn tốt nhất về các khách sạn sang trọng và giá cả phải chăng cho khách hàng của chúng tôi.",
+        "SERVICE6"      : "Đảm bảo giá tốt nhất",
+        "SERVICE66"      : "Nếu quý khách thấy các tour rẻ hơn chúng tôi, chúng tôi sẽ bù phần chênh lệch.",
+         "Choose" : "Lựa chọn",
+         "Pefect" : "KÌ NGHỈ CỦA BẠN"
+    }
+}
