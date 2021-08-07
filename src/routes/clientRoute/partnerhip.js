@@ -1,6 +1,6 @@
 const express = require('express')
 const route = express.Router()
-const controller = require('../app/controllers/partnershipController')
+const controller = require('../../app/controllers/partnershipController')
 
 route.get('/get-banks',controller.getBanks)
 route.get('/payment-order',controller.showPaymentOrder)

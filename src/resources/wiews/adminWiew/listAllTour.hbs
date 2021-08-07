@@ -4,7 +4,7 @@
   <div class="container-fluid " style="margin-top: 5rem;padding-left: 75px;">
   <form action="/admin/all-list/execute" method="post" id="formControl" >
   <h2>List all tour</h2>
-  <a href="/admin/all-list/trash">Thùng rác <span>{{countDeleted}}</span> </a>
+  <a href="/admin/all-list/trash"><i class="fas fa-trash text-danger mr-2"></i><span>{{countDeleted}}</span> </a>
 
   <div class="mt-4 mb-4 d-flex align-items-center">
 
@@ -44,7 +44,7 @@
          <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="listAllTour">
       
           {{#each listAll}}
           <tr>
@@ -64,12 +64,12 @@
         <td>{{this.startPlace}}</td>
         <td>{{this.price}}</td>
         <td>{{this.priceSale}}</td>
-        <td><a href="/tours/{{this.slug}}" class="btn btn-success">Details</a></td>
-        <td><a href=""  class="btn btn-danger" data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</a></td>
-        <td><a href="/admin/updateTour/{{this._id}}" class="btn btn-warning">Edit</a></td>
+        <td><a href="/tours/{{this.slug}}" class="btn btn-sm btn-success">Details</a></td>
+        <td><a href=""  class="btn btn-sm btn-danger" data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</a></td>
+        <td><a href="/admin/updateTour/{{this._id}}" class="btn btn-sm btn-warning">Edit</a></td>
         </tr>
           {{else}}
-         <td colspan="5"> Danh sách tour đang bị trống. <a href="/amdin/createTour">Thêm tour ngay</a> </td>
+         <td colspan="5"> Danh sách tour đang bị trống.</td>
           {{/each}}
       
     </tbody>
@@ -161,6 +161,42 @@ checkboxAll.change(function(event){
       event.preventDefault();
       alert("Please choose your action");
     }
+  })
+
+  $('.search-btn').click(function() {
+      $.ajax({
+        url: "/admin/all-list/search",
+        type: "get",
+        data: {search : $('#m-search').val()} ,
+        success: function (response) {
+    console.log(response)
+
+          $('#listAllTour').html('')
+          for (var index = 0; index < response.length; index++) {
+            $('#listAllTour').append(` <tr>
+            <td>
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="tourIds" value="${response[index]._id}">
+             
+            </div>
+                 
+             </td>
+              <td>${index + 1}</td>
+        <td>${response[index].name}</td>
+        <td><img style="width: 150px;" src="/${response[index].img}" alt=""></td>
+        <td>${response[index].startDay}</td>
+        <td>${response[index].time}</td>
+        <td>${response[index].startPlace}</td>
+        <td>${response[index].price}</td>
+        <td>${response[index].priceSale ? response[index].priceSale : '' }</td>
+        <td><a href="/tours/${response[index].slug}" class="btn btn-success">Details</a></td>
+        <td><a href=""  class="btn btn-danger" data-id="${response[index]._id}"  data-toggle="modal" data-target="#delete-tour">Delete</a></td>
+        <td><a href="/admin/updateTour/${response[index]._id}" class="btn btn-warning">Edit</a></td>
+        </tr>`)
+          }
+        }
+    });
   })
 </script>
 </body>

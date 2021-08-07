@@ -992,7 +992,7 @@ input.checkbox {
  .switch {
   height: 30px;
   width: 80px;
-  background: #009688;
+  background: var(--primary_color);
   cursor: pointer;
   -moz-transform: skew(-30deg);
   -ms-transform: skew(-30deg);
@@ -1006,9 +1006,7 @@ input.checkbox {
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   text-indent: 45%;
-  -moz-box-shadow: 0px 0.5px 2.5px #6f6f6f;
-  -webkit-box-shadow: 0px 0.5px 2.5px #6f6f6f;
-  box-shadow: 0px 0.5px 2.5px #6f6f6f;
+
 
 }
 .switch .span {
@@ -1038,16 +1036,14 @@ input.checkbox {
   content: "";
   height: 26px;
   width: 20px;
-  top: 2.5px;
-  left: 2.5px;
+  top: 2px;
+  left: 4.5px;
   cursor: pointer;
-  background: #eee;
+  background: #fff;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 2.5px 0 5px #6f6f6f;
-  -webkit-box-shadow: 2.5px 0 5px #6f6f6f;
-  box-shadow: 2.5px 0 5px #6f6f6f;
+
   
 }
 .switch.active {
@@ -1058,18 +1054,17 @@ input.checkbox {
   background: #9bc148;
 }
 .switch.active .span {
-  -moz-transform: skew(-30deg);
-  -ms-transform: skew(-30deg);
-  -webkit-transform: skew(-30deg);
-  transform: skew(-30deg);
+  -moz-transform: skew(-17deg);
+  -ms-transform: skew(-17deg);
+  -webkit-transform: skew(-17deg);
+  transform: skew(-17deg);
   text-indent: 20%;
-  color: #eee;
+  margin-left: 5px;
+  color: #fff;
 }
 .switch.active:before {
   left: 5.5px;
-  -moz-box-shadow: -2.5px 0px 5px #6f6f6f;
-  -webkit-box-shadow: -2.5px 0px 5px #6f6f6f;
-  box-shadow: -2.5px 0px 5px #6f6f6f;
+ 
 }
 
 

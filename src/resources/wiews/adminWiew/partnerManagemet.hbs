@@ -1,0 +1,101 @@
+{{>adminHeader}}
+
+<div class="col-sm-12">
+  <div class="container-fluid " style="margin-top: 5rem;padding-left: 75px;">
+    <h1 class="ml-5">List partner User</h1>
+  <form action="" method="post" id="formControl" >
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Bank account</th>
+         <th>Hotel amount</th>
+         <th>Room amount</th>
+         <th>Affiliate profit</th>
+         <th></th>
+         <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+         
+          <tr >
+          
+          <td>1</td>
+          <td>Nguyen Van Nam</td>
+        <td>Nguyenvannam@gmail.com</td>
+        <td>09844663635</td>
+        <td>Agribank/9707205243281</td>
+         <td>2</td>
+         <td>50</td>
+         <td>100$</td>
+         <td><h5 ><b class="text-success">Active</b></h5></td>
+         <td><button class="btn btn-danger btn-sm">Block</button></td>
+          </tr>
+
+          <tr >
+          
+          <td>2</td>
+          <td>Nguyen Huu Da</td>
+        <td>Nguyenvannam@gmail.com</td>
+        <td>09844663635</td>
+        <td>Agribank/9707205243281</td>
+         <td>5</td>
+         <td>10</td>
+         <td>500$</td>
+         <td><h5 ><b class="text-danger">Block</b></h5></td>
+         <td><button class="btn btn-success btn-sm">Active</button></td>
+          </tr>
+
+          <tr >
+          
+          <td>3</td>
+          <td>Nguyen Van Dai</td>
+        <td>Nguyenvannam@gmail.com</td>
+        <td>09844663635</td>
+        <td>Agriback/9707205243281</td>
+         <td>2</td>
+         <td>50</td>
+         <td>100$</td>
+         <td><h5 ><b class="text-success">Active</b></h5></td>
+         <td><button class="btn btn-danger btn-sm">Block</button></td>
+          </tr>
+      
+    </tbody>
+  </table>
+  </form>
+</div>
+</div>
+
+
+<!-- Modal -->
+
+<style>
+.table td, .table th {
+         white-space: normal !important;
+         padding : 1.05rem .4rem !important	;
+         }
+ 
+         
+</style>
+ {{!-- end modal  --}}
+
+    <form  name="form__idTour" method="post"></form>
+ <script src="/assets/js/vendor-all.min.js"></script>
+	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/js/pcoded.min.js"></script>
+	<script src="/assets/js/main.js"></script>
+<script>
+  $('#formControl').submit(e => {
+    e.preventDefault();
+  }) 
+
+</script>
+</body>
+
+</html>
+

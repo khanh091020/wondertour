@@ -1,4 +1,4 @@
-const photographerController = require('../app/controllers/photographerController');
+const photographerController = require('../../app/controllers/photographerController');
 const express = require('express');
 const router = express.Router();
 

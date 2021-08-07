@@ -30,8 +30,8 @@
           <td>{{#if this.phone}} {{this.phone}} {{else}}Not update{{/if}}</td>
            <td>{{#if this.address}} {{this.address}} {{else}}Not update{{/if}}</td>
       
-        <td><button href="" class="btn btn-success " {{#if this.admin}}disabled{{/if}}>Active</button></td>
-        <td><button href=""  class="btn btn-danger" {{#if this.admin}}disabled{{/if}} data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</button></td>
+        <td><button href="" class="btn btn-sm btn-success " {{#if this.admin}}disabled{{/if}}>Active</button></td>
+        <td><button href=""  class="btn btn-sm btn-danger" {{#if this.admin}}disabled{{/if}} data-id="{{this._id}}"  data-toggle="modal" data-target="#delete-tour">Delete</button></td>
         </tr>
           {{else}}
          <td colspan="5">Not have account</td>

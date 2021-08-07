@@ -23,6 +23,18 @@ class loadListTourController {
             })
         })
     }
+
+    searchTour(req,res,next) {
+        let search = req.query.search
+        model.find({$or: [
+            { name: new RegExp(search, "i") },
+            { cityDestination: new RegExp(search, "i") },
+          ]})
+        .then(list => {
+           res.json(list)
+        })
+        .catch(next)
+    }
 }
 
 module.exports = new loadListTourController;

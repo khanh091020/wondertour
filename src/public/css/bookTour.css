@@ -592,6 +592,10 @@ overflow-y: scroll;
       max-width: 100%;
       flex: 1;
     }
+    #menu1 {
+      padding-left: 0px;
+    padding-right: 0px;
+    }
     .tab-pane {
       max-height: none !important;
     }
