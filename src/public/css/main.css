@@ -783,6 +783,7 @@ a.contain__impression-btn:hover {
 }
 
 .contain__what-say-content {
+	filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.15));
 	background-color: #fff;
 	position: relative;
 	text-align: center;
@@ -1354,7 +1355,7 @@ a.footer__policy {
     color: #fff;
     text-shadow: -2px 5px 6px #000;
     font-weight: 500;
-    font-family: 'Lora', serif;
+    
 }
 .contain__photograp-til h5 {
 	margin: 1rem 0;
@@ -1696,9 +1697,11 @@ a.footer__policy {
 	 cursor: pointer;
 }
 
- .hotel__list-item-info {
-	padding: 0 2rem;
- }
+.relative__hotel .row {
+	margin: 0;
+}
+
+
  .hotel__list-item-info .row h5 {
 	display: -webkit-box;
  }
