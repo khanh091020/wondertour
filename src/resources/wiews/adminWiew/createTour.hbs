@@ -90,6 +90,8 @@ Dropzone.autoDiscover = false;
   var zdrop = new Dropzone('#dropzone', {
     url: '/admin/createTour/upload__img-tour',
     maxFiles: 5,
+    acceptFiles: 'image/jpeg,image/png,image/gif,image/jpg',
+    acceptedMimeTypes: 'image/jpeg,image/png,image/gif,image/jpg',
     parallelUploads: 5,
     uploadMultiple : true,
     autoProcessQueue: false,
