@@ -12,7 +12,6 @@ const account = new Schema({
     admin : {type: Boolean, default: false},
     boss : {type: Boolean, default: false},
     googleId : String
-    
 },
 {
     collection : 'account'

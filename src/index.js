@@ -8,7 +8,6 @@ const db = require('./config/db')
 const methodOverride = require('method-override');
 const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
-var session = require('express-session');
 const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
 
@@ -28,12 +27,12 @@ app.use(cookieParser())
 // custom sortMidderwares 
 app.use(sortMidderwares);
 // sesion
-app.use(session({
-  secret: '2C44-4D44-WppQ38S',
-  resave: true,
-  saveUninitialized: true
-}));
-
+// app.use(session({
+//   secret: '2C44-4D44-WppQ38S',
+//   resave: true,
+//   saveUninitialized: true
+// }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 // set staic file 

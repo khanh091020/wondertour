@@ -2,7 +2,7 @@
      logout(req,res,next) {
         // res.clearCookie("token");
         req.session.destroy();
-        res.redirect('/web-nhanh');
+        res.redirect('/index.html');
      }
  }
 

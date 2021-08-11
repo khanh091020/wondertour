@@ -1,13 +1,13 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
-const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
-const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
+const GOOGLE_CLIENT_ID = "603221464013-ji6thsjj9862r5es12she2f5hgdjlsde.apps.googleusercontent.com";
+const GOOGLE_CLIENT_SECRET = "QhYAj1Gf_Don2DXFAXBEQO8L";
 
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/google/callback",
+  clientID: GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: "https://wonderplace.herokuapp.com/auth/google/login",
   passReqToCallback: true,
 },
 function(request, accessToken, refreshToken, profile, done) {
