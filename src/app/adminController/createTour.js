@@ -12,9 +12,8 @@ class creatTour{
         req.body.img2 = 'image/'+ req.body.img2 ;
         req.body.img3 = 'image/'+ req.body.img3 ;
         req.body.img4 = 'image/'+ req.body.img4 ;
-        const object = new tour(req.body);
-        object.save()
-        res.send(object);
+        tour.create(req.body)
+        res.redirect('/admin/createTour')
     }
 
     // post uplouad img tour 

@@ -17,6 +17,7 @@ const order = require("./clientRoute/order");
 const priviteOrderMiddleware = require("../app/midderwares/privateOrderMiddleware");
 const privateAccountMiddleware = require("../app/midderwares/privateAccountMiddleware");
 const partnership = require("./clientRoute/partnerhip");
+const authen = require('./authOtherApp')
 // web webNhanh
 const webnhanh = require("./webnhanh/webnhanh");
 
@@ -33,6 +34,7 @@ function route(app) {
   // user link
   app.use("/partnership", partnership);
   app.use("/blog", blog);
+  app.use("/auth",authen)
   app.use("/bookTour", bookTour);
   app.use("/search", search);
   app.use("/outTour.html", outTour);

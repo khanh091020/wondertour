@@ -9,8 +9,9 @@ const account = new Schema({
     loveTour : Array,
     phone : Number,
     address : String,
-    admin : Boolean,
-    boss : Boolean
+    admin : {type: Boolean, default: false},
+    boss : {type: Boolean, default: false},
+    googleId : String
     
 },
 {

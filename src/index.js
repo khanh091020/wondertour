@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 var session = require('express-session');
+const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
 
 // connect db
@@ -32,6 +33,9 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 // set staic file 
  app.use(express.static(path.join(__dirname,'public')));
 
@@ -63,13 +67,13 @@ app.use(checkLoginMidleware);
 routes(app);
 
 // Quyền truy cập 
-const cors = require('cors');
-const corsOptions ={
-    origin:'http://localhost:3000', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+// const cors = require('cors');
+// const corsOptions ={
+//     origin:'http://localhost:3000', 
+//     credentials:true,            //access-control-allow-credentials:true
+//     optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 // port listener 
 app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

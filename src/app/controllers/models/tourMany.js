@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 const Schema = mongoose.Schema;
-const slug = require('mongoose-slug-generator');
+var slug = require('mongoose-slug-generator')
+mongoose.plugin(slug)
 var mongoose_delete = require('mongoose-delete');
-
 
 const Tours = new Schema({
     _id : Number,
@@ -13,7 +13,7 @@ const Tours = new Schema({
     saleOff : {type :Number},
     description : {type :String},
     startDay : {type : Date},
-    slug : {type : String, slug: 'name',unique : true} ,
+    slug: { type: String, slug: 'name', slug_padding_size: 4,  unique: true },
     countLeft : Number,
     video_id : String,
     img1 : String,
@@ -29,7 +29,6 @@ const Tours = new Schema({
 });
 Tours.plugin(AutoIncrement);
 
-mongoose.plugin(slug);
 Tours.plugin(mongoose_delete,
      { 
          deletedAt : true,

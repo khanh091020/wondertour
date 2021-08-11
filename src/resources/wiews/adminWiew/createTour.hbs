@@ -5,15 +5,15 @@
    <form action="/admin/createTour" method="POST" id="formCtour">
       <div class="form-group">
          <label for="name">Tour name</label>
-         <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="name">
+         <input required type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="name">
       </div>
       <div class="form-group">
          <label for="name">City destination</label>
-         <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="cityDestination">
+         <input required type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="cityDestination">
       </div>
       <div class="form-group">
          
-         <input type="hidden" class="form-control-file"  name="img">
+         <input required type="hidden" class="form-control-file"  name="img">
       </div>
       <div class="form-group">
          <label for="name">Tour description</label>
@@ -21,49 +21,49 @@
       </div>
       <div class="form-group">
          <label for="name">Tour price</label>
-         <input type="number" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="price">
+         <input required type="number" class="form-control"  aria-describedby="nameHelp" placeholder="Enter name" name="price">
       </div>
       {{!-- 
       <div class="form-group">
          <label for="name">Tour slug</label>
-         <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter slug" name="slug">
+         <input required type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter slug" name="slug">
       </div>
       --}}
       <div class="form-group">
          <label for="name">Tour startDay</label>
-         <input type="date" class="form-control"  aria-describedby="nameHelp" placeholder="Enter startDay" name="startDay">
+         <input required type="date" class="form-control"  aria-describedby="nameHelp" placeholder="Enter startDay" name="startDay">
       </div>
       <div class="form-group">
          <label for="name">Tour countLeft</label>
-         <input type="number" class="form-control"  aria-describedby="nameHelp" placeholder="Enter countLeft" name="countLeft">
+         <input required type="number" class="form-control"  aria-describedby="nameHelp" placeholder="Enter countLeft" name="countLeft">
       </div>
       <div class="form-group">
          <label for="exampleFormControlFile1">video ID </label>
-         <input type="text"  class="form-control"  name="video_id">
+         <input required type="text"  class="form-control"  name="video_id">
       </div>
       <div class="form-group">
          
-         <input type="hidden" class="form-control-file"  name="img1">
+         <input required type="hidden" class="form-control-file"  name="img1">
       </div>
       <div class="form-group">
          
-         <input type="hidden" class="form-control-file"  name="img2">
+         <input required type="hidden" class="form-control-file"  name="img2">
       </div>
       <div class="form-group">
          
-         <input type="hidden" class="form-control-file"  name="img3">
+         <input required type="hidden" class="form-control-file"  name="img3">
       </div>
       <div class="form-group">
          
-         <input type="hidden" class="form-control-file"  name="img4">
+         <input required type="hidden" class="form-control-file"  name="img4">
       </div>
       <div class="form-group">
          <label for="name">Tour startPlace</label>
-         <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter startPlace" name="startPlace">
+         <input required type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter startPlace" name="startPlace">
       </div>
       <div class="form-group">
          <label for="name">Tour time</label>
-         <input type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter time" name="time">
+         <input required type="text" class="form-control"  aria-describedby="nameHelp" placeholder="Enter time" name="time">
       </div>
      
    </form>
