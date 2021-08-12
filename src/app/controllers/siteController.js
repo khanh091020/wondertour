@@ -6,7 +6,9 @@ class siteController{
         res.render('others/about');
     }
 
-    
+    showLiveChat(req,res,next) {
+        res.render("webnhanh/testChatSocket")
+    }
 
    
 }

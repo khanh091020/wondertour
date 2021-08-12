@@ -10,6 +10,7 @@ const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
+const soketIo = require('socket.io');
 
 // connect db
 db.connect();
@@ -74,6 +75,13 @@ routes(app);
 // }
 // app.use(cors(corsOptions));
 // port listener 
-app.listen(process.env.PORT || port, () => {
+
+ var server = app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 })
+ 
+var io = soketIo(server)
+
+var ioController = require('./util/soketio')(io);
+
+
