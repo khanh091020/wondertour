@@ -111,6 +111,7 @@ Dropzone.autoDiscover = false;
 
        self.on("successmultiple", function(file,response) {
          $('input[name="img"]').val(response[0])
+         alert('ok')
          for(let i=1;i<response.length;i++) { 
                 $('input[name="img'+i+'"]').val(response[i])
                 console.log(response[i])

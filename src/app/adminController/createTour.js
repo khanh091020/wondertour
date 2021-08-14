@@ -7,7 +7,7 @@ class creatTour{
     }
 
     async save(req,res,next) {
-       
+       conso.log(req.body)
         tour.create(req.body)
         res.redirect('/admin/createTour')
     }
