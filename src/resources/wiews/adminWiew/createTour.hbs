@@ -106,14 +106,14 @@ Dropzone.autoDiscover = false;
       });
       // Send file starts
       self.on("sending", function(file) {
-        console.log("upload started", file);
-        
+      
       });
 
        self.on("successmultiple", function(file,response) {
-         $('input[name="img"]').val(response[0].filename)
+         $('input[name="img"]').val(response[0])
          for(let i=1;i<response.length;i++) { 
-                $('input[name="img'+i+'"]').val(response[i].filename)
+                $('input[name="img'+i+'"]').val(response[i])
+                console.log(response[i])
          }
          $('#formCtour').submit()
       });
