@@ -25,6 +25,7 @@ class loginController {
             req.session.firstName = account.firstName;
             req.session.name = account.lastName;
             req.session.phone = account.phone;
+            req.session.role = account.admin;
            
                res.json({
                    link : '/index.html'

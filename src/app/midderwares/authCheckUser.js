@@ -4,12 +4,12 @@ const checkToken = (req, res, next) => {
    const token = req.session.token
    if(!token) return res.json({
      success: false,
-     message: 'Please login to order this tour !'
+     message: 'Please login to continue !'
    })
 
   try {
     const decaded = jwt.verify(token,'mk')
-    req.email = decaded.email
+     req.email = decaded.email
      req.id = req.session._id
     next()
   } catch (error) {

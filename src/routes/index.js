@@ -14,10 +14,11 @@ const sortMidderwares = require("../app/midderwares/checkLoginMiderwares");
 const account = require("./clientRoute/account");
 const affiliatService = require("./clientRoute/affiliatService");
 const order = require("./clientRoute/order");
-const priviteOrderMiddleware = require("../app/midderwares/privateOrderMiddleware");
+const authCheckUser = require("../app/midderwares/authCheckUser");
 const privateAccountMiddleware = require("../app/midderwares/privateAccountMiddleware");
 const partnership = require("./clientRoute/partnerhip");
 const authen = require('./authOtherApp')
+const adminAuth = require("../app/midderwares/authCheckAdmin");
 // web webNhanh
 const webnhanh = require("./webnhanh/webnhanh");
 
@@ -48,16 +49,16 @@ function route(app) {
   app.use("/photographer", photographers);
   app.use("/account", privateAccountMiddleware, account);
   app.use("/affiliate-service", affiliatService);
-  app.use("/api/order", priviteOrderMiddleware, order);
+  app.use("/api/order", authCheckUser, order);
   // web nhanh
   app.use("/web-nhanh", webnhanh);
   // admin link
-  app.use("/admin/api/order", adminOrder);
-  app.use("/admin/createTour", createTour);
-  app.use("/admin/all-list", listAllTour);
-  app.use("/admin/updateTour", updateTour);
-  app.use("/admin/deleteTour", deleteTour);
-  app.use("/admin", indexadmin);
+  app.use("/admin/api/order",authCheckUser,adminAuth, adminOrder);
+  app.use("/admin/createTour",authCheckUser,adminAuth, createTour);
+  app.use("/admin/all-list",authCheckUser,adminAuth, listAllTour);
+  app.use("/admin/updateTour",authCheckUser,adminAuth, updateTour);
+  app.use("/admin/deleteTour",authCheckUser,adminAuth, deleteTour);
+  app.use("/admin",authCheckUser,adminAuth, indexadmin);
   // facebook
   app.use("/firstWeb", (req, res, next) => {
     res.redirect(

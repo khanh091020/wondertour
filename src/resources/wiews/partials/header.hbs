@@ -81,6 +81,7 @@
                        <i class="fas fa-user"></i>
                        <h5 onclick="openClose__UserTool()">Hello {{session.name}} <i class="fas fa-chevron-down"></i></h5>
                        <ul class="list__Tool-User">
+                           {{#if session.role}}<li class="list__Tool-User-item"> <a href="/admin">Admin management</a> </li>{{/if}}
                            <li class="list__Tool-User-item"> <a class="list__Tool-User-link1" href="/account/details">My account</a> </li>
                            <li class="list__Tool-User-item"> <a href="/account/my-tour">My tours</a> </li>
                            <li class="list__Tool-User-item"> <a href="/account/love-tour">Love tour</a> </li>
