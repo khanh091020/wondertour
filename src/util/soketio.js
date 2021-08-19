@@ -1,12 +1,15 @@
 var dateFormat = require("dateformat");
 const { v4: uuidv4 } = require('uuid');
+const jwt = require('jsonwebtoken');
+var user = require('../app/controllers/models/account');
+var comment = require('../app/controllers/models/comment');
 var userArr = new Array();
 var admin = [];
 
 module.exports = function (io) {
     io.on('connection', (socket) => {
-      
-        // console.log('a user connected');
+    
+        /*  * * * BẮT ĐẦU XỬ LÍ CHO LIVE CHAT  * * * * * * */
         // listen add user 
         socket.on('adduser', (requset) => {
           
@@ -157,8 +160,56 @@ module.exports = function (io) {
            
             
         })
+        /******  ĐÓNG XỬ LÍ LIVE CHAT  ****** */
 
-        // notify
+
+
+   /******  BẮT ĐẦU XỬ LÍ PHÂN REALTIME COMMENT   ****** */
+      socket.on('addRoomComment', (data) => {
+         socket.join(data)
+         socket.room = data
+      })
+
+       socket.on('addComment',async (data) => {
+           if(!socket.handshake.session.token) 
+               return socket.emit('failAuth',{
+                   success : false,
+                   message : "YOU NEED LOGIN TO COMMENT"
+               });
+           
+           let token = jwt.verify(socket.handshake.session.token,'mk');
+           
+           let userFind = await user.findOne({email : token.email})
+              if(!userFind)  return socket.emit('failAuth',{
+                  success : false,
+                  message : "NOT AUTH YOUR ACOOUNT"
+              }); 
+          
+              let obj = new comment({
+                slugTour : data.slugTour,
+                comment : data.comment,
+                rate : data.rate ? data.rate : 5,
+                accountID : userFind._id,
+                nameAccount : userFind.lastName
+              })
+              let newComment;
+              
+          try {
+             newComment = await obj.save();
+          } catch (error) {
+              console.error(error)
+          }
+           let countComment = await comment.countDocuments({slugTour : data.slugTour})
+            io.in(socket.room).emit('appendComment',{
+                newComment,
+                countComment
+            })
+       })        
+
+
+   /******  ĐÓNG XỬ LÍ REALTIME COMMENT  ****** */
+
+      
     });
      
 }

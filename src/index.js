@@ -11,6 +11,8 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
 const soketIo = require('socket.io');
+var sharedsession = require("express-socket.io-session");
+ 
 
 // connect db
 db.connect();
@@ -28,12 +30,12 @@ app.use(cookieParser())
 // custom sortMidderwares 
 app.use(sortMidderwares);
 // sesion
-// app.use(session({
-//   secret: '2C44-4D44-WppQ38S',
-//   resave: true,
-//   saveUninitialized: true
-// }));
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+var session = require("express-session")({
+  secret: "my-secret",
+  resave: true,
+  saveUninitialized: true
+});
+app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
 // set staic file 
@@ -81,7 +83,9 @@ routes(app);
 })
  
 var io = soketIo(server)
-
+io.use(sharedsession(session, {
+  autoSave:true
+})); 
 var ioController = require('./util/soketio')(io);
 
 

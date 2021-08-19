@@ -80,13 +80,14 @@
          .lSPager {
             display: none
          }
+       
       </style>
    </head>
    <body style="overflow-x : hidden;margin: 0;">
       <div class="ontop" id="ontopbro" onclick="ontop()">
          <i class="fas fa-arrow-alt-circle-up"></i>
       </div>
-      <div id="loading">
+      <div id="loading" >
          <img src="/image/load.gif" alt="">
       </div>
       {{> header}}
@@ -292,7 +293,7 @@
                                  <div class="col-10">
                                     <div class="comment-box ml-2">
                                        <h4>Add a comment</h4>
-                                       <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+                                       <div class="rating"> <input type="radio" name="rating"  value="5" id="5"><label  for="5">☆</label> <input type="radio" name="rating"  value="4" id="4"><label  for="4">☆</label> <input type="radio" name="rating"  value="3" id="3"><label  for="3">☆</label> <input type="radio" name="rating"  value="2" id="2"><label  for="2">☆</label> <input type="radio" name="rating"  value="1" id="1"><label  for="1">☆</label> </div>
                                        <div class="comment-area"> <textarea  class="form-control" placeholder="what is your view?" rows="4" id="comment"></textarea> </div>
                                        <input type="hidden" id="slug__tour" value="{{object.slug}}">
                                        <div class="comment-btns mt-2">
@@ -317,11 +318,13 @@
                                     <div class="card p-3 mt-2">
                                        <div class="d-flex justify-content-between align-items-center">
                                           <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">{{this.nameAccount}}</small> <small class="font-weight-bold">{{this.comment}}</small></span> </div>
-                                          <small>{{formatDateDetails this.createdAt}}</small>
+                                          <small>{{{formatDateDetails this.createdAt}}}</small>
                                        </div>
                                        <div class="action d-flex justify-content-between mt-2 align-items-center">
-                                          <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                                          <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                                       <div class="user__comment-rate">{{{renderRateComment this.rate}}}</div>
+
+                                          <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small></div>
+                                          
                                        </div>
                                     </div>
                                     {{else}}
@@ -458,46 +461,57 @@
             $('.container__left').css('max-height','700px')
          }
          
-         var currentdate = new Date(); 
+        
+         function resertComment() {
+          $('.comment-area textarea').val('')
+         }
+
+
+    var socket = io.connect("http://localhost:3000");
+           socket.on("connect", () => {
+              socket.emit('addRoomComment',window.location.pathname)
+           })
+        
+           $('#send__comment').click(function() {
+               let newComment = {
+                  slugTour :  window.location.pathname.split('/tours/')[1],
+                  comment : $('#comment').val(),
+                  rate : $('input[name="rating"]:checked').val()
+               }
+              socket.emit('addComment',newComment)
+           })
+           socket.on('failAuth',(data) => {
+              alert(data.message);
+           })
+           socket.on('appendComment',(data) => {
+              let renderRate = [];
+              for (let i = 1; i<=5;i++) {
+                 renderRate.push(` <label class="${i<=data.newComment.rate ? "comment__rated" : "" }">☆</label>`)
+              }
+              $('#not__have-comment').remove()
+                  $('#countComment').html("Unread comments("+(data.countComment)+")");
+                   $( "#contain__comment" ).prepend(` <div class="card p-3 mt-2">
+                             <div class="d-flex justify-content-between align-items-center">
+                             <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">`+data.newComment.nameAccount+`</small> <small class="font-weight-bold">`+data.newComment.comment+`</small></span> </div>
+                                   <small>`+formatDate(data.newComment.createdAt)+`</small>
+                                  </div>
+                              <div class="action d-flex justify-content-between mt-2 align-items-center">
+                                     <div class="user__comment-rate">${renderRate.join('')}</div>
+                                  <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
+                                            </div>
+                                         </div>`);
+           })
+         
+          function formatDate(date) {
+              var currentdate = new Date(date); 
                var datetime =currentdate.getDate() + "/"
                + (currentdate.getMonth()+1)  + "/" 
                + currentdate.getFullYear() + " "  
                + currentdate.getHours() + ":"  
                + currentdate.getMinutes() + ":" 
                + currentdate.getSeconds();
-         function resertComment() {
-          $('.comment-area textarea').val('')
-         }
-         $('#send__comment').click(function() {
-            $.post("/create-comment",
-                 {
-                    comment : $('#comment').val(),
-                  slugTour : $('#slug__tour').val()
-                 },
-                 function(data, status){
-                    if(data.link)
-                    {
-                       alert('You need login to comment this post !')
-                       return 
-                    }
-                    $('#not__have-comment').remove()
-                  $('#countComment').html("Unread comments("+(data.count+1)+")");
-                   $( "#contain__comment" ).prepend(` <div class="card p-3 mt-2">
-                             <div class="d-flex justify-content-between align-items-center">
-                             <div class="user d-flex flex-row align-items-center"> <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">`+data.nameAccount+`</small> <small class="font-weight-bold">`+data.comment+`</small></span> </div>
-                                   <small>`+datetime+`</small>
-                                  </div>
-                              <div class="action d-flex justify-content-between mt-2 align-items-center">
-                                  <div class="reply px-4"> <small>Remove</small> <span class="dots"></span> <small>Reply</small> <span class="dots"></span> <small>Translate</small> </div>
-                                               <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
-                                            </div>
-                                         </div>`);
-                 });
-         })
-         
-          
-            
-         
+               return datetime;
+          } 
          
       </script>
    </body>

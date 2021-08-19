@@ -69,6 +69,13 @@ module.exports = {
           if(ispaid)
           return ''
           return `<a href="/tours/{{this.tourID.slug}}" data-toggle="modal" data-target="#confirmPaymentTour"  data-id="${id}" class="btn btn-success btn-sm mb-2">Comfirm paid</a>`
+        },
+        renderRateComment(number) {
+           let html = [];
+           for(let i = 1; i <= 5;i++) {
+             html.push(` <label class="${i<=number ? "comment__rated" : "" }">☆</label>`)
+           }
+           return html.join('');
         }
         
 

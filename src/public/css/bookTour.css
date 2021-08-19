@@ -975,6 +975,28 @@ overflow-y: scroll;
     opacity: 1 !important
 }
 
+/* rating cmt  */
+.user__comment-rate {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.user__comment-rate>label {
+  position: relative;
+    width: 19px;
+    font-size: 25px;
+    color: var(--primary_color );
+    margin-bottom: 0;
+}
+.comment__rated::before {
+  content: "\2605";
+    position: absolute;
+    opacity: 1;
+}
+
+
+
+
 .rating>input:checked~label:before {
     opacity: 1
 }

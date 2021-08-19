@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         var conversation = [];
        
-        var socket = io.connect("https://wonderplace.herokuapp.com");
+        var socket = io.connect("http://localhost:3000");
         socket.on("connect", function() {
           
             if(localStorage.getItem('conversation'))

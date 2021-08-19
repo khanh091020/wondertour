@@ -6,7 +6,7 @@ const tourDetails = require("./clientRoute/tourDetail");
 const search = require("./clientRoute/search");
 const signUp = require("./clientRoute/signUp");
 const logout = require("./clientRoute/logout");
-const comment = require("./clientRoute/comment");
+
 const filter = require("./clientRoute/filter");
 const blog = require("./clientRoute/blog");
 const photographers = require("./clientRoute/photographers");
@@ -44,7 +44,7 @@ function route(app) {
   app.use("/filter", filter);
   app.use("/log-out", logout);
   app.use("/sign-up.html", signUp);
-  app.use("/create-comment", comment);
+
   app.use("/tours", tourDetails);
   app.use("/photographer", photographers);
   app.use("/account", privateAccountMiddleware, account);
