@@ -656,6 +656,14 @@
     .contain__counter--decrip {
       font-size:1.5rem
     }
+    .wrapper  {
+        max-width:330px;
+        right: 10px;
+    }
+    .card-body {
+        height: 360px !important;
+
+    }
 }
 
 @media (max-width: 475px) {  
