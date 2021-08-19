@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         var conversation = [];
        
-        var socket = io.connect("http://localhost:3000");
+        var socket = io.connect("https://wonderplace.herokuapp.com");
         socket.on("connect", function() {
           
             if(localStorage.getItem('conversation'))
@@ -57,7 +57,7 @@ $( document ).ready(function() {
        $('#chat-submit').click(() => {
          let message = $('#chat-input').val()
          $('#chat-input').val('')
-         alert(message)
+       
          if(message === "") return;
          socket.emit('sendMessage',message);
        })
