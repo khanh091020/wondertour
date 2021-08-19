@@ -10,7 +10,11 @@ const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
-const soketIo = require('socket.io');
+const soketIo =  require('socket.io')(server, {
+  cors: {
+    origin: '*',
+  }
+});
 var sharedsession = require("express-socket.io-session");
  
 
@@ -69,13 +73,13 @@ app.use(checkLoginMidleware);
 routes(app);
 
 // Quyền truy cập 
-// const cors = require('cors');
-// const corsOptions ={
-//     origin:'http://localhost:3000', 
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
+const cors = require('cors');
+const corsOptions ={
+    origin:'https://wonderplace.herokuapp.com', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 // port listener 
 
  var server = app.listen(process.env.PORT || port, () => {
