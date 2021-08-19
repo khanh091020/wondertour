@@ -71,7 +71,7 @@ routes(app);
 // Quyền truy cập 
 const cors = require('cors');
 const corsOptions ={
-    origin:'https://wonderplace.herokuapp.com', 
+    origin:'https://wonderplace.herokuapp.com/', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
@@ -82,12 +82,7 @@ app.use(cors(corsOptions));
   console.log(`Example app listening at http://localhost:${port}`);
 })
  
-var io = soketIo(server,  {
-  cors: {
-    origin: '*',
-  }
-} ) 
-
+var io = soketIo(server)
 io.use(sharedsession(session, {
   autoSave:true
 })); 
