@@ -29,7 +29,7 @@ async function(req, res) {
     req.session._id = user._id;
     req.session.phone = user.phone;
   }
-  console.log(token);
+  req.session.email = req.user.email;
   req.session.token = token;
   req.session.firstName = req.user.family_name;
   req.session.name = req.user.given_name;
