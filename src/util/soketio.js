@@ -29,7 +29,7 @@ module.exports = function (io) {
             // let data = {
             //     sender : "WONDER PLACE",
             //     message : "Welcome you to wonder place support !",
-            //     time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
+            //     time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss")
             // }
             // socket.emit('update_message', data);
              
@@ -68,14 +68,14 @@ module.exports = function (io) {
             let data = {
                 sender : "You",
                 message : message,
-                time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
+                time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss")
             }
             socket.emit("update_message",data);
             
              data = {
                 sender : socket.name,
                 message : message,
-                time : dateFormat(new Date(), "UTC:h:MM:ss TT Z"),
+                time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss"),
                
             }
             socket.to(socket.room).emit("update_message",data);
@@ -125,7 +125,7 @@ module.exports = function (io) {
         //   let data = {
         //       sender : "WONDER PLACE",
         //       message : "Support is starting online !",
-        //       time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
+        //       time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss")
         //   }
         //   socket.broadcast.emit('update_message', data)
         
