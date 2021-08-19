@@ -60,10 +60,8 @@ function route(app) {
   app.use("/admin/deleteTour",authCheckUser,adminAuth, deleteTour);
   app.use("/admin",authCheckUser,adminAuth, indexadmin);
   // facebook
-  app.use("/firstWeb", (req, res, next) => {
-    res.redirect(
-      "https://www.facebook.com/cs.vku.udn.vn/posts/356782236109464"
-    );
+  app.use("/test-chat", (req, res, next) => {
+    res.render('adminWiew/adminChat')
   });
   // #
   app.use("/index.html", sitee);

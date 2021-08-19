@@ -22,6 +22,7 @@ class loginController {
             },'mk');
             req.session.token = token;
             req.session._id = account._id;
+            req.session.email = account.email;
             req.session.firstName = account.firstName;
             req.session.name = account.lastName;
             req.session.phone = account.phone;

@@ -9,6 +9,107 @@ $( document ).ready(function() {
             menuItems[i].classList.add('navbar__active');
             }
         }
+
+         function messageObject(sender,message,time) {
+          this.sender = sender;
+          this.message = message;
+          this.time = time;
+        }
+        var conversation = [];
+       
+        var socket = io.connect("https://wonderplace.herokuapp.com");
+        socket.on("connect", function() {
+            console.log("you are connected to chat");
+ 
+            if(localStorage.getItem('conversation'))
+            {
+              conversation  = (JSON.parse(localStorage.getItem('conversation')))
+              for (let item of conversation) {
+               loadMessage(item)
+              }
+              
+            }
+        })
+         
+        $('#start_chat').click((e) => {
+         
+         if($('#fullName').val() === '' || $('#email').val()==='')
+          return;
+          let data = {
+            name : $('#fullName').val(), 
+            email : $('#email').val(),
+            conversation : conversation
+          }
+          
+          socket.emit("adduser",data );
+          
+          $('.chat-box').toggleClass('display__none')
+          $('.chat-input').toggleClass('display__none')
+          $('.msg_card_body').toggleClass('display__none')
+         
+       })
+      
+       // notify
+      $('.label__livechat').click(function() {
+        $('.wrapper').toggleClass('chat_active')
+      })      
+       
+       $('#chat-submit').click(() => {
+         let message = $('#chat-input').val()
+         $('#chat-input').val('')
+         alert(message)
+         if(message === "") return;
+         socket.emit('sendMessage',message);
+       })
+
+       var count_mess = 1;
+       socket.on("update_message", (data) => {
+         console.log(count_mess);
+        loadMessage(data)   
+        let newMessage = new messageObject(data.sender,data.message,data.time)
+        conversation.push(newMessage)
+        localStorage.setItem("conversation",JSON.stringify(conversation))
+        socket.emit('update_conversation',conversation)
+        let check = $('.wrapper').hasClass('chat_active')
+        console.log(check)
+        let notify_div = $('.notify_message')
+        if(!check) {
+             notify_div.html(`<p>${count_mess}</p>`)
+             if(notify_div.hasClass('display__none')) notify_div.removeClass('display__none')
+             count_mess++
+        }
+        else {
+          count_mess = 1
+          if(!notify_div.hasClass('display__none')) notify_div.addClass('display__none')
+        }
+       
+       })
+
+     function loadMessage(data) {
+      if(data.sender !== "You") 
+      {
+       $('.msg_card_body').append(`<div class="d-flex justify-content-start mb-4">
+         
+       <div class="msg_cotainer">
+       <p class='text-muted'>${data.message}</p>
+         <span class="msg_time">${data.time}</span>
+       </div>
+     </div>`)
+
+      }
+     
+    else 
+    {
+     $('.msg_card_body').append(`<div class="d-flex justify-content-end mb-4">
+     <div class="msg_cotainer_send">
+       <p class='text-muted'>${data.message}</p>
+       <span class="msg_time_send">${data.time}</span>
+     </div>`)
+   }
+     }
+       
+
+     
 });
    //refresh animations
    $(window).on('load', function() {
