@@ -60,7 +60,10 @@ $( document ).ready(function() {
          $('#chat-input').val('')
        
          if(message === "") return;
-         socket.emit('sendMessage',message);
+         socket.emit('sendMessage',{ 
+           message , 
+           time : formatDate(new Date())
+         });
        })
 
        // triggle enter send message
@@ -119,6 +122,16 @@ $( document ).ready(function() {
 
      
 });
+function formatDate(date) {
+  var currentdate = new Date(date); 
+   var datetime =currentdate.getDate() + "/"
+   + (currentdate.getMonth()+1)  + "/" 
+   + currentdate.getFullYear() + " "  
+   + currentdate.getHours() + ":"  
+   + currentdate.getMinutes() + ":" 
+   + currentdate.getSeconds();
+   return datetime;
+} 
    //refresh animations
    $(window).on('load', function() {
     AOS.refresh();

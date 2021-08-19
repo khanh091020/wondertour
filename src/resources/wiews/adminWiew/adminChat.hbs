@@ -553,7 +553,10 @@
         let message = $('#message').val()
         $('#message').val('')
         if(message === '') return
-         socket.emit('sendMessage', message);
+         socket.emit('sendMessage', {
+            message ,
+            time : formatDate(new Date())
+         });
       })
        // trigger send mess when enter
       $('#message').keypress((e) => {
@@ -615,7 +618,16 @@
          }
       }
       
-         
+         function formatDate(date) {
+              var currentdate = new Date(date); 
+               var datetime =currentdate.getDate() + "/"
+               + (currentdate.getMonth()+1)  + "/" 
+               + currentdate.getFullYear() + " "  
+               + currentdate.getHours() + ":"  
+               + currentdate.getMinutes() + ":" 
+               + currentdate.getSeconds();
+               return datetime;
+          } 
    </script>
 </body>
 

@@ -64,18 +64,18 @@ module.exports = function (io) {
 
 
 
-        socket.on('sendMessage', (message) => {
+        socket.on('sendMessage', (date) => {
             let data = {
                 sender : "You",
-                message : message,
-                time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss")
+                message : data.message,
+                time : data.time
             }
             socket.emit("update_message",data);
             
              data = {
                 sender : socket.name,
                 message : message,
-                time : dateFormat(new Date(), "GMT:0700 ddd mmm dd yyyy HH:MM:ss"),
+                time : data.time,
                
             }
             socket.to(socket.room).emit("update_message",data);
