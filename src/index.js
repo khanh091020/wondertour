@@ -10,11 +10,7 @@ const sortMidderwares = require('./app/midderwares/sortMidderwares');
 const cookieParser = require('cookie-parser')
 const passport = require('passport');
 const checkLoginMidleware = require('../src/app/midderwares/checkLoginMiderwares');
-const soketIo =  require('socket.io')(server, {
-  cors: {
-    origin: '*',
-  }
-});
+const soketIo = require('socket.io');
 var sharedsession = require("express-socket.io-session");
  
 
@@ -86,7 +82,12 @@ app.use(cors(corsOptions));
   console.log(`Example app listening at http://localhost:${port}`);
 })
  
-var io = soketIo(server)
+var io = soketIo(server,  {
+  cors: {
+    origin: '*',
+  }
+} ) 
+
 io.use(sharedsession(session, {
   autoSave:true
 })); 
