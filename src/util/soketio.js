@@ -1,4 +1,4 @@
-const moment = require('moment');
+var dateFormat = require("dateformat");
 const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
 var user = require('../app/controllers/models/account');
@@ -29,7 +29,7 @@ module.exports = function (io) {
             // let data = {
             //     sender : "WONDER PLACE",
             //     message : "Welcome you to wonder place support !",
-            //     time : moment().format('MMMM Do YYYY, h:mm:ss a')
+            //     time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
             // }
             // socket.emit('update_message', data);
              
@@ -68,14 +68,14 @@ module.exports = function (io) {
             let data = {
                 sender : "You",
                 message : message,
-                time : moment().format('MMMM Do YYYY, h:mm:ss a')
+                time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
             }
             socket.emit("update_message",data);
             
              data = {
                 sender : socket.name,
                 message : message,
-                time : moment().format('MMMM Do YYYY, h:mm:ss a'),
+                time : dateFormat(new Date(), "UTC:h:MM:ss TT Z"),
                
             }
             socket.to(socket.room).emit("update_message",data);
@@ -122,11 +122,11 @@ module.exports = function (io) {
             
              admin.push(newAdmin);
 
-          let data = {
-              sender : "WONDER PLACE",
-              message : "Support is starting online !",
-              time : moment().format('MMMM Do YYYY, h:mm:ss a')
-          }
+        //   let data = {
+        //       sender : "WONDER PLACE",
+        //       message : "Support is starting online !",
+        //       time : dateFormat(new Date(), "UTC:h:MM:ss TT Z")
+        //   }
         //   socket.broadcast.emit('update_message', data)
         
           socket.emit('online-user',userArr)
