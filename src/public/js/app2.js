@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         var conversation = [];
        
-        var socket = io.connect("https://wonderplace.herokuapp.com");
+        var socket = io.connect("http://localhost:3000/");
         
         socket.on("connect", function() {
           
@@ -60,10 +60,7 @@ $( document ).ready(function() {
          $('#chat-input').val('')
        
          if(message === "") return;
-         socket.emit('sendMessage',{ 
-           message , 
-           time : formatDate(new Date())
-         });
+         socket.emit('sendMessage',message);
        })
 
        // triggle enter send message
