@@ -82,7 +82,11 @@ app.use(cors(corsOptions));
   console.log(`Example app listening at http://localhost:${port}`);
 })
  
-var io = soketIo(server)
+var io = soketIo(server, {
+  cors: {
+    origin: '*',
+  }
+})
 io.use(sharedsession(session, {
   autoSave:true
 })); 
