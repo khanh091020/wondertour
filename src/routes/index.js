@@ -60,9 +60,7 @@ function route(app) {
   app.use("/admin/deleteTour",authCheckUser,adminAuth, deleteTour);
   app.use("/admin",authCheckUser,adminAuth, indexadmin);
   // facebook
-  app.use("/test-chat", (req, res, next) => {
-    res.render('adminWiew/adminChat')
-  });
+
   // #
   app.use("/index.html", sitee);
   app.use("/", sitee);

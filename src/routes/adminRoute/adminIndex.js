@@ -3,6 +3,7 @@ const route = express.Router();
 const controller = require('../../app/adminController/adminIndex');
 
 route.get('/account/partner',controller.showPartners)
+route.get('/live-chat',controller.showLiveChat)
 route.get('/listHotelOrder',controller.showListHotelOrder)
 route.get('/account-user',controller.showUsers)
 route.get('/account-admin',controller.showAdmin)

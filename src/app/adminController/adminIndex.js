@@ -48,6 +48,11 @@ class adminIndexController {
   showListHotelOrder(req, res, next) {
     res.render("adminWiew/listHotelOrder");
   }
-}
+
+  // show live chat
+  showLiveChat(req, res, next) {
+    res.render('adminWiew/adminChat')
+  }
+ }
 
 module.exports = new adminIndexController();

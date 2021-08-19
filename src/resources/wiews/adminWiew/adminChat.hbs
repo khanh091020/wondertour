@@ -407,7 +407,7 @@
          
         })
         socket.emit('add_admin');
-            
+            // list user first
           socket.on('online-user', (data) => {
             if(data.length !== 0) {
            for(let item of data[0].conversation)  
@@ -544,19 +544,25 @@
              }
           })
       
-         
+      // update mess soket event
       socket.on('update_message',(data) => {
         update_message(data);
       })
-      
+      // send message event
       $('#send_message').click(function() {
         let message = $('#message').val()
         $('#message').val('')
         if(message === '') return
          socket.emit('sendMessage', message);
       })
-      
-              $('.contacts li').click(changeActive)
+       // trigger send mess when enter
+      $('#message').keypress((e) => {
+         if(e.which === 13 ) {
+             $('#send_message').trigger('click');
+         }
+      }) 
+      // change active user event
+    $('.contacts li').click(changeActive)
        
       function changeActive () {
         
@@ -565,7 +571,7 @@
          $('#chat_with').html(`Chat with ` + $(this).attr("data-name"))
          socket.emit('change_room', $(this).attr("data-id") )
         }
-      
+      // func update message 
       function update_message (data) {
             if(data.sender !== 'You') {
              $('.msg_card_body').append(`<div class="d-flex justify-content-start mb-4">
@@ -586,7 +592,7 @@
                   </div>`)
          }
       }
-      
+      // load message by room event
       function loadMessagesByRoom (data) {
          
          if(data.sender === 'You') {

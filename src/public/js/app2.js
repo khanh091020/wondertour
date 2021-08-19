@@ -19,8 +19,7 @@ $( document ).ready(function() {
        
         var socket = io.connect("https://wonderplace.herokuapp.com");
         socket.on("connect", function() {
-            console.log("you are connected to chat");
- 
+          
             if(localStorage.getItem('conversation'))
             {
               conversation  = (JSON.parse(localStorage.getItem('conversation')))
@@ -54,6 +53,7 @@ $( document ).ready(function() {
         $('.wrapper').toggleClass('chat_active')
       })      
        
+      // send message event
        $('#chat-submit').click(() => {
          let message = $('#chat-input').val()
          $('#chat-input').val('')
@@ -62,16 +62,23 @@ $( document ).ready(function() {
          socket.emit('sendMessage',message);
        })
 
+       // triggle enter send message
+       $('#chat-input').keypress((e) => {
+        if(e.which === 13 ) {
+            $('#chat-submit').trigger('click');
+        }
+     }) 
+
        var count_mess = 1;
        socket.on("update_message", (data) => {
-         console.log(count_mess);
+    
         loadMessage(data)   
         let newMessage = new messageObject(data.sender,data.message,data.time)
         conversation.push(newMessage)
         localStorage.setItem("conversation",JSON.stringify(conversation))
         socket.emit('update_conversation',conversation)
         let check = $('.wrapper').hasClass('chat_active')
-        console.log(check)
+   
         let notify_div = $('.notify_message')
         if(!check) {
              notify_div.html(`<p>${count_mess}</p>`)
@@ -84,7 +91,7 @@ $( document ).ready(function() {
         }
        
        })
-
+    // func load message first
      function loadMessage(data) {
       if(data.sender !== "You") 
       {
@@ -168,7 +175,7 @@ function cancelSingerTour() {
 $('#btn__completeBooking').click(function(e) {
    e.preventDefault();
    $("input[name='totalPrice']").val(getNumberFromString($('#totalPrice').text()));
-   console.log($("input[name='totalPrice']"))
+  
    $.post( '/api/order', $('#postDataOrder').serialize(), function(res){
       if(res.success === false) {
         alert(res.message)
