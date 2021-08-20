@@ -71,8 +71,8 @@ routes(app);
 // Quyền truy cập 
 const cors = require('cors');
 const corsOptions ={
-    origin:'https://wonderplace.herokuapp.com/', 
-    credentials:true,            //access-control-allow-credentials:true
+    origin:'*', 
+    credentials:true,          
     optionSuccessStatus:200
 }
 app.use(cors(corsOptions));

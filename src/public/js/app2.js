@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         var conversation = [];
        
-        var socket = io.connect("http://localhost:3000/");
+        var socket = io.connect("https://wonderplace.herokuapp.com/");
         
         socket.on("connect", function() {
           
@@ -119,16 +119,7 @@ $( document ).ready(function() {
 
      
 });
-function formatDate(date) {
-  var currentdate = new Date(date); 
-   var datetime =currentdate.getDate() + "/"
-   + (currentdate.getMonth()+1)  + "/" 
-   + currentdate.getFullYear() + " "  
-   + currentdate.getHours() + ":"  
-   + currentdate.getMinutes() + ":" 
-   + currentdate.getSeconds();
-   return datetime;
-} 
+
    //refresh animations
    $(window).on('load', function() {
     AOS.refresh();

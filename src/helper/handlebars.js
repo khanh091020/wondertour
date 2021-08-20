@@ -33,7 +33,7 @@ module.exports = {
         },
 
         formatDateDetails(date) {
-            return dateFormat(date,"mm/dd/yyyy HH:MM:ss");
+            return dateFormat(date,"dd/mm/yyyy HH:MM:ss");
         },
 
         
