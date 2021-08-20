@@ -1,4 +1,4 @@
-var dateFormat = require("dateformat");
+const moment = require('moment-timezone')
 const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
 var user = require('../app/controllers/models/account');
@@ -29,7 +29,7 @@ module.exports = function (io) {
             // let data = {
             //     sender : "WONDER PLACE",
             //     message : "Welcome you to wonder place support !",
-            //     time : dateFormat(new Date(), "dd/mm/yyyy HH:MM:ss")
+            //     time : moment.utc(new Date().getUTCDate).tz("Asia/Saigon").format('DD/MM/YYYY HH:mm:ss')
             // }
             // socket.emit('update_message', data);
              
@@ -68,14 +68,14 @@ module.exports = function (io) {
             let data = {
                 sender : "You",
                 message : message,
-                time : dateFormat(new Date(), "dd/mm/yyyy HH:MM:ss")
+                time : moment.utc(new Date().getUTCDate).tz("Asia/Saigon").format('DD/MM/YYYY HH:mm:ss')
             }
             socket.emit("update_message",data);
             
              data = {
                 sender : socket.name,
                 message : message,
-                time : dateFormat(new Date(), "dd/mm/yyyy HH:MM:ss"),
+                time : moment.utc(new Date().getUTCDate).tz("Asia/Saigon").format('DD/MM/YYYY HH:mm:ss'),
                
             }
             socket.to(socket.room).emit("update_message",data);
@@ -125,7 +125,7 @@ module.exports = function (io) {
         //   let data = {
         //       sender : "WONDER PLACE",
         //       message : "Support is starting online !",
-        //       time : dateFormat(new Date(), "dd/mm/yyyy HH:MM:ss")
+        //       time : moment.utc(new Date().getUTCDate).tz("Asia/Saigon").format('DD/MM/YYYY HH:mm:ss')
         //   }
         //   socket.broadcast.emit('update_message', data)
         

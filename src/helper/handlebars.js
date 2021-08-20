@@ -1,6 +1,6 @@
 const Handlebars = require('handlebars');
 var dateFormat = require("dateformat"); 
-
+var moment = require('moment-timezone');
 
 module.exports = {
     
@@ -33,15 +33,7 @@ module.exports = {
         },
 
         formatDateDetails(date) {
-            // return dateFormat(date,"dd/mm/yyyy HH:MM:ss");
-            var currentdate = new Date(date); 
-            var datetime =currentdate.getDate() + "/"
-            + (currentdate.getMonth()+1)  + "/" 
-            + currentdate.getFullYear() + " "  
-            + currentdate.getHours() + ":"  
-            + currentdate.getMinutes() + ":" 
-            + currentdate.getSeconds();
-            return datetime;
+        return  moment.utc(date).tz("Asia/Saigon").format('DD/MM/YYYY HH:mm:ss');    
         },
 
         
