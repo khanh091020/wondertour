@@ -107,7 +107,7 @@ Dropzone.autoDiscover = false;
     parallelUploads: 5,
     uploadMultiple : true,
     autoProcessQueue: false,
-    maxFilesize: 30,
+    maxFilesize: 2,
     addRemoveLinks: true,
     init: function() {
       var self = this;
@@ -140,7 +140,7 @@ Dropzone.autoDiscover = false;
       });
 
       self.on("maxfilesreached", function(file, response) {
-        //alert("too big");
+       // alert("too big");
       });
 
       self.on("maxfilesexceeded", function(file, response) {

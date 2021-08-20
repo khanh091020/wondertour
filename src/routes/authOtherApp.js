@@ -21,6 +21,7 @@ async function(req, res) {
         email : newUser.email
     },'mk');
     req.session._id = newUser._id;
+    req.session.role = newUser.admin;
   }
   else {
     token  =  jwt.sign({
@@ -28,10 +29,10 @@ async function(req, res) {
     },'mk');
     req.session._id = user._id;
     req.session.phone = user.phone;
+    req.session.role = user.admin;
   }
   req.session.email = req.user.email;
   req.session.token = token;
-  req.session.admin = admin;
   req.session.firstName = req.user.family_name;
   req.session.name = req.user.given_name;
   res.redirect('/index.html');
