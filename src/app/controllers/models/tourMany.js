@@ -13,7 +13,7 @@ const Tours = new Schema({
     saleOff : {type :Number},
     description : {type :String},
     startDay : {type : Date},
-    slug: { type: String, slug: 'name', slug_padding_size: 4,  unique: true },
+    slug: { type: String, slug: ["name", "startPlace"], slug_padding_size: 4,  unique: true },
     countLeft : Number,
     video_id : String,
     img1 : String,

@@ -85,6 +85,10 @@ $( document ).ready(function() {
              notify_div.html(`<p>${count_mess}</p>`)
              var audio = document.getElementById("myAudio");
              audio.play();
+             setTimeout(() => {
+              audio.pause();
+              audio.currentTime = 0;
+             },1100)
              if(notify_div.hasClass('display__none')) notify_div.removeClass('display__none')
              count_mess++
         }
