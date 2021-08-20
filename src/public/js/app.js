@@ -68,7 +68,7 @@
  // loading webside
 
 var preloader = document.getElementById("loading");
-setTimeout(loadingFunction,500)
+setTimeout(loadingFunction,1500)
 function loadingFunction(){
   preloader.style.display = 'none';
 };
