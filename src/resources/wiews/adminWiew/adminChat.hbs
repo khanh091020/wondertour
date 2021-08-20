@@ -1,7 +1,7 @@
 <body>
    {{>adminHeader}}
    <div class="container-fluid h-100">
-      <div class="row justify-content-center h-100">
+      <div class="row justify-content-center h-100 contain__live-chat">
          <div class="col-md-4 col-xl-3 chat">
             <div class="card mb-sm-3 mb-md-0 contacts_card">
                <div class="card-header">
@@ -388,6 +388,16 @@
       }
       .display__none {
       display: none !important;
+      }
+      @media (max-width:992px) {
+         .contain__live-chat {
+            margin-top:4.5rem
+         }
+      }
+       @media (max-width:786px) {
+         .contain__live-chat {
+            margin-top:8.5rem
+         }
       }
    </style>
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
