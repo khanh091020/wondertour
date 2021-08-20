@@ -83,6 +83,8 @@ $( document ).ready(function() {
         let notify_div = $('.notify_message')
         if(!check) {
              notify_div.html(`<p>${count_mess}</p>`)
+             var audio = document.getElementById("myAudio");
+             audio.play();
              if(notify_div.hasClass('display__none')) notify_div.removeClass('display__none')
              count_mess++
         }
