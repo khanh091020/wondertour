@@ -17,7 +17,7 @@ $( document ).ready(function() {
         }
         var conversation = [];
        
-        var socket = io.connect("https://wonderplace.herokuapp.com/");
+        var socket = io.connect("https://wonderplace.herokuapp.com");
         
         socket.on("connect", function() {
           
