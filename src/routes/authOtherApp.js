@@ -31,6 +31,7 @@ async function(req, res) {
   }
   req.session.email = req.user.email;
   req.session.token = token;
+  req.session.admin = admin;
   req.session.firstName = req.user.family_name;
   req.session.name = req.user.given_name;
   res.redirect('/index.html');
