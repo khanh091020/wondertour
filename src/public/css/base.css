@@ -1220,7 +1220,7 @@ form .textarea textarea:focus::placeholder{
   color: #fff;
   font-size: 18px;
   font-weight: 500;
-  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  background: -webkit-linear-gradient(left, #01b3a7, #16d6c9);
   transition: all 0.3s ease;
 }
 .chat-box form .field button:active{
