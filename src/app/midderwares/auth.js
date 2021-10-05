@@ -7,7 +7,7 @@ const GOOGLE_CLIENT_SECRET = "QhYAj1Gf_Don2DXFAXBEQO8L";
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: "https://wonderplace.herokuapp.com/auth/google/login",
+  callbackURL: "http://localhost:3000/auth/google/login",
   passReqToCallback: true,
 },
 function(request, accessToken, refreshToken, profile, done) {
