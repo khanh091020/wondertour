@@ -663,8 +663,8 @@
     function loading_lazy(img){
       let url = img.getAttribute("data-src");
       img.setAttribute("src",url);
-      img.removeAtrribute("data-src");
-       IntersectionObserver.unobserve(img);
+      console.log(img)
+      img.removeAttribute("data-src");
     }
      function ready() {
          if("IntersectionObserver" in window) {
