@@ -665,7 +665,6 @@
       img.setAttribute("src",url);
       console.log(img)
       img.removeAttribute("data-src");
-      IntersectionObserver.unobserve(img);
     }
      function ready() {
          if("IntersectionObserver" in window) {
@@ -674,6 +673,7 @@
                     entries.forEach(entry => {
                         if(entry.isIntersecting) {
                             loading_lazy(entry.target)
+                            observer.unobserve(entry.target)
                         }
                     })
                 });
