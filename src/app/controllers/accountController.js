@@ -5,6 +5,8 @@ const {mongooseToObject} = require('../../util/mongoose')
 const jsonwebtoken = require('jsonwebtoken')
 const order = require('./models/order')
 
+const ImageRemoveEventCallbackPlugin = require('ckeditor5-image-remove-event-callback-plugin');
+
 class accountControlller {
     showAccountDetail(req,res,next) {
        if(req.session.token)

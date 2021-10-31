@@ -71,7 +71,7 @@
   
     <div id="dropzone" class="dropzone"><DIV class="dz-message needsclick">    
           Drop files here or click to upload.<BR>
-          {{!-- You can only upload 5 image and the first image is avatar of tour --}}
+
           <SPAN class="note needsclick"><h4 class="text-danger">UPLOAD IMAGE HERE</h4></SPAN>
         </DIV></div>
     <button type="button" class="btn btn-primary mb-5 submitForm">Submit</button>
@@ -95,10 +95,7 @@
    CKEDITOR.replace( 'editor');
 
 
-Dropzone.autoDiscover = false;
-
-
-
+  Dropzone.autoDiscover = false;
   var zdrop = new Dropzone('#dropzone', {
     url: '/admin/createTour/upload__img-tour',
     maxFiles: 5,
