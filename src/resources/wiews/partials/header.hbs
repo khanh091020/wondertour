@@ -1,3 +1,18 @@
+ 
+  <style>
+  #progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background-color: var(--primary_color);
+  z-index: 9999999999;
+  transition: all 0.2s linear;
+}
+  </style>
+   <div id="progress"></div>
+ 
    <div id="modal__login-signUpForm">
           <div class="contain__form__login-signUp">
         <div class="form-modal">
@@ -180,7 +195,12 @@
         }
     }
 
-   
+    window.addEventListener("scroll", function() {
+        var scrollTop = window.pageYOffset
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        var width = scrollTop / height * 100;
+        document.getElementById("progress").style.width = `${width}%`
+    })
 
     </script>
 
