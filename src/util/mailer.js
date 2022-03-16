@@ -2,8 +2,8 @@ const nodeMailer = require("nodemailer");
 
 // Những thông tin dưới đây các bạn có thể ném nó vào biến môi trường env nhé.
 // Vì để demo nên mình để các biến const ở đây.
-const adminEmail = "vannamnguyen928@gmail.com";
-const adminPassword = "khanh09102002";
+const adminEmail = "shygamershop102@gmail.com";
+const adminPassword = "shopgame2k2";
 // Mình sử dụng host của google - gmail
 const mailHost = "smtp.gmail.com";
 // 587 là một cổng tiêu chuẩn và phổ biến trong giao thức SMTP
